@@ -50,8 +50,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get levelAllInOrder => 'Alle, op volgorde';
 
   @override
-  String get levelAllHint =>
-      'Nieuwe kaarten komen eerst uit A1, dan uit A2 en zo verder tot C2.';
+  String get levelAllHint => 'Nieuwe kaarten komen eerst uit A1, dan uit A2 en zo verder tot C2.';
 
   @override
   String get dueNow => 'Te herhalen';
@@ -167,7 +166,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get pronounce => 'Uitspreken';
 
   @override
-  String get noVoice => 'Voor deze taal is in Windows geen stem geïnstalleerd';
+  String get noVoice => 'Op dit apparaat is geen stem voor deze taal geïnstalleerd';
 
   @override
   String get newCardBadge => 'Nieuw';
@@ -261,8 +260,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get settingsDailyGoal => 'Dagdoel (nieuwe woorden)';
 
   @override
-  String get settingsDailyGoalHint =>
-      'Alleen om bij te houden. Je kunt altijd meer leren.';
+  String get settingsDailyGoalHint => 'Alleen om bij te houden. Je kunt altijd meer leren.';
 
   @override
   String get noGoal => 'Geen';
@@ -278,7 +276,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get settingsAppearance => 'Weergave';
 
   @override
-  String get themeSystem => 'Zoals Windows';
+  String get themeSystem => 'Zoals het systeem';
 
   @override
   String get themeLight => 'Licht';
@@ -287,8 +285,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get themeDark => 'Donker';
 
   @override
-  String get settingsAbout =>
-      'De voortgang wordt voor elk taalpaar apart bijgehouden.';
+  String get settingsAbout => 'De voortgang wordt voor elk taalpaar apart bijgehouden.';
 
   @override
   String get typeNoun => 'zelfstandig naamwoord';

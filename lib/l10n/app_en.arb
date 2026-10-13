@@ -91,7 +91,7 @@
   "pluralLabel": "Plural:",
   "noPlural": "No plural",
   "pronounce": "Pronounce",
-  "noVoice": "No voice for this language is installed in Windows",
+  "noVoice": "No voice for this language is installed on this device",
   "newCardBadge": "New",
   "minutes": "{n} min",
   "@minutes": {
@@ -179,7 +179,7 @@
   "settingsReversed": "Reverse cards",
   "settingsReversedHint": "Show the meaning first and recall the word. Progress is kept separately.",
   "settingsAppearance": "Appearance",
-  "themeSystem": "Same as Windows",
+  "themeSystem": "Same as system",
   "themeLight": "Light",
   "themeDark": "Dark",
   "settingsAbout": "Progress is kept separately for every language pair.",

@@ -10,6 +10,7 @@ import '../l10n/app_localizations.dart';
 import '../state/providers.dart';
 import 'difficulty_menu.dart';
 import 'labels.dart';
+import 'layout.dart';
 import 'term_text.dart';
 
 /// Today's summary, and the flashcard session once started.
@@ -246,6 +247,15 @@ class _SessionViewState extends ConsumerState<_SessionView> {
     final item = widget.session.current!;
     final goal = settings.dailyGoal;
     final newToday = widget.newBefore + widget.session.newAnswered;
+    final compact = isCompact(context);
+    final progress = goal > 0
+        ? LinearProgressIndicator(value: (newToday / goal).clamp(0, 1))
+        : null;
+    final goalText = Text(
+      goal > 0 ? l.goalProgress(newToday, goal) : l.newTodayCount(newToday),
+      style: theme.textTheme.titleSmall,
+    );
+    final dueText = Text(l.dueInSession(widget.session.dueCount), style: theme.textTheme.bodySmall);
     final now = ref.watch(clockProvider)();
 
     final target = vocab.language(settings.target!);
@@ -290,31 +300,38 @@ class _SessionViewState extends ConsumerState<_SessionView> {
         focusNode: _focus,
         autofocus: true,
         child: Padding(
-          padding: const EdgeInsets.all(24),
+          padding: EdgeInsets.all(compact ? 16 : 24),
           child: Column(
             children: [
-              Row(
-                children: [
-                  Text(
-                    goal > 0 ? l.goalProgress(newToday, goal) : l.newTodayCount(newToday),
-                    style: theme.textTheme.titleSmall,
-                  ),
-                  const SizedBox(width: 16),
-                  Expanded(
-                    child: goal > 0
-                        ? LinearProgressIndicator(value: (newToday / goal).clamp(0, 1))
-                        : const SizedBox(),
-                  ),
-                  const SizedBox(width: 16),
-                  Text(l.dueInSession(widget.session.dueCount), style: theme.textTheme.bodySmall),
-                  const SizedBox(width: 16),
-                  TextButton.icon(
-                    onPressed: widget.onEnd,
-                    icon: const Icon(Icons.close),
-                    label: Text(l.endSession),
-                  ),
-                ],
-              ),
+              if (compact) ...[
+                Row(
+                  children: [
+                    Expanded(child: goalText),
+                    dueText,
+                    IconButton(
+                      tooltip: l.endSession,
+                      onPressed: widget.onEnd,
+                      icon: const Icon(Icons.close),
+                    ),
+                  ],
+                ),
+                ?progress,
+              ] else
+                Row(
+                  children: [
+                    goalText,
+                    const SizedBox(width: 16),
+                    Expanded(child: progress ?? const SizedBox()),
+                    const SizedBox(width: 16),
+                    dueText,
+                    const SizedBox(width: 16),
+                    TextButton.icon(
+                      onPressed: widget.onEnd,
+                      icon: const Icon(Icons.close),
+                      label: Text(l.endSession),
+                    ),
+                  ],
+                ),
               Expanded(
                 child: Center(
                   child: ConstrainedBox(
@@ -323,7 +340,10 @@ class _SessionViewState extends ConsumerState<_SessionView> {
                       onTap: () => setState(() => _revealed = true),
                       child: Card(
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 40),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: compact ? 20 : 32,
+                            vertical: compact ? 28 : 40,
+                          ),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -373,46 +393,50 @@ class _SessionViewState extends ConsumerState<_SessionView> {
                               child: Text(l.showAnswer),
                             ),
                           ),
-                          const SizedBox(height: 8),
-                          Text(l.keyboardHint, style: theme.textTheme.bodySmall),
+                          if (!compact) ...[
+                            const SizedBox(height: 8),
+                            Text(l.keyboardHint, style: theme.textTheme.bodySmall),
+                          ],
                         ],
                       )
                     : Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           for (final (i, (_, label, rating, color, _, _)) in answers.indexed)
-                            Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 8),
-                              child: SizedBox(
-                                width: 180,
-                                child: OutlinedButton(
-                                  style: OutlinedButton.styleFrom(
-                                    foregroundColor: color,
-                                    side: BorderSide(color: color),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(12),
+                            Flexible(
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 8),
+                                child: SizedBox(
+                                  width: 180,
+                                  child: OutlinedButton(
+                                    style: OutlinedButton.styleFrom(
+                                      foregroundColor: color,
+                                      side: BorderSide(color: color),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      padding: const EdgeInsets.symmetric(vertical: 8),
+                                      fixedSize: const Size.fromHeight(60),
                                     ),
-                                    padding: const EdgeInsets.symmetric(vertical: 8),
-                                    fixedSize: const Size.fromHeight(60),
-                                  ),
-                                  onPressed: () => _answer(rating, difficulty),
-                                  child: FittedBox(
-                                    child: Column(
-                                      children: [
-                                        Text('${i + 1}  $label'),
-                                        Text(
-                                          intervalLabel(
-                                            l,
-                                            srs.preview(
-                                              item.schedule,
-                                              rating,
-                                              now,
-                                              wordDifficulty: difficulty,
+                                    onPressed: () => _answer(rating, difficulty),
+                                    child: FittedBox(
+                                      child: Column(
+                                        children: [
+                                          Text(compact ? label : '${i + 1}  $label'),
+                                          Text(
+                                            intervalLabel(
+                                              l,
+                                              srs.preview(
+                                                item.schedule,
+                                                rating,
+                                                now,
+                                                wordDifficulty: difficulty,
+                                              ),
                                             ),
+                                            style: theme.textTheme.bodySmall,
                                           ),
-                                          style: theme.textTheme.bodySmall,
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),

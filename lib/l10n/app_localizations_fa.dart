@@ -50,8 +50,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get levelAllInOrder => 'همه، به ترتیب';
 
   @override
-  String get levelAllHint =>
-      'کارت‌های تازه اول از A1 می‌آیند، بعد از A2 و همین‌طور تا C2.';
+  String get levelAllHint => 'کارت‌های تازه اول از A1 می‌آیند، بعد از A2 و همین‌طور تا C2.';
 
   @override
   String get dueNow => 'آماده‌ی مرور';
@@ -131,8 +130,7 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get goalReached =>
-      'به هدف امروز رسیدید. هر قدر بخواهید می‌توانید ادامه دهید.';
+  String get goalReached => 'به هدف امروز رسیدید. هر قدر بخواهید می‌توانید ادامه دهید.';
 
   @override
   String get endSession => 'پایان مرور';
@@ -166,7 +164,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get pronounce => 'تلفظ';
 
   @override
-  String get noVoice => 'صدایی برای این زبان در ویندوز نصب نیست';
+  String get noVoice => 'روی این دستگاه صدایی برای این زبان نصب نیست';
 
   @override
   String get newCardBadge => 'تازه';
@@ -204,11 +202,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String wordCount(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count واژه',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count واژه');
     return '$_temp0';
   }
 
@@ -259,8 +253,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get settingsDailyGoal => 'هدف روزانه (واژه‌ی تازه)';
 
   @override
-  String get settingsDailyGoalHint =>
-      'فقط برای پیگیری است. همیشه می‌توانید بیشتر بخوانید.';
+  String get settingsDailyGoalHint => 'فقط برای پیگیری است. همیشه می‌توانید بیشتر بخوانید.';
 
   @override
   String get noGoal => 'ندارد';
@@ -276,7 +269,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get settingsAppearance => 'ظاهر';
 
   @override
-  String get themeSystem => 'مثل ویندوز';
+  String get themeSystem => 'مثل سیستم';
 
   @override
   String get themeLight => 'روشن';

@@ -1,6 +1,7 @@
 # Flashcards
 
-A Windows app for learning vocabulary with flashcards and spaced repetition.
+An app for Windows and iPhone for learning vocabulary with flashcards and spaced
+repetition.
 You pick the language you want to learn and the language you already know;
 each card shows only those two. The words come from
 [oss-community/dictionary](https://github.com/oss-community/dictionary):
@@ -27,30 +28,46 @@ about 9,000 cards in English, German, Dutch and Persian, from level A1 to C2.
 - Progress is kept separately for each language pair and direction.
 - Word list with search in both languages and a level filter.
 - Daily statistics: answers per day, streak, words learned per level.
-- Pronunciation with the voices installed in Windows.
+- Pronunciation with the voices installed on the device.
 - Menus in English (default), German, Dutch and Persian, right to left for Persian.
-- Light, dark, or the same as Windows.
+- Light, dark, or the same as the system.
+- On a phone the menu moves to the bottom of the screen.
 - Works fully offline.
 
 ## Download
 
 Every push to `main` builds the app on GitHub Actions. Open the latest
-[Windows build](../../actions/workflows/windows.yml) run, download
-**Flashcards-windows**, unzip it and run `flashcard.exe`. Windows may warn that
-the app is unsigned; choose "More info" and "Run anyway".
+[Build](../../actions/workflows/build.yml) run and download the version you need.
+
+### Windows
+
+Download **Flashcards-windows**, unzip it and run `flashcard.exe`. Windows may
+warn that the app is unsigned; choose "More info" and "Run anyway".
 
 Pronunciation uses Windows voices. To add one, open Settings > Time & language >
 Speech > Add voices. A language without a voice shows a disabled speaker button.
 
+### iPhone
+
+Download **Flashcards-ios** and unzip it to get `Flashcards.ipa`. The file is not
+signed, and an iPhone only installs apps signed with an Apple ID. A sideloading
+tool such as Sideloadly or AltStore signs and installs it from a computer with
+your Apple ID. With a free Apple ID the app has to be signed again every 7 days;
+a paid Apple Developer account makes it last a year.
+
+Pronunciation uses the iPhone's voices. To add one, open Settings >
+Accessibility > Spoken Content > Voices.
+
 ## Building
 
-Requires Flutter 3.47 on Windows with Visual Studio's "Desktop development with C++".
+Requires Flutter 3.47. For Windows: a Windows computer with Visual Studio's
+"Desktop development with C++". For iPhone: a Mac with Xcode.
 
 ```
 flutter pub get
 dart run tool/build_vocabulary_db.dart
-flutter run -d windows
 flutter build windows --release
+flutter build ios --release
 ```
 
 `tool/build_vocabulary_db.dart` checks `data/vocabulary.csv` and writes

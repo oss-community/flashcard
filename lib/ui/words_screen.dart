@@ -8,6 +8,7 @@ import '../l10n/app_localizations.dart';
 import '../state/providers.dart';
 import 'difficulty_menu.dart';
 import 'labels.dart';
+import 'layout.dart';
 import 'term_text.dart';
 
 /// List of all words of the current pair, with search and a level filter.
@@ -34,6 +35,7 @@ class _WordsScreenState extends ConsumerState<WordsScreen> {
     final overrides = ref.watch(difficultyOverridesProvider).value ?? const {};
     final now = DateTime.now().toUtc();
     final dateFormat = DateFormat.yMMMd(settings.uiLanguage);
+    final compact = isCompact(context);
 
     final cards =
         ref
@@ -47,12 +49,12 @@ class _WordsScreenState extends ConsumerState<WordsScreen> {
           });
 
     return Padding(
-      padding: const EdgeInsets.all(24),
+      padding: EdgeInsets.all(compact ? 16 : 24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           TextField(
-            autofocus: true,
+            autofocus: !compact,
             decoration: InputDecoration(
               prefixIcon: const Icon(Icons.search),
               hintText: l.searchHint,
@@ -65,17 +67,22 @@ class _WordsScreenState extends ConsumerState<WordsScreen> {
             children: [
               Expanded(
                 child: Wrap(
-                  spacing: 8,
+                  spacing: compact ? 4 : 8,
+                  runSpacing: compact ? 4 : 0,
                   children: [
                     ChoiceChip(
                       label: Text(l.allLevels),
                       selected: _level == null,
+                      showCheckmark: !compact,
+                      visualDensity: compact ? VisualDensity.compact : null,
                       onSelected: (_) => setState(() => _level = null),
                     ),
                     for (final level in levels)
                       ChoiceChip(
                         label: Text(level),
                         selected: _level == level,
+                        showCheckmark: !compact,
+                        visualDensity: compact ? VisualDensity.compact : null,
                         onSelected: (_) => setState(() => _level = level),
                       ),
                   ],
@@ -101,60 +108,86 @@ class _WordsScreenState extends ConsumerState<WordsScreen> {
                           : l.statusLearning;
                       final plural = card.target.plural;
                       return ListTile(
-                        leading: CircleAvatar(
-                          radius: 18,
-                          child: Text(card.level, style: theme.textTheme.labelSmall),
-                        ),
-                        title: Row(
+                        contentPadding: compact ? EdgeInsets.zero : null,
+                        leading: compact
+                            ? null
+                            : CircleAvatar(
+                                radius: 18,
+                                child: Text(card.level, style: theme.textTheme.labelSmall),
+                              ),
+                        title: Wrap(
+                          crossAxisAlignment: WrapCrossAlignment.center,
                           children: [
-                            Flexible(child: TermText(card.target.word, language: target)),
+                            TermText(card.target.word, language: target),
                             if (card.target.type == 'noun' && plural != null && plural != '-')
-                              Flexible(
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.only(start: 8),
-                                  child: TermText(
-                                    plural,
-                                    language: target,
+                              Padding(
+                                padding: const EdgeInsetsDirectional.only(start: 8),
+                                child: TermText(
+                                  plural,
+                                  language: target,
+                                  style: TextStyle(color: theme.colorScheme.outline),
+                                ),
+                              ),
+                          ],
+                        ),
+                        subtitle: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Flexible(
+                                  flex: 3,
+                                  child: TermText(card.native.word, language: native),
+                                ),
+                                Flexible(
+                                  child: Text(
+                                    '  ${typeLabel(l, card.target.type)}',
                                     style: TextStyle(color: theme.colorScheme.outline),
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
-                              ),
+                              ],
+                            ),
+                            if (compact)
+                              Text('${card.level} · $status', style: theme.textTheme.bodySmall),
                           ],
                         ),
-                        subtitle: Row(
-                          children: [
-                            Flexible(child: TermText(card.native.word, language: native)),
-                            Text(
-                              '  ${typeLabel(l, card.target.type)}',
-                              style: TextStyle(color: theme.colorScheme.outline),
-                            ),
-                          ],
-                        ),
-                        trailing: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            SizedBox(
-                              width: 140,
-                              child: Align(
-                                alignment: AlignmentDirectional.centerStart,
-                                child: DifficultyMenu(
-                                  cardId: card.id,
-                                  difficulty: effectiveDifficulty(card, overrides),
-                                ),
+                        trailing: compact
+                            ? Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  DifficultyMenu(
+                                    cardId: card.id,
+                                    difficulty: effectiveDifficulty(card, overrides),
+                                  ),
+                                  SpeakButton(language: target, text: card.target.word),
+                                ],
+                              )
+                            : Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  SizedBox(
+                                    width: 140,
+                                    child: Align(
+                                      alignment: AlignmentDirectional.centerStart,
+                                      child: DifficultyMenu(
+                                        cardId: card.id,
+                                        difficulty: effectiveDifficulty(card, overrides),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 12),
+                                  SizedBox(
+                                    width: 150,
+                                    child: Text(
+                                      status,
+                                      textAlign: TextAlign.end,
+                                      style: theme.textTheme.bodySmall,
+                                    ),
+                                  ),
+                                  SpeakButton(language: target, text: card.target.word),
+                                ],
                               ),
-                            ),
-                            const SizedBox(width: 12),
-                            SizedBox(
-                              width: 150,
-                              child: Text(
-                                status,
-                                textAlign: TextAlign.end,
-                                style: theme.textTheme.bodySmall,
-                              ),
-                            ),
-                            SpeakButton(language: target, text: card.target.word),
-                          ],
-                        ),
                       );
                     },
                   ),

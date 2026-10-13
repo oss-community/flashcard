@@ -5,13 +5,14 @@ import 'package:go_router/go_router.dart';
 
 import 'l10n/app_localizations.dart';
 import 'state/providers.dart';
+import 'ui/layout.dart';
 import 'ui/onboarding_screen.dart';
 import 'ui/settings_screen.dart';
 import 'ui/stats_screen.dart';
 import 'ui/study_screen.dart';
 import 'ui/words_screen.dart';
 
-final _router = GoRouter(
+GoRouter _buildRouter() => GoRouter(
   initialLocation: '/study',
   routes: [
     StatefulShellRoute.indexedStack(
@@ -37,11 +38,24 @@ ThemeData _theme(Brightness brightness, String uiLanguage) => ThemeData(
   fontFamilyFallback: const ['Vazirmatn'],
 );
 
-class FlashcardApp extends ConsumerWidget {
+class FlashcardApp extends ConsumerStatefulWidget {
   const FlashcardApp({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<FlashcardApp> createState() => _FlashcardAppState();
+}
+
+class _FlashcardAppState extends ConsumerState<FlashcardApp> {
+  final _router = _buildRouter();
+
+  @override
+  void dispose() {
+    _router.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final settings = ref.watch(settingsProvider);
     final locale = Locale(settings.uiLanguage);
     final theme = _theme(Brightness.light, settings.uiLanguage);
@@ -88,35 +102,41 @@ class _Shell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
+    final destinations = [
+      (Icons.style_outlined, Icons.style, l.navStudy),
+      (Icons.list_alt_outlined, Icons.list_alt, l.navWords),
+      (Icons.bar_chart_outlined, Icons.bar_chart, l.navStats),
+      (Icons.settings_outlined, Icons.settings, l.navSettings),
+    ];
+    void select(int i) => shell.goBranch(i, initialLocation: i == shell.currentIndex);
+
+    if (isCompact(context)) {
+      return Scaffold(
+        body: SafeArea(bottom: false, child: shell),
+        bottomNavigationBar: NavigationBar(
+          selectedIndex: shell.currentIndex,
+          onDestinationSelected: select,
+          destinations: [
+            for (final (icon, selected, label) in destinations)
+              NavigationDestination(icon: Icon(icon), selectedIcon: Icon(selected), label: label),
+          ],
+        ),
+      );
+    }
     return Scaffold(
       body: Row(
         children: [
           NavigationRail(
             selectedIndex: shell.currentIndex,
-            onDestinationSelected: (i) =>
-                shell.goBranch(i, initialLocation: i == shell.currentIndex),
+            onDestinationSelected: select,
             labelType: NavigationRailLabelType.all,
             destinations: [
-              NavigationRailDestination(
-                icon: const Icon(Icons.style_outlined),
-                selectedIcon: const Icon(Icons.style),
-                label: Text(l.navStudy),
-              ),
-              NavigationRailDestination(
-                icon: const Icon(Icons.list_alt_outlined),
-                selectedIcon: const Icon(Icons.list_alt),
-                label: Text(l.navWords),
-              ),
-              NavigationRailDestination(
-                icon: const Icon(Icons.bar_chart_outlined),
-                selectedIcon: const Icon(Icons.bar_chart),
-                label: Text(l.navStats),
-              ),
-              NavigationRailDestination(
-                icon: const Icon(Icons.settings_outlined),
-                selectedIcon: const Icon(Icons.settings),
-                label: Text(l.navSettings),
-              ),
+              for (final (icon, selected, label) in destinations)
+                NavigationRailDestination(
+                  icon: Icon(icon),
+                  selectedIcon: Icon(selected),
+                  label: Text(label),
+                ),
             ],
           ),
           const VerticalDivider(width: 1),

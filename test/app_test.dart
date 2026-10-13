@@ -77,6 +77,9 @@ void main() {
     });
   });
 
+  phoneTest(vocabulary, 'en');
+  phoneTest(vocabulary, 'fa');
+
   testWidgets('choose a pair, study a card, and switch the menus to Persian', (tester) async {
     await tester.binding.setSurfaceSize(const Size(1100, 800));
     final repo = ProgressRepository(ProgressDatabase(NativeDatabase.memory()));
@@ -150,5 +153,53 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('تنظیمات'), findsWidgets);
     expect(Directionality.of(tester.element(find.text('تنظیمات').first)), TextDirection.rtl);
+  });
+}
+
+void phoneTest(Vocabulary vocabulary, String uiLanguage) {
+  testWidgets('every screen fits on a phone ($uiLanguage menus)', (tester) async {
+    tester.view.physicalSize = const Size(390, 844) * tester.view.devicePixelRatio;
+    addTearDown(tester.view.reset);
+    final repo = ProgressRepository(ProgressDatabase(NativeDatabase.memory()));
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          vocabularyProvider.overrideWithValue(vocabulary),
+          progressRepositoryProvider.overrideWithValue(repo),
+          initialSettingsProvider.overrideWithValue({
+            'uiLanguage': uiLanguage,
+            'target': 'de',
+            'native': 'fa',
+            'dailyGoal': '20',
+          }),
+          speechProvider.overrideWithValue(Speech.silent()),
+          srsProvider.overrideWithValue(Srs(fuzz: false)),
+        ],
+        child: const FlashcardApp(),
+      ),
+    );
+    await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 100)));
+    await tester.pumpAndSettle();
+    expect(find.byType(NavigationBar), findsOneWidget);
+
+    await tester.tap(find.byType(FilledButton));
+    await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 100)));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byType(FilledButton));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byType(OutlinedButton).last);
+    await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 100)));
+    await tester.pumpAndSettle();
+    expect(await repo.schedules(const LanguagePair(target: 'de', native: 'fa')), hasLength(1));
+
+    for (final icon in [
+      Icons.list_alt_outlined,
+      Icons.bar_chart_outlined,
+      Icons.settings_outlined,
+    ]) {
+      await tester.tap(find.byIcon(icon));
+      await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 100)));
+      await tester.pumpAndSettle();
+    }
   });
 }

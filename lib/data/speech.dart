@@ -1,9 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
 import '../core/language.dart';
 
-/// Pronunciation with the voices installed on the computer.
+/// Pronunciation with the voices installed on the device.
 ///
 /// Works offline. A language with no installed voice simply cannot be spoken,
 /// and the pronounce button is disabled for it.
@@ -21,6 +23,13 @@ class Speech {
   static Future<Speech> create() async {
     try {
       final tts = FlutterTts();
+      if (Platform.isIOS) {
+        // Speak even when the ring/silent switch is set to silent.
+        await tts.setSharedInstance(true);
+        await tts.setIosAudioCategory(IosTextToSpeechAudioCategory.playback, [
+          IosTextToSpeechAudioCategoryOptions.mixWithOthers,
+        ]);
+      }
       final voices = <String, Map<String, String>>{};
       final list = await tts.getVoices as List?;
       for (final voice in list ?? const []) {
