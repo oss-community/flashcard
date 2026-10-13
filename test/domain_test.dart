@@ -157,14 +157,55 @@ void main() {
   });
 
   group('difficulty', () {
-    test('remembering an easy word schedules it later than an advanced one', () {
-      final srs = Srs(fuzz: false);
+    final srs = Srs(fuzz: false);
+
+    /// Days between reviews when a word is remembered every time it comes back.
+    List<int> rememberedGaps(String difficulty) {
+      var time = now;
+      var schedule = Schedule.fresh(time);
+      final days = <int>[];
+      while (days.length < 4) {
+        schedule = srs.review(
+          schedule,
+          rememberedRating(difficulty, schedule),
+          time,
+          wordDifficulty: difficulty,
+        );
+        final gap = schedule.due.difference(time);
+        if (gap.inDays >= 1) days.add(gap.inDays);
+        time = schedule.due;
+      }
+      return days;
+    }
+
+    test('a new easy word first comes back after a week', () {
       final fresh = Schedule.fresh(now);
-      final easy = srs.preview(fresh, rememberedRating('easy'), now);
-      final medium = srs.preview(fresh, rememberedRating('medium'), now);
-      final advanced = srs.preview(fresh, rememberedRating('advanced'), now);
-      expect(advanced < medium, isTrue);
-      expect(medium < easy, isTrue);
+      final easy = srs.preview(fresh, rememberedRating('easy', fresh), now, wordDifficulty: 'easy');
+      expect(easy.inDays, 7);
+    });
+
+    test('each remembered answer brings the word back later than the last', () {
+      for (final difficulty in difficulties) {
+        final days = rememberedGaps(difficulty);
+        for (var i = 1; i < days.length; i++) {
+          expect(days[i], greaterThan(days[i - 1]), reason: '$difficulty: $days');
+        }
+      }
+    });
+
+    test('easy words space out faster than medium, medium faster than advanced', () {
+      final easy = rememberedGaps('easy');
+      final medium = rememberedGaps('medium');
+      final advanced = rememberedGaps('advanced');
+      for (var i = 0; i < 4; i++) {
+        expect(easy[i], greaterThan(medium[i]), reason: 'easy $easy, medium $medium');
+        expect(
+          medium[i],
+          greaterThanOrEqualTo(advanced[i]),
+          reason: 'medium $medium, advanced $advanced',
+        );
+      }
+      expect(medium[3], greaterThan(advanced[3]));
     });
   });
 

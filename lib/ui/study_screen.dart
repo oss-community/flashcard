@@ -188,11 +188,16 @@ class _SessionViewState extends ConsumerState<_SessionView> {
     super.dispose();
   }
 
-  Future<void> _answer(Rating rating) async {
+  Future<void> _answer(Rating rating, String difficulty) async {
     if (!_revealed || _saving) return;
     _saving = true;
     final now = ref.read(clockProvider)();
-    final result = widget.session.answer(ref.read(srsProvider), rating, now);
+    final result = widget.session.answer(
+      ref.read(srsProvider),
+      rating,
+      now,
+      wordDifficulty: difficulty,
+    );
     await ref
         .read(progressRepositoryProvider)
         .saveReview(
@@ -242,7 +247,7 @@ class _SessionViewState extends ConsumerState<_SessionView> {
       (
         true,
         l.remembered,
-        rememberedRating(difficulty),
+        rememberedRating(difficulty, item.schedule),
         theme.colorScheme.primary,
         LogicalKeyboardKey.digit2,
         LogicalKeyboardKey.numpad2,
@@ -254,8 +259,8 @@ class _SessionViewState extends ConsumerState<_SessionView> {
         const SingleActivator(LogicalKeyboardKey.space): () => setState(() => _revealed = true),
         const SingleActivator(LogicalKeyboardKey.enter): () => setState(() => _revealed = true),
         for (final (_, _, rating, _, key, numpadKey) in answers) ...{
-          SingleActivator(key): () => _answer(rating),
-          SingleActivator(numpadKey): () => _answer(rating),
+          SingleActivator(key): () => _answer(rating, difficulty),
+          SingleActivator(numpadKey): () => _answer(rating, difficulty),
         },
       },
       child: Focus(
@@ -364,13 +369,21 @@ class _SessionViewState extends ConsumerState<_SessionView> {
                                     padding: const EdgeInsets.symmetric(vertical: 8),
                                     fixedSize: const Size.fromHeight(60),
                                   ),
-                                  onPressed: () => _answer(rating),
+                                  onPressed: () => _answer(rating, difficulty),
                                   child: FittedBox(
                                     child: Column(
                                       children: [
                                         Text('${i + 1}  $label'),
                                         Text(
-                                          intervalLabel(l, srs.preview(item.schedule, rating, now)),
+                                          intervalLabel(
+                                            l,
+                                            srs.preview(
+                                              item.schedule,
+                                              rating,
+                                              now,
+                                              wordDifficulty: difficulty,
+                                            ),
+                                          ),
                                           style: theme.textTheme.bodySmall,
                                         ),
                                       ],

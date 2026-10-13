@@ -43,26 +43,36 @@ class Schedule {
 }
 
 /// The answer to give the scheduler when the learner remembered a word of
-/// [difficulty]: easy words come back later, advanced words sooner.
-fsrs.Rating rememberedRating(String difficulty) => switch (difficulty) {
-  'easy' => fsrs.Rating.easy,
-  'advanced' => fsrs.Rating.hard,
-  _ => fsrs.Rating.good,
-};
+/// [difficulty]. A new easy word skips the short learning steps and first
+/// comes back after a week; every other remembered answer is Good.
+fsrs.Rating rememberedRating(String difficulty, Schedule schedule) =>
+    difficulty == 'easy' && schedule.state != fsrs.State.review
+    ? fsrs.Rating.easy
+    : fsrs.Rating.good;
+
+/// FSRS difficulty (1 to 10) given to a remembered word with this label. The
+/// higher it is, the more slowly the time between reviews grows. Medium words
+/// keep the difficulty FSRS works out from the answers.
+const _labelDifficulty = {'easy': 4.0, 'advanced': 8.0};
+
+/// FSRS default parameters, except that a new word answered Easy first comes
+/// back after about a week instead of about 16 days.
+final parameters = [...fsrs.defaultParameters]..[3] = 7.0;
 
 /// Spaced repetition with the FSRS algorithm.
 class Srs {
-  Srs({bool fuzz = true})
-    : _scheduler = fsrs.Scheduler(enableFuzzing: fuzz),
-      _preview = fsrs.Scheduler(enableFuzzing: false);
+  Srs({bool fuzz = true}) : _scheduler = _make(fuzz), _preview = _make(false);
+
+  static fsrs.Scheduler _make(bool fuzz) =>
+      fsrs.Scheduler(parameters: parameters, maximumInterval: 365, enableFuzzing: fuzz);
 
   final fsrs.Scheduler _scheduler;
   final fsrs.Scheduler _preview;
 
-  /// Applies an answer and returns the card's new schedule.
-  Schedule review(Schedule schedule, fsrs.Rating rating, DateTime now) {
-    final result = _scheduler.reviewCard(schedule._toCard(), rating, reviewDateTime: now.toUtc());
-    final card = result.card;
+  /// Applies an answer to a word labelled [wordDifficulty] and returns the
+  /// card's new schedule.
+  Schedule review(Schedule schedule, fsrs.Rating rating, DateTime now, {String? wordDifficulty}) {
+    final card = _review(_scheduler, schedule, rating, now, wordDifficulty);
     final lapsed = rating == fsrs.Rating.again && schedule.state == fsrs.State.review;
     return Schedule(
       state: card.state,
@@ -77,8 +87,21 @@ class Srs {
   }
 
   /// How long until the card comes back if answered with [rating].
-  Duration preview(Schedule schedule, fsrs.Rating rating, DateTime now) {
-    final card = _preview.reviewCard(schedule._toCard(), rating, reviewDateTime: now.toUtc()).card;
-    return card.due.difference(now.toUtc());
+  Duration preview(Schedule schedule, fsrs.Rating rating, DateTime now, {String? wordDifficulty}) =>
+      _review(_preview, schedule, rating, now, wordDifficulty).due.difference(now.toUtc());
+
+  static fsrs.Card _review(
+    fsrs.Scheduler scheduler,
+    Schedule schedule,
+    fsrs.Rating rating,
+    DateTime now,
+    String? wordDifficulty,
+  ) {
+    final card = schedule._toCard();
+    final labelled = _labelDifficulty[wordDifficulty];
+    if (labelled != null && rating != fsrs.Rating.again && card.difficulty != null) {
+      card.difficulty = labelled;
+    }
+    return scheduler.reviewCard(card, rating, reviewDateTime: now.toUtc()).card;
   }
 }

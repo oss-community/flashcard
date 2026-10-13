@@ -13,9 +13,12 @@ about 9,000 cards in English, German, Dutch and Persian, from level A1 to C2.
   you can also pick a single level.
 - Flashcards scheduled with the FSRS spaced repetition algorithm. Answer with
   Forgot or Remembered; keyboard: Space shows the answer, 1 forgot, 2 remembered.
-- Every word has a difficulty (easy, medium, advanced) from the data. Remembered
-  easy words come back later, advanced ones sooner. You can change a word's
-  difficulty on the card or in the word list; your choice is kept per language.
+- Every word has a difficulty (easy, medium, advanced) from the data. Each time
+  you remember a word, the wait before it comes back grows: a new easy word
+  first returns after a week, and easy words space out faster than medium ones,
+  medium faster than advanced. Forgetting brings a word back soon. The longest
+  wait is one year. You can change a word's difficulty on the card or in the
+  word list; your choice is kept per language.
 - Reverse cards: see the meaning first and recall the word.
 - Progress is kept separately for each language pair and direction.
 - Word list with search in both languages and a level filter.

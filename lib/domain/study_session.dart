@@ -87,12 +87,17 @@ class StudySession {
   int get remaining => _queue.length;
   bool get isFinished => _queue.isEmpty;
 
-  /// Answers the current card. Cards that come due again within
-  /// [learnAhead] go to the back of the queue.
-  ({StudyItem item, bool wasNew, Schedule schedule}) answer(Srs srs, Rating rating, DateTime now) {
+  /// Answers the current card, a word labelled [wordDifficulty]. Cards that
+  /// come due again within [learnAhead] go to the back of the queue.
+  ({StudyItem item, bool wasNew, Schedule schedule}) answer(
+    Srs srs,
+    Rating rating,
+    DateTime now, {
+    String? wordDifficulty,
+  }) {
     final item = _queue.removeFirst();
     final wasNew = item.isNew;
-    item.schedule = srs.review(item.schedule, rating, now);
+    item.schedule = srs.review(item.schedule, rating, now, wordDifficulty: wordDifficulty);
     item.isNew = false;
     answered++;
     if (!item.schedule.due.isAfter(now.toUtc().add(learnAhead))) {
