@@ -16,7 +16,7 @@ class OnboardingScreen extends ConsumerStatefulWidget {
 class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   String? _native;
   String? _target;
-  String _level = 'A1';
+  String? _level;
 
   @override
   Widget build(BuildContext context) {
@@ -75,8 +75,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                 ),
                 if (same) ...[
                   const SizedBox(height: 8),
-                  Text(l.sameLanguageError,
-                      style: TextStyle(color: theme.colorScheme.error)),
+                  Text(l.sameLanguageError, style: TextStyle(color: theme.colorScheme.error)),
                 ],
                 const SizedBox(height: 24),
                 Text(l.level, style: theme.textTheme.titleMedium),
@@ -85,8 +84,12 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                 const SizedBox(height: 32),
                 FilledButton(
                   onPressed: ready
-                      ? () => ref.read(settingsProvider.notifier).update((s) =>
-                          s.copyWith(native: _native, target: _target, level: _level))
+                      ? () => ref
+                            .read(settingsProvider.notifier)
+                            .update(
+                              (s) =>
+                                  s.copyWith(native: _native, target: _target, level: () => _level),
+                            )
                       : null,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 12),

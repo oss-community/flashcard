@@ -174,6 +174,18 @@ abstract class AppLocalizations {
   /// **'Choose two different languages.'**
   String get sameLanguageError;
 
+  /// No description provided for @levelAllInOrder.
+  ///
+  /// In en, this message translates to:
+  /// **'All, in order'**
+  String get levelAllInOrder;
+
+  /// No description provided for @levelAllHint.
+  ///
+  /// In en, this message translates to:
+  /// **'New cards come from A1 first, then A2, and so on up to C2.'**
+  String get levelAllHint;
+
   /// No description provided for @dueNow.
   ///
   /// In en, this message translates to:
@@ -228,29 +240,47 @@ abstract class AppLocalizations {
   /// **'Show answer'**
   String get showAnswer;
 
-  /// No description provided for @again.
+  /// No description provided for @forgot.
   ///
   /// In en, this message translates to:
-  /// **'Again'**
-  String get again;
+  /// **'Forgot'**
+  String get forgot;
 
-  /// No description provided for @hard.
+  /// No description provided for @remembered.
   ///
   /// In en, this message translates to:
-  /// **'Hard'**
-  String get hard;
+  /// **'Remembered'**
+  String get remembered;
 
-  /// No description provided for @good.
+  /// No description provided for @difficulty.
   ///
   /// In en, this message translates to:
-  /// **'Good'**
-  String get good;
+  /// **'Difficulty'**
+  String get difficulty;
 
-  /// No description provided for @easy.
+  /// No description provided for @diffEasy.
   ///
   /// In en, this message translates to:
   /// **'Easy'**
-  String get easy;
+  String get diffEasy;
+
+  /// No description provided for @diffMedium.
+  ///
+  /// In en, this message translates to:
+  /// **'Medium'**
+  String get diffMedium;
+
+  /// No description provided for @diffAdvanced.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced'**
+  String get diffAdvanced;
+
+  /// No description provided for @changeDifficulty.
+  ///
+  /// In en, this message translates to:
+  /// **'Change difficulty'**
+  String get changeDifficulty;
 
   /// No description provided for @cardsLeft.
   ///
@@ -285,7 +315,7 @@ abstract class AppLocalizations {
   /// No description provided for @keyboardHint.
   ///
   /// In en, this message translates to:
-  /// **'Space: show answer   1 to 4: answer'**
+  /// **'Space: show answer   1: forgot   2: remembered'**
   String get keyboardHint;
 
   /// No description provided for @pluralLabel.

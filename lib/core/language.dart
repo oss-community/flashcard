@@ -46,22 +46,22 @@ class Language {
   String nameIn(String uiCode) => names[uiCode] ?? names['en'] ?? code;
 
   factory Language.fromJson(Map<String, dynamic> json) => Language(
-        code: json['code'] as String,
-        column: json['column'] as String,
-        rtl: json['rtl'] as bool? ?? false,
-        ttsLocale: json['ttsLocale'] as String,
-        names: (json['names'] as Map<String, dynamic>).cast<String, String>(),
-        articles: (json['articles'] as List?)?.cast<String>() ?? const [],
-      );
+    code: json['code'] as String,
+    column: json['column'] as String,
+    rtl: json['rtl'] as bool? ?? false,
+    ttsLocale: json['ttsLocale'] as String,
+    names: (json['names'] as Map<String, dynamic>).cast<String, String>(),
+    articles: (json['articles'] as List?)?.cast<String>() ?? const [],
+  );
 
   Map<String, dynamic> toJson() => {
-        'code': code,
-        'column': column,
-        'rtl': rtl,
-        'ttsLocale': ttsLocale,
-        'names': names,
-        'articles': articles,
-      };
+    'code': code,
+    'column': column,
+    'rtl': rtl,
+    'ttsLocale': ttsLocale,
+    'names': names,
+    'articles': articles,
+  };
 
   static List<Language> listFromJson(String source) {
     final json = jsonDecode(source) as Map<String, dynamic>;

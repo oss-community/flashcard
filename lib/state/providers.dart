@@ -11,11 +11,11 @@ import '../domain/stats.dart';
 
 /// Loaded before the app starts and provided through overrides in `main`.
 final vocabularyProvider = Provider<Vocabulary>((ref) => throw UnimplementedError());
-final progressRepositoryProvider =
-    Provider<ProgressRepository>((ref) => throw UnimplementedError());
+final progressRepositoryProvider = Provider<ProgressRepository>(
+  (ref) => throw UnimplementedError(),
+);
 final speechProvider = Provider<Speech>((ref) => throw UnimplementedError());
-final initialSettingsProvider =
-    Provider<Map<String, String>>((ref) => throw UnimplementedError());
+final initialSettingsProvider = Provider<Map<String, String>>((ref) => throw UnimplementedError());
 
 final srsProvider = Provider<Srs>((ref) => Srs());
 
@@ -29,7 +29,7 @@ class AppSettings {
     required this.uiLanguage,
     this.native,
     this.target,
-    this.level = 'A1',
+    this.level,
     this.newPerDay = 20,
     this.reversed = false,
     this.themeMode = ThemeMode.system,
@@ -39,7 +39,9 @@ class AppSettings {
   final String uiLanguage;
   final String? native;
   final String? target;
-  final String level;
+
+  /// Level new cards come from; null means every level in order, A1 first.
+  final String? level;
   final int newPerDay;
   final bool reversed;
   final ThemeMode themeMode;
@@ -47,37 +49,35 @@ class AppSettings {
   /// True once both languages of the pair have been chosen.
   bool get hasPair => native != null && target != null && native != target;
 
-  LanguagePair get pair =>
-      LanguagePair(target: target!, native: native!, reversed: reversed);
+  LanguagePair get pair => LanguagePair(target: target!, native: native!, reversed: reversed);
 
   AppSettings copyWith({
     String? uiLanguage,
     String? native,
     String? target,
-    String? level,
+    String? Function()? level,
     int? newPerDay,
     bool? reversed,
     ThemeMode? themeMode,
-  }) =>
-      AppSettings(
-        uiLanguage: uiLanguage ?? this.uiLanguage,
-        native: native ?? this.native,
-        target: target ?? this.target,
-        level: level ?? this.level,
-        newPerDay: newPerDay ?? this.newPerDay,
-        reversed: reversed ?? this.reversed,
-        themeMode: themeMode ?? this.themeMode,
-      );
+  }) => AppSettings(
+    uiLanguage: uiLanguage ?? this.uiLanguage,
+    native: native ?? this.native,
+    target: target ?? this.target,
+    level: level != null ? level() : this.level,
+    newPerDay: newPerDay ?? this.newPerDay,
+    reversed: reversed ?? this.reversed,
+    themeMode: themeMode ?? this.themeMode,
+  );
 
   Map<String, String> toMap() => {
-        'uiLanguage': uiLanguage,
-        'native': ?native,
-        'target': ?target,
-        'level': level,
-        'newPerDay': '$newPerDay',
-        'reversed': '$reversed',
-        'themeMode': themeMode.name,
-      };
+    'uiLanguage': uiLanguage,
+    'native': ?native,
+    'target': ?target,
+    'level': level ?? 'all',
+    'newPerDay': '$newPerDay',
+    'reversed': '$reversed',
+    'themeMode': themeMode.name,
+  };
 
   static AppSettings fromMap(Map<String, String> map, List<Language> languages) {
     final codes = languages.map((l) => l.code).toSet();
@@ -86,11 +86,13 @@ class AppSettings {
       uiLanguage: lang('uiLanguage') ?? 'en',
       native: lang('native'),
       target: lang('target'),
-      level: levels.contains(map['level']) ? map['level']! : 'A1',
+      level: levels.contains(map['level']) ? map['level'] : null,
       newPerDay: int.tryParse(map['newPerDay'] ?? '')?.clamp(0, 200) ?? 20,
       reversed: map['reversed'] == 'true',
-      themeMode: ThemeMode.values.firstWhere((m) => m.name == map['themeMode'],
-          orElse: () => ThemeMode.system),
+      themeMode: ThemeMode.values.firstWhere(
+        (m) => m.name == map['themeMode'],
+        orElse: () => ThemeMode.system,
+      ),
     );
   }
 }
@@ -98,7 +100,9 @@ class AppSettings {
 class SettingsNotifier extends Notifier<AppSettings> {
   @override
   AppSettings build() => AppSettings.fromMap(
-      ref.watch(initialSettingsProvider), ref.watch(vocabularyProvider).languages);
+    ref.watch(initialSettingsProvider),
+    ref.watch(vocabularyProvider).languages,
+  );
 
   Future<void> update(AppSettings Function(AppSettings) change) async {
     final next = change(state);
@@ -110,8 +114,7 @@ class SettingsNotifier extends Notifier<AppSettings> {
   }
 }
 
-final settingsProvider =
-    NotifierProvider<SettingsNotifier, AppSettings>(SettingsNotifier.new);
+final settingsProvider = NotifierProvider<SettingsNotifier, AppSettings>(SettingsNotifier.new);
 
 /// Language currently used for the menus.
 final uiLanguageProvider = Provider<Language>((ref) {
@@ -125,6 +128,18 @@ final pairCardsProvider = Provider<List<PairCard>>((ref) {
   if (!settings.hasPair) return const [];
   return cardsForPair(ref.watch(vocabularyProvider).cards, settings.pair);
 });
+
+/// Difficulty labels the learner changed for the language being learned.
+final difficultyOverridesProvider = FutureProvider<Map<String, String>>((ref) async {
+  ref.watch(progressVersionProvider);
+  final target = ref.watch(settingsProvider.select((s) => s.target));
+  if (target == null) return const {};
+  return ref.watch(progressRepositoryProvider).difficultyOverrides(target);
+});
+
+/// Difficulty of [card] as the learner sees it: their own label, or the data's.
+String effectiveDifficulty(PairCard card, Map<String, String> overrides) =>
+    overrides[card.id] ?? card.difficulty;
 
 /// Bumped after each answer so progress views reload.
 final progressVersionProvider = NotifierProvider<ProgressVersion, int>(ProgressVersion.new);
@@ -172,7 +187,12 @@ final todayProvider = FutureProvider<TodaySummary>((ref) async {
 
   final dueLimit = now.toUtc();
   final due = schedules.values.where((s) => !s.due.isAfter(dueLimit)).length;
-  final unseen = cards.where((c) => c.level == settings.level && !schedules.containsKey(c.id)).length;
+  final unseen = cards
+      .where(
+        (c) =>
+            (settings.level == null || c.level == settings.level) && !schedules.containsKey(c.id),
+      )
+      .length;
   final newLeft = (settings.newPerDay - today.newCards).clamp(0, unseen);
   return TodaySummary(
     due: due,

@@ -41,16 +41,23 @@ class StatsScreen extends ConsumerWidget {
           Text(l.statsToday, style: theme.textTheme.titleLarge),
           const SizedBox(height: 12),
           if (today != null)
-            Wrap(spacing: 16, runSpacing: 16, children: [
-              StatTile(label: l.reviewedToday, value: today.reviewedToday),
-              StatTile(label: l.dueNow, value: today.due),
-              StatTile(label: l.streak, value: today.streak),
-            ]),
+            Wrap(
+              spacing: 16,
+              runSpacing: 16,
+              children: [
+                StatTile(label: l.reviewedToday, value: today.reviewedToday),
+                StatTile(label: l.dueNow, value: today.due),
+                StatTile(label: l.streak, value: today.streak),
+              ],
+            ),
           const SizedBox(height: 32),
           Text(l.statsLast30, style: theme.textTheme.titleLarge),
           Text(l.statsAllPairs, style: theme.textTheme.bodySmall),
           const SizedBox(height: 12),
-          SizedBox(height: 160, child: _HistoryChart(history: history, locale: ui)),
+          SizedBox(
+            height: 160,
+            child: _HistoryChart(history: history, locale: ui),
+          ),
           const SizedBox(height: 32),
           Text(l.statsByLevel, style: theme.textTheme.titleLarge),
           Text(l.statsThisPair, style: theme.textTheme.bodySmall),
@@ -70,8 +77,11 @@ class StatsScreen extends ConsumerWidget {
                   ),
                   SizedBox(
                     width: 120,
-                    child: Text(l.learnedOf(count.learned, count.total),
-                        textAlign: TextAlign.end, style: theme.textTheme.bodySmall),
+                    child: Text(
+                      l.learnedOf(count.learned, count.total),
+                      textAlign: TextAlign.end,
+                      style: theme.textTheme.bodySmall,
+                    ),
                   ),
                 ],
               ),

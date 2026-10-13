@@ -17,12 +17,23 @@ class Term {
 
 /// One row of the vocabulary: the same meaning in every language.
 class VocabCard {
-  const VocabCard({required this.id, required this.level, required this.terms});
+  const VocabCard({
+    required this.id,
+    required this.level,
+    required this.difficulty,
+    required this.terms,
+  });
 
   final String id;
   final String level;
+
+  /// Estimated difficulty of the word: `easy`, `medium` or `advanced`.
+  final String difficulty;
   final Map<String, Term> terms;
 }
+
+/// Difficulty labels, easiest first.
+const difficulties = ['easy', 'medium', 'advanced'];
 
 /// Word types allowed in the data.
 const wordTypes = {
@@ -107,7 +118,7 @@ List<VocabCard> readVocabulary(String csvText, List<Language> languages) {
   final index = {for (var i = 0; i < header.length; i++) header[i]: i};
   final problems = <String>[];
 
-  for (final name in ['id', 'level']) {
+  for (final name in ['id', 'level', 'difficulty']) {
     if (!index.containsKey(name)) problems.add('missing column "$name"');
   }
   for (final lang in languages) {
@@ -135,6 +146,10 @@ List<VocabCard> readVocabulary(String csvText, List<Language> languages) {
     final level = cell('level');
     if (id.isEmpty || !seenIds.add(id)) problems.add('line $line: empty or duplicate id "$id"');
     if (!levels.contains(level)) problems.add('line $line: unknown level "$level"');
+    final difficulty = cell('difficulty');
+    if (!difficulties.contains(difficulty)) {
+      problems.add('line $line: unknown difficulty "$difficulty"');
+    }
 
     final terms = <String, Term>{};
     for (final lang in languages) {
@@ -146,13 +161,9 @@ List<VocabCard> readVocabulary(String csvText, List<Language> languages) {
       if (!wordTypes.contains(type)) {
         problems.add('line $line: unknown ${lang.column}_type "$type"');
       }
-      terms[lang.code] = Term(
-        word: word,
-        type: type,
-        plural: plural.isEmpty ? null : plural,
-      );
+      terms[lang.code] = Term(word: word, type: type, plural: plural.isEmpty ? null : plural);
     }
-    cards.add(VocabCard(id: id, level: level, terms: terms));
+    cards.add(VocabCard(id: id, level: level, difficulty: difficulty, terms: terms));
   }
   if (problems.isNotEmpty) throw VocabularyFormatException(problems);
   return cards;

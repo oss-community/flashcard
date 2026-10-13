@@ -2,22 +2,22 @@ import '../l10n/app_localizations.dart';
 
 /// Menu name of a word type from the data (`noun`, `phrasal verb`, ...).
 String typeLabel(AppLocalizations l, String type) => switch (type) {
-      'noun' => l.typeNoun,
-      'verb' => l.typeVerb,
-      'adj' => l.typeAdj,
-      'adv' => l.typeAdv,
-      'prep' => l.typePrep,
-      'pron' => l.typePron,
-      'conj' => l.typeConj,
-      'det' => l.typeDet,
-      'particle' => l.typeParticle,
-      'interj' => l.typeInterj,
-      'num' => l.typeNum,
-      'phrasal verb' => l.typePhrasalVerb,
-      'phrase' => l.typePhrase,
-      'idiom' => l.typeIdiom,
-      _ => type,
-    };
+  'noun' => l.typeNoun,
+  'verb' => l.typeVerb,
+  'adj' => l.typeAdj,
+  'adv' => l.typeAdv,
+  'prep' => l.typePrep,
+  'pron' => l.typePron,
+  'conj' => l.typeConj,
+  'det' => l.typeDet,
+  'particle' => l.typeParticle,
+  'interj' => l.typeInterj,
+  'num' => l.typeNum,
+  'phrasal verb' => l.typePhrasalVerb,
+  'phrase' => l.typePhrase,
+  'idiom' => l.typeIdiom,
+  _ => type,
+};
 
 /// Short interval such as "10 min" or "3 d".
 String intervalLabel(AppLocalizations l, Duration d) {
@@ -28,3 +28,10 @@ String intervalLabel(AppLocalizations l, Duration d) {
   if (days < 365) return l.months((days / 30).round());
   return l.years((days / 365).round());
 }
+
+/// Menu name of a difficulty label (`easy`, `medium`, `advanced`).
+String difficultyLabel(AppLocalizations l, String difficulty) => switch (difficulty) {
+  'easy' => l.diffEasy,
+  'advanced' => l.diffAdvanced,
+  _ => l.diffMedium,
+};

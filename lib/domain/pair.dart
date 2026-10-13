@@ -28,12 +28,17 @@ class PairCard {
   const PairCard({
     required this.id,
     required this.level,
+    required this.difficulty,
     required this.target,
     required this.native,
   });
 
   final String id;
   final String level;
+
+  /// Difficulty from the data; the learner may override it (see
+  /// `ProgressRepository.difficultyOverrides`).
+  final String difficulty;
   final Term target;
   final Term native;
 }
@@ -49,7 +54,15 @@ List<PairCard> cardsForPair(List<VocabCard> cards, LanguagePair pair) {
     if (target == null || native == null) continue;
     final key = '${target.word.toLowerCase()}\u0000${native.word.toLowerCase()}';
     if (!seen.add(key)) continue;
-    result.add(PairCard(id: card.id, level: card.level, target: target, native: native));
+    result.add(
+      PairCard(
+        id: card.id,
+        level: card.level,
+        difficulty: card.difficulty,
+        target: target,
+        native: native,
+      ),
+    );
   }
   return result;
 }

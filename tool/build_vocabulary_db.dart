@@ -11,8 +11,7 @@ import 'package:flashcard/core/vocabulary_source.dart';
 import 'package:sqlite3/sqlite3.dart';
 
 void main() {
-  final languages =
-      Language.listFromJson(File('data/languages.json').readAsStringSync());
+  final languages = Language.listFromJson(File('data/languages.json').readAsStringSync());
   final List<VocabCard> cards;
   try {
     cards = readVocabulary(File('data/vocabulary.csv').readAsStringSync(), languages);
@@ -39,11 +38,11 @@ void main() {
   }
   insertLanguage.close();
 
-  final insertCard = db.prepare('INSERT INTO cards VALUES (?, ?, ?)');
+  final insertCard = db.prepare('INSERT INTO cards VALUES (?, ?, ?, ?)');
   final insertTerm = db.prepare('INSERT INTO terms VALUES (?, ?, ?, ?, ?)');
   for (var i = 0; i < cards.length; i++) {
     final card = cards[i];
-    insertCard.execute([card.id, card.level, i]);
+    insertCard.execute([card.id, card.level, card.difficulty, i]);
     for (final entry in card.terms.entries) {
       final term = entry.value;
       insertTerm.execute([card.id, entry.key, term.word, term.type, term.plural]);
@@ -55,6 +54,8 @@ void main() {
   db.execute('VACUUM');
   db.close();
 
-  stdout.writeln('Wrote ${out.path}: ${cards.length} cards, '
-      '${languages.map((l) => l.code).join(', ')}');
+  stdout.writeln(
+    'Wrote ${out.path}: ${cards.length} cards, '
+    '${languages.map((l) => l.code).join(', ')}',
+  );
 }

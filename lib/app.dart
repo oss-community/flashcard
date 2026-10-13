@@ -23,17 +23,19 @@ final _router = GoRouter(
           ('/stats', const StatsScreen()),
           ('/settings', const SettingsScreen()),
         ])
-          StatefulShellBranch(routes: [GoRoute(path: path, builder: (_, _) => page)]),
+          StatefulShellBranch(
+            routes: [GoRoute(path: path, builder: (_, _) => page)],
+          ),
       ],
     ),
   ],
 );
 
 ThemeData _theme(Brightness brightness, String uiLanguage) => ThemeData(
-      colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF3F51B5), brightness: brightness),
-      fontFamily: uiLanguage == 'fa' ? 'Vazirmatn' : null,
-      fontFamilyFallback: const ['Vazirmatn'],
-    );
+  colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF3F51B5), brightness: brightness),
+  fontFamily: uiLanguage == 'fa' ? 'Vazirmatn' : null,
+  fontFamilyFallback: const ['Vazirmatn'],
+);
 
 class FlashcardApp extends ConsumerWidget {
   const FlashcardApp({super.key});
@@ -91,25 +93,30 @@ class _Shell extends StatelessWidget {
         children: [
           NavigationRail(
             selectedIndex: shell.currentIndex,
-            onDestinationSelected: (i) => shell.goBranch(i, initialLocation: i == shell.currentIndex),
+            onDestinationSelected: (i) =>
+                shell.goBranch(i, initialLocation: i == shell.currentIndex),
             labelType: NavigationRailLabelType.all,
             destinations: [
               NavigationRailDestination(
-                  icon: const Icon(Icons.style_outlined),
-                  selectedIcon: const Icon(Icons.style),
-                  label: Text(l.navStudy)),
+                icon: const Icon(Icons.style_outlined),
+                selectedIcon: const Icon(Icons.style),
+                label: Text(l.navStudy),
+              ),
               NavigationRailDestination(
-                  icon: const Icon(Icons.list_alt_outlined),
-                  selectedIcon: const Icon(Icons.list_alt),
-                  label: Text(l.navWords)),
+                icon: const Icon(Icons.list_alt_outlined),
+                selectedIcon: const Icon(Icons.list_alt),
+                label: Text(l.navWords),
+              ),
               NavigationRailDestination(
-                  icon: const Icon(Icons.bar_chart_outlined),
-                  selectedIcon: const Icon(Icons.bar_chart),
-                  label: Text(l.navStats)),
+                icon: const Icon(Icons.bar_chart_outlined),
+                selectedIcon: const Icon(Icons.bar_chart),
+                label: Text(l.navStats),
+              ),
               NavigationRailDestination(
-                  icon: const Icon(Icons.settings_outlined),
-                  selectedIcon: const Icon(Icons.settings),
-                  label: Text(l.navSettings)),
+                icon: const Icon(Icons.settings_outlined),
+                selectedIcon: const Icon(Icons.settings),
+                label: Text(l.navSettings),
+              ),
             ],
           ),
           const VerticalDivider(width: 1),

@@ -47,6 +47,13 @@ class AppLocalizationsDe extends AppLocalizations {
   String get sameLanguageError => 'Wähle zwei verschiedene Sprachen.';
 
   @override
+  String get levelAllInOrder => 'Alle, der Reihe nach';
+
+  @override
+  String get levelAllHint =>
+      'Neue Karten kommen zuerst aus A1, dann aus A2 und so weiter bis C2.';
+
+  @override
   String get dueNow => 'Zur Wiederholung fällig';
 
   @override
@@ -79,16 +86,25 @@ class AppLocalizationsDe extends AppLocalizations {
   String get showAnswer => 'Antwort zeigen';
 
   @override
-  String get again => 'Nochmal';
+  String get forgot => 'Vergessen';
 
   @override
-  String get hard => 'Schwer';
+  String get remembered => 'Gewusst';
 
   @override
-  String get good => 'Gut';
+  String get difficulty => 'Schwierigkeit';
 
   @override
-  String get easy => 'Leicht';
+  String get diffEasy => 'Leicht';
+
+  @override
+  String get diffMedium => 'Mittel';
+
+  @override
+  String get diffAdvanced => 'Fortgeschritten';
+
+  @override
+  String get changeDifficulty => 'Schwierigkeit ändern';
 
   @override
   String cardsLeft(int count) {
@@ -122,7 +138,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get backHome => 'Zurück';
 
   @override
-  String get keyboardHint => 'Leertaste: Antwort zeigen   1 bis 4: antworten';
+  String get keyboardHint =>
+      'Leertaste: Antwort zeigen   1: vergessen   2: gewusst';
 
   @override
   String get pluralLabel => 'Plural:';

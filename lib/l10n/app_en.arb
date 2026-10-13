@@ -5,7 +5,6 @@
   "navWords": "Words",
   "navStats": "Statistics",
   "navSettings": "Settings",
-
   "welcomeTitle": "Welcome",
   "welcomeBody": "Choose the language you want to learn, the language you already know, and your level. You can change all of this later in Settings.",
   "languageToLearn": "Language to learn",
@@ -13,7 +12,8 @@
   "level": "Level",
   "start": "Start",
   "sameLanguageError": "Choose two different languages.",
-
+  "levelAllInOrder": "All, in order",
+  "levelAllHint": "New cards come from A1 first, then A2, and so on up to C2.",
   "dueNow": "Due for review",
   "newToday": "New cards left today",
   "reviewedToday": "Answered today",
@@ -21,58 +21,134 @@
   "studyNow": "Start studying",
   "allDone": "All done for now. Come back later, or raise the number of new cards per day in Settings.",
   "learningPair": "{target} from {native}",
-  "@learningPair": {"placeholders": {"target": {"type": "String"}, "native": {"type": "String"}}},
+  "@learningPair": {
+    "placeholders": {
+      "target": {
+        "type": "String"
+      },
+      "native": {
+        "type": "String"
+      }
+    }
+  },
   "levelLabel": "Level {level}",
-  "@levelLabel": {"placeholders": {"level": {"type": "String"}}},
-
+  "@levelLabel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
   "showAnswer": "Show answer",
-  "again": "Again",
-  "hard": "Hard",
-  "good": "Good",
-  "easy": "Easy",
+  "forgot": "Forgot",
+  "remembered": "Remembered",
+  "difficulty": "Difficulty",
+  "diffEasy": "Easy",
+  "diffMedium": "Medium",
+  "diffAdvanced": "Advanced",
+  "changeDifficulty": "Change difficulty",
   "cardsLeft": "{count, plural, =1{1 card left} other{{count} cards left}}",
-  "@cardsLeft": {"placeholders": {"count": {"type": "int"}}},
+  "@cardsLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "endSession": "End session",
   "sessionFinished": "Session finished",
   "sessionSummary": "{count, plural, =1{You answered 1 card.} other{You answered {count} cards.}}",
-  "@sessionSummary": {"placeholders": {"count": {"type": "int"}}},
+  "@sessionSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "backHome": "Back",
-  "keyboardHint": "Space: show answer   1 to 4: answer",
+  "keyboardHint": "Space: show answer   1: forgot   2: remembered",
   "pluralLabel": "Plural:",
   "noPlural": "No plural",
   "pronounce": "Pronounce",
   "noVoice": "No voice for this language is installed in Windows",
   "newCardBadge": "New",
-
   "minutes": "{n} min",
-  "@minutes": {"placeholders": {"n": {"type": "int"}}},
+  "@minutes": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
   "hours": "{n} h",
-  "@hours": {"placeholders": {"n": {"type": "int"}}},
+  "@hours": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
   "days": "{n} d",
-  "@days": {"placeholders": {"n": {"type": "int"}}},
+  "@days": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
   "months": "{n} mo",
-  "@months": {"placeholders": {"n": {"type": "int"}}},
+  "@months": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
   "years": "{n} y",
-  "@years": {"placeholders": {"n": {"type": "int"}}},
-
+  "@years": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
   "searchHint": "Search in both languages",
   "allLevels": "All",
   "wordCount": "{count, plural, =1{1 word} other{{count} words}}",
-  "@wordCount": {"placeholders": {"count": {"type": "int"}}},
+  "@wordCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "statusNew": "Not studied",
   "statusLearning": "Learning",
   "statusLearned": "Next review {date}",
-  "@statusLearned": {"placeholders": {"date": {"type": "String"}}},
+  "@statusLearned": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "noResults": "No words found.",
-
   "statsToday": "Today",
   "statsLast30": "Last 30 days",
   "statsByLevel": "Learned per level",
   "learnedOf": "{learned} of {total}",
-  "@learnedOf": {"placeholders": {"learned": {"type": "int"}, "total": {"type": "int"}}},
+  "@learnedOf": {
+    "placeholders": {
+      "learned": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
   "statsAllPairs": "All language pairs",
   "statsThisPair": "Current language pair",
-
   "settingsMenuLanguage": "Menu language",
   "settingsLanguages": "Languages",
   "settingsStudy": "Study",
@@ -84,7 +160,6 @@
   "themeLight": "Light",
   "themeDark": "Dark",
   "settingsAbout": "Progress is kept separately for every language pair.",
-
   "typeNoun": "noun",
   "typeVerb": "verb",
   "typeAdj": "adjective",

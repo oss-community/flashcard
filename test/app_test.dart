@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:drift/drift.dart' show driftRuntimeOptions;
 import 'package:drift/native.dart';
 import 'package:flashcard/app.dart';
@@ -8,6 +10,7 @@ import 'package:flashcard/data/vocabulary_repository.dart';
 import 'package:flashcard/domain/pair.dart';
 import 'package:flashcard/domain/srs.dart';
 import 'package:flashcard/state/providers.dart';
+import 'package:flashcard/ui/difficulty_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -24,6 +27,7 @@ void main() {
     final card = vocabulary.cards.firstWhere((c) => c.terms['de']!.word == 'die Frau');
     expect(card.terms['de']!.plural, 'Frauen');
     expect(card.terms['nl']!.word, startsWith('de '));
+    expect(vocabulary.cards.map((c) => c.difficulty).toSet(), {'easy', 'medium', 'advanced'});
   });
 
   group('ProgressRepository', () {
@@ -35,7 +39,13 @@ void main() {
       const nlEn = LanguagePair(target: 'nl', native: 'en');
       final schedule = Srs(fuzz: false).review(Schedule.fresh(now), Rating.good, now);
       await repo.saveReview(
-          pair: deFa, cardId: 'a1-0001', schedule: schedule, rating: Rating.good, wasNew: true, at: now);
+        pair: deFa,
+        cardId: 'a1-0001',
+        schedule: schedule,
+        rating: Rating.good,
+        wasNew: true,
+        at: now,
+      );
 
       expect((await repo.schedules(deFa)).keys, ['a1-0001']);
       expect(await repo.schedules(nlEn), isEmpty);
@@ -43,6 +53,20 @@ void main() {
       expect(today.reviews, 1);
       expect(today.newCards, 1);
       expect(await repo.reviewDays(), hasLength(1));
+    });
+
+    test('upgrades a version 1 progress database', () async {
+      final dir = Directory.systemTemp.createTempSync('progress');
+      final file = File('${dir.path}/progress.sqlite');
+      final first = ProgressDatabase(NativeDatabase(file));
+      await first.customStatement('DROP TABLE difficulty_overrides');
+      await first.customStatement('PRAGMA user_version = 1');
+      await first.close();
+
+      final upgraded = ProgressRepository(ProgressDatabase(NativeDatabase(file)));
+      await upgraded.setDifficulty('a1-0001', 'de', 'easy');
+      expect(await upgraded.difficultyOverrides('de'), {'a1-0001': 'easy'});
+      dir.deleteSync(recursive: true);
     });
 
     test('stores settings', () async {
@@ -55,16 +79,18 @@ void main() {
   testWidgets('choose a pair, study a card, and switch the menus to Persian', (tester) async {
     await tester.binding.setSurfaceSize(const Size(1100, 800));
     final repo = ProgressRepository(ProgressDatabase(NativeDatabase.memory()));
-    await tester.pumpWidget(ProviderScope(
-      overrides: [
-        vocabularyProvider.overrideWithValue(vocabulary),
-        progressRepositoryProvider.overrideWithValue(repo),
-        initialSettingsProvider.overrideWithValue(const {}),
-        speechProvider.overrideWithValue(Speech.silent()),
-        srsProvider.overrideWithValue(Srs(fuzz: false)),
-      ],
-      child: const FlashcardApp(),
-    ));
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          vocabularyProvider.overrideWithValue(vocabulary),
+          progressRepositoryProvider.overrideWithValue(repo),
+          initialSettingsProvider.overrideWithValue(const {}),
+          speechProvider.overrideWithValue(Speech.silent()),
+          srsProvider.overrideWithValue(Srs(fuzz: false)),
+        ],
+        child: const FlashcardApp(),
+      ),
+    );
     await tester.pumpAndSettle();
 
     // Menus start in English.
@@ -88,12 +114,26 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('20 cards left'), findsOneWidget);
-    await tester.tap(find.text('Show answer'));
+    expect(find.text('Again'), findsNothing);
+
+    // Mark the word as advanced; the choice is saved for German.
+    await tester.tap(find.byType(DifficultyMenu));
     await tester.pumpAndSettle();
-    await tester.tap(find.textContaining('Good'));
+    await tester.tap(find.text('Advanced').last);
     await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 100)));
     await tester.pumpAndSettle();
-    expect(find.text('20 cards left'), findsOneWidget, reason: 'a learning card comes back');
+    expect((await repo.difficultyOverrides('de')).values, ['advanced']);
+
+    await tester.tap(find.text('Show answer'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.textContaining('Remembered'));
+    await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 100)));
+    await tester.pumpAndSettle();
+    expect(
+      find.text('20 cards left'),
+      findsOneWidget,
+      reason: 'an advanced word answered once comes back in the same session',
+    );
     expect(await repo.schedules(const LanguagePair(target: 'de', native: 'fa')), hasLength(1));
 
     // Switch the menu language in Settings.

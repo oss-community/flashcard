@@ -6,6 +6,7 @@ import '../core/language.dart';
 import '../domain/pair.dart';
 import '../l10n/app_localizations.dart';
 import '../state/providers.dart';
+import 'difficulty_menu.dart';
 import 'labels.dart';
 import 'term_text.dart';
 
@@ -30,18 +31,20 @@ class _WordsScreenState extends ConsumerState<WordsScreen> {
     final target = vocab.language(settings.target!);
     final native = vocab.language(settings.native!);
     final schedules = ref.watch(schedulesProvider).value ?? const {};
+    final overrides = ref.watch(difficultyOverridesProvider).value ?? const {};
     final now = DateTime.now().toUtc();
     final dateFormat = DateFormat.yMMMd(settings.uiLanguage);
 
-    final cards = ref
-        .watch(pairCardsProvider)
-        .where((c) => (_level == null || c.level == _level) && matchesQuery(c, _query))
-        .toList()
-      ..sort((a, b) {
-        final byLevel = levels.indexOf(a.level).compareTo(levels.indexOf(b.level));
-        if (byLevel != 0) return byLevel;
-        return target.sortKey(a.target.word).compareTo(target.sortKey(b.target.word));
-      });
+    final cards =
+        ref
+            .watch(pairCardsProvider)
+            .where((c) => (_level == null || c.level == _level) && matchesQuery(c, _query))
+            .toList()
+          ..sort((a, b) {
+            final byLevel = levels.indexOf(a.level).compareTo(levels.indexOf(b.level));
+            if (byLevel != 0) return byLevel;
+            return target.sortKey(a.target.word).compareTo(target.sortKey(b.target.word));
+          });
 
     return Padding(
       padding: const EdgeInsets.all(24),
@@ -94,8 +97,8 @@ class _WordsScreenState extends ConsumerState<WordsScreen> {
                       final status = schedule == null
                           ? l.statusNew
                           : schedule.isLearned && schedule.due.isAfter(now)
-                              ? l.statusLearned(dateFormat.format(schedule.due.toLocal()))
-                              : l.statusLearning;
+                          ? l.statusLearned(dateFormat.format(schedule.due.toLocal()))
+                          : l.statusLearning;
                       final plural = card.target.plural;
                       return ListTile(
                         leading: CircleAvatar(
@@ -109,9 +112,11 @@ class _WordsScreenState extends ConsumerState<WordsScreen> {
                               Flexible(
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.only(start: 8),
-                                  child: TermText(plural,
-                                      language: target,
-                                      style: TextStyle(color: theme.colorScheme.outline)),
+                                  child: TermText(
+                                    plural,
+                                    language: target,
+                                    style: TextStyle(color: theme.colorScheme.outline),
+                                  ),
                                 ),
                               ),
                           ],
@@ -119,14 +124,34 @@ class _WordsScreenState extends ConsumerState<WordsScreen> {
                         subtitle: Row(
                           children: [
                             Flexible(child: TermText(card.native.word, language: native)),
-                            Text('  ${typeLabel(l, card.target.type)}',
-                                style: TextStyle(color: theme.colorScheme.outline)),
+                            Text(
+                              '  ${typeLabel(l, card.target.type)}',
+                              style: TextStyle(color: theme.colorScheme.outline),
+                            ),
                           ],
                         ),
                         trailing: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Text(status, style: theme.textTheme.bodySmall),
+                            SizedBox(
+                              width: 140,
+                              child: Align(
+                                alignment: AlignmentDirectional.centerStart,
+                                child: DifficultyMenu(
+                                  cardId: card.id,
+                                  difficulty: effectiveDifficulty(card, overrides),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 12),
+                            SizedBox(
+                              width: 150,
+                              child: Text(
+                                status,
+                                textAlign: TextAlign.end,
+                                style: theme.textTheme.bodySmall,
+                              ),
+                            ),
                             SpeakButton(language: target, text: card.target.word),
                           ],
                         ),

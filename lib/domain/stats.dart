@@ -22,7 +22,10 @@ int streakDays(Set<DateTime> reviewDays, DateTime now) {
 
 /// Review counts for the last [days] days, oldest first, today last.
 List<({DateTime day, int count})> dailyCounts(
-    Map<DateTime, int> countsByDay, DateTime now, int days) {
+  Map<DateTime, int> countsByDay,
+  DateTime now,
+  int days,
+) {
   final today = dayOf(now);
   return [
     for (var i = days - 1; i >= 0; i--)

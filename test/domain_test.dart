@@ -6,14 +6,15 @@ import 'package:flashcard/domain/study_session.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 VocabCard card(String id, String level, String en, String de, String fa) => VocabCard(
-      id: id,
-      level: level,
-      terms: {
-        'en': Term(word: en, type: 'noun'),
-        'de': Term(word: de, type: 'noun', plural: '-'),
-        'fa': Term(word: fa, type: 'noun'),
-      },
-    );
+  id: id,
+  level: level,
+  difficulty: 'medium',
+  terms: {
+    'en': Term(word: en, type: 'noun'),
+    'de': Term(word: de, type: 'noun', plural: '-'),
+    'fa': Term(word: fa, type: 'noun'),
+  },
+);
 
 void main() {
   final now = DateTime.utc(2026, 10, 13, 9);
@@ -47,19 +48,47 @@ void main() {
 
     test('takes new cards only from the chosen level, up to the limit', () {
       final items = buildSessionItems(
-          cards: cards, schedules: {}, level: 'A2', newLimit: 3, now: now, seed: 1);
+        cards: cards,
+        schedules: {},
+        level: 'A2',
+        newLimit: 3,
+        now: now,
+        seed: 1,
+      );
       expect(items.length, 3);
       expect(items.every((i) => i.isNew && i.card.level == 'A2'), isTrue);
+    });
+
+    test('with no level, takes new cards from A1 first, then A2', () {
+      final items = buildSessionItems(
+        cards: cards,
+        schedules: {},
+        level: null,
+        newLimit: 12,
+        now: now,
+        seed: 1,
+      );
+      expect(items.take(10).every((i) => i.card.level == 'A1'), isTrue);
+      expect(items.skip(10).every((i) => i.card.level == 'A2'), isTrue);
     });
 
     test('includes due reviews from any level and spreads new cards between them', () {
       final schedules = {
         for (var i = 0; i < 4; i++)
-          'b$i': Schedule(state: State.review, due: now.subtract(Duration(days: i))),
+          'b$i': Schedule(
+            state: State.review,
+            due: now.subtract(Duration(days: i)),
+          ),
         'b4': Schedule(state: State.review, due: now.add(const Duration(days: 3))),
       };
       final items = buildSessionItems(
-          cards: cards, schedules: schedules, level: 'A1', newLimit: 2, now: now, seed: 1);
+        cards: cards,
+        schedules: schedules,
+        level: 'A1',
+        newLimit: 2,
+        now: now,
+        seed: 1,
+      );
       expect(items.length, 6);
       expect(items.where((i) => i.isNew).length, 2);
       expect(items.where((i) => !i.isNew).map((i) => i.card.id), ['b3', 'b2', 'b1', 'b0']);
@@ -68,9 +97,13 @@ void main() {
 
     test('new card order is shuffled but stable', () {
       List<String> ids() => buildSessionItems(
-              cards: cards, schedules: {}, level: 'A1', newLimit: 10, now: now, seed: 42)
-          .map((i) => i.card.id)
-          .toList();
+        cards: cards,
+        schedules: {},
+        level: 'A1',
+        newLimit: 10,
+        now: now,
+        seed: 42,
+      ).map((i) => i.card.id).toList();
       expect(ids(), ids());
       expect(ids(), isNot([for (var i = 0; i < 10; i++) 'a$i']));
     });
@@ -78,11 +111,15 @@ void main() {
 
   group('StudySession', () {
     final srs = Srs(fuzz: false);
-    final cards = cardsForPair([card('1', 'A1', 'a', 'b', 'c'), card('2', 'A1', 'd', 'e', 'f')], pair);
+    final cards = cardsForPair([
+      card('1', 'A1', 'a', 'b', 'c'),
+      card('2', 'A1', 'd', 'e', 'f'),
+    ], pair);
 
     test('a forgotten card comes back in the same session', () {
-      final session = StudySession(buildSessionItems(
-          cards: cards, schedules: {}, level: 'A1', newLimit: 2, now: now, seed: 1));
+      final session = StudySession(
+        buildSessionItems(cards: cards, schedules: {}, level: 'A1', newLimit: 2, now: now, seed: 1),
+      );
       final first = session.current!.card.id;
       final result = session.answer(srs, Rating.again, now);
       expect(result.wasNew, isTrue);
@@ -105,11 +142,29 @@ void main() {
 
     test('a lapse is counted when a learned card is forgotten', () {
       final learned = Schedule(
-          state: State.review, stability: 10, difficulty: 5, due: now, lastReview: now.subtract(const Duration(days: 10)), reps: 3);
+        state: State.review,
+        stability: 10,
+        difficulty: 5,
+        due: now,
+        lastReview: now.subtract(const Duration(days: 10)),
+        reps: 3,
+      );
       final after = srs.review(learned, Rating.again, now);
       expect(after.lapses, 1);
       expect(after.reps, 4);
       expect(after.state, State.relearning);
+    });
+  });
+
+  group('difficulty', () {
+    test('remembering an easy word schedules it later than an advanced one', () {
+      final srs = Srs(fuzz: false);
+      final fresh = Schedule.fresh(now);
+      final easy = srs.preview(fresh, rememberedRating('easy'), now);
+      final medium = srs.preview(fresh, rememberedRating('medium'), now);
+      final advanced = srs.preview(fresh, rememberedRating('advanced'), now);
+      expect(advanced < medium, isTrue);
+      expect(medium < easy, isTrue);
     });
   });
 

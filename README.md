@@ -8,9 +8,14 @@ about 9,000 cards in English, German, Dutch and Persian, from level A1 to C2.
 
 ## Features
 
-- Choose a language pair (any two of English, German, Dutch, Persian) and a level.
+- Choose a language pair (any two of English, German, Dutch, Persian). By default
+  new cards come from every level in order, all of A1 first, then A2, up to C2;
+  you can also pick a single level.
 - Flashcards scheduled with the FSRS spaced repetition algorithm. Answer with
-  Again, Hard, Good or Easy; keyboard: Space shows the answer, 1 to 4 answers.
+  Forgot or Remembered; keyboard: Space shows the answer, 1 forgot, 2 remembered.
+- Every word has a difficulty (easy, medium, advanced) from the data. Remembered
+  easy words come back later, advanced ones sooner. You can change a word's
+  difficulty on the card or in the word list; your choice is kept per language.
 - Reverse cards: see the meaning first and recall the word.
 - Progress is kept separately for each language pair and direction.
 - Word list with search in both languages and a level filter.

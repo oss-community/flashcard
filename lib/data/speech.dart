@@ -24,8 +24,7 @@ class Speech {
       final voices = <String, Map<String, String>>{};
       final list = await tts.getVoices as List?;
       for (final voice in list ?? const []) {
-        final map = Map<String, String>.from(
-            (voice as Map).map((k, v) => MapEntry('$k', '$v')));
+        final map = Map<String, String>.from((voice as Map).map((k, v) => MapEntry('$k', '$v')));
         final locale = map['locale'];
         if (locale == null) continue;
         final code = locale.split(RegExp('[-_]')).first.toLowerCase();

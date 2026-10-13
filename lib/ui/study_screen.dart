@@ -8,6 +8,7 @@ import '../domain/srs.dart';
 import '../domain/study_session.dart';
 import '../l10n/app_localizations.dart';
 import '../state/providers.dart';
+import 'difficulty_menu.dart';
 import 'labels.dart';
 import 'term_text.dart';
 
@@ -80,41 +81,46 @@ class _Overview extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                l.learningPair(vocab.language(settings.target!).nameIn(ui),
-                    vocab.language(settings.native!).nameIn(ui)),
+                l.learningPair(
+                  vocab.language(settings.target!).nameIn(ui),
+                  vocab.language(settings.native!).nameIn(ui),
+                ),
                 style: theme.textTheme.headlineMedium,
               ),
               const SizedBox(height: 4),
-              Text(l.levelLabel(settings.level), style: theme.textTheme.titleMedium),
+              Text(
+                settings.level == null ? l.levelAllHint : l.levelLabel(settings.level!),
+                style: theme.textTheme.titleMedium,
+              ),
               const SizedBox(height: 32),
               switch (today) {
                 AsyncData(:final value) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Wrap(
-                        spacing: 16,
-                        runSpacing: 16,
-                        children: [
-                          StatTile(label: l.dueNow, value: value.due),
-                          StatTile(label: l.newToday, value: value.newAvailable),
-                          StatTile(label: l.reviewedToday, value: value.reviewedToday),
-                          StatTile(label: l.streak, value: value.streak),
-                        ],
-                      ),
-                      const SizedBox(height: 32),
-                      if (value.due + value.newAvailable > 0)
-                        FilledButton.icon(
-                          onPressed: onStart,
-                          icon: const Icon(Icons.play_arrow),
-                          label: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 12),
-                            child: Text(l.studyNow),
-                          ),
-                        )
-                      else
-                        Text(l.allDone, style: theme.textTheme.bodyLarge),
-                    ],
-                  ),
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Wrap(
+                      spacing: 16,
+                      runSpacing: 16,
+                      children: [
+                        StatTile(label: l.dueNow, value: value.due),
+                        StatTile(label: l.newToday, value: value.newAvailable),
+                        StatTile(label: l.reviewedToday, value: value.reviewedToday),
+                        StatTile(label: l.streak, value: value.streak),
+                      ],
+                    ),
+                    const SizedBox(height: 32),
+                    if (value.due + value.newAvailable > 0)
+                      FilledButton.icon(
+                        onPressed: onStart,
+                        icon: const Icon(Icons.play_arrow),
+                        label: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          child: Text(l.studyNow),
+                        ),
+                      )
+                    else
+                      Text(l.allDone, style: theme.textTheme.bodyLarge),
+                  ],
+                ),
                 AsyncError(:final error) => Text('$error'),
                 _ => const Center(child: CircularProgressIndicator()),
               },
@@ -187,7 +193,9 @@ class _SessionViewState extends ConsumerState<_SessionView> {
     _saving = true;
     final now = ref.read(clockProvider)();
     final result = widget.session.answer(ref.read(srsProvider), rating, now);
-    await ref.read(progressRepositoryProvider).saveReview(
+    await ref
+        .read(progressRepositoryProvider)
+        .saveReview(
           pair: ref.read(settingsProvider).pair,
           cardId: result.item.card.id,
           schedule: result.schedule,
@@ -220,22 +228,34 @@ class _SessionViewState extends ConsumerState<_SessionView> {
         ? (native, nativeTerm, target, targetTerm)
         : (target, targetTerm, native, nativeTerm);
 
-    final ratings = [
-      (Rating.again, l.again, theme.colorScheme.error),
-      (Rating.hard, l.hard, theme.colorScheme.tertiary),
-      (Rating.good, l.good, theme.colorScheme.primary),
-      (Rating.easy, l.easy, theme.colorScheme.secondary),
+    final overrides = ref.watch(difficultyOverridesProvider).value ?? const {};
+    final difficulty = effectiveDifficulty(item.card, overrides);
+    final answers = [
+      (
+        false,
+        l.forgot,
+        Rating.again,
+        theme.colorScheme.error,
+        LogicalKeyboardKey.digit1,
+        LogicalKeyboardKey.numpad1,
+      ),
+      (
+        true,
+        l.remembered,
+        rememberedRating(difficulty),
+        theme.colorScheme.primary,
+        LogicalKeyboardKey.digit2,
+        LogicalKeyboardKey.numpad2,
+      ),
     ];
 
     return CallbackShortcuts(
       bindings: {
         const SingleActivator(LogicalKeyboardKey.space): () => setState(() => _revealed = true),
         const SingleActivator(LogicalKeyboardKey.enter): () => setState(() => _revealed = true),
-        for (var i = 0; i < 4; i++) ...{
-          SingleActivator(LogicalKeyboardKey(LogicalKeyboardKey.digit1.keyId + i)): () =>
-              _answer(ratings[i].$1),
-          SingleActivator(LogicalKeyboardKey(LogicalKeyboardKey.numpad1.keyId + i)): () =>
-              _answer(ratings[i].$1),
+        for (final (_, _, rating, _, key, numpadKey) in answers) ...{
+          SingleActivator(key): () => _answer(rating),
+          SingleActivator(numpadKey): () => _answer(rating),
         },
       },
       child: Focus(
@@ -251,7 +271,8 @@ class _SessionViewState extends ConsumerState<_SessionView> {
                   const SizedBox(width: 16),
                   Expanded(
                     child: LinearProgressIndicator(
-                      value: widget.session.answered /
+                      value:
+                          widget.session.answered /
                           (widget.session.answered + widget.session.remaining),
                     ),
                   ),
@@ -275,11 +296,14 @@ class _SessionViewState extends ConsumerState<_SessionView> {
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              if (item.isNew)
-                                Align(
-                                  alignment: AlignmentDirectional.topEnd,
-                                  child: Chip(label: Text(l.newCardBadge)),
-                                ),
+                              Row(
+                                children: [
+                                  DifficultyMenu(cardId: item.card.id, difficulty: difficulty),
+                                  const Spacer(),
+                                  if (item.isNew) Chip(label: Text(l.newCardBadge)),
+                                ],
+                              ),
+                              const SizedBox(height: 8),
                               _TermBlock(
                                 language: frontLang,
                                 term: frontTerm,
@@ -325,28 +349,32 @@ class _SessionViewState extends ConsumerState<_SessionView> {
                     : Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          for (final (i, (rating, label, color)) in ratings.indexed)
+                          for (final (i, (_, label, rating, color, _, _)) in answers.indexed)
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 6),
+                              padding: const EdgeInsets.symmetric(horizontal: 8),
                               child: SizedBox(
-                                width: 132,
+                                width: 180,
                                 child: OutlinedButton(
                                   style: OutlinedButton.styleFrom(
                                     foregroundColor: color,
                                     side: BorderSide(color: color),
                                     shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(12)),
-                                    padding: const EdgeInsets.symmetric(vertical: 12),
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                    padding: const EdgeInsets.symmetric(vertical: 8),
+                                    fixedSize: const Size.fromHeight(60),
                                   ),
                                   onPressed: () => _answer(rating),
-                                  child: Column(
-                                    children: [
-                                      Text('${i + 1}  $label'),
-                                      Text(
-                                        intervalLabel(l, srs.preview(item.schedule, rating, now)),
-                                        style: theme.textTheme.bodySmall,
-                                      ),
-                                    ],
+                                  child: FittedBox(
+                                    child: Column(
+                                      children: [
+                                        Text('${i + 1}  $label'),
+                                        Text(
+                                          intervalLabel(l, srs.preview(item.schedule, rating, now)),
+                                          style: theme.textTheme.bodySmall,
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -398,8 +426,10 @@ class _TermBlock extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 8),
-        Text(typeLabel(l, term.type),
-            style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.outline)),
+        Text(
+          typeLabel(l, term.type),
+          style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.outline),
+        ),
         if (showPlural && term.type == 'noun' && plural != null) ...[
           const SizedBox(height: 8),
           plural == '-'

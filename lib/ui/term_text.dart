@@ -20,9 +20,7 @@ class TermText extends StatelessWidget {
       text,
       textDirection: language.rtl ? TextDirection.rtl : TextDirection.ltr,
       textAlign: textAlign,
-      style: (style ?? const TextStyle()).copyWith(
-        fontFamily: language.rtl ? 'Vazirmatn' : null,
-      ),
+      style: (style ?? const TextStyle()).copyWith(fontFamily: language.rtl ? 'Vazirmatn' : null),
     );
   }
 }

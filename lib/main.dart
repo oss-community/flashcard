@@ -30,13 +30,15 @@ Future<void> main() async {
   final settings = await progress.readSettings();
   final speech = await Speech.create();
 
-  runApp(ProviderScope(
-    overrides: [
-      vocabularyProvider.overrideWithValue(vocabulary),
-      progressRepositoryProvider.overrideWithValue(progress),
-      initialSettingsProvider.overrideWithValue(settings),
-      speechProvider.overrideWithValue(speech),
-    ],
-    child: const FlashcardApp(),
-  ));
+  runApp(
+    ProviderScope(
+      overrides: [
+        vocabularyProvider.overrideWithValue(vocabulary),
+        progressRepositoryProvider.overrideWithValue(progress),
+        initialSettingsProvider.overrideWithValue(settings),
+        speechProvider.overrideWithValue(speech),
+      ],
+      child: const FlashcardApp(),
+    ),
+  );
 }

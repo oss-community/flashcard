@@ -1,6 +1,7 @@
 import 'dart:collection';
 import 'dart:math';
 
+import '../core/language.dart';
 import 'pair.dart';
 import 'srs.dart';
 
@@ -19,30 +20,33 @@ class StudyItem {
 const learnAhead = Duration(minutes: 20);
 
 /// Picks the cards for one session: every due review, plus up to
-/// [newLimit] cards from [level] that have never been studied.
+/// [newLimit] cards that have never been studied.
 ///
-/// New cards are spread evenly between reviews. Their order is shuffled with a
-/// fixed seed per pair, so it is random but the same every day.
+/// New cards come from [level], or, when [level] is null, from every level in
+/// order: all of A1 first, then A2, and so on. Within a level their order is
+/// shuffled with a fixed seed per pair, so it is random but the same every day.
+/// New cards are spread evenly between reviews.
 List<StudyItem> buildSessionItems({
   required List<PairCard> cards,
   required Map<String, Schedule> schedules,
-  required String level,
+  required String? level,
   required int newLimit,
   required DateTime now,
   required int seed,
 }) {
   final due = <StudyItem>[];
-  final fresh = <PairCard>[];
+  final freshByLevel = {for (final l in levels) l: <PairCard>[]};
   for (final card in cards) {
     final schedule = schedules[card.id];
     if (schedule == null) {
-      if (card.level == level) fresh.add(card);
+      if (level == null || card.level == level) freshByLevel[card.level]?.add(card);
     } else if (!schedule.due.isAfter(now.toUtc().add(learnAhead))) {
       due.add(StudyItem(card: card, schedule: schedule, isNew: false));
     }
   }
   due.sort((a, b) => a.schedule.due.compareTo(b.schedule.due));
-  fresh.shuffle(Random(seed));
+  final random = Random(seed);
+  final fresh = [for (final l in levels) ...(freshByLevel[l]!..shuffle(random))];
   final newItems = fresh
       .take(max(0, newLimit))
       .map((c) => StudyItem(card: c, schedule: Schedule.fresh(now), isNew: true))
@@ -85,8 +89,7 @@ class StudySession {
 
   /// Answers the current card. Cards that come due again within
   /// [learnAhead] go to the back of the queue.
-  ({StudyItem item, bool wasNew, Schedule schedule}) answer(
-      Srs srs, Rating rating, DateTime now) {
+  ({StudyItem item, bool wasNew, Schedule schedule}) answer(Srs srs, Rating rating, DateTime now) {
     final item = _queue.removeFirst();
     final wasNew = item.isNew;
     item.schedule = srs.review(item.schedule, rating, now);

@@ -47,6 +47,13 @@ class AppLocalizationsNl extends AppLocalizations {
   String get sameLanguageError => 'Kies twee verschillende talen.';
 
   @override
+  String get levelAllInOrder => 'Alle, op volgorde';
+
+  @override
+  String get levelAllHint =>
+      'Nieuwe kaarten komen eerst uit A1, dan uit A2 en zo verder tot C2.';
+
+  @override
   String get dueNow => 'Te herhalen';
 
   @override
@@ -79,16 +86,25 @@ class AppLocalizationsNl extends AppLocalizations {
   String get showAnswer => 'Toon antwoord';
 
   @override
-  String get again => 'Opnieuw';
+  String get forgot => 'Vergeten';
 
   @override
-  String get hard => 'Moeilijk';
+  String get remembered => 'Geweten';
 
   @override
-  String get good => 'Goed';
+  String get difficulty => 'Moeilijkheid';
 
   @override
-  String get easy => 'Makkelijk';
+  String get diffEasy => 'Makkelijk';
+
+  @override
+  String get diffMedium => 'Gemiddeld';
+
+  @override
+  String get diffAdvanced => 'Gevorderd';
+
+  @override
+  String get changeDifficulty => 'Moeilijkheid wijzigen';
 
   @override
   String cardsLeft(int count) {
@@ -122,7 +138,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get backHome => 'Terug';
 
   @override
-  String get keyboardHint => 'Spatie: toon antwoord   1 tot 4: antwoorden';
+  String get keyboardHint => 'Spatie: toon antwoord   1: vergeten   2: geweten';
 
   @override
   String get pluralLabel => 'Meervoud:';

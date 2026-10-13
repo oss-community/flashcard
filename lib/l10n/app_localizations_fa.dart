@@ -47,6 +47,13 @@ class AppLocalizationsFa extends AppLocalizations {
   String get sameLanguageError => 'دو زبان متفاوت انتخاب کنید.';
 
   @override
+  String get levelAllInOrder => 'همه، به ترتیب';
+
+  @override
+  String get levelAllHint =>
+      'کارت‌های تازه اول از A1 می‌آیند، بعد از A2 و همین‌طور تا C2.';
+
+  @override
   String get dueNow => 'آماده‌ی مرور';
 
   @override
@@ -79,16 +86,25 @@ class AppLocalizationsFa extends AppLocalizations {
   String get showAnswer => 'نمایش پاسخ';
 
   @override
-  String get again => 'دوباره';
+  String get forgot => 'یادم نبود';
 
   @override
-  String get hard => 'سخت';
+  String get remembered => 'یادم بود';
 
   @override
-  String get good => 'خوب';
+  String get difficulty => 'درجه‌ی سختی';
 
   @override
-  String get easy => 'آسان';
+  String get diffEasy => 'آسان';
+
+  @override
+  String get diffMedium => 'متوسط';
+
+  @override
+  String get diffAdvanced => 'پیشرفته';
+
+  @override
+  String get changeDifficulty => 'تغییر درجه‌ی سختی';
 
   @override
   String cardsLeft(int count) {
@@ -120,7 +136,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get backHome => 'بازگشت';
 
   @override
-  String get keyboardHint => 'فاصله: نمایش پاسخ   ۱ تا ۴: پاسخ';
+  String get keyboardHint => 'فاصله: نمایش پاسخ   ۱: یادم نبود   ۲: یادم بود';
 
   @override
   String get pluralLabel => 'جمع:';

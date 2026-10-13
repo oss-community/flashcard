@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../core/language.dart';
+import '../l10n/app_localizations.dart';
 
 /// Dropdown of languages, each named in the current menu language.
 class LanguageDropdown extends StatelessWidget {
@@ -35,19 +36,26 @@ class LanguageDropdown extends StatelessWidget {
   }
 }
 
-/// Row of A1 to C2 choice chips.
+/// Choice chips for "all levels in order" (null) or one level, A1 to C2.
 class LevelPicker extends StatelessWidget {
   const LevelPicker({super.key, required this.value, required this.onChanged});
 
-  final String value;
-  final ValueChanged<String> onChanged;
+  final String? value;
+  final ValueChanged<String?> onChanged;
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
     return Wrap(
       spacing: 8,
       runSpacing: 8,
       children: [
+        ChoiceChip(
+          label: Text(l.levelAllInOrder),
+          tooltip: l.levelAllHint,
+          selected: value == null,
+          onSelected: (_) => onChanged(null),
+        ),
         for (final level in levels)
           ChoiceChip(
             label: Text(level),

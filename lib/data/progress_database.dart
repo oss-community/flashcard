@@ -44,6 +44,19 @@ class ReviewLogs extends Table {
   DateTimeColumn get reviewedAt => dateTime()();
 }
 
+/// Difficulty the learner chose for a word, replacing the one from the data.
+/// Kept per language being learned.
+class DifficultyOverrides extends Table {
+  TextColumn get cardId => text()();
+  TextColumn get target => text()();
+
+  /// `easy`, `medium` or `advanced`.
+  TextColumn get difficulty => text()();
+
+  @override
+  Set<Column> get primaryKey => {cardId, target};
+}
+
 /// Simple key/value settings.
 class Settings extends Table {
   TextColumn get key => text()();
@@ -53,26 +66,29 @@ class Settings extends Table {
   Set<Column> get primaryKey => {key};
 }
 
-@DriftDatabase(tables: [ReviewStates, ReviewLogs, Settings])
+@DriftDatabase(tables: [ReviewStates, ReviewLogs, Settings, DifficultyOverrides])
 class ProgressDatabase extends _$ProgressDatabase {
   ProgressDatabase([QueryExecutor? executor]) : super(executor ?? _openConnection());
 
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
-        onCreate: (m) async {
-          await m.createAll();
-          await customStatement(
-              'CREATE INDEX review_states_due ON review_states (target, native, reversed, due)');
-          await customStatement(
-              'CREATE INDEX review_logs_time ON review_logs (reviewed_at)');
-        },
+    onCreate: (m) async {
+      await m.createAll();
+      await customStatement(
+        'CREATE INDEX review_states_due ON review_states (target, native, reversed, due)',
       );
+      await customStatement('CREATE INDEX review_logs_time ON review_logs (reviewed_at)');
+    },
+    onUpgrade: (m, from, to) async {
+      if (from < 2) await m.createTable(difficultyOverrides);
+    },
+  );
 
   static QueryExecutor _openConnection() => driftDatabase(
-        name: 'progress',
-        native: const DriftNativeOptions(databaseDirectory: getApplicationSupportDirectory),
-      );
+    name: 'progress',
+    native: const DriftNativeOptions(databaseDirectory: getApplicationSupportDirectory),
+  );
 }

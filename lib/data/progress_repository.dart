@@ -44,29 +44,37 @@ class ProgressRepository {
     required DateTime at,
   }) {
     return _db.transaction(() async {
-      await _db.into(_db.reviewStates).insertOnConflictUpdate(ReviewStatesCompanion.insert(
-            cardId: cardId,
-            target: pair.target,
-            native: pair.native,
-            reversed: pair.reversed,
-            state: schedule.state.value,
-            step: Value(schedule.step),
-            stability: Value(schedule.stability),
-            difficulty: Value(schedule.difficulty),
-            due: schedule.due,
-            lastReview: Value(schedule.lastReview),
-            reps: Value(schedule.reps),
-            lapses: Value(schedule.lapses),
-          ));
-      await _db.into(_db.reviewLogs).insert(ReviewLogsCompanion.insert(
-            cardId: cardId,
-            target: pair.target,
-            native: pair.native,
-            reversed: pair.reversed,
-            rating: rating.value,
-            wasNew: wasNew,
-            reviewedAt: at,
-          ));
+      await _db
+          .into(_db.reviewStates)
+          .insertOnConflictUpdate(
+            ReviewStatesCompanion.insert(
+              cardId: cardId,
+              target: pair.target,
+              native: pair.native,
+              reversed: pair.reversed,
+              state: schedule.state.value,
+              step: Value(schedule.step),
+              stability: Value(schedule.stability),
+              difficulty: Value(schedule.difficulty),
+              due: schedule.due,
+              lastReview: Value(schedule.lastReview),
+              reps: Value(schedule.reps),
+              lapses: Value(schedule.lapses),
+            ),
+          );
+      await _db
+          .into(_db.reviewLogs)
+          .insert(
+            ReviewLogsCompanion.insert(
+              cardId: cardId,
+              target: pair.target,
+              native: pair.native,
+              reversed: pair.reversed,
+              rating: rating.value,
+              wasNew: wasNew,
+              reviewedAt: at,
+            ),
+          );
     });
   }
 
@@ -75,13 +83,16 @@ class ProgressRepository {
     final logs = _db.reviewLogs;
     final count = logs.id.count();
     final newCount = logs.id.count(filter: logs.wasNew.equals(true));
-    final row = await (_db.selectOnly(logs)
-          ..addColumns([count, newCount])
-          ..where(logs.target.equals(pair.target) &
-              logs.native.equals(pair.native) &
-              logs.reversed.equals(pair.reversed) &
-              logs.reviewedAt.isBiggerOrEqualValue(dayOf(now))))
-        .getSingle();
+    final row =
+        await (_db.selectOnly(logs)
+              ..addColumns([count, newCount])
+              ..where(
+                logs.target.equals(pair.target) &
+                    logs.native.equals(pair.native) &
+                    logs.reversed.equals(pair.reversed) &
+                    logs.reviewedAt.isBiggerOrEqualValue(dayOf(now)),
+              ))
+            .getSingle();
     return (reviews: row.read(count) ?? 0, newCards: row.read(newCount) ?? 0);
   }
 
@@ -89,9 +100,9 @@ class ProgressRepository {
   Future<Map<DateTime, int>> countsByDay(DateTime now, int days) async {
     final today = dayOf(now);
     final since = DateTime(today.year, today.month, today.day - days + 1);
-    final rows = await (_db.select(_db.reviewLogs)
-          ..where((t) => t.reviewedAt.isBiggerOrEqualValue(since)))
-        .get();
+    final rows = await (_db.select(
+      _db.reviewLogs,
+    )..where((t) => t.reviewedAt.isBiggerOrEqualValue(since))).get();
     final counts = <DateTime, int>{};
     for (final row in rows) {
       final day = dayOf(row.reviewedAt);
@@ -109,6 +120,20 @@ class ProgressRepository {
         if (row.read(at) case final DateTime time) dayOf(time),
     };
   }
+
+  /// Difficulties the learner changed for words of [target], by card id.
+  Future<Map<String, String>> difficultyOverrides(String target) async {
+    final rows = await (_db.select(
+      _db.difficultyOverrides,
+    )..where((t) => t.target.equals(target))).get();
+    return {for (final row in rows) row.cardId: row.difficulty};
+  }
+
+  Future<void> setDifficulty(String cardId, String target, String difficulty) => _db
+      .into(_db.difficultyOverrides)
+      .insertOnConflictUpdate(
+        DifficultyOverridesCompanion.insert(cardId: cardId, target: target, difficulty: difficulty),
+      );
 
   Future<Map<String, String>> readSettings() async {
     final rows = await _db.select(_db.settings).get();

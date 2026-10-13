@@ -59,10 +59,11 @@ class Vocabulary {
         );
       }
       final cards = [
-        for (final row in db.select('SELECT id, level FROM cards ORDER BY position'))
+        for (final row in db.select('SELECT id, level, difficulty FROM cards ORDER BY position'))
           VocabCard(
             id: row['id'] as String,
             level: row['level'] as String,
+            difficulty: row['difficulty'] as String,
             terms: terms[row['id'] as String] ?? const {},
           ),
       ];
