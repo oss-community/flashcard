@@ -102,5 +102,22 @@
   "save": "ذخیره",
   "settingsStudyIn": "یادگیری: {profile}",
   "settingsShowForms": "نمایش شکل‌های واژه",
-  "settingsShowFormsHint": "جمع، شکل‌های فعل و صفت تفضیلی پشت کارت نشان داده شود."
+  "settingsShowFormsHint": "جمع، شکل‌های فعل و صفت تفضیلی پشت کارت نشان داده شود.",
+  "conjugation": "صرف فعل",
+  "formInfinitive": "مصدر",
+  "formPast": "گذشته",
+  "formPerfect": "ماضی نقلی",
+  "formPastParticiple": "اسم مفعول",
+  "formPastStem": "بن ماضی",
+  "formPresentStem": "بن مضارع",
+  "formComparative": "صفت برتر",
+  "formSuperlative": "صفت برترین",
+  "tensePresent": "مضارع",
+  "tensePresentProgressive": "مضارع مستمر",
+  "tenseSimplePast": "ماضی ساده",
+  "tensePastImperfect": "ماضی استمراری",
+  "tensePastProgressive": "ماضی مستمر",
+  "tensePresentPerfect": "ماضی نقلی",
+  "tensePastPerfect": "ماضی بعید",
+  "tenseFuture": "آینده"
 }

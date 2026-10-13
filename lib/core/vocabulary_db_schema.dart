@@ -1,8 +1,8 @@
 /// Schema of `vocabulary.db`, the read-only word database built from
-/// `data/vocabulary.csv` by `tool/build_vocabulary_db.dart`.
+/// `data/vocabulary.csv` and `data/conjugations.csv` by `tool/build_vocabulary_db.dart`.
 ///
 /// Languages are rows, not columns, so a new language needs no schema change.
-const vocabularySchemaVersion = 2;
+const vocabularySchemaVersion = 3;
 
 const vocabularySchema = [
   'CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL)',
@@ -12,5 +12,10 @@ const vocabularySchema = [
       'difficulty TEXT NOT NULL, position INTEGER NOT NULL)',
   'CREATE TABLE terms (card_id TEXT NOT NULL REFERENCES cards (id), '
       'lang TEXT NOT NULL REFERENCES languages (code), word TEXT NOT NULL, '
-      'type TEXT NOT NULL, plural TEXT, PRIMARY KEY (card_id, lang))',
+      'type TEXT NOT NULL, plural TEXT, forms TEXT, PRIMARY KEY (card_id, lang))',
+  // Read only when a conjugation page opens.
+  'CREATE TABLE conjugations (card_id TEXT NOT NULL REFERENCES cards (id), '
+      'lang TEXT NOT NULL REFERENCES languages (code), position INTEGER NOT NULL, '
+      'tense TEXT NOT NULL, verb TEXT NOT NULL, forms TEXT NOT NULL, '
+      'PRIMARY KEY (card_id, lang, tense)) WITHOUT ROWID',
 ];

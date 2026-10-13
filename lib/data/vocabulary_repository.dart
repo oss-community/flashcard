@@ -14,10 +14,41 @@ import '../core/vocabulary_source.dart';
 /// The database is small (about nine thousand cards), so it is read into
 /// memory at start-up and searched there.
 class Vocabulary {
-  Vocabulary({required this.languages, required this.cards});
+  Vocabulary({required this.languages, required this.cards, this.path, this.conjugated = const {}});
 
   final List<Language> languages;
   final List<VocabCard> cards;
+
+  /// The database file; conjugation tables are read from it when needed.
+  final String? path;
+
+  /// Card id and language code of every verb with a conjugation table.
+  final Set<(String, String)> conjugated;
+
+  /// True when the verb of card [cardId] has a conjugation table in [lang].
+  bool hasConjugation(String cardId, String lang) => conjugated.contains((cardId, lang));
+
+  /// Every tense of the verb of card [cardId] in [lang], in the data's order.
+  List<Conjugation> conjugations(String cardId, String lang) {
+    if (path == null || !hasConjugation(cardId, lang)) return const [];
+    final db = sqlite3.open(path!, mode: OpenMode.readOnly);
+    try {
+      return [
+        for (final row in db.select(
+          'SELECT tense, verb, forms FROM conjugations WHERE card_id = ? AND lang = ? '
+          'ORDER BY position',
+          [cardId, lang],
+        ))
+          Conjugation(
+            tense: row['tense'] as String,
+            verb: row['verb'] as String,
+            forms: (jsonDecode(row['forms'] as String) as List).cast<String>(),
+          ),
+      ];
+    } finally {
+      db.close();
+    }
+  }
 
   Language language(String code) => languages.firstWhere((l) => l.code == code);
 
@@ -51,13 +82,21 @@ class Vocabulary {
           Language.fromJson(jsonDecode(row['json'] as String) as Map<String, dynamic>),
       ];
       final terms = <String, Map<String, Term>>{};
-      for (final row in db.select('SELECT card_id, lang, word, type, plural FROM terms')) {
+      for (final row in db.select('SELECT card_id, lang, word, type, plural, forms FROM terms')) {
+        final forms = row['forms'] as String?;
         (terms[row['card_id'] as String] ??= {})[row['lang'] as String] = Term(
           word: row['word'] as String,
           type: row['type'] as String,
           plural: row['plural'] as String?,
+          forms: forms == null
+              ? const {}
+              : (jsonDecode(forms) as Map<String, dynamic>).cast<String, String>(),
         );
       }
+      final conjugated = {
+        for (final row in db.select('SELECT DISTINCT card_id, lang FROM conjugations'))
+          (row['card_id'] as String, row['lang'] as String),
+      };
       final cards = [
         for (final row in db.select('SELECT id, level, difficulty FROM cards ORDER BY position'))
           VocabCard(
@@ -67,7 +106,7 @@ class Vocabulary {
             terms: terms[row['id'] as String] ?? const {},
           ),
       ];
-      return Vocabulary(languages: languages, cards: cards);
+      return Vocabulary(languages: languages, cards: cards, path: path, conjugated: conjugated);
     } finally {
       db.close();
     }

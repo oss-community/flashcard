@@ -43,6 +43,59 @@ void main() {
     });
   });
 
+  group('conjugations.csv', () {
+    late List<VocabCard> cards;
+    late Map<(String, String), List<Conjugation>> conjugations;
+    setUpAll(() {
+      cards = readVocabulary(File('data/vocabulary.csv').readAsStringSync(), languages);
+      conjugations = readConjugations(File('data/conjugations.csv').readAsStringSync(), languages, {
+        for (final card in cards) card.id,
+      });
+    });
+
+    test('has a table for most verbs, with six persons per tense', () {
+      expect(conjugations.length, greaterThan(7000));
+      for (final tenses in conjugations.values) {
+        for (final tense in tenses) {
+          expect(tense.forms, hasLength(6));
+        }
+      }
+      final gehen = conjugations[('a1-0507', 'de')]!;
+      expect(gehen.map((c) => c.tense), [
+        'present',
+        'simple_past',
+        'present_perfect',
+        'past_perfect',
+        'future',
+      ]);
+      expect(gehen.first.forms, ['gehe', 'gehst', 'geht', 'gehen', 'geht', 'gehen']);
+      expect(conjugations[('a1-0507', 'fa')]!.first.forms.first, 'می‌روم');
+    });
+
+    test('word forms come from the other columns', () {
+      final gehen = cards.firstWhere((c) => c.id == 'a1-0507');
+      expect(gehen.terms['de']!.forms, {
+        'past': 'ging',
+        'participle': 'gegangen',
+        'auxiliary': 'sein',
+      });
+      expect(gehen.terms['fa']!.forms['present_stem'], 'رو');
+      expect(gehen.terms['en']!.forms, {'past': 'went', 'past_participle': 'gone'});
+    });
+
+    test('rejects unknown cards and languages', () {
+      const header = 'id,language,verb,tense,1s,2s,3s,1p,2p,3p';
+      expect(
+        () => readConjugations('$header\nx-1,german,a,present,a,b,c,d,e,f\n', languages, {'a'}),
+        throwsA(isA<VocabularyFormatException>()),
+      );
+      expect(
+        () => readConjugations('$header\na,klingon,a,present,a,b,c,d,e,f\n', languages, {'a'}),
+        throwsA(isA<VocabularyFormatException>()),
+      );
+    });
+  });
+
   group('languages', () {
     test('every language is named in every menu language', () {
       final codes = languages.map((l) => l.code).toSet();

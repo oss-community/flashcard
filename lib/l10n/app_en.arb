@@ -233,5 +233,22 @@
     }
   },
   "settingsShowForms": "Show word forms",
-  "settingsShowFormsHint": "Plurals, verb forms and comparisons on the back of the card."
+  "settingsShowFormsHint": "Plurals, verb forms and comparisons on the back of the card.",
+  "conjugation": "Conjugation",
+  "formInfinitive": "Infinitive",
+  "formPast": "Past",
+  "formPerfect": "Perfect",
+  "formPastParticiple": "Past participle",
+  "formPastStem": "Past stem",
+  "formPresentStem": "Present stem",
+  "formComparative": "Comparative",
+  "formSuperlative": "Superlative",
+  "tensePresent": "Present",
+  "tensePresentProgressive": "Present progressive",
+  "tenseSimplePast": "Past",
+  "tensePastImperfect": "Past habitual",
+  "tensePastProgressive": "Past progressive",
+  "tensePresentPerfect": "Present perfect",
+  "tensePastPerfect": "Past perfect",
+  "tenseFuture": "Future"
 }

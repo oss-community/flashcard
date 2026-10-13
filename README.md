@@ -9,7 +9,11 @@ about 9,000 cards in English, German, Dutch and Persian, from level A1 to C2.
 
 ## Features
 
-- Choose a language pair (any two of English, German, Dutch, Persian). By default
+- Profiles: each one is a language pair (any two of English, German, Dutch,
+  Persian) with its own name, level, daily goal, options and progress. Its
+  name is made from the two languages unless you give it one, such as
+  "Persian → German". Switch profiles at the top of the study page; add,
+  rename or delete them in Settings. By default
   new cards come from every level in order, all of A1 first, then A2, up to C2;
   you can also pick a single level.
 - No daily limit: study as long as you like. Words due for review come first,
@@ -23,9 +27,15 @@ about 9,000 cards in English, German, Dutch and Persian, from level A1 to C2.
   first returns after a week, and easy words space out faster than medium ones,
   medium faster than advanced. Forgetting brings a word back soon. The longest
   wait is one year. You can change a word's difficulty on the card or in the
-  word list; your choice is kept per language.
+  word list; your choice is kept per profile.
 - Reverse cards: see the meaning first and recall the word.
-- Progress is kept separately for each language pair and direction.
+- Word forms on the back of the card, in both languages: plurals, past forms of
+  verbs (Persian: past and present stems), comparison of adjectives. Can be
+  turned off per profile.
+- Conjugation page for verbs: every tense and person, with the same form in the
+  other language beside it and a switch to that language's table. Opens from a
+  verb card or by tapping a word in the word list.
+- Progress is kept separately for each profile and direction.
 - Word list with search in both languages and a level filter.
 - Daily statistics: answers per day, streak, words learned per level.
 - Pronunciation with the voices installed on the device.
@@ -70,19 +80,20 @@ flutter build windows --release
 flutter build ios --release
 ```
 
-`tool/build_vocabulary_db.dart` checks `data/vocabulary.csv` and writes
-`assets/vocabulary.db`; run it again whenever the CSV changes. Tests:
+`tool/build_vocabulary_db.dart` checks `data/vocabulary.csv` and
+`data/conjugations.csv` and writes `assets/vocabulary.db`; run it again whenever
+a CSV changes. Tests:
 `flutter test`.
 
 ## How it is organised
 
 | Folder | What it holds |
 |---|---|
-| `data/` | `vocabulary.csv` (copied from the dictionary repository) and `languages.json` |
+| `data/` | `vocabulary.csv` and `conjugations.csv` (copied from the dictionary repository) and `languages.json` |
 | `tool/` | The script that builds the word database from `data/` |
 | `lib/core/` | Language list, CSV reading and checks (plain Dart) |
 | `lib/data/` | Word database, progress database, pronunciation |
-| `lib/domain/` | Language pairs, spaced repetition, study sessions, statistics |
+| `lib/domain/` | Profiles, language pairs, spaced repetition, study sessions, statistics |
 | `lib/state/` | App state (Riverpod) |
 | `lib/ui/` | Screens |
 | `lib/l10n/` | Menu translations, one `app_<code>.arb` file per language |
@@ -95,7 +106,8 @@ updating the words never resets it.
 ## Adding a language
 
 1. Add `<name>`, `<name>_type` and, if it has plurals, `<name>_plural` columns
-   to `data/vocabulary.csv`.
+   to `data/vocabulary.csv`. Other `<name>_<form>` columns are read as word
+   forms; verb tables go in `data/conjugations.csv` with `<name>` as language.
 2. Add the language to `data/languages.json` with its name in every menu language
    (and add its own name to the other languages).
 3. Add `lib/l10n/app_<code>.arb` with every menu text translated.

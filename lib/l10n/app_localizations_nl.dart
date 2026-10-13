@@ -376,4 +376,55 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get settingsShowFormsHint =>
       'Meervoud, werkwoordsvormen en trappen van vergelijking op de achterkant van de kaart.';
+
+  @override
+  String get conjugation => 'Vervoeging';
+
+  @override
+  String get formInfinitive => 'Infinitief';
+
+  @override
+  String get formPast => 'Verleden tijd';
+
+  @override
+  String get formPerfect => 'Voltooid';
+
+  @override
+  String get formPastParticiple => 'Voltooid deelwoord';
+
+  @override
+  String get formPastStem => 'Verledentijdsstam';
+
+  @override
+  String get formPresentStem => 'Tegenwoordigetijdsstam';
+
+  @override
+  String get formComparative => 'Vergrotende trap';
+
+  @override
+  String get formSuperlative => 'Overtreffende trap';
+
+  @override
+  String get tensePresent => 'Tegenwoordige tijd';
+
+  @override
+  String get tensePresentProgressive => 'Bezig in het heden';
+
+  @override
+  String get tenseSimplePast => 'Verleden tijd';
+
+  @override
+  String get tensePastImperfect => 'Gewoonte in het verleden';
+
+  @override
+  String get tensePastProgressive => 'Bezig in het verleden';
+
+  @override
+  String get tensePresentPerfect => 'Voltooid tegenwoordige tijd';
+
+  @override
+  String get tensePastPerfect => 'Voltooid verleden tijd';
+
+  @override
+  String get tenseFuture => 'Toekomende tijd';
 }

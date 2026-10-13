@@ -1,4 +1,5 @@
-// Builds assets/vocabulary.db from data/vocabulary.csv and data/languages.json.
+// Builds assets/vocabulary.db from data/vocabulary.csv, data/conjugations.csv and
+// data/languages.json.
 //
 // Run from the repository root before `flutter run` or `flutter build`:
 //   dart run tool/build_vocabulary_db.dart
@@ -13,8 +14,14 @@ import 'package:sqlite3/sqlite3.dart';
 void main() {
   final languages = Language.listFromJson(File('data/languages.json').readAsStringSync());
   final List<VocabCard> cards;
+  final Map<(String, String), List<Conjugation>> conjugations;
   try {
     cards = readVocabulary(File('data/vocabulary.csv').readAsStringSync(), languages);
+    conjugations = readConjugations(
+      File('data/conjugations.csv').readAsStringSync(),
+      languages,
+      {for (final card in cards) card.id},
+    );
   } on VocabularyFormatException catch (e) {
     stderr.writeln(e);
     exit(1);
@@ -39,23 +46,38 @@ void main() {
   insertLanguage.close();
 
   final insertCard = db.prepare('INSERT INTO cards VALUES (?, ?, ?, ?)');
-  final insertTerm = db.prepare('INSERT INTO terms VALUES (?, ?, ?, ?, ?)');
+  final insertTerm = db.prepare('INSERT INTO terms VALUES (?, ?, ?, ?, ?, ?)');
   for (var i = 0; i < cards.length; i++) {
     final card = cards[i];
     insertCard.execute([card.id, card.level, card.difficulty, i]);
     for (final entry in card.terms.entries) {
       final term = entry.value;
-      insertTerm.execute([card.id, entry.key, term.word, term.type, term.plural]);
+      insertTerm.execute([
+        card.id,
+        entry.key,
+        term.word,
+        term.type,
+        term.plural,
+        term.forms.isEmpty ? null : jsonEncode(term.forms),
+      ]);
     }
   }
   insertCard.close();
   insertTerm.close();
+
+  final insertConjugation = db.prepare('INSERT INTO conjugations VALUES (?, ?, ?, ?, ?, ?)');
+  for (final MapEntry(key: (id, lang), value: tenses) in conjugations.entries) {
+    for (final (i, c) in tenses.indexed) {
+      insertConjugation.execute([id, lang, i, c.tense, c.verb, jsonEncode(c.forms)]);
+    }
+  }
+  insertConjugation.close();
   db.execute('COMMIT');
   db.execute('VACUUM');
   db.close();
 
   stdout.writeln(
-    'Wrote ${out.path}: ${cards.length} cards, '
+    'Wrote ${out.path}: ${cards.length} cards, ${conjugations.length} conjugated verbs, '
     '${languages.map((l) => l.code).join(', ')}',
   );
 }

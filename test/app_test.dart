@@ -7,11 +7,14 @@ import 'package:flashcard/data/progress_database.dart';
 import 'package:flashcard/data/progress_repository.dart';
 import 'package:flashcard/data/speech.dart';
 import 'package:flashcard/data/vocabulary_repository.dart';
+import 'package:flashcard/core/vocabulary_source.dart';
 import 'package:flashcard/domain/profile.dart';
+import 'package:flashcard/l10n/app_localizations.dart';
 import 'package:flashcard/domain/srs.dart';
 import 'package:flashcard/state/providers.dart';
 import 'package:flashcard/ui/difficulty_menu.dart';
 import 'package:flashcard/ui/term_text.dart';
+import 'package:flashcard/ui/word_forms.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -146,6 +149,67 @@ void main() {
       await repo.writeSetting('uiLanguage', 'de');
       expect(await repo.readSettings(), {'uiLanguage': 'de'});
     });
+  });
+
+  test('key forms of verbs and adjectives', () {
+    final l = lookupAppLocalizations(const Locale('en'));
+    VocabCard byWord(String de) => vocabulary.cards.firstWhere((c) => c.terms['de']!.word == de);
+    final gehen = byWord('gehen');
+    expect(keyForms(l, 'de', gehen.terms['de']!), [('ging', 'Past'), ('ist gegangen', 'Perfect')]);
+    expect(keyForms(l, 'nl', gehen.terms['nl']!), [('ging', 'Past'), ('is gegaan', 'Perfect')]);
+    expect(keyForms(l, 'en', gehen.terms['en']!), [('went', 'Past'), ('gone', 'Past participle')]);
+    expect(keyForms(l, 'fa', gehen.terms['fa']!), [('رفت', 'Past stem'), ('رو', 'Present stem')]);
+    final gross = byWord('groß');
+    expect(keyForms(l, 'de', gross.terms['de']!), [
+      ('größer', 'Comparative'),
+      ('am größten', 'Superlative'),
+    ]);
+    final reflexive = vocabulary.cards.firstWhere(
+      (c) => c.terms['de']!.word == 'sich erinnern' || c.terms['de']!.word == 'sich waschen',
+    );
+    expect(perfect('de', reflexive.terms['de']!), startsWith('hat sich '));
+    expect(vocabulary.hasConjugation(gehen.id, 'de'), isTrue);
+    expect(vocabulary.conjugations(gehen.id, 'fa').map((c) => c.tense), contains('past_imperfect'));
+    expect(vocabulary.conjugations(gross.id, 'de'), isEmpty);
+  });
+
+  testWidgets('a verb opens its conjugation in both languages', (tester) async {
+    tester.view.physicalSize = const Size(390, 844) * tester.view.devicePixelRatio;
+    addTearDown(tester.view.reset);
+    final repo = ProgressRepository(ProgressDatabase(NativeDatabase.memory()));
+    final profile = (await tester.runAsync(() => repo.createProfile(native: 'fa', target: 'de')))!;
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          vocabularyProvider.overrideWithValue(vocabulary),
+          progressRepositoryProvider.overrideWithValue(repo),
+          initialSettingsProvider.overrideWithValue(const {}),
+          initialProfilesProvider.overrideWithValue([profile]),
+          speechProvider.overrideWithValue(Speech.silent()),
+        ],
+        child: const FlashcardApp(),
+      ),
+    );
+    await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 100)));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byIcon(Icons.list_alt_outlined));
+    await tester.pumpAndSettle();
+    await tester.enterText(find.byType(TextField), 'gehen');
+    await tester.pumpAndSettle();
+    await tester.tap(find.widgetWithText(ListTile, 'gehen'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Present'), findsOneWidget);
+    expect(find.text('Präsens · مضارع اخباری'), findsOneWidget);
+    expect(find.text('gehe'), findsOneWidget);
+
+    await tester.tap(find.text('Persian'));
+    await tester.pumpAndSettle();
+    expect(find.text('مضارع اخباری · Präsens'), findsOneWidget);
+    expect(find.text('می‌روم'), findsOneWidget);
+    expect(find.text('gehe'), findsWidgets, reason: 'the German form stands beside the Persian');
+    await tester.scrollUntilVisible(find.text('Past habitual'), 300);
+    expect(find.text('Past habitual'), findsOneWidget);
   });
 
   phoneTest(vocabulary, 'en');

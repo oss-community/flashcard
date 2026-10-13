@@ -376,4 +376,55 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get settingsShowFormsHint =>
       'Plurals, verb forms and comparisons on the back of the card.';
+
+  @override
+  String get conjugation => 'Conjugation';
+
+  @override
+  String get formInfinitive => 'Infinitive';
+
+  @override
+  String get formPast => 'Past';
+
+  @override
+  String get formPerfect => 'Perfect';
+
+  @override
+  String get formPastParticiple => 'Past participle';
+
+  @override
+  String get formPastStem => 'Past stem';
+
+  @override
+  String get formPresentStem => 'Present stem';
+
+  @override
+  String get formComparative => 'Comparative';
+
+  @override
+  String get formSuperlative => 'Superlative';
+
+  @override
+  String get tensePresent => 'Present';
+
+  @override
+  String get tensePresentProgressive => 'Present progressive';
+
+  @override
+  String get tenseSimplePast => 'Past';
+
+  @override
+  String get tensePastImperfect => 'Past habitual';
+
+  @override
+  String get tensePastProgressive => 'Past progressive';
+
+  @override
+  String get tensePresentPerfect => 'Present perfect';
+
+  @override
+  String get tensePastPerfect => 'Past perfect';
+
+  @override
+  String get tenseFuture => 'Future';
 }

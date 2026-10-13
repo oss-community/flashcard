@@ -102,5 +102,22 @@
   "save": "Speichern",
   "settingsStudyIn": "Lernen: {profile}",
   "settingsShowForms": "Wortformen zeigen",
-  "settingsShowFormsHint": "Plural, Verbformen und Steigerung auf der Rückseite der Karte."
+  "settingsShowFormsHint": "Plural, Verbformen und Steigerung auf der Rückseite der Karte.",
+  "conjugation": "Konjugation",
+  "formInfinitive": "Infinitiv",
+  "formPast": "Präteritum",
+  "formPerfect": "Perfekt",
+  "formPastParticiple": "Partizip II",
+  "formPastStem": "Vergangenheitsstamm",
+  "formPresentStem": "Präsensstamm",
+  "formComparative": "Komparativ",
+  "formSuperlative": "Superlativ",
+  "tensePresent": "Gegenwart",
+  "tensePresentProgressive": "Verlaufsform Gegenwart",
+  "tenseSimplePast": "Vergangenheit",
+  "tensePastImperfect": "Gewohnheit in der Vergangenheit",
+  "tensePastProgressive": "Verlaufsform Vergangenheit",
+  "tensePresentPerfect": "Perfekt",
+  "tensePastPerfect": "Plusquamperfekt",
+  "tenseFuture": "Zukunft"
 }

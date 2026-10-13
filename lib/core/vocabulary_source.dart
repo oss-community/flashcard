@@ -2,7 +2,7 @@ import 'language.dart';
 
 /// One word of a card in one language.
 class Term {
-  const Term({required this.word, required this.type, this.plural});
+  const Term({required this.word, required this.type, this.plural, this.forms = const {}});
 
   /// The word or phrase; nouns carry their article (e.g. `die Frau`).
   final String word;
@@ -13,6 +13,24 @@ class Term {
   /// Full plural form, `-` when the noun has no plural, null for non-nouns
   /// and languages without a plural column.
   final String? plural;
+
+  /// Other forms by name, such as `past`, `participle`, `auxiliary`,
+  /// `comparative` or `present_stem`, from the `<column>_<name>` columns.
+  /// Only forms the word has; `-` (none) is left out.
+  final Map<String, String> forms;
+}
+
+/// One tense of a verb in one language: the six persons I, you, he/she, we,
+/// you (plural), they. A person the verb lacks is `-`.
+class Conjugation {
+  const Conjugation({required this.tense, required this.verb, required this.forms});
+
+  /// Such as `present`, `simple_past` or `present_perfect`.
+  final String tense;
+
+  /// The verb as written in the table, which may differ from the card's word.
+  final String verb;
+  final List<String> forms;
 }
 
 /// One row of the vocabulary: the same meaning in every language.
@@ -109,7 +127,7 @@ List<List<String>> parseCsv(String text) {
 /// Reads and validates the vocabulary CSV against the language list.
 ///
 /// Each language needs a `<column>` and `<column>_type` column; a
-/// `<column>_plural` column is optional. Throws [VocabularyFormatException]
+/// `<column>_plural` column and other `<column>_<form>` columns are optional. Throws [VocabularyFormatException]
 /// listing every problem found.
 List<VocabCard> readVocabulary(String csvText, List<Language> languages) {
   final rows = parseCsv(csvText);
@@ -129,6 +147,17 @@ List<VocabCard> readVocabulary(String csvText, List<Language> languages) {
     }
   }
   if (problems.isNotEmpty) throw VocabularyFormatException(problems);
+
+  // Every other `<column>_<name>` column is a word form.
+  final formColumns = {
+    for (final lang in languages)
+      lang.code: [
+        for (final (i, name) in header.indexed)
+          if (name.startsWith('${lang.column}_') &&
+              !{'${lang.column}_type', '${lang.column}_plural'}.contains(name))
+            (name.substring(lang.column.length + 1), i),
+      ],
+  };
 
   final cards = <VocabCard>[];
   final seenIds = <String>{};
@@ -153,6 +182,10 @@ List<VocabCard> readVocabulary(String csvText, List<Language> languages) {
 
     final terms = <String, Term>{};
     for (final lang in languages) {
+      final forms = <String, String>{
+        for (final (name, i) in formColumns[lang.code]!)
+          if (row[i].trim() case final value when value.isNotEmpty && value != '-') name: value,
+      };
       final word = cell(lang.column);
       final type = cell('${lang.column}_type');
       final pluralColumn = '${lang.column}_plural';
@@ -161,10 +194,64 @@ List<VocabCard> readVocabulary(String csvText, List<Language> languages) {
       if (!wordTypes.contains(type)) {
         problems.add('line $line: unknown ${lang.column}_type "$type"');
       }
-      terms[lang.code] = Term(word: word, type: type, plural: plural.isEmpty ? null : plural);
+      terms[lang.code] = Term(
+        word: word,
+        type: type,
+        plural: plural.isEmpty ? null : plural,
+        forms: forms,
+      );
     }
     cards.add(VocabCard(id: id, level: level, difficulty: difficulty, terms: terms));
   }
   if (problems.isNotEmpty) throw VocabularyFormatException(problems);
   return cards;
+}
+
+/// Persons of a conjugation row, in order.
+const persons = ['1s', '2s', '3s', '1p', '2p', '3p'];
+
+/// Reads and validates the conjugation CSV: one row per verb, language and
+/// tense. Returns the tenses of each card and language code, in file order.
+Map<(String, String), List<Conjugation>> readConjugations(
+  String csvText,
+  List<Language> languages,
+  Set<String> cardIds,
+) {
+  final rows = parseCsv(csvText);
+  if (rows.isEmpty) throw VocabularyFormatException(['conjugations: file is empty']);
+  final header = rows.first;
+  final index = {for (var i = 0; i < header.length; i++) header[i]: i};
+  final problems = <String>[
+    for (final name in ['id', 'language', 'verb', 'tense', ...persons])
+      if (!index.containsKey(name)) 'conjugations: missing column "$name"',
+  ];
+  if (problems.isNotEmpty) throw VocabularyFormatException(problems);
+
+  final codes = {for (final lang in languages) lang.column: lang.code};
+  final result = <(String, String), List<Conjugation>>{};
+  for (var r = 1; r < rows.length; r++) {
+    final row = rows[r];
+    if (row.length == 1 && row.first.isEmpty) continue;
+    final line = 'conjugations line ${r + 1}';
+    if (row.length != header.length) {
+      problems.add('$line: ${row.length} fields, expected ${header.length}');
+      continue;
+    }
+    String cell(String name) => row[index[name]!].trim();
+    final id = cell('id');
+    final code = codes[cell('language')];
+    final tense = cell('tense');
+    final forms = [for (final p in persons) cell(p)];
+    if (!cardIds.contains(id)) problems.add('$line: unknown card "$id"');
+    if (code == null) problems.add('$line: unknown language "${cell('language')}"');
+    if (tense.isEmpty || cell('verb').isEmpty || forms.any((f) => f.isEmpty)) {
+      problems.add('$line: empty cell');
+    }
+    if (code == null) continue;
+    final tenses = result[(id, code)] ??= [];
+    if (tenses.any((c) => c.tense == tense)) problems.add('$line: tense "$tense" twice');
+    tenses.add(Conjugation(tense: tense, verb: cell('verb'), forms: forms));
+  }
+  if (problems.isNotEmpty) throw VocabularyFormatException(problems);
+  return result;
 }

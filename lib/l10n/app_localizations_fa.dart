@@ -368,4 +368,55 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get settingsShowFormsHint => 'جمع، شکل‌های فعل و صفت تفضیلی پشت کارت نشان داده شود.';
+
+  @override
+  String get conjugation => 'صرف فعل';
+
+  @override
+  String get formInfinitive => 'مصدر';
+
+  @override
+  String get formPast => 'گذشته';
+
+  @override
+  String get formPerfect => 'ماضی نقلی';
+
+  @override
+  String get formPastParticiple => 'اسم مفعول';
+
+  @override
+  String get formPastStem => 'بن ماضی';
+
+  @override
+  String get formPresentStem => 'بن مضارع';
+
+  @override
+  String get formComparative => 'صفت برتر';
+
+  @override
+  String get formSuperlative => 'صفت برترین';
+
+  @override
+  String get tensePresent => 'مضارع';
+
+  @override
+  String get tensePresentProgressive => 'مضارع مستمر';
+
+  @override
+  String get tenseSimplePast => 'ماضی ساده';
+
+  @override
+  String get tensePastImperfect => 'ماضی استمراری';
+
+  @override
+  String get tensePastProgressive => 'ماضی مستمر';
+
+  @override
+  String get tensePresentPerfect => 'ماضی نقلی';
+
+  @override
+  String get tensePastPerfect => 'ماضی بعید';
+
+  @override
+  String get tenseFuture => 'آینده';
 }

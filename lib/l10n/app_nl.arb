@@ -102,5 +102,22 @@
   "save": "Opslaan",
   "settingsStudyIn": "Leren: {profile}",
   "settingsShowForms": "Woordvormen tonen",
-  "settingsShowFormsHint": "Meervoud, werkwoordsvormen en trappen van vergelijking op de achterkant van de kaart."
+  "settingsShowFormsHint": "Meervoud, werkwoordsvormen en trappen van vergelijking op de achterkant van de kaart.",
+  "conjugation": "Vervoeging",
+  "formInfinitive": "Infinitief",
+  "formPast": "Verleden tijd",
+  "formPerfect": "Voltooid",
+  "formPastParticiple": "Voltooid deelwoord",
+  "formPastStem": "Verledentijdsstam",
+  "formPresentStem": "Tegenwoordigetijdsstam",
+  "formComparative": "Vergrotende trap",
+  "formSuperlative": "Overtreffende trap",
+  "tensePresent": "Tegenwoordige tijd",
+  "tensePresentProgressive": "Bezig in het heden",
+  "tenseSimplePast": "Verleden tijd",
+  "tensePastImperfect": "Gewoonte in het verleden",
+  "tensePastProgressive": "Bezig in het verleden",
+  "tensePresentPerfect": "Voltooid tegenwoordige tijd",
+  "tensePastPerfect": "Voltooid verleden tijd",
+  "tenseFuture": "Toekomende tijd"
 }

@@ -10,6 +10,7 @@ import 'difficulty_menu.dart';
 import 'labels.dart';
 import 'layout.dart';
 import 'term_text.dart';
+import 'word_screen.dart';
 
 /// List of all words of the current pair, with search and a level filter.
 class WordsScreen extends ConsumerStatefulWidget {
@@ -108,6 +109,7 @@ class _WordsScreenState extends ConsumerState<WordsScreen> {
                           : l.statusLearning;
                       final plural = card.target.plural;
                       return ListTile(
+                        onTap: () => WordScreen.open(context, card),
                         contentPadding: compact ? EdgeInsets.zero : null,
                         leading: compact
                             ? null

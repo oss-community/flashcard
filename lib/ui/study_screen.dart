@@ -13,6 +13,8 @@ import 'labels.dart';
 import 'profiles.dart';
 import 'layout.dart';
 import 'term_text.dart';
+import 'word_forms.dart';
+import 'word_screen.dart';
 
 /// Today's summary, and the flashcard session once started.
 class StudyScreen extends ConsumerStatefulWidget {
@@ -273,6 +275,8 @@ class _SessionViewState extends ConsumerState<_SessionView> {
 
     final overrides = ref.watch(difficultyOverridesProvider).value ?? const {};
     final difficulty = effectiveDifficulty(item.card, overrides);
+    // Forms belong to the answer, so they wait until it is shown.
+    final forms = _revealed && settings.showForms;
     final answers = [
       (
         false,
@@ -363,20 +367,32 @@ class _SessionViewState extends ConsumerState<_SessionView> {
                               _TermBlock(
                                 language: frontLang,
                                 term: frontTerm,
-                                showPlural: frontLang == target,
+                                showPlural: frontLang == target || forms,
+                                showForms: forms,
                                 big: true,
                               ),
                               if (_revealed) ...[
-                                const Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 24),
-                                  child: Divider(),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: compact ? 16 : 24),
+                                  child: const Divider(),
                                 ),
                                 _TermBlock(
                                   language: backLang,
                                   term: backTerm,
-                                  showPlural: backLang == target,
+                                  showPlural: backLang == target || forms,
+                                  showForms: forms,
                                   big: false,
                                 ),
+                                if (forms &&
+                                    (vocab.hasConjugation(item.card.id, target.code) ||
+                                        vocab.hasConjugation(item.card.id, native.code))) ...[
+                                  const SizedBox(height: 16),
+                                  FilledButton.tonalIcon(
+                                    onPressed: () => WordScreen.open(context, item.card),
+                                    icon: const Icon(Icons.table_chart_outlined),
+                                    label: Text(l.conjugation),
+                                  ),
+                                ],
                               ],
                             ],
                           ),
@@ -463,12 +479,16 @@ class _TermBlock extends StatelessWidget {
     required this.language,
     required this.term,
     required this.showPlural,
+    required this.showForms,
     required this.big,
   });
 
   final Language language;
   final Term term;
   final bool showPlural;
+
+  /// Past forms of verbs and comparison of adjectives.
+  final bool showForms;
   final bool big;
 
   @override
@@ -476,6 +496,7 @@ class _TermBlock extends StatelessWidget {
     final l = AppLocalizations.of(context);
     final theme = Theme.of(context);
     final plural = term.plural;
+    final forms = showForms ? keyForms(l, language.code, term) : const <(String, String)>[];
     return Column(
       children: [
         Row(
@@ -500,16 +521,11 @@ class _TermBlock extends StatelessWidget {
         ),
         if (showPlural && term.type == 'noun' && plural != null) ...[
           const SizedBox(height: 8),
-          plural == '-'
-              ? Text(l.noPlural, style: theme.textTheme.bodyLarge)
-              : Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(l.pluralLabel, style: theme.textTheme.bodyLarge),
-                    const SizedBox(width: 6),
-                    TermText(plural, language: language, style: theme.textTheme.bodyLarge),
-                  ],
-                ),
+          PluralLine(language: language, plural: plural),
+        ],
+        if (forms.isNotEmpty) ...[
+          const SizedBox(height: 12),
+          FormChips(language: language, forms: forms),
         ],
       ],
     );

@@ -717,6 +717,108 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Plurals, verb forms and comparisons on the back of the card.'**
   String get settingsShowFormsHint;
+
+  /// No description provided for @conjugation.
+  ///
+  /// In en, this message translates to:
+  /// **'Conjugation'**
+  String get conjugation;
+
+  /// No description provided for @formInfinitive.
+  ///
+  /// In en, this message translates to:
+  /// **'Infinitive'**
+  String get formInfinitive;
+
+  /// No description provided for @formPast.
+  ///
+  /// In en, this message translates to:
+  /// **'Past'**
+  String get formPast;
+
+  /// No description provided for @formPerfect.
+  ///
+  /// In en, this message translates to:
+  /// **'Perfect'**
+  String get formPerfect;
+
+  /// No description provided for @formPastParticiple.
+  ///
+  /// In en, this message translates to:
+  /// **'Past participle'**
+  String get formPastParticiple;
+
+  /// No description provided for @formPastStem.
+  ///
+  /// In en, this message translates to:
+  /// **'Past stem'**
+  String get formPastStem;
+
+  /// No description provided for @formPresentStem.
+  ///
+  /// In en, this message translates to:
+  /// **'Present stem'**
+  String get formPresentStem;
+
+  /// No description provided for @formComparative.
+  ///
+  /// In en, this message translates to:
+  /// **'Comparative'**
+  String get formComparative;
+
+  /// No description provided for @formSuperlative.
+  ///
+  /// In en, this message translates to:
+  /// **'Superlative'**
+  String get formSuperlative;
+
+  /// No description provided for @tensePresent.
+  ///
+  /// In en, this message translates to:
+  /// **'Present'**
+  String get tensePresent;
+
+  /// No description provided for @tensePresentProgressive.
+  ///
+  /// In en, this message translates to:
+  /// **'Present progressive'**
+  String get tensePresentProgressive;
+
+  /// No description provided for @tenseSimplePast.
+  ///
+  /// In en, this message translates to:
+  /// **'Past'**
+  String get tenseSimplePast;
+
+  /// No description provided for @tensePastImperfect.
+  ///
+  /// In en, this message translates to:
+  /// **'Past habitual'**
+  String get tensePastImperfect;
+
+  /// No description provided for @tensePastProgressive.
+  ///
+  /// In en, this message translates to:
+  /// **'Past progressive'**
+  String get tensePastProgressive;
+
+  /// No description provided for @tensePresentPerfect.
+  ///
+  /// In en, this message translates to:
+  /// **'Present perfect'**
+  String get tensePresentPerfect;
+
+  /// No description provided for @tensePastPerfect.
+  ///
+  /// In en, this message translates to:
+  /// **'Past perfect'**
+  String get tensePastPerfect;
+
+  /// No description provided for @tenseFuture.
+  ///
+  /// In en, this message translates to:
+  /// **'Future'**
+  String get tenseFuture;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

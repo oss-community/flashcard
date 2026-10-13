@@ -377,4 +377,55 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get settingsShowFormsHint =>
       'Plural, Verbformen und Steigerung auf der Rückseite der Karte.';
+
+  @override
+  String get conjugation => 'Konjugation';
+
+  @override
+  String get formInfinitive => 'Infinitiv';
+
+  @override
+  String get formPast => 'Präteritum';
+
+  @override
+  String get formPerfect => 'Perfekt';
+
+  @override
+  String get formPastParticiple => 'Partizip II';
+
+  @override
+  String get formPastStem => 'Vergangenheitsstamm';
+
+  @override
+  String get formPresentStem => 'Präsensstamm';
+
+  @override
+  String get formComparative => 'Komparativ';
+
+  @override
+  String get formSuperlative => 'Superlativ';
+
+  @override
+  String get tensePresent => 'Gegenwart';
+
+  @override
+  String get tensePresentProgressive => 'Verlaufsform Gegenwart';
+
+  @override
+  String get tenseSimplePast => 'Vergangenheit';
+
+  @override
+  String get tensePastImperfect => 'Gewohnheit in der Vergangenheit';
+
+  @override
+  String get tensePastProgressive => 'Verlaufsform Vergangenheit';
+
+  @override
+  String get tensePresentPerfect => 'Perfekt';
+
+  @override
+  String get tensePastPerfect => 'Plusquamperfekt';
+
+  @override
+  String get tenseFuture => 'Zukunft';
 }
