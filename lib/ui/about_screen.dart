@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../l10n/app_localizations.dart';
-
-const repositoryUrl = 'https://github.com/oss-community/flashcard';
-const issuesUrl = '$repositoryUrl/issues';
-const privacyUrl = 'https://oss-community.github.io/flashcard/privacy.html';
+import 'links.dart';
 
 /// App name and version, links for feedback, the privacy policy and the
 /// source code, and the licences of everything bundled with the app.
@@ -79,8 +75,6 @@ class AboutScreen extends StatelessWidget {
   }
 }
 
-/// Opens [url] in the browser; if that fails, shows the address so it can be
-/// typed in by hand.
 class _Link extends StatelessWidget {
   const _Link({required this.icon, required this.title, required this.url});
 
@@ -95,14 +89,7 @@ class _Link extends StatelessWidget {
       leading: Icon(icon),
       title: Text(title),
       trailing: const Icon(Icons.open_in_new, size: 18),
-      onTap: () async {
-        final messenger = ScaffoldMessenger.of(context);
-        var opened = false;
-        try {
-          opened = await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
-        } catch (_) {}
-        if (!opened) messenger.showSnackBar(SnackBar(content: SelectableText(url)));
-      },
+      onTap: () => openLink(context, url),
     );
   }
 }

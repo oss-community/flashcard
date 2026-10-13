@@ -451,4 +451,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutLicenses => 'Licenses';
+
+  @override
+  String get reportMistake => 'Report a mistake';
 }

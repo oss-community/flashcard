@@ -451,4 +451,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get aboutLicenses => 'Licenties';
+
+  @override
+  String get reportMistake => 'Fout melden';
 }

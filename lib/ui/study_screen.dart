@@ -12,6 +12,7 @@ import 'difficulty_menu.dart';
 import 'labels.dart';
 import 'profiles.dart';
 import 'layout.dart';
+import 'links.dart';
 import 'term_text.dart';
 import 'word_forms.dart';
 import 'word_screen.dart';
@@ -361,6 +362,15 @@ class _SessionViewState extends ConsumerState<_SessionView> {
                                   DifficultyMenu(cardId: item.card.id, difficulty: difficulty),
                                   const Spacer(),
                                   if (item.isNew) Chip(label: Text(l.newCardBadge)),
+                                  IconButton(
+                                    key: const Key('reportMistake'),
+                                    tooltip: l.reportMistake,
+                                    onPressed: () => openLink(
+                                      context,
+                                      mistakeReportUrl(item.card, target, native),
+                                    ),
+                                    icon: const Icon(Icons.flag_outlined),
+                                  ),
                                 ],
                               ),
                               const SizedBox(height: 8),

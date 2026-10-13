@@ -452,4 +452,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get aboutLicenses => 'Lizenzen';
+
+  @override
+  String get reportMistake => 'Fehler melden';
 }

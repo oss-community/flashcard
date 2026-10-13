@@ -264,5 +264,6 @@
   "aboutFeedback": "Report a problem or suggest an idea",
   "privacyPolicy": "Privacy policy",
   "aboutSource": "Source code",
-  "aboutLicenses": "Licenses"
+  "aboutLicenses": "Licenses",
+  "reportMistake": "Report a mistake"
 }

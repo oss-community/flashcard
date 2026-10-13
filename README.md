@@ -37,6 +37,8 @@ about 9,000 cards in English, German, Dutch and Persian, from level A1 to C2.
   verb card or by tapping a word in the word list.
 - Progress is kept separately for each profile and direction.
 - Word list with search in both languages and a level filter.
+- A flag on each card opens a ready-made report in the dictionary repository
+  when a word or meaning is wrong.
 - Daily statistics: answers per day, streak, words learned per level.
 - Pronunciation with the voices installed on the device.
 - Menus in English (default), German, Dutch and Persian, right to left for Persian.

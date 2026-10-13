@@ -443,4 +443,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get aboutLicenses => 'مجوزها';
+
+  @override
+  String get reportMistake => 'گزارش اشتباه';
 }

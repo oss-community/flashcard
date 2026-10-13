@@ -8,12 +8,14 @@ import 'package:flashcard/data/progress_repository.dart';
 import 'package:flashcard/data/speech.dart';
 import 'package:flashcard/data/vocabulary_repository.dart';
 import 'package:flashcard/core/vocabulary_source.dart';
+import 'package:flashcard/domain/pair.dart';
 import 'package:flashcard/domain/profile.dart';
 import 'package:flashcard/l10n/app_localizations.dart';
 import 'package:flashcard/domain/srs.dart';
 import 'package:flashcard/state/providers.dart';
 import 'package:flashcard/ui/about_screen.dart';
 import 'package:flashcard/ui/difficulty_menu.dart';
+import 'package:flashcard/ui/links.dart';
 import 'package:flashcard/ui/term_text.dart';
 import 'package:flashcard/ui/word_forms.dart';
 import 'package:flutter/material.dart';
@@ -151,6 +153,22 @@ void main() {
       await repo.writeSetting('uiLanguage', 'de');
       expect(await repo.readSettings(), {'uiLanguage': 'de'});
     });
+  });
+
+  test('a mistake report names the card and both words', () {
+    final card = cardsForPair(
+      vocabulary.cards,
+      const LanguagePair(target: 'de', native: 'fa'),
+    ).firstWhere((c) => c.target.word == 'die Frau');
+    final url = Uri.parse(
+      mistakeReportUrl(card, vocabulary.language('de'), vocabulary.language('fa')),
+    );
+    expect(url.toString(), startsWith(dictionaryIssuesUrl));
+    expect(url.queryParameters['title'], 'Mistake in ${card.id}: die Frau');
+    final body = url.queryParameters['body']!;
+    expect(body, contains('Card: `${card.id}`'));
+    expect(body, contains('- German: die Frau (noun, plural: Frauen)'));
+    expect(body, contains('- Persian: ${card.native.word}'));
   });
 
   test('key forms of verbs and adjectives', () {

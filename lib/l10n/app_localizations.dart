@@ -861,6 +861,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Licenses'**
   String get aboutLicenses;
+
+  /// No description provided for @reportMistake.
+  ///
+  /// In en, this message translates to:
+  /// **'Report a mistake'**
+  String get reportMistake;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

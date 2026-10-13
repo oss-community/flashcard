@@ -126,5 +126,6 @@
   "aboutFeedback": "Fehler melden oder Idee vorschlagen",
   "privacyPolicy": "Datenschutzerklärung",
   "aboutSource": "Quellcode",
-  "aboutLicenses": "Lizenzen"
+  "aboutLicenses": "Lizenzen",
+  "reportMistake": "Fehler melden"
 }
