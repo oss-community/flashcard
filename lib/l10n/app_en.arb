@@ -250,5 +250,19 @@
   "tensePastProgressive": "Past progressive",
   "tensePresentPerfect": "Present perfect",
   "tensePastPerfect": "Past perfect",
-  "tenseFuture": "Future"
+  "tenseFuture": "Future",
+  "about": "About",
+  "aboutBody": "Learn vocabulary with flashcards and spaced repetition. Free and open source. Works offline, and your progress stays on this device.",
+  "aboutVersion": "Version {version}",
+  "@aboutVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutFeedback": "Report a problem or suggest an idea",
+  "privacyPolicy": "Privacy policy",
+  "aboutSource": "Source code",
+  "aboutLicenses": "Licenses"
 }

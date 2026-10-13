@@ -428,4 +428,28 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get tenseFuture => 'Zukunft';
+
+  @override
+  String get about => 'Über die App';
+
+  @override
+  String get aboutBody =>
+      'Lerne Vokabeln mit Karteikarten und verteilter Wiederholung. Kostenlos und quelloffen. Funktioniert offline, und dein Fortschritt bleibt auf diesem Gerät.';
+
+  @override
+  String aboutVersion(String version) {
+    return 'Version $version';
+  }
+
+  @override
+  String get aboutFeedback => 'Fehler melden oder Idee vorschlagen';
+
+  @override
+  String get privacyPolicy => 'Datenschutzerklärung';
+
+  @override
+  String get aboutSource => 'Quellcode';
+
+  @override
+  String get aboutLicenses => 'Lizenzen';
 }

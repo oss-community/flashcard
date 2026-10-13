@@ -21,6 +21,8 @@ dependencies:
   window_manager: ^0.5.2
   flutter_localizations:
     sdk: flutter
+  url_launcher: ^6.3.3
+  package_info_plus: ^10.2.2
 
 dev_dependencies:
   flutter_test:
@@ -34,6 +36,7 @@ flutter:
   generate: true
   assets:
     - assets/vocabulary.db
+    - assets/fonts/OFL.txt
   fonts:
     - family: Vazirmatn
       fonts:

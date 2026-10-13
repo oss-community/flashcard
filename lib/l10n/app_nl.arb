@@ -119,5 +119,12 @@
   "tensePastProgressive": "Bezig in het verleden",
   "tensePresentPerfect": "Voltooid tegenwoordige tijd",
   "tensePastPerfect": "Voltooid verleden tijd",
-  "tenseFuture": "Toekomende tijd"
+  "tenseFuture": "Toekomende tijd",
+  "about": "Over de app",
+  "aboutBody": "Leer woorden met flashcards en gespreide herhaling. Gratis en open source. Werkt offline, en je voortgang blijft op dit apparaat.",
+  "aboutVersion": "Versie {version}",
+  "aboutFeedback": "Een probleem melden of een idee voorstellen",
+  "privacyPolicy": "Privacybeleid",
+  "aboutSource": "Broncode",
+  "aboutLicenses": "Licenties"
 }

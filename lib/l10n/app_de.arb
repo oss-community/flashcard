@@ -119,5 +119,12 @@
   "tensePastProgressive": "Verlaufsform Vergangenheit",
   "tensePresentPerfect": "Perfekt",
   "tensePastPerfect": "Plusquamperfekt",
-  "tenseFuture": "Zukunft"
+  "tenseFuture": "Zukunft",
+  "about": "Über die App",
+  "aboutBody": "Lerne Vokabeln mit Karteikarten und verteilter Wiederholung. Kostenlos und quelloffen. Funktioniert offline, und dein Fortschritt bleibt auf diesem Gerät.",
+  "aboutVersion": "Version {version}",
+  "aboutFeedback": "Fehler melden oder Idee vorschlagen",
+  "privacyPolicy": "Datenschutzerklärung",
+  "aboutSource": "Quellcode",
+  "aboutLicenses": "Lizenzen"
 }

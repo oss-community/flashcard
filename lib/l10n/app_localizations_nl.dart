@@ -427,4 +427,28 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get tenseFuture => 'Toekomende tijd';
+
+  @override
+  String get about => 'Over de app';
+
+  @override
+  String get aboutBody =>
+      'Leer woorden met flashcards en gespreide herhaling. Gratis en open source. Werkt offline, en je voortgang blijft op dit apparaat.';
+
+  @override
+  String aboutVersion(String version) {
+    return 'Versie $version';
+  }
+
+  @override
+  String get aboutFeedback => 'Een probleem melden of een idee voorstellen';
+
+  @override
+  String get privacyPolicy => 'Privacybeleid';
+
+  @override
+  String get aboutSource => 'Broncode';
+
+  @override
+  String get aboutLicenses => 'Licenties';
 }

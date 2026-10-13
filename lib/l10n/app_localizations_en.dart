@@ -427,4 +427,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tenseFuture => 'Future';
+
+  @override
+  String get about => 'About';
+
+  @override
+  String get aboutBody =>
+      'Learn vocabulary with flashcards and spaced repetition. Free and open source. Works offline, and your progress stays on this device.';
+
+  @override
+  String aboutVersion(String version) {
+    return 'Version $version';
+  }
+
+  @override
+  String get aboutFeedback => 'Report a problem or suggest an idea';
+
+  @override
+  String get privacyPolicy => 'Privacy policy';
+
+  @override
+  String get aboutSource => 'Source code';
+
+  @override
+  String get aboutLicenses => 'Licenses';
 }

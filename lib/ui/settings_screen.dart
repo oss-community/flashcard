@@ -3,10 +3,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../l10n/app_localizations.dart';
 import '../state/providers.dart';
+import 'about_screen.dart';
 import 'language_picker.dart';
 import 'profiles.dart';
 
-/// Menu language, profiles, study options of the current profile, and theme.
+/// Menu language, profiles, study options of the current profile, theme, and
+/// a link to the About page.
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
 
@@ -139,6 +141,16 @@ class SettingsScreen extends ConsumerWidget {
                 ],
                 selected: {settings.themeMode},
                 onSelectionChanged: (v) => notifier.update((s) => s.copyWith(themeMode: v.first)),
+              ),
+              const SizedBox(height: 24),
+              const Divider(),
+              ListTile(
+                key: const Key('about'),
+                contentPadding: EdgeInsets.zero,
+                leading: const Icon(Icons.info_outline),
+                title: Text(l.about),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => AboutScreen.open(context),
               ),
             ],
           ),

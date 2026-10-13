@@ -1,7 +1,7 @@
-# Flashcards
+<h1 align="center">Flashcards</h1>
 
-An app for Windows and iPhone for learning vocabulary with flashcards and spaced
-repetition.
+An app for Windows, Android and iPhone for learning vocabulary with flashcards
+and spaced repetition.
 You pick the language you want to learn and the language you already know;
 each card shows only those two. The words come from
 [oss-community/dictionary](https://github.com/oss-community/dictionary):
@@ -42,7 +42,9 @@ about 9,000 cards in English, German, Dutch and Persian, from level A1 to C2.
 - Menus in English (default), German, Dutch and Persian, right to left for Persian.
 - Light, dark, or the same as the system.
 - On a phone the menu moves to the bottom of the screen.
-- Works fully offline.
+- Works fully offline and collects no data; see the
+  [privacy policy](https://oss-community.github.io/flashcard/privacy.html)
+  (source in `docs/privacy.html`).
 
 ## Download
 
@@ -56,6 +58,18 @@ warn that the app is unsigned; choose "More info" and "Run anyway".
 
 Pronunciation uses Windows voices. To add one, open Settings > Time & language >
 Speech > Add voices. A language without a voice shows a disabled speaker button.
+
+### Android
+
+Download **Flashcards-android** and unzip it to get `Flashcards.apk`. Copy it to
+the phone (or send it by email or a messenger), open it and allow installing
+apps from that source when Android asks. Android 7 or newer is needed. The file
+is signed with a test key, so Android may show a warning, and a later version
+installs over it only if it was built the same way.
+
+Pronunciation uses the phone's speech engine. To add a voice, open Settings >
+System > Languages > Text-to-speech output (the path differs a little between
+phone makers).
 
 ### iPhone
 
@@ -71,12 +85,14 @@ Accessibility > Spoken Content > Voices.
 ## Building
 
 Requires Flutter 3.47. For Windows: a Windows computer with Visual Studio's
-"Desktop development with C++". For iPhone: a Mac with Xcode.
+"Desktop development with C++". For Android: the Android SDK and Java 17. For
+iPhone: a Mac with Xcode.
 
 ```
 flutter pub get
 dart run tool/build_vocabulary_db.dart
 flutter build windows --release
+flutter build apk --release
 flutter build ios --release
 ```
 
@@ -97,6 +113,7 @@ a CSV changes. Tests:
 | `lib/state/` | App state (Riverpod) |
 | `lib/ui/` | Screens |
 | `lib/l10n/` | Menu translations, one `app_<code>.arb` file per language |
+| `docs/` | The privacy policy, published with GitHub Pages |
 | `test/` | Tests, including a check that every language has complete menus |
 
 Two databases are kept in the app's data folder: `vocabulary.db` is replaced

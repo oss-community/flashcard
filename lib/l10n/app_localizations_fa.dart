@@ -419,4 +419,28 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get tenseFuture => 'آینده';
+
+  @override
+  String get about => 'درباره';
+
+  @override
+  String get aboutBody =>
+      'واژه‌ها را با فلش‌کارت و مرور فاصله‌دار یاد بگیرید. این برنامه رایگان و متن‌باز است، بدون اینترنت کار می‌کند و پیشرفت شما فقط روی همین دستگاه می‌ماند.';
+
+  @override
+  String aboutVersion(String version) {
+    return 'نسخهٔ $version';
+  }
+
+  @override
+  String get aboutFeedback => 'گزارش مشکل یا پیشنهاد';
+
+  @override
+  String get privacyPolicy => 'حریم خصوصی';
+
+  @override
+  String get aboutSource => 'کد منبع';
+
+  @override
+  String get aboutLicenses => 'مجوزها';
 }

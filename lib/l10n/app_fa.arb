@@ -119,5 +119,12 @@
   "tensePastProgressive": "ماضی مستمر",
   "tensePresentPerfect": "ماضی نقلی",
   "tensePastPerfect": "ماضی بعید",
-  "tenseFuture": "آینده"
+  "tenseFuture": "آینده",
+  "about": "درباره",
+  "aboutBody": "واژه‌ها را با فلش‌کارت و مرور فاصله‌دار یاد بگیرید. این برنامه رایگان و متن‌باز است، بدون اینترنت کار می‌کند و پیشرفت شما فقط روی همین دستگاه می‌ماند.",
+  "aboutVersion": "نسخهٔ {version}",
+  "aboutFeedback": "گزارش مشکل یا پیشنهاد",
+  "privacyPolicy": "حریم خصوصی",
+  "aboutSource": "کد منبع",
+  "aboutLicenses": "مجوزها"
 }

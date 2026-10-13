@@ -12,12 +12,14 @@ import 'package:flashcard/domain/profile.dart';
 import 'package:flashcard/l10n/app_localizations.dart';
 import 'package:flashcard/domain/srs.dart';
 import 'package:flashcard/state/providers.dart';
+import 'package:flashcard/ui/about_screen.dart';
 import 'package:flashcard/ui/difficulty_menu.dart';
 import 'package:flashcard/ui/term_text.dart';
 import 'package:flashcard/ui/word_forms.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:sqlite3/sqlite3.dart' as sqlite;
 
 // Needs assets/vocabulary.db: run `dart run tool/build_vocabulary_db.dart` first.
@@ -423,6 +425,24 @@ void phoneTest(Vocabulary vocabulary, String uiLanguage) {
       await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 100)));
       await tester.pumpAndSettle();
     }
+
+    // The About page opens from the bottom of Settings.
+    PackageInfo.setMockInitialValues(
+      appName: 'Flashcards',
+      packageName: 'org.osscommunity.flashcard',
+      version: '1.0.0',
+      buildNumber: '1',
+      buildSignature: '',
+    );
+    await tester.scrollUntilVisible(
+      find.byKey(const Key('about')),
+      300,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.tap(find.byKey(const Key('about')));
+    await tester.pumpAndSettle();
+    expect(find.byType(AboutScreen), findsOneWidget);
+    expect(find.textContaining('1.0.0'), findsOneWidget);
   });
 }
 
