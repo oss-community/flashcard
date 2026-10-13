@@ -29,7 +29,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get welcomeBody =>
-      'Choose the language you want to learn, the language you already know, and your level. You can change all of this later in Settings.';
+      'Choose the language you want to learn, the language you already know, and your level. You can add more profiles later in Settings, each with its own progress.';
 
   @override
   String get languageToLearn => 'Language to learn';
@@ -242,16 +242,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get statsAllPairs => 'All language pairs';
-
-  @override
-  String get statsThisPair => 'Current language pair';
-
-  @override
   String get settingsMenuLanguage => 'Menu language';
-
-  @override
-  String get settingsLanguages => 'Languages';
 
   @override
   String get settingsStudy => 'Study';
@@ -285,7 +276,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get themeDark => 'Dark';
 
   @override
-  String get settingsAbout => 'Progress is kept separately for every language pair.';
+  String get settingsAbout =>
+      'Each profile keeps its own progress. To study another pair of languages, add a new profile.';
 
   @override
   String get typeNoun => 'noun';
@@ -328,4 +320,60 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get typeIdiom => 'idiom';
+
+  @override
+  String get profiles => 'Profiles';
+
+  @override
+  String get profileName => 'Profile name';
+
+  @override
+  String get profileNameHint => 'Optional. Leave it empty to name the profile after its languages.';
+
+  @override
+  String profileDefaultName(String native, String target) {
+    return '$native → $target';
+  }
+
+  @override
+  String get newProfile => 'New profile';
+
+  @override
+  String get createProfile => 'Create profile';
+
+  @override
+  String get switchProfile => 'Switch profile';
+
+  @override
+  String get renameProfile => 'Rename';
+
+  @override
+  String deleteProfileTitle(String name) {
+    return 'Delete “$name”?';
+  }
+
+  @override
+  String get deleteProfileBody =>
+      'All progress of this profile will be removed. This cannot be undone.';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String settingsStudyIn(String profile) {
+    return 'Study: $profile';
+  }
+
+  @override
+  String get settingsShowForms => 'Show word forms';
+
+  @override
+  String get settingsShowFormsHint =>
+      'Plurals, verb forms and comparisons on the back of the card.';
 }

@@ -4,8 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../l10n/app_localizations.dart';
 import '../state/providers.dart';
 import 'language_picker.dart';
+import 'profiles.dart';
 
-/// Menu language, language pair, level, study options and theme.
+/// Menu language, profiles, study options of the current profile, and theme.
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
 
@@ -14,7 +15,9 @@ class SettingsScreen extends ConsumerWidget {
     final l = AppLocalizations.of(context);
     final theme = Theme.of(context);
     final settings = ref.watch(settingsProvider);
-    final languages = ref.watch(vocabularyProvider).languages;
+    final vocab = ref.watch(vocabularyProvider);
+    final languages = vocab.languages;
+    final active = settings.profile!;
     final notifier = ref.read(settingsProvider.notifier);
     final ui = settings.uiLanguage;
 
@@ -39,38 +42,43 @@ class SettingsScreen extends ConsumerWidget {
                 value: ui,
                 onChanged: (code) => notifier.update((s) => s.copyWith(uiLanguage: code)),
               ),
-              section(l.settingsLanguages),
-              LanguageDropdown(
-                key: ValueKey('target-${settings.target}-$ui'),
-                label: l.languageToLearn,
-                languages: [
-                  for (final lang in languages)
-                    if (lang.code != settings.native) lang,
-                ],
-                uiCode: ui,
-                value: settings.target,
-                onChanged: (code) => notifier.update((s) => s.copyWith(target: code)),
-              ),
-              const SizedBox(height: 16),
-              LanguageDropdown(
-                key: ValueKey('native-${settings.native}-$ui'),
-                label: l.languageYouKnow,
-                languages: [
-                  for (final lang in languages)
-                    if (lang.code != settings.target) lang,
-                ],
-                uiCode: ui,
-                value: settings.native,
-                onChanged: (code) => notifier.update((s) => s.copyWith(native: code)),
+              section(l.profiles),
+              for (final profile in settings.profiles)
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  leading: Icon(
+                    profile.id == active.id ? Icons.radio_button_checked : Icons.radio_button_off,
+                    color: profile.id == active.id ? theme.colorScheme.primary : null,
+                  ),
+                  title: Text(profileTitle(l, vocab, ui, profile)),
+                  subtitle: Text(profilePair(l, vocab, ui, profile)),
+                  onTap: () => notifier.switchProfile(profile.id),
+                  trailing: PopupMenuButton<bool>(
+                    onSelected: (delete) => delete
+                        ? deleteProfile(context, ref, profile)
+                        : renameProfile(context, ref, profile),
+                    itemBuilder: (_) => [
+                      PopupMenuItem(value: false, child: Text(l.renameProfile)),
+                      PopupMenuItem(value: true, child: Text(l.delete)),
+                    ],
+                  ),
+                ),
+              Align(
+                alignment: AlignmentDirectional.centerStart,
+                child: TextButton.icon(
+                  onPressed: () => NewProfileScreen.open(context),
+                  icon: const Icon(Icons.add),
+                  label: Text(l.newProfile),
+                ),
               ),
               const SizedBox(height: 8),
               Text(l.settingsAbout, style: theme.textTheme.bodySmall),
-              section(l.settingsStudy),
+              section(l.settingsStudyIn(profileTitle(l, vocab, ui, active))),
               Text(l.level, style: theme.textTheme.titleSmall),
               const SizedBox(height: 8),
               LevelPicker(
                 value: settings.level,
-                onChanged: (v) => notifier.update((s) => s.copyWith(level: () => v)),
+                onChanged: (v) => notifier.updateProfile((p) => p.copyWith(level: () => v)),
               ),
               const SizedBox(height: 16),
               Row(
@@ -87,7 +95,8 @@ class SettingsScreen extends ConsumerWidget {
                   IconButton(
                     onPressed: settings.dailyGoal <= 0
                         ? null
-                        : () => notifier.update((s) => s.copyWith(dailyGoal: s.dailyGoal - 5)),
+                        : () =>
+                              notifier.updateProfile((p) => p.copyWith(dailyGoal: p.dailyGoal - 5)),
                     icon: const Icon(Icons.remove),
                   ),
                   ConstrainedBox(
@@ -101,7 +110,8 @@ class SettingsScreen extends ConsumerWidget {
                   IconButton(
                     onPressed: settings.dailyGoal >= maxDailyGoal
                         ? null
-                        : () => notifier.update((s) => s.copyWith(dailyGoal: s.dailyGoal + 5)),
+                        : () =>
+                              notifier.updateProfile((p) => p.copyWith(dailyGoal: p.dailyGoal + 5)),
                     icon: const Icon(Icons.add),
                   ),
                 ],
@@ -111,7 +121,14 @@ class SettingsScreen extends ConsumerWidget {
                 title: Text(l.settingsReversed),
                 subtitle: Text(l.settingsReversedHint),
                 value: settings.reversed,
-                onChanged: (v) => notifier.update((s) => s.copyWith(reversed: v)),
+                onChanged: (v) => notifier.updateProfile((p) => p.copyWith(reversed: v)),
+              ),
+              SwitchListTile(
+                contentPadding: EdgeInsets.zero,
+                title: Text(l.settingsShowForms),
+                subtitle: Text(l.settingsShowFormsHint),
+                value: settings.showForms,
+                onChanged: (v) => notifier.updateProfile((p) => p.copyWith(showForms: v)),
               ),
               section(l.settingsAppearance),
               SegmentedButton<ThemeMode>(

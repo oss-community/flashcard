@@ -28,6 +28,7 @@ Future<void> main() async {
   final vocabulary = await Vocabulary.load();
   final progress = ProgressRepository(ProgressDatabase());
   final settings = await progress.readSettings();
+  final profiles = await progress.profiles();
   final speech = await Speech.create();
 
   runApp(
@@ -36,6 +37,7 @@ Future<void> main() async {
         vocabularyProvider.overrideWithValue(vocabulary),
         progressRepositoryProvider.overrideWithValue(progress),
         initialSettingsProvider.overrideWithValue(settings),
+        initialProfilesProvider.overrideWithValue(profiles),
         speechProvider.overrideWithValue(speech),
       ],
       child: const FlashcardApp(),

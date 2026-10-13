@@ -29,7 +29,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get welcomeBody =>
-      'زبانی که می‌خواهید یاد بگیرید، زبانی که بلدید و سطح خود را انتخاب کنید. همه‌ی این‌ها را بعداً در تنظیمات می‌توانید عوض کنید.';
+      'زبانی را که می‌خواهید یاد بگیرید، زبانی را که بلدید و سطح خود را انتخاب کنید. بعداً در تنظیمات می‌توانید پروفایل‌های دیگری بسازید که هرکدام پیشرفت جدای خود را دارند.';
 
   @override
   String get languageToLearn => 'زبانی که یاد می‌گیرید';
@@ -235,16 +235,7 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get statsAllPairs => 'همه‌ی جفت‌زبان‌ها';
-
-  @override
-  String get statsThisPair => 'جفت‌زبان فعلی';
-
-  @override
   String get settingsMenuLanguage => 'زبان منو';
-
-  @override
-  String get settingsLanguages => 'زبان‌ها';
 
   @override
   String get settingsStudy => 'مرور';
@@ -278,7 +269,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get themeDark => 'تاریک';
 
   @override
-  String get settingsAbout => 'پیشرفت برای هر جفت‌زبان جدا نگه داشته می‌شود.';
+  String get settingsAbout =>
+      'هر پروفایل پیشرفت جدای خود را دارد. برای یادگرفتن جفت‌زبانی دیگر، پروفایل تازه‌ای بسازید.';
 
   @override
   String get typeNoun => 'اسم';
@@ -321,4 +313,59 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get typeIdiom => 'اصطلاح';
+
+  @override
+  String get profiles => 'پروفایل‌ها';
+
+  @override
+  String get profileName => 'نام پروفایل';
+
+  @override
+  String get profileNameHint =>
+      'اختیاری است. اگر خالی بماند، نام پروفایل از دو زبانش ساخته می‌شود.';
+
+  @override
+  String profileDefaultName(String native, String target) {
+    return '$native ← $target';
+  }
+
+  @override
+  String get newProfile => 'پروفایل تازه';
+
+  @override
+  String get createProfile => 'ساختن پروفایل';
+
+  @override
+  String get switchProfile => 'رفتن به پروفایل دیگر';
+
+  @override
+  String get renameProfile => 'تغییر نام';
+
+  @override
+  String deleteProfileTitle(String name) {
+    return '«$name» پاک شود؟';
+  }
+
+  @override
+  String get deleteProfileBody => 'همهٔ پیشرفت این پروفایل پاک می‌شود و برگرداندنش ممکن نیست.';
+
+  @override
+  String get delete => 'پاک کردن';
+
+  @override
+  String get cancel => 'انصراف';
+
+  @override
+  String get save => 'ذخیره';
+
+  @override
+  String settingsStudyIn(String profile) {
+    return 'یادگیری: $profile';
+  }
+
+  @override
+  String get settingsShowForms => 'نمایش شکل‌های واژه';
+
+  @override
+  String get settingsShowFormsHint => 'جمع، شکل‌های فعل و صفت تفضیلی پشت کارت نشان داده شود.';
 }

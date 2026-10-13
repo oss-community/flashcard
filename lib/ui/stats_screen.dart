@@ -52,7 +52,6 @@ class StatsScreen extends ConsumerWidget {
             ),
           const SizedBox(height: 32),
           Text(l.statsLast30, style: theme.textTheme.titleLarge),
-          Text(l.statsAllPairs, style: theme.textTheme.bodySmall),
           const SizedBox(height: 12),
           SizedBox(
             height: 160,
@@ -60,7 +59,6 @@ class StatsScreen extends ConsumerWidget {
           ),
           const SizedBox(height: 32),
           Text(l.statsByLevel, style: theme.textTheme.titleLarge),
-          Text(l.statsThisPair, style: theme.textTheme.bodySmall),
           const SizedBox(height: 12),
           for (final MapEntry(key: level, value: count) in perLevel.entries)
             Padding(

@@ -10,6 +10,7 @@ import '../l10n/app_localizations.dart';
 import '../state/providers.dart';
 import 'difficulty_menu.dart';
 import 'labels.dart';
+import 'profiles.dart';
 import 'layout.dart';
 import 'term_text.dart';
 
@@ -32,7 +33,7 @@ class _StudyScreenState extends ConsumerState<StudyScreen> {
     final clock = ref.read(clockProvider);
     final now = clock();
     final schedules = await ref.read(schedulesProvider.future);
-    final today = await ref.read(progressRepositoryProvider).today(settings.pair, now);
+    final today = await ref.read(progressRepositoryProvider).today(settings.profile!.id, now);
     final cards = sessionCards(
       cards: ref.read(pairCardsProvider),
       schedules: schedules,
@@ -53,6 +54,11 @@ class _StudyScreenState extends ConsumerState<StudyScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // A session belongs to one profile and direction.
+    ref.listen(
+      settingsProvider.select((s) => (s.profile?.id, s.reversed)),
+      (_, _) => setState(() => _session = null),
+    );
     final session = _session;
     if (session == null) return _Overview(onStart: _start);
     if (session.isFinished) return _Finished(answered: session.answered, onClose: _close);
@@ -88,17 +94,15 @@ class _Overview extends ConsumerWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
-                l.learningPair(
-                  vocab.language(settings.target!).nameIn(ui),
-                  vocab.language(settings.native!).nameIn(ui),
-                ),
-                style: theme.textTheme.headlineMedium,
-              ),
+              const Align(alignment: AlignmentDirectional.centerStart, child: ProfileSwitcher()),
               const SizedBox(height: 4),
               Text(
-                settings.level == null ? l.levelAllHint : l.levelLabel(settings.level!),
+                profilePair(l, vocab, ui, settings.profile!),
                 style: theme.textTheme.titleMedium,
+              ),
+              Text(
+                settings.level == null ? l.levelAllHint : l.levelLabel(settings.level!),
+                style: theme.textTheme.bodyMedium,
               ),
               const SizedBox(height: 32),
               switch (today) {
@@ -218,7 +222,8 @@ class _SessionViewState extends ConsumerState<_SessionView> {
     await ref
         .read(progressRepositoryProvider)
         .saveReview(
-          pair: ref.read(settingsProvider).pair,
+          profile: ref.read(settingsProvider).profile!.id,
+          reversed: ref.read(settingsProvider).reversed,
           cardId: result.item.card.id,
           schedule: result.schedule,
           rating: rating,

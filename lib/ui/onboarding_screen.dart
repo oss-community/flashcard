@@ -4,27 +4,18 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../l10n/app_localizations.dart';
 import '../state/providers.dart';
 import 'language_picker.dart';
+import 'profiles.dart';
 
-/// First screen: pick the language pair and level.
-class OnboardingScreen extends ConsumerStatefulWidget {
+/// First screen: pick the menu language and make the first profile.
+class OnboardingScreen extends ConsumerWidget {
   const OnboardingScreen({super.key});
 
   @override
-  ConsumerState<OnboardingScreen> createState() => _OnboardingScreenState();
-}
-
-class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
-  String? _native;
-  String? _target;
-  String? _level;
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l = AppLocalizations.of(context);
     final settings = ref.watch(settingsProvider);
     final languages = ref.watch(vocabularyProvider).languages;
-    final same = _native != null && _native == _target;
-    final ready = _native != null && _target != null && !same;
+    final notifier = ref.read(settingsProvider.notifier);
     final theme = Theme.of(context);
 
     return Scaffold(
@@ -45,9 +36,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                       languages: languages,
                       uiCode: settings.uiLanguage,
                       value: settings.uiLanguage,
-                      onChanged: (code) => ref
-                          .read(settingsProvider.notifier)
-                          .update((s) => s.copyWith(uiLanguage: code)),
+                      onChanged: (code) => notifier.update((s) => s.copyWith(uiLanguage: code)),
                     ),
                   ),
                 ),
@@ -56,46 +45,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                 const SizedBox(height: 12),
                 Text(l.welcomeBody, style: theme.textTheme.bodyLarge),
                 const SizedBox(height: 32),
-                LanguageDropdown(
-                  key: const Key('target'),
-                  label: l.languageToLearn,
-                  languages: languages,
-                  uiCode: settings.uiLanguage,
-                  value: _target,
-                  onChanged: (code) => setState(() => _target = code),
-                ),
-                const SizedBox(height: 16),
-                LanguageDropdown(
-                  key: const Key('native'),
-                  label: l.languageYouKnow,
-                  languages: languages,
-                  uiCode: settings.uiLanguage,
-                  value: _native,
-                  onChanged: (code) => setState(() => _native = code),
-                ),
-                if (same) ...[
-                  const SizedBox(height: 8),
-                  Text(l.sameLanguageError, style: TextStyle(color: theme.colorScheme.error)),
-                ],
-                const SizedBox(height: 24),
-                Text(l.level, style: theme.textTheme.titleMedium),
-                const SizedBox(height: 8),
-                LevelPicker(value: _level, onChanged: (v) => setState(() => _level = v)),
-                const SizedBox(height: 32),
-                FilledButton(
-                  onPressed: ready
-                      ? () => ref
-                            .read(settingsProvider.notifier)
-                            .update(
-                              (s) =>
-                                  s.copyWith(native: _native, target: _target, level: () => _level),
-                            )
-                      : null,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12),
-                    child: Text(l.start),
-                  ),
-                ),
+                ProfileForm(submitLabel: l.start, onSubmit: notifier.createProfile),
               ],
             ),
           ),

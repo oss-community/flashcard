@@ -26,8 +26,8 @@ class DifficultyMenu extends ConsumerWidget {
       tooltip: l.changeDifficulty,
       initialValue: difficulty,
       onSelected: (value) async {
-        final target = ref.read(settingsProvider).target!;
-        await ref.read(progressRepositoryProvider).setDifficulty(cardId, target, value);
+        final profile = ref.read(settingsProvider).profile!.id;
+        await ref.read(progressRepositoryProvider).setDifficulty(profile, cardId, value);
         ref.read(progressVersionProvider.notifier).bump();
       },
       itemBuilder: (_) => [

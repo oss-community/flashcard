@@ -3,15 +3,38 @@
 part of 'progress_database.dart';
 
 // ignore_for_file: type=lint
-class $ReviewStatesTable extends ReviewStates with TableInfo<$ReviewStatesTable, ReviewState> {
+class $ProfilesTable extends Profiles
+    with TableInfo<$ProfilesTable, ProfileRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
-  $ReviewStatesTable(this.attachedDatabase, [this._alias]);
-  static const VerificationMeta _cardIdMeta = const VerificationMeta('cardId');
+  $ProfilesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
   @override
-  late final GeneratedColumn<String> cardId = GeneratedColumn<String>(
-    'card_id',
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
+    'id',
+    aliasedName,
+    false,
+    hasAutoIncrement: true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'PRIMARY KEY AUTOINCREMENT',
+    ),
+  );
+  static const VerificationMeta _nameMeta = const VerificationMeta('name');
+  @override
+  late final GeneratedColumn<String> name = GeneratedColumn<String>(
+    'name',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _nativeMeta = const VerificationMeta('native');
+  @override
+  late final GeneratedColumn<String> native = GeneratedColumn<String>(
+    'native',
     aliasedName,
     false,
     type: DriftSqlType.string,
@@ -26,16 +49,489 @@ class $ReviewStatesTable extends ReviewStates with TableInfo<$ReviewStatesTable,
     type: DriftSqlType.string,
     requiredDuringInsert: true,
   );
-  static const VerificationMeta _nativeMeta = const VerificationMeta('native');
+  static const VerificationMeta _levelMeta = const VerificationMeta('level');
   @override
-  late final GeneratedColumn<String> native = GeneratedColumn<String>(
-    'native',
+  late final GeneratedColumn<String> level = GeneratedColumn<String>(
+    'level',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _dailyGoalMeta = const VerificationMeta(
+    'dailyGoal',
+  );
+  @override
+  late final GeneratedColumn<int> dailyGoal = GeneratedColumn<int>(
+    'daily_goal',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _reversedMeta = const VerificationMeta(
+    'reversed',
+  );
+  @override
+  late final GeneratedColumn<bool> reversed = GeneratedColumn<bool>(
+    'reversed',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("reversed" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
+  static const VerificationMeta _showFormsMeta = const VerificationMeta(
+    'showForms',
+  );
+  @override
+  late final GeneratedColumn<bool> showForms = GeneratedColumn<bool>(
+    'show_forms',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("show_forms" IN (0, 1))',
+    ),
+    defaultValue: const Constant(true),
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    name,
+    native,
+    target,
+    level,
+    dailyGoal,
+    reversed,
+    showForms,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'profiles';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<ProfileRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('name')) {
+      context.handle(
+        _nameMeta,
+        name.isAcceptableOrUnknown(data['name']!, _nameMeta),
+      );
+    }
+    if (data.containsKey('native')) {
+      context.handle(
+        _nativeMeta,
+        native.isAcceptableOrUnknown(data['native']!, _nativeMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_nativeMeta);
+    }
+    if (data.containsKey('target')) {
+      context.handle(
+        _targetMeta,
+        target.isAcceptableOrUnknown(data['target']!, _targetMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_targetMeta);
+    }
+    if (data.containsKey('level')) {
+      context.handle(
+        _levelMeta,
+        level.isAcceptableOrUnknown(data['level']!, _levelMeta),
+      );
+    }
+    if (data.containsKey('daily_goal')) {
+      context.handle(
+        _dailyGoalMeta,
+        dailyGoal.isAcceptableOrUnknown(data['daily_goal']!, _dailyGoalMeta),
+      );
+    }
+    if (data.containsKey('reversed')) {
+      context.handle(
+        _reversedMeta,
+        reversed.isAcceptableOrUnknown(data['reversed']!, _reversedMeta),
+      );
+    }
+    if (data.containsKey('show_forms')) {
+      context.handle(
+        _showFormsMeta,
+        showForms.isAcceptableOrUnknown(data['show_forms']!, _showFormsMeta),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  ProfileRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return ProfileRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}id'],
+      )!,
+      name: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}name'],
+      ),
+      native: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}native'],
+      )!,
+      target: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}target'],
+      )!,
+      level: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}level'],
+      ),
+      dailyGoal: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}daily_goal'],
+      )!,
+      reversed: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}reversed'],
+      )!,
+      showForms: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}show_forms'],
+      )!,
+    );
+  }
+
+  @override
+  $ProfilesTable createAlias(String alias) {
+    return $ProfilesTable(attachedDatabase, alias);
+  }
+}
+
+class ProfileRow extends DataClass implements Insertable<ProfileRow> {
+  final int id;
+
+  /// Chosen by the learner; null shows a name made from the two languages.
+  final String? name;
+  final String native;
+  final String target;
+
+  /// Level new cards come from; null means every level in order.
+  final String? level;
+  final int dailyGoal;
+  final bool reversed;
+
+  /// Show plurals, verb forms and comparisons on the back of the card.
+  final bool showForms;
+  const ProfileRow({
+    required this.id,
+    this.name,
+    required this.native,
+    required this.target,
+    this.level,
+    required this.dailyGoal,
+    required this.reversed,
+    required this.showForms,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<int>(id);
+    if (!nullToAbsent || name != null) {
+      map['name'] = Variable<String>(name);
+    }
+    map['native'] = Variable<String>(native);
+    map['target'] = Variable<String>(target);
+    if (!nullToAbsent || level != null) {
+      map['level'] = Variable<String>(level);
+    }
+    map['daily_goal'] = Variable<int>(dailyGoal);
+    map['reversed'] = Variable<bool>(reversed);
+    map['show_forms'] = Variable<bool>(showForms);
+    return map;
+  }
+
+  ProfilesCompanion toCompanion(bool nullToAbsent) {
+    return ProfilesCompanion(
+      id: Value(id),
+      name: name == null && nullToAbsent ? const Value.absent() : Value(name),
+      native: Value(native),
+      target: Value(target),
+      level: level == null && nullToAbsent
+          ? const Value.absent()
+          : Value(level),
+      dailyGoal: Value(dailyGoal),
+      reversed: Value(reversed),
+      showForms: Value(showForms),
+    );
+  }
+
+  factory ProfileRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return ProfileRow(
+      id: serializer.fromJson<int>(json['id']),
+      name: serializer.fromJson<String?>(json['name']),
+      native: serializer.fromJson<String>(json['native']),
+      target: serializer.fromJson<String>(json['target']),
+      level: serializer.fromJson<String?>(json['level']),
+      dailyGoal: serializer.fromJson<int>(json['dailyGoal']),
+      reversed: serializer.fromJson<bool>(json['reversed']),
+      showForms: serializer.fromJson<bool>(json['showForms']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<int>(id),
+      'name': serializer.toJson<String?>(name),
+      'native': serializer.toJson<String>(native),
+      'target': serializer.toJson<String>(target),
+      'level': serializer.toJson<String?>(level),
+      'dailyGoal': serializer.toJson<int>(dailyGoal),
+      'reversed': serializer.toJson<bool>(reversed),
+      'showForms': serializer.toJson<bool>(showForms),
+    };
+  }
+
+  ProfileRow copyWith({
+    int? id,
+    Value<String?> name = const Value.absent(),
+    String? native,
+    String? target,
+    Value<String?> level = const Value.absent(),
+    int? dailyGoal,
+    bool? reversed,
+    bool? showForms,
+  }) => ProfileRow(
+    id: id ?? this.id,
+    name: name.present ? name.value : this.name,
+    native: native ?? this.native,
+    target: target ?? this.target,
+    level: level.present ? level.value : this.level,
+    dailyGoal: dailyGoal ?? this.dailyGoal,
+    reversed: reversed ?? this.reversed,
+    showForms: showForms ?? this.showForms,
+  );
+  ProfileRow copyWithCompanion(ProfilesCompanion data) {
+    return ProfileRow(
+      id: data.id.present ? data.id.value : this.id,
+      name: data.name.present ? data.name.value : this.name,
+      native: data.native.present ? data.native.value : this.native,
+      target: data.target.present ? data.target.value : this.target,
+      level: data.level.present ? data.level.value : this.level,
+      dailyGoal: data.dailyGoal.present ? data.dailyGoal.value : this.dailyGoal,
+      reversed: data.reversed.present ? data.reversed.value : this.reversed,
+      showForms: data.showForms.present ? data.showForms.value : this.showForms,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ProfileRow(')
+          ..write('id: $id, ')
+          ..write('name: $name, ')
+          ..write('native: $native, ')
+          ..write('target: $target, ')
+          ..write('level: $level, ')
+          ..write('dailyGoal: $dailyGoal, ')
+          ..write('reversed: $reversed, ')
+          ..write('showForms: $showForms')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    name,
+    native,
+    target,
+    level,
+    dailyGoal,
+    reversed,
+    showForms,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is ProfileRow &&
+          other.id == this.id &&
+          other.name == this.name &&
+          other.native == this.native &&
+          other.target == this.target &&
+          other.level == this.level &&
+          other.dailyGoal == this.dailyGoal &&
+          other.reversed == this.reversed &&
+          other.showForms == this.showForms);
+}
+
+class ProfilesCompanion extends UpdateCompanion<ProfileRow> {
+  final Value<int> id;
+  final Value<String?> name;
+  final Value<String> native;
+  final Value<String> target;
+  final Value<String?> level;
+  final Value<int> dailyGoal;
+  final Value<bool> reversed;
+  final Value<bool> showForms;
+  const ProfilesCompanion({
+    this.id = const Value.absent(),
+    this.name = const Value.absent(),
+    this.native = const Value.absent(),
+    this.target = const Value.absent(),
+    this.level = const Value.absent(),
+    this.dailyGoal = const Value.absent(),
+    this.reversed = const Value.absent(),
+    this.showForms = const Value.absent(),
+  });
+  ProfilesCompanion.insert({
+    this.id = const Value.absent(),
+    this.name = const Value.absent(),
+    required String native,
+    required String target,
+    this.level = const Value.absent(),
+    this.dailyGoal = const Value.absent(),
+    this.reversed = const Value.absent(),
+    this.showForms = const Value.absent(),
+  }) : native = Value(native),
+       target = Value(target);
+  static Insertable<ProfileRow> custom({
+    Expression<int>? id,
+    Expression<String>? name,
+    Expression<String>? native,
+    Expression<String>? target,
+    Expression<String>? level,
+    Expression<int>? dailyGoal,
+    Expression<bool>? reversed,
+    Expression<bool>? showForms,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (name != null) 'name': name,
+      if (native != null) 'native': native,
+      if (target != null) 'target': target,
+      if (level != null) 'level': level,
+      if (dailyGoal != null) 'daily_goal': dailyGoal,
+      if (reversed != null) 'reversed': reversed,
+      if (showForms != null) 'show_forms': showForms,
+    });
+  }
+
+  ProfilesCompanion copyWith({
+    Value<int>? id,
+    Value<String?>? name,
+    Value<String>? native,
+    Value<String>? target,
+    Value<String?>? level,
+    Value<int>? dailyGoal,
+    Value<bool>? reversed,
+    Value<bool>? showForms,
+  }) {
+    return ProfilesCompanion(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      native: native ?? this.native,
+      target: target ?? this.target,
+      level: level ?? this.level,
+      dailyGoal: dailyGoal ?? this.dailyGoal,
+      reversed: reversed ?? this.reversed,
+      showForms: showForms ?? this.showForms,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<int>(id.value);
+    }
+    if (name.present) {
+      map['name'] = Variable<String>(name.value);
+    }
+    if (native.present) {
+      map['native'] = Variable<String>(native.value);
+    }
+    if (target.present) {
+      map['target'] = Variable<String>(target.value);
+    }
+    if (level.present) {
+      map['level'] = Variable<String>(level.value);
+    }
+    if (dailyGoal.present) {
+      map['daily_goal'] = Variable<int>(dailyGoal.value);
+    }
+    if (reversed.present) {
+      map['reversed'] = Variable<bool>(reversed.value);
+    }
+    if (showForms.present) {
+      map['show_forms'] = Variable<bool>(showForms.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ProfilesCompanion(')
+          ..write('id: $id, ')
+          ..write('name: $name, ')
+          ..write('native: $native, ')
+          ..write('target: $target, ')
+          ..write('level: $level, ')
+          ..write('dailyGoal: $dailyGoal, ')
+          ..write('reversed: $reversed, ')
+          ..write('showForms: $showForms')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $ReviewStatesTable extends ReviewStates
+    with TableInfo<$ReviewStatesTable, ReviewState> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $ReviewStatesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _profileIdMeta = const VerificationMeta(
+    'profileId',
+  );
+  @override
+  late final GeneratedColumn<int> profileId = GeneratedColumn<int>(
+    'profile_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _cardIdMeta = const VerificationMeta('cardId');
+  @override
+  late final GeneratedColumn<String> cardId = GeneratedColumn<String>(
+    'card_id',
     aliasedName,
     false,
     type: DriftSqlType.string,
     requiredDuringInsert: true,
   );
-  static const VerificationMeta _reversedMeta = const VerificationMeta('reversed');
+  static const VerificationMeta _reversedMeta = const VerificationMeta(
+    'reversed',
+  );
   @override
   late final GeneratedColumn<bool> reversed = GeneratedColumn<bool>(
     'reversed',
@@ -43,7 +539,9 @@ class $ReviewStatesTable extends ReviewStates with TableInfo<$ReviewStatesTable,
     false,
     type: DriftSqlType.bool,
     requiredDuringInsert: true,
-    defaultConstraints: GeneratedColumn.constraintIsAlways('CHECK ("reversed" IN (0, 1))'),
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("reversed" IN (0, 1))',
+    ),
   );
   static const VerificationMeta _stateMeta = const VerificationMeta('state');
   @override
@@ -63,7 +561,9 @@ class $ReviewStatesTable extends ReviewStates with TableInfo<$ReviewStatesTable,
     type: DriftSqlType.int,
     requiredDuringInsert: false,
   );
-  static const VerificationMeta _stabilityMeta = const VerificationMeta('stability');
+  static const VerificationMeta _stabilityMeta = const VerificationMeta(
+    'stability',
+  );
   @override
   late final GeneratedColumn<double> stability = GeneratedColumn<double>(
     'stability',
@@ -72,7 +572,9 @@ class $ReviewStatesTable extends ReviewStates with TableInfo<$ReviewStatesTable,
     type: DriftSqlType.double,
     requiredDuringInsert: false,
   );
-  static const VerificationMeta _difficultyMeta = const VerificationMeta('difficulty');
+  static const VerificationMeta _difficultyMeta = const VerificationMeta(
+    'difficulty',
+  );
   @override
   late final GeneratedColumn<double> difficulty = GeneratedColumn<double>(
     'difficulty',
@@ -90,7 +592,9 @@ class $ReviewStatesTable extends ReviewStates with TableInfo<$ReviewStatesTable,
     type: DriftSqlType.dateTime,
     requiredDuringInsert: true,
   );
-  static const VerificationMeta _lastReviewMeta = const VerificationMeta('lastReview');
+  static const VerificationMeta _lastReviewMeta = const VerificationMeta(
+    'lastReview',
+  );
   @override
   late final GeneratedColumn<DateTime> lastReview = GeneratedColumn<DateTime>(
     'last_review',
@@ -121,9 +625,8 @@ class $ReviewStatesTable extends ReviewStates with TableInfo<$ReviewStatesTable,
   );
   @override
   List<GeneratedColumn> get $columns => [
+    profileId,
     cardId,
-    target,
-    native,
     reversed,
     state,
     step,
@@ -146,20 +649,21 @@ class $ReviewStatesTable extends ReviewStates with TableInfo<$ReviewStatesTable,
   }) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
+    if (data.containsKey('profile_id')) {
+      context.handle(
+        _profileIdMeta,
+        profileId.isAcceptableOrUnknown(data['profile_id']!, _profileIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_profileIdMeta);
+    }
     if (data.containsKey('card_id')) {
-      context.handle(_cardIdMeta, cardId.isAcceptableOrUnknown(data['card_id']!, _cardIdMeta));
+      context.handle(
+        _cardIdMeta,
+        cardId.isAcceptableOrUnknown(data['card_id']!, _cardIdMeta),
+      );
     } else if (isInserting) {
       context.missing(_cardIdMeta);
-    }
-    if (data.containsKey('target')) {
-      context.handle(_targetMeta, target.isAcceptableOrUnknown(data['target']!, _targetMeta));
-    } else if (isInserting) {
-      context.missing(_targetMeta);
-    }
-    if (data.containsKey('native')) {
-      context.handle(_nativeMeta, native.isAcceptableOrUnknown(data['native']!, _nativeMeta));
-    } else if (isInserting) {
-      context.missing(_nativeMeta);
     }
     if (data.containsKey('reversed')) {
       context.handle(
@@ -170,12 +674,18 @@ class $ReviewStatesTable extends ReviewStates with TableInfo<$ReviewStatesTable,
       context.missing(_reversedMeta);
     }
     if (data.containsKey('state')) {
-      context.handle(_stateMeta, state.isAcceptableOrUnknown(data['state']!, _stateMeta));
+      context.handle(
+        _stateMeta,
+        state.isAcceptableOrUnknown(data['state']!, _stateMeta),
+      );
     } else if (isInserting) {
       context.missing(_stateMeta);
     }
     if (data.containsKey('step')) {
-      context.handle(_stepMeta, step.isAcceptableOrUnknown(data['step']!, _stepMeta));
+      context.handle(
+        _stepMeta,
+        step.isAcceptableOrUnknown(data['step']!, _stepMeta),
+      );
     }
     if (data.containsKey('stability')) {
       context.handle(
@@ -190,7 +700,10 @@ class $ReviewStatesTable extends ReviewStates with TableInfo<$ReviewStatesTable,
       );
     }
     if (data.containsKey('due')) {
-      context.handle(_dueMeta, due.isAcceptableOrUnknown(data['due']!, _dueMeta));
+      context.handle(
+        _dueMeta,
+        due.isAcceptableOrUnknown(data['due']!, _dueMeta),
+      );
     } else if (isInserting) {
       context.missing(_dueMeta);
     }
@@ -201,38 +714,46 @@ class $ReviewStatesTable extends ReviewStates with TableInfo<$ReviewStatesTable,
       );
     }
     if (data.containsKey('reps')) {
-      context.handle(_repsMeta, reps.isAcceptableOrUnknown(data['reps']!, _repsMeta));
+      context.handle(
+        _repsMeta,
+        reps.isAcceptableOrUnknown(data['reps']!, _repsMeta),
+      );
     }
     if (data.containsKey('lapses')) {
-      context.handle(_lapsesMeta, lapses.isAcceptableOrUnknown(data['lapses']!, _lapsesMeta));
+      context.handle(
+        _lapsesMeta,
+        lapses.isAcceptableOrUnknown(data['lapses']!, _lapsesMeta),
+      );
     }
     return context;
   }
 
   @override
-  Set<GeneratedColumn> get $primaryKey => {cardId, target, native, reversed};
+  Set<GeneratedColumn> get $primaryKey => {profileId, cardId, reversed};
   @override
   ReviewState map(Map<String, dynamic> data, {String? tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
     return ReviewState(
+      profileId: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}profile_id'],
+      )!,
       cardId: attachedDatabase.typeMapping.read(
         DriftSqlType.string,
         data['${effectivePrefix}card_id'],
-      )!,
-      target: attachedDatabase.typeMapping.read(
-        DriftSqlType.string,
-        data['${effectivePrefix}target'],
-      )!,
-      native: attachedDatabase.typeMapping.read(
-        DriftSqlType.string,
-        data['${effectivePrefix}native'],
       )!,
       reversed: attachedDatabase.typeMapping.read(
         DriftSqlType.bool,
         data['${effectivePrefix}reversed'],
       )!,
-      state: attachedDatabase.typeMapping.read(DriftSqlType.int, data['${effectivePrefix}state'])!,
-      step: attachedDatabase.typeMapping.read(DriftSqlType.int, data['${effectivePrefix}step']),
+      state: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}state'],
+      )!,
+      step: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}step'],
+      ),
       stability: attachedDatabase.typeMapping.read(
         DriftSqlType.double,
         data['${effectivePrefix}stability'],
@@ -241,12 +762,18 @@ class $ReviewStatesTable extends ReviewStates with TableInfo<$ReviewStatesTable,
         DriftSqlType.double,
         data['${effectivePrefix}difficulty'],
       ),
-      due: attachedDatabase.typeMapping.read(DriftSqlType.dateTime, data['${effectivePrefix}due'])!,
+      due: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}due'],
+      )!,
       lastReview: attachedDatabase.typeMapping.read(
         DriftSqlType.dateTime,
         data['${effectivePrefix}last_review'],
       ),
-      reps: attachedDatabase.typeMapping.read(DriftSqlType.int, data['${effectivePrefix}reps'])!,
+      reps: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}reps'],
+      )!,
       lapses: attachedDatabase.typeMapping.read(
         DriftSqlType.int,
         data['${effectivePrefix}lapses'],
@@ -261,9 +788,8 @@ class $ReviewStatesTable extends ReviewStates with TableInfo<$ReviewStatesTable,
 }
 
 class ReviewState extends DataClass implements Insertable<ReviewState> {
+  final int profileId;
   final String cardId;
-  final String target;
-  final String native;
   final bool reversed;
 
   /// FSRS state: 1 learning, 2 review, 3 relearning.
@@ -276,9 +802,8 @@ class ReviewState extends DataClass implements Insertable<ReviewState> {
   final int reps;
   final int lapses;
   const ReviewState({
+    required this.profileId,
     required this.cardId,
-    required this.target,
-    required this.native,
     required this.reversed,
     required this.state,
     this.step,
@@ -292,9 +817,8 @@ class ReviewState extends DataClass implements Insertable<ReviewState> {
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
+    map['profile_id'] = Variable<int>(profileId);
     map['card_id'] = Variable<String>(cardId);
-    map['target'] = Variable<String>(target);
-    map['native'] = Variable<String>(native);
     map['reversed'] = Variable<bool>(reversed);
     map['state'] = Variable<int>(state);
     if (!nullToAbsent || step != null) {
@@ -317,27 +841,34 @@ class ReviewState extends DataClass implements Insertable<ReviewState> {
 
   ReviewStatesCompanion toCompanion(bool nullToAbsent) {
     return ReviewStatesCompanion(
+      profileId: Value(profileId),
       cardId: Value(cardId),
-      target: Value(target),
-      native: Value(native),
       reversed: Value(reversed),
       state: Value(state),
       step: step == null && nullToAbsent ? const Value.absent() : Value(step),
-      stability: stability == null && nullToAbsent ? const Value.absent() : Value(stability),
-      difficulty: difficulty == null && nullToAbsent ? const Value.absent() : Value(difficulty),
+      stability: stability == null && nullToAbsent
+          ? const Value.absent()
+          : Value(stability),
+      difficulty: difficulty == null && nullToAbsent
+          ? const Value.absent()
+          : Value(difficulty),
       due: Value(due),
-      lastReview: lastReview == null && nullToAbsent ? const Value.absent() : Value(lastReview),
+      lastReview: lastReview == null && nullToAbsent
+          ? const Value.absent()
+          : Value(lastReview),
       reps: Value(reps),
       lapses: Value(lapses),
     );
   }
 
-  factory ReviewState.fromJson(Map<String, dynamic> json, {ValueSerializer? serializer}) {
+  factory ReviewState.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return ReviewState(
+      profileId: serializer.fromJson<int>(json['profileId']),
       cardId: serializer.fromJson<String>(json['cardId']),
-      target: serializer.fromJson<String>(json['target']),
-      native: serializer.fromJson<String>(json['native']),
       reversed: serializer.fromJson<bool>(json['reversed']),
       state: serializer.fromJson<int>(json['state']),
       step: serializer.fromJson<int?>(json['step']),
@@ -353,9 +884,8 @@ class ReviewState extends DataClass implements Insertable<ReviewState> {
   Map<String, dynamic> toJson({ValueSerializer? serializer}) {
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return <String, dynamic>{
+      'profileId': serializer.toJson<int>(profileId),
       'cardId': serializer.toJson<String>(cardId),
-      'target': serializer.toJson<String>(target),
-      'native': serializer.toJson<String>(native),
       'reversed': serializer.toJson<bool>(reversed),
       'state': serializer.toJson<int>(state),
       'step': serializer.toJson<int?>(step),
@@ -369,9 +899,8 @@ class ReviewState extends DataClass implements Insertable<ReviewState> {
   }
 
   ReviewState copyWith({
+    int? profileId,
     String? cardId,
-    String? target,
-    String? native,
     bool? reversed,
     int? state,
     Value<int?> step = const Value.absent(),
@@ -382,9 +911,8 @@ class ReviewState extends DataClass implements Insertable<ReviewState> {
     int? reps,
     int? lapses,
   }) => ReviewState(
+    profileId: profileId ?? this.profileId,
     cardId: cardId ?? this.cardId,
-    target: target ?? this.target,
-    native: native ?? this.native,
     reversed: reversed ?? this.reversed,
     state: state ?? this.state,
     step: step.present ? step.value : this.step,
@@ -397,16 +925,19 @@ class ReviewState extends DataClass implements Insertable<ReviewState> {
   );
   ReviewState copyWithCompanion(ReviewStatesCompanion data) {
     return ReviewState(
+      profileId: data.profileId.present ? data.profileId.value : this.profileId,
       cardId: data.cardId.present ? data.cardId.value : this.cardId,
-      target: data.target.present ? data.target.value : this.target,
-      native: data.native.present ? data.native.value : this.native,
       reversed: data.reversed.present ? data.reversed.value : this.reversed,
       state: data.state.present ? data.state.value : this.state,
       step: data.step.present ? data.step.value : this.step,
       stability: data.stability.present ? data.stability.value : this.stability,
-      difficulty: data.difficulty.present ? data.difficulty.value : this.difficulty,
+      difficulty: data.difficulty.present
+          ? data.difficulty.value
+          : this.difficulty,
       due: data.due.present ? data.due.value : this.due,
-      lastReview: data.lastReview.present ? data.lastReview.value : this.lastReview,
+      lastReview: data.lastReview.present
+          ? data.lastReview.value
+          : this.lastReview,
       reps: data.reps.present ? data.reps.value : this.reps,
       lapses: data.lapses.present ? data.lapses.value : this.lapses,
     );
@@ -415,9 +946,8 @@ class ReviewState extends DataClass implements Insertable<ReviewState> {
   @override
   String toString() {
     return (StringBuffer('ReviewState(')
+          ..write('profileId: $profileId, ')
           ..write('cardId: $cardId, ')
-          ..write('target: $target, ')
-          ..write('native: $native, ')
           ..write('reversed: $reversed, ')
           ..write('state: $state, ')
           ..write('step: $step, ')
@@ -433,9 +963,8 @@ class ReviewState extends DataClass implements Insertable<ReviewState> {
 
   @override
   int get hashCode => Object.hash(
+    profileId,
     cardId,
-    target,
-    native,
     reversed,
     state,
     step,
@@ -450,9 +979,8 @@ class ReviewState extends DataClass implements Insertable<ReviewState> {
   bool operator ==(Object other) =>
       identical(this, other) ||
       (other is ReviewState &&
+          other.profileId == this.profileId &&
           other.cardId == this.cardId &&
-          other.target == this.target &&
-          other.native == this.native &&
           other.reversed == this.reversed &&
           other.state == this.state &&
           other.step == this.step &&
@@ -465,9 +993,8 @@ class ReviewState extends DataClass implements Insertable<ReviewState> {
 }
 
 class ReviewStatesCompanion extends UpdateCompanion<ReviewState> {
+  final Value<int> profileId;
   final Value<String> cardId;
-  final Value<String> target;
-  final Value<String> native;
   final Value<bool> reversed;
   final Value<int> state;
   final Value<int?> step;
@@ -479,9 +1006,8 @@ class ReviewStatesCompanion extends UpdateCompanion<ReviewState> {
   final Value<int> lapses;
   final Value<int> rowid;
   const ReviewStatesCompanion({
+    this.profileId = const Value.absent(),
     this.cardId = const Value.absent(),
-    this.target = const Value.absent(),
-    this.native = const Value.absent(),
     this.reversed = const Value.absent(),
     this.state = const Value.absent(),
     this.step = const Value.absent(),
@@ -494,9 +1020,8 @@ class ReviewStatesCompanion extends UpdateCompanion<ReviewState> {
     this.rowid = const Value.absent(),
   });
   ReviewStatesCompanion.insert({
+    required int profileId,
     required String cardId,
-    required String target,
-    required String native,
     required bool reversed,
     required int state,
     this.step = const Value.absent(),
@@ -507,16 +1032,14 @@ class ReviewStatesCompanion extends UpdateCompanion<ReviewState> {
     this.reps = const Value.absent(),
     this.lapses = const Value.absent(),
     this.rowid = const Value.absent(),
-  }) : cardId = Value(cardId),
-       target = Value(target),
-       native = Value(native),
+  }) : profileId = Value(profileId),
+       cardId = Value(cardId),
        reversed = Value(reversed),
        state = Value(state),
        due = Value(due);
   static Insertable<ReviewState> custom({
+    Expression<int>? profileId,
     Expression<String>? cardId,
-    Expression<String>? target,
-    Expression<String>? native,
     Expression<bool>? reversed,
     Expression<int>? state,
     Expression<int>? step,
@@ -529,9 +1052,8 @@ class ReviewStatesCompanion extends UpdateCompanion<ReviewState> {
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
+      if (profileId != null) 'profile_id': profileId,
       if (cardId != null) 'card_id': cardId,
-      if (target != null) 'target': target,
-      if (native != null) 'native': native,
       if (reversed != null) 'reversed': reversed,
       if (state != null) 'state': state,
       if (step != null) 'step': step,
@@ -546,9 +1068,8 @@ class ReviewStatesCompanion extends UpdateCompanion<ReviewState> {
   }
 
   ReviewStatesCompanion copyWith({
+    Value<int>? profileId,
     Value<String>? cardId,
-    Value<String>? target,
-    Value<String>? native,
     Value<bool>? reversed,
     Value<int>? state,
     Value<int?>? step,
@@ -561,9 +1082,8 @@ class ReviewStatesCompanion extends UpdateCompanion<ReviewState> {
     Value<int>? rowid,
   }) {
     return ReviewStatesCompanion(
+      profileId: profileId ?? this.profileId,
       cardId: cardId ?? this.cardId,
-      target: target ?? this.target,
-      native: native ?? this.native,
       reversed: reversed ?? this.reversed,
       state: state ?? this.state,
       step: step ?? this.step,
@@ -580,14 +1100,11 @@ class ReviewStatesCompanion extends UpdateCompanion<ReviewState> {
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
+    if (profileId.present) {
+      map['profile_id'] = Variable<int>(profileId.value);
+    }
     if (cardId.present) {
       map['card_id'] = Variable<String>(cardId.value);
-    }
-    if (target.present) {
-      map['target'] = Variable<String>(target.value);
-    }
-    if (native.present) {
-      map['native'] = Variable<String>(native.value);
     }
     if (reversed.present) {
       map['reversed'] = Variable<bool>(reversed.value);
@@ -625,9 +1142,8 @@ class ReviewStatesCompanion extends UpdateCompanion<ReviewState> {
   @override
   String toString() {
     return (StringBuffer('ReviewStatesCompanion(')
+          ..write('profileId: $profileId, ')
           ..write('cardId: $cardId, ')
-          ..write('target: $target, ')
-          ..write('native: $native, ')
           ..write('reversed: $reversed, ')
           ..write('state: $state, ')
           ..write('step: $step, ')
@@ -643,7 +1159,8 @@ class ReviewStatesCompanion extends UpdateCompanion<ReviewState> {
   }
 }
 
-class $ReviewLogsTable extends ReviewLogs with TableInfo<$ReviewLogsTable, ReviewLog> {
+class $ReviewLogsTable extends ReviewLogs
+    with TableInfo<$ReviewLogsTable, ReviewLog> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -657,7 +1174,20 @@ class $ReviewLogsTable extends ReviewLogs with TableInfo<$ReviewLogsTable, Revie
     hasAutoIncrement: true,
     type: DriftSqlType.int,
     requiredDuringInsert: false,
-    defaultConstraints: GeneratedColumn.constraintIsAlways('PRIMARY KEY AUTOINCREMENT'),
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'PRIMARY KEY AUTOINCREMENT',
+    ),
+  );
+  static const VerificationMeta _profileIdMeta = const VerificationMeta(
+    'profileId',
+  );
+  @override
+  late final GeneratedColumn<int> profileId = GeneratedColumn<int>(
+    'profile_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
   );
   static const VerificationMeta _cardIdMeta = const VerificationMeta('cardId');
   @override
@@ -668,25 +1198,9 @@ class $ReviewLogsTable extends ReviewLogs with TableInfo<$ReviewLogsTable, Revie
     type: DriftSqlType.string,
     requiredDuringInsert: true,
   );
-  static const VerificationMeta _targetMeta = const VerificationMeta('target');
-  @override
-  late final GeneratedColumn<String> target = GeneratedColumn<String>(
-    'target',
-    aliasedName,
-    false,
-    type: DriftSqlType.string,
-    requiredDuringInsert: true,
+  static const VerificationMeta _reversedMeta = const VerificationMeta(
+    'reversed',
   );
-  static const VerificationMeta _nativeMeta = const VerificationMeta('native');
-  @override
-  late final GeneratedColumn<String> native = GeneratedColumn<String>(
-    'native',
-    aliasedName,
-    false,
-    type: DriftSqlType.string,
-    requiredDuringInsert: true,
-  );
-  static const VerificationMeta _reversedMeta = const VerificationMeta('reversed');
   @override
   late final GeneratedColumn<bool> reversed = GeneratedColumn<bool>(
     'reversed',
@@ -694,7 +1208,9 @@ class $ReviewLogsTable extends ReviewLogs with TableInfo<$ReviewLogsTable, Revie
     false,
     type: DriftSqlType.bool,
     requiredDuringInsert: true,
-    defaultConstraints: GeneratedColumn.constraintIsAlways('CHECK ("reversed" IN (0, 1))'),
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("reversed" IN (0, 1))',
+    ),
   );
   static const VerificationMeta _ratingMeta = const VerificationMeta('rating');
   @override
@@ -713,9 +1229,13 @@ class $ReviewLogsTable extends ReviewLogs with TableInfo<$ReviewLogsTable, Revie
     false,
     type: DriftSqlType.bool,
     requiredDuringInsert: true,
-    defaultConstraints: GeneratedColumn.constraintIsAlways('CHECK ("was_new" IN (0, 1))'),
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("was_new" IN (0, 1))',
+    ),
   );
-  static const VerificationMeta _reviewedAtMeta = const VerificationMeta('reviewedAt');
+  static const VerificationMeta _reviewedAtMeta = const VerificationMeta(
+    'reviewedAt',
+  );
   @override
   late final GeneratedColumn<DateTime> reviewedAt = GeneratedColumn<DateTime>(
     'reviewed_at',
@@ -727,9 +1247,8 @@ class $ReviewLogsTable extends ReviewLogs with TableInfo<$ReviewLogsTable, Revie
   @override
   List<GeneratedColumn> get $columns => [
     id,
+    profileId,
     cardId,
-    target,
-    native,
     reversed,
     rating,
     wasNew,
@@ -750,20 +1269,21 @@ class $ReviewLogsTable extends ReviewLogs with TableInfo<$ReviewLogsTable, Revie
     if (data.containsKey('id')) {
       context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
     }
+    if (data.containsKey('profile_id')) {
+      context.handle(
+        _profileIdMeta,
+        profileId.isAcceptableOrUnknown(data['profile_id']!, _profileIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_profileIdMeta);
+    }
     if (data.containsKey('card_id')) {
-      context.handle(_cardIdMeta, cardId.isAcceptableOrUnknown(data['card_id']!, _cardIdMeta));
+      context.handle(
+        _cardIdMeta,
+        cardId.isAcceptableOrUnknown(data['card_id']!, _cardIdMeta),
+      );
     } else if (isInserting) {
       context.missing(_cardIdMeta);
-    }
-    if (data.containsKey('target')) {
-      context.handle(_targetMeta, target.isAcceptableOrUnknown(data['target']!, _targetMeta));
-    } else if (isInserting) {
-      context.missing(_targetMeta);
-    }
-    if (data.containsKey('native')) {
-      context.handle(_nativeMeta, native.isAcceptableOrUnknown(data['native']!, _nativeMeta));
-    } else if (isInserting) {
-      context.missing(_nativeMeta);
     }
     if (data.containsKey('reversed')) {
       context.handle(
@@ -774,12 +1294,18 @@ class $ReviewLogsTable extends ReviewLogs with TableInfo<$ReviewLogsTable, Revie
       context.missing(_reversedMeta);
     }
     if (data.containsKey('rating')) {
-      context.handle(_ratingMeta, rating.isAcceptableOrUnknown(data['rating']!, _ratingMeta));
+      context.handle(
+        _ratingMeta,
+        rating.isAcceptableOrUnknown(data['rating']!, _ratingMeta),
+      );
     } else if (isInserting) {
       context.missing(_ratingMeta);
     }
     if (data.containsKey('was_new')) {
-      context.handle(_wasNewMeta, wasNew.isAcceptableOrUnknown(data['was_new']!, _wasNewMeta));
+      context.handle(
+        _wasNewMeta,
+        wasNew.isAcceptableOrUnknown(data['was_new']!, _wasNewMeta),
+      );
     } else if (isInserting) {
       context.missing(_wasNewMeta);
     }
@@ -800,18 +1326,17 @@ class $ReviewLogsTable extends ReviewLogs with TableInfo<$ReviewLogsTable, Revie
   ReviewLog map(Map<String, dynamic> data, {String? tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
     return ReviewLog(
-      id: attachedDatabase.typeMapping.read(DriftSqlType.int, data['${effectivePrefix}id'])!,
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}id'],
+      )!,
+      profileId: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}profile_id'],
+      )!,
       cardId: attachedDatabase.typeMapping.read(
         DriftSqlType.string,
         data['${effectivePrefix}card_id'],
-      )!,
-      target: attachedDatabase.typeMapping.read(
-        DriftSqlType.string,
-        data['${effectivePrefix}target'],
-      )!,
-      native: attachedDatabase.typeMapping.read(
-        DriftSqlType.string,
-        data['${effectivePrefix}native'],
       )!,
       reversed: attachedDatabase.typeMapping.read(
         DriftSqlType.bool,
@@ -840,9 +1365,8 @@ class $ReviewLogsTable extends ReviewLogs with TableInfo<$ReviewLogsTable, Revie
 
 class ReviewLog extends DataClass implements Insertable<ReviewLog> {
   final int id;
+  final int profileId;
   final String cardId;
-  final String target;
-  final String native;
   final bool reversed;
 
   /// 1 again, 2 hard, 3 good, 4 easy.
@@ -853,9 +1377,8 @@ class ReviewLog extends DataClass implements Insertable<ReviewLog> {
   final DateTime reviewedAt;
   const ReviewLog({
     required this.id,
+    required this.profileId,
     required this.cardId,
-    required this.target,
-    required this.native,
     required this.reversed,
     required this.rating,
     required this.wasNew,
@@ -865,9 +1388,8 @@ class ReviewLog extends DataClass implements Insertable<ReviewLog> {
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
     map['id'] = Variable<int>(id);
+    map['profile_id'] = Variable<int>(profileId);
     map['card_id'] = Variable<String>(cardId);
-    map['target'] = Variable<String>(target);
-    map['native'] = Variable<String>(native);
     map['reversed'] = Variable<bool>(reversed);
     map['rating'] = Variable<int>(rating);
     map['was_new'] = Variable<bool>(wasNew);
@@ -878,9 +1400,8 @@ class ReviewLog extends DataClass implements Insertable<ReviewLog> {
   ReviewLogsCompanion toCompanion(bool nullToAbsent) {
     return ReviewLogsCompanion(
       id: Value(id),
+      profileId: Value(profileId),
       cardId: Value(cardId),
-      target: Value(target),
-      native: Value(native),
       reversed: Value(reversed),
       rating: Value(rating),
       wasNew: Value(wasNew),
@@ -888,13 +1409,15 @@ class ReviewLog extends DataClass implements Insertable<ReviewLog> {
     );
   }
 
-  factory ReviewLog.fromJson(Map<String, dynamic> json, {ValueSerializer? serializer}) {
+  factory ReviewLog.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return ReviewLog(
       id: serializer.fromJson<int>(json['id']),
+      profileId: serializer.fromJson<int>(json['profileId']),
       cardId: serializer.fromJson<String>(json['cardId']),
-      target: serializer.fromJson<String>(json['target']),
-      native: serializer.fromJson<String>(json['native']),
       reversed: serializer.fromJson<bool>(json['reversed']),
       rating: serializer.fromJson<int>(json['rating']),
       wasNew: serializer.fromJson<bool>(json['wasNew']),
@@ -906,9 +1429,8 @@ class ReviewLog extends DataClass implements Insertable<ReviewLog> {
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return <String, dynamic>{
       'id': serializer.toJson<int>(id),
+      'profileId': serializer.toJson<int>(profileId),
       'cardId': serializer.toJson<String>(cardId),
-      'target': serializer.toJson<String>(target),
-      'native': serializer.toJson<String>(native),
       'reversed': serializer.toJson<bool>(reversed),
       'rating': serializer.toJson<int>(rating),
       'wasNew': serializer.toJson<bool>(wasNew),
@@ -918,18 +1440,16 @@ class ReviewLog extends DataClass implements Insertable<ReviewLog> {
 
   ReviewLog copyWith({
     int? id,
+    int? profileId,
     String? cardId,
-    String? target,
-    String? native,
     bool? reversed,
     int? rating,
     bool? wasNew,
     DateTime? reviewedAt,
   }) => ReviewLog(
     id: id ?? this.id,
+    profileId: profileId ?? this.profileId,
     cardId: cardId ?? this.cardId,
-    target: target ?? this.target,
-    native: native ?? this.native,
     reversed: reversed ?? this.reversed,
     rating: rating ?? this.rating,
     wasNew: wasNew ?? this.wasNew,
@@ -938,13 +1458,14 @@ class ReviewLog extends DataClass implements Insertable<ReviewLog> {
   ReviewLog copyWithCompanion(ReviewLogsCompanion data) {
     return ReviewLog(
       id: data.id.present ? data.id.value : this.id,
+      profileId: data.profileId.present ? data.profileId.value : this.profileId,
       cardId: data.cardId.present ? data.cardId.value : this.cardId,
-      target: data.target.present ? data.target.value : this.target,
-      native: data.native.present ? data.native.value : this.native,
       reversed: data.reversed.present ? data.reversed.value : this.reversed,
       rating: data.rating.present ? data.rating.value : this.rating,
       wasNew: data.wasNew.present ? data.wasNew.value : this.wasNew,
-      reviewedAt: data.reviewedAt.present ? data.reviewedAt.value : this.reviewedAt,
+      reviewedAt: data.reviewedAt.present
+          ? data.reviewedAt.value
+          : this.reviewedAt,
     );
   }
 
@@ -952,9 +1473,8 @@ class ReviewLog extends DataClass implements Insertable<ReviewLog> {
   String toString() {
     return (StringBuffer('ReviewLog(')
           ..write('id: $id, ')
+          ..write('profileId: $profileId, ')
           ..write('cardId: $cardId, ')
-          ..write('target: $target, ')
-          ..write('native: $native, ')
           ..write('reversed: $reversed, ')
           ..write('rating: $rating, ')
           ..write('wasNew: $wasNew, ')
@@ -964,15 +1484,15 @@ class ReviewLog extends DataClass implements Insertable<ReviewLog> {
   }
 
   @override
-  int get hashCode => Object.hash(id, cardId, target, native, reversed, rating, wasNew, reviewedAt);
+  int get hashCode =>
+      Object.hash(id, profileId, cardId, reversed, rating, wasNew, reviewedAt);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       (other is ReviewLog &&
           other.id == this.id &&
+          other.profileId == this.profileId &&
           other.cardId == this.cardId &&
-          other.target == this.target &&
-          other.native == this.native &&
           other.reversed == this.reversed &&
           other.rating == this.rating &&
           other.wasNew == this.wasNew &&
@@ -981,18 +1501,16 @@ class ReviewLog extends DataClass implements Insertable<ReviewLog> {
 
 class ReviewLogsCompanion extends UpdateCompanion<ReviewLog> {
   final Value<int> id;
+  final Value<int> profileId;
   final Value<String> cardId;
-  final Value<String> target;
-  final Value<String> native;
   final Value<bool> reversed;
   final Value<int> rating;
   final Value<bool> wasNew;
   final Value<DateTime> reviewedAt;
   const ReviewLogsCompanion({
     this.id = const Value.absent(),
+    this.profileId = const Value.absent(),
     this.cardId = const Value.absent(),
-    this.target = const Value.absent(),
-    this.native = const Value.absent(),
     this.reversed = const Value.absent(),
     this.rating = const Value.absent(),
     this.wasNew = const Value.absent(),
@@ -1000,25 +1518,22 @@ class ReviewLogsCompanion extends UpdateCompanion<ReviewLog> {
   });
   ReviewLogsCompanion.insert({
     this.id = const Value.absent(),
+    required int profileId,
     required String cardId,
-    required String target,
-    required String native,
     required bool reversed,
     required int rating,
     required bool wasNew,
     required DateTime reviewedAt,
-  }) : cardId = Value(cardId),
-       target = Value(target),
-       native = Value(native),
+  }) : profileId = Value(profileId),
+       cardId = Value(cardId),
        reversed = Value(reversed),
        rating = Value(rating),
        wasNew = Value(wasNew),
        reviewedAt = Value(reviewedAt);
   static Insertable<ReviewLog> custom({
     Expression<int>? id,
+    Expression<int>? profileId,
     Expression<String>? cardId,
-    Expression<String>? target,
-    Expression<String>? native,
     Expression<bool>? reversed,
     Expression<int>? rating,
     Expression<bool>? wasNew,
@@ -1026,9 +1541,8 @@ class ReviewLogsCompanion extends UpdateCompanion<ReviewLog> {
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
+      if (profileId != null) 'profile_id': profileId,
       if (cardId != null) 'card_id': cardId,
-      if (target != null) 'target': target,
-      if (native != null) 'native': native,
       if (reversed != null) 'reversed': reversed,
       if (rating != null) 'rating': rating,
       if (wasNew != null) 'was_new': wasNew,
@@ -1038,9 +1552,8 @@ class ReviewLogsCompanion extends UpdateCompanion<ReviewLog> {
 
   ReviewLogsCompanion copyWith({
     Value<int>? id,
+    Value<int>? profileId,
     Value<String>? cardId,
-    Value<String>? target,
-    Value<String>? native,
     Value<bool>? reversed,
     Value<int>? rating,
     Value<bool>? wasNew,
@@ -1048,9 +1561,8 @@ class ReviewLogsCompanion extends UpdateCompanion<ReviewLog> {
   }) {
     return ReviewLogsCompanion(
       id: id ?? this.id,
+      profileId: profileId ?? this.profileId,
       cardId: cardId ?? this.cardId,
-      target: target ?? this.target,
-      native: native ?? this.native,
       reversed: reversed ?? this.reversed,
       rating: rating ?? this.rating,
       wasNew: wasNew ?? this.wasNew,
@@ -1064,14 +1576,11 @@ class ReviewLogsCompanion extends UpdateCompanion<ReviewLog> {
     if (id.present) {
       map['id'] = Variable<int>(id.value);
     }
+    if (profileId.present) {
+      map['profile_id'] = Variable<int>(profileId.value);
+    }
     if (cardId.present) {
       map['card_id'] = Variable<String>(cardId.value);
-    }
-    if (target.present) {
-      map['target'] = Variable<String>(target.value);
-    }
-    if (native.present) {
-      map['native'] = Variable<String>(native.value);
     }
     if (reversed.present) {
       map['reversed'] = Variable<bool>(reversed.value);
@@ -1092,9 +1601,8 @@ class ReviewLogsCompanion extends UpdateCompanion<ReviewLog> {
   String toString() {
     return (StringBuffer('ReviewLogsCompanion(')
           ..write('id: $id, ')
+          ..write('profileId: $profileId, ')
           ..write('cardId: $cardId, ')
-          ..write('target: $target, ')
-          ..write('native: $native, ')
           ..write('reversed: $reversed, ')
           ..write('rating: $rating, ')
           ..write('wasNew: $wasNew, ')
@@ -1135,16 +1643,25 @@ class $SettingsTable extends Settings with TableInfo<$SettingsTable, Setting> {
   String get actualTableName => $name;
   static const String $name = 'settings';
   @override
-  VerificationContext validateIntegrity(Insertable<Setting> instance, {bool isInserting = false}) {
+  VerificationContext validateIntegrity(
+    Insertable<Setting> instance, {
+    bool isInserting = false,
+  }) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
     if (data.containsKey('key')) {
-      context.handle(_keyMeta, key.isAcceptableOrUnknown(data['key']!, _keyMeta));
+      context.handle(
+        _keyMeta,
+        key.isAcceptableOrUnknown(data['key']!, _keyMeta),
+      );
     } else if (isInserting) {
       context.missing(_keyMeta);
     }
     if (data.containsKey('value')) {
-      context.handle(_valueMeta, value.isAcceptableOrUnknown(data['value']!, _valueMeta));
+      context.handle(
+        _valueMeta,
+        value.isAcceptableOrUnknown(data['value']!, _valueMeta),
+      );
     } else if (isInserting) {
       context.missing(_valueMeta);
     }
@@ -1157,7 +1674,10 @@ class $SettingsTable extends Settings with TableInfo<$SettingsTable, Setting> {
   Setting map(Map<String, dynamic> data, {String? tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
     return Setting(
-      key: attachedDatabase.typeMapping.read(DriftSqlType.string, data['${effectivePrefix}key'])!,
+      key: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}key'],
+      )!,
       value: attachedDatabase.typeMapping.read(
         DriftSqlType.string,
         data['${effectivePrefix}value'],
@@ -1187,7 +1707,10 @@ class Setting extends DataClass implements Insertable<Setting> {
     return SettingsCompanion(key: Value(key), value: Value(value));
   }
 
-  factory Setting.fromJson(Map<String, dynamic> json, {ValueSerializer? serializer}) {
+  factory Setting.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return Setting(
       key: serializer.fromJson<String>(json['key']),
@@ -1256,7 +1779,11 @@ class SettingsCompanion extends UpdateCompanion<Setting> {
     });
   }
 
-  SettingsCompanion copyWith({Value<String>? key, Value<String>? value, Value<int>? rowid}) {
+  SettingsCompanion copyWith({
+    Value<String>? key,
+    Value<String>? value,
+    Value<int>? rowid,
+  }) {
     return SettingsCompanion(
       key: key ?? this.key,
       value: value ?? this.value,
@@ -1296,6 +1823,17 @@ class $DifficultyOverridesTable extends DifficultyOverrides
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
   $DifficultyOverridesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _profileIdMeta = const VerificationMeta(
+    'profileId',
+  );
+  @override
+  late final GeneratedColumn<int> profileId = GeneratedColumn<int>(
+    'profile_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
   static const VerificationMeta _cardIdMeta = const VerificationMeta('cardId');
   @override
   late final GeneratedColumn<String> cardId = GeneratedColumn<String>(
@@ -1305,16 +1843,9 @@ class $DifficultyOverridesTable extends DifficultyOverrides
     type: DriftSqlType.string,
     requiredDuringInsert: true,
   );
-  static const VerificationMeta _targetMeta = const VerificationMeta('target');
-  @override
-  late final GeneratedColumn<String> target = GeneratedColumn<String>(
-    'target',
-    aliasedName,
-    false,
-    type: DriftSqlType.string,
-    requiredDuringInsert: true,
+  static const VerificationMeta _difficultyMeta = const VerificationMeta(
+    'difficulty',
   );
-  static const VerificationMeta _difficultyMeta = const VerificationMeta('difficulty');
   @override
   late final GeneratedColumn<String> difficulty = GeneratedColumn<String>(
     'difficulty',
@@ -1324,7 +1855,7 @@ class $DifficultyOverridesTable extends DifficultyOverrides
     requiredDuringInsert: true,
   );
   @override
-  List<GeneratedColumn> get $columns => [cardId, target, difficulty];
+  List<GeneratedColumn> get $columns => [profileId, cardId, difficulty];
   @override
   String get aliasedName => _alias ?? actualTableName;
   @override
@@ -1337,15 +1868,21 @@ class $DifficultyOverridesTable extends DifficultyOverrides
   }) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
+    if (data.containsKey('profile_id')) {
+      context.handle(
+        _profileIdMeta,
+        profileId.isAcceptableOrUnknown(data['profile_id']!, _profileIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_profileIdMeta);
+    }
     if (data.containsKey('card_id')) {
-      context.handle(_cardIdMeta, cardId.isAcceptableOrUnknown(data['card_id']!, _cardIdMeta));
+      context.handle(
+        _cardIdMeta,
+        cardId.isAcceptableOrUnknown(data['card_id']!, _cardIdMeta),
+      );
     } else if (isInserting) {
       context.missing(_cardIdMeta);
-    }
-    if (data.containsKey('target')) {
-      context.handle(_targetMeta, target.isAcceptableOrUnknown(data['target']!, _targetMeta));
-    } else if (isInserting) {
-      context.missing(_targetMeta);
     }
     if (data.containsKey('difficulty')) {
       context.handle(
@@ -1359,18 +1896,18 @@ class $DifficultyOverridesTable extends DifficultyOverrides
   }
 
   @override
-  Set<GeneratedColumn> get $primaryKey => {cardId, target};
+  Set<GeneratedColumn> get $primaryKey => {profileId, cardId};
   @override
   DifficultyOverride map(Map<String, dynamic> data, {String? tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
     return DifficultyOverride(
+      profileId: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}profile_id'],
+      )!,
       cardId: attachedDatabase.typeMapping.read(
         DriftSqlType.string,
         data['${effectivePrefix}card_id'],
-      )!,
-      target: attachedDatabase.typeMapping.read(
-        DriftSqlType.string,
-        data['${effectivePrefix}target'],
       )!,
       difficulty: attachedDatabase.typeMapping.read(
         DriftSqlType.string,
@@ -1385,35 +1922,43 @@ class $DifficultyOverridesTable extends DifficultyOverrides
   }
 }
 
-class DifficultyOverride extends DataClass implements Insertable<DifficultyOverride> {
+class DifficultyOverride extends DataClass
+    implements Insertable<DifficultyOverride> {
+  final int profileId;
   final String cardId;
-  final String target;
 
   /// `easy`, `medium` or `advanced`.
   final String difficulty;
-  const DifficultyOverride({required this.cardId, required this.target, required this.difficulty});
+  const DifficultyOverride({
+    required this.profileId,
+    required this.cardId,
+    required this.difficulty,
+  });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
+    map['profile_id'] = Variable<int>(profileId);
     map['card_id'] = Variable<String>(cardId);
-    map['target'] = Variable<String>(target);
     map['difficulty'] = Variable<String>(difficulty);
     return map;
   }
 
   DifficultyOverridesCompanion toCompanion(bool nullToAbsent) {
     return DifficultyOverridesCompanion(
+      profileId: Value(profileId),
       cardId: Value(cardId),
-      target: Value(target),
       difficulty: Value(difficulty),
     );
   }
 
-  factory DifficultyOverride.fromJson(Map<String, dynamic> json, {ValueSerializer? serializer}) {
+  factory DifficultyOverride.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return DifficultyOverride(
+      profileId: serializer.fromJson<int>(json['profileId']),
       cardId: serializer.fromJson<String>(json['cardId']),
-      target: serializer.fromJson<String>(json['target']),
       difficulty: serializer.fromJson<String>(json['difficulty']),
     );
   }
@@ -1421,89 +1966,94 @@ class DifficultyOverride extends DataClass implements Insertable<DifficultyOverr
   Map<String, dynamic> toJson({ValueSerializer? serializer}) {
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return <String, dynamic>{
+      'profileId': serializer.toJson<int>(profileId),
       'cardId': serializer.toJson<String>(cardId),
-      'target': serializer.toJson<String>(target),
       'difficulty': serializer.toJson<String>(difficulty),
     };
   }
 
-  DifficultyOverride copyWith({String? cardId, String? target, String? difficulty}) =>
-      DifficultyOverride(
-        cardId: cardId ?? this.cardId,
-        target: target ?? this.target,
-        difficulty: difficulty ?? this.difficulty,
-      );
+  DifficultyOverride copyWith({
+    int? profileId,
+    String? cardId,
+    String? difficulty,
+  }) => DifficultyOverride(
+    profileId: profileId ?? this.profileId,
+    cardId: cardId ?? this.cardId,
+    difficulty: difficulty ?? this.difficulty,
+  );
   DifficultyOverride copyWithCompanion(DifficultyOverridesCompanion data) {
     return DifficultyOverride(
+      profileId: data.profileId.present ? data.profileId.value : this.profileId,
       cardId: data.cardId.present ? data.cardId.value : this.cardId,
-      target: data.target.present ? data.target.value : this.target,
-      difficulty: data.difficulty.present ? data.difficulty.value : this.difficulty,
+      difficulty: data.difficulty.present
+          ? data.difficulty.value
+          : this.difficulty,
     );
   }
 
   @override
   String toString() {
     return (StringBuffer('DifficultyOverride(')
+          ..write('profileId: $profileId, ')
           ..write('cardId: $cardId, ')
-          ..write('target: $target, ')
           ..write('difficulty: $difficulty')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode => Object.hash(cardId, target, difficulty);
+  int get hashCode => Object.hash(profileId, cardId, difficulty);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       (other is DifficultyOverride &&
+          other.profileId == this.profileId &&
           other.cardId == this.cardId &&
-          other.target == this.target &&
           other.difficulty == this.difficulty);
 }
 
 class DifficultyOverridesCompanion extends UpdateCompanion<DifficultyOverride> {
+  final Value<int> profileId;
   final Value<String> cardId;
-  final Value<String> target;
   final Value<String> difficulty;
   final Value<int> rowid;
   const DifficultyOverridesCompanion({
+    this.profileId = const Value.absent(),
     this.cardId = const Value.absent(),
-    this.target = const Value.absent(),
     this.difficulty = const Value.absent(),
     this.rowid = const Value.absent(),
   });
   DifficultyOverridesCompanion.insert({
+    required int profileId,
     required String cardId,
-    required String target,
     required String difficulty,
     this.rowid = const Value.absent(),
-  }) : cardId = Value(cardId),
-       target = Value(target),
+  }) : profileId = Value(profileId),
+       cardId = Value(cardId),
        difficulty = Value(difficulty);
   static Insertable<DifficultyOverride> custom({
+    Expression<int>? profileId,
     Expression<String>? cardId,
-    Expression<String>? target,
     Expression<String>? difficulty,
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
+      if (profileId != null) 'profile_id': profileId,
       if (cardId != null) 'card_id': cardId,
-      if (target != null) 'target': target,
       if (difficulty != null) 'difficulty': difficulty,
       if (rowid != null) 'rowid': rowid,
     });
   }
 
   DifficultyOverridesCompanion copyWith({
+    Value<int>? profileId,
     Value<String>? cardId,
-    Value<String>? target,
     Value<String>? difficulty,
     Value<int>? rowid,
   }) {
     return DifficultyOverridesCompanion(
+      profileId: profileId ?? this.profileId,
       cardId: cardId ?? this.cardId,
-      target: target ?? this.target,
       difficulty: difficulty ?? this.difficulty,
       rowid: rowid ?? this.rowid,
     );
@@ -1512,11 +2062,11 @@ class DifficultyOverridesCompanion extends UpdateCompanion<DifficultyOverride> {
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
+    if (profileId.present) {
+      map['profile_id'] = Variable<int>(profileId.value);
+    }
     if (cardId.present) {
       map['card_id'] = Variable<String>(cardId.value);
-    }
-    if (target.present) {
-      map['target'] = Variable<String>(target.value);
     }
     if (difficulty.present) {
       map['difficulty'] = Variable<String>(difficulty.value);
@@ -1530,8 +2080,8 @@ class DifficultyOverridesCompanion extends UpdateCompanion<DifficultyOverride> {
   @override
   String toString() {
     return (StringBuffer('DifficultyOverridesCompanion(')
+          ..write('profileId: $profileId, ')
           ..write('cardId: $cardId, ')
-          ..write('target: $target, ')
           ..write('difficulty: $difficulty, ')
           ..write('rowid: $rowid')
           ..write(')'))
@@ -1542,15 +2092,18 @@ class DifficultyOverridesCompanion extends UpdateCompanion<DifficultyOverride> {
 abstract class _$ProgressDatabase extends GeneratedDatabase {
   _$ProgressDatabase(QueryExecutor e) : super(e);
   $ProgressDatabaseManager get managers => $ProgressDatabaseManager(this);
+  late final $ProfilesTable profiles = $ProfilesTable(this);
   late final $ReviewStatesTable reviewStates = $ReviewStatesTable(this);
   late final $ReviewLogsTable reviewLogs = $ReviewLogsTable(this);
   late final $SettingsTable settings = $SettingsTable(this);
-  late final $DifficultyOverridesTable difficultyOverrides = $DifficultyOverridesTable(this);
+  late final $DifficultyOverridesTable difficultyOverrides =
+      $DifficultyOverridesTable(this);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
   @override
   List<DatabaseSchemaEntity> get allSchemaEntities => [
+    profiles,
     reviewStates,
     reviewLogs,
     settings,
@@ -1558,38 +2111,297 @@ abstract class _$ProgressDatabase extends GeneratedDatabase {
   ];
 }
 
-typedef $$ReviewStatesTableCreateCompanionBuilder = ReviewStatesCompanion Function({
-  required String cardId,
-  required String target,
+typedef $$ProfilesTableCreateCompanionBuilder = ProfilesCompanion Function({
+  Value<int> id,
+  Value<String?> name,
   required String native,
-  required bool reversed,
-  required int state,
-  Value<int?> step,
-  Value<double?> stability,
-  Value<double?> difficulty,
-  required DateTime due,
-  Value<DateTime?> lastReview,
-  Value<int> reps,
-  Value<int> lapses,
-  Value<int> rowid,
-});
-typedef $$ReviewStatesTableUpdateCompanionBuilder = ReviewStatesCompanion Function({
-  Value<String> cardId,
-  Value<String> target,
-  Value<String> native,
+  required String target,
+  Value<String?> level,
+  Value<int> dailyGoal,
   Value<bool> reversed,
-  Value<int> state,
-  Value<int?> step,
-  Value<double?> stability,
-  Value<double?> difficulty,
-  Value<DateTime> due,
-  Value<DateTime?> lastReview,
-  Value<int> reps,
-  Value<int> lapses,
-  Value<int> rowid,
+  Value<bool> showForms,
+});
+typedef $$ProfilesTableUpdateCompanionBuilder = ProfilesCompanion Function({
+  Value<int> id,
+  Value<String?> name,
+  Value<String> native,
+  Value<String> target,
+  Value<String?> level,
+  Value<int> dailyGoal,
+  Value<bool> reversed,
+  Value<bool> showForms,
 });
 
-class $$ReviewStatesTableFilterComposer extends Composer<_$ProgressDatabase, $ReviewStatesTable> {
+class $$ProfilesTableFilterComposer
+    extends Composer<_$ProgressDatabase, $ProfilesTable> {
+  $$ProfilesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get native => $composableBuilder(
+    column: $table.native,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get target => $composableBuilder(
+    column: $table.target,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get level => $composableBuilder(
+    column: $table.level,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get dailyGoal => $composableBuilder(
+    column: $table.dailyGoal,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get reversed => $composableBuilder(
+    column: $table.reversed,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get showForms => $composableBuilder(
+    column: $table.showForms,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$ProfilesTableOrderingComposer
+    extends Composer<_$ProgressDatabase, $ProfilesTable> {
+  $$ProfilesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get native => $composableBuilder(
+    column: $table.native,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get target => $composableBuilder(
+    column: $table.target,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get level => $composableBuilder(
+    column: $table.level,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get dailyGoal => $composableBuilder(
+    column: $table.dailyGoal,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get reversed => $composableBuilder(
+    column: $table.reversed,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get showForms => $composableBuilder(
+    column: $table.showForms,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$ProfilesTableAnnotationComposer
+    extends Composer<_$ProgressDatabase, $ProfilesTable> {
+  $$ProfilesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get name =>
+      $composableBuilder(column: $table.name, builder: (column) => column);
+
+  GeneratedColumn<String> get native =>
+      $composableBuilder(column: $table.native, builder: (column) => column);
+
+  GeneratedColumn<String> get target =>
+      $composableBuilder(column: $table.target, builder: (column) => column);
+
+  GeneratedColumn<String> get level =>
+      $composableBuilder(column: $table.level, builder: (column) => column);
+
+  GeneratedColumn<int> get dailyGoal =>
+      $composableBuilder(column: $table.dailyGoal, builder: (column) => column);
+
+  GeneratedColumn<bool> get reversed =>
+      $composableBuilder(column: $table.reversed, builder: (column) => column);
+
+  GeneratedColumn<bool> get showForms =>
+      $composableBuilder(column: $table.showForms, builder: (column) => column);
+}
+
+class $$ProfilesTableTableManager
+    extends
+        RootTableManager<
+          _$ProgressDatabase,
+          $ProfilesTable,
+          ProfileRow,
+          $$ProfilesTableFilterComposer,
+          $$ProfilesTableOrderingComposer,
+          $$ProfilesTableAnnotationComposer,
+          $$ProfilesTableCreateCompanionBuilder,
+          $$ProfilesTableUpdateCompanionBuilder,
+          (
+            ProfileRow,
+            BaseReferences<_$ProgressDatabase, $ProfilesTable, ProfileRow>,
+          ),
+          ProfileRow,
+          PrefetchHooks Function()
+        > {
+  $$ProfilesTableTableManager(_$ProgressDatabase db, $ProfilesTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$ProfilesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$ProfilesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$ProfilesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                Value<String?> name = const Value.absent(),
+                Value<String> native = const Value.absent(),
+                Value<String> target = const Value.absent(),
+                Value<String?> level = const Value.absent(),
+                Value<int> dailyGoal = const Value.absent(),
+                Value<bool> reversed = const Value.absent(),
+                Value<bool> showForms = const Value.absent(),
+              }) => ProfilesCompanion(
+                id: id,
+                name: name,
+                native: native,
+                target: target,
+                level: level,
+                dailyGoal: dailyGoal,
+                reversed: reversed,
+                showForms: showForms,
+              ),
+          createCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                Value<String?> name = const Value.absent(),
+                required String native,
+                required String target,
+                Value<String?> level = const Value.absent(),
+                Value<int> dailyGoal = const Value.absent(),
+                Value<bool> reversed = const Value.absent(),
+                Value<bool> showForms = const Value.absent(),
+              }) => ProfilesCompanion.insert(
+                id: id,
+                name: name,
+                native: native,
+                target: target,
+                level: level,
+                dailyGoal: dailyGoal,
+                reversed: reversed,
+                showForms: showForms,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable<$ProfilesTable, ProfileRow>(table),
+                  BaseReferences<
+                    _$ProgressDatabase,
+                    $ProfilesTable,
+                    ProfileRow
+                  >(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$ProfilesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$ProgressDatabase,
+      $ProfilesTable,
+      ProfileRow,
+      $$ProfilesTableFilterComposer,
+      $$ProfilesTableOrderingComposer,
+      $$ProfilesTableAnnotationComposer,
+      $$ProfilesTableCreateCompanionBuilder,
+      $$ProfilesTableUpdateCompanionBuilder,
+      (
+        ProfileRow,
+        BaseReferences<_$ProgressDatabase, $ProfilesTable, ProfileRow>,
+      ),
+      ProfileRow,
+      PrefetchHooks Function()
+    >;
+typedef $$ReviewStatesTableCreateCompanionBuilder =
+    ReviewStatesCompanion Function({
+      required int profileId,
+      required String cardId,
+      required bool reversed,
+      required int state,
+      Value<int?> step,
+      Value<double?> stability,
+      Value<double?> difficulty,
+      required DateTime due,
+      Value<DateTime?> lastReview,
+      Value<int> reps,
+      Value<int> lapses,
+      Value<int> rowid,
+    });
+typedef $$ReviewStatesTableUpdateCompanionBuilder =
+    ReviewStatesCompanion Function({
+      Value<int> profileId,
+      Value<String> cardId,
+      Value<bool> reversed,
+      Value<int> state,
+      Value<int?> step,
+      Value<double?> stability,
+      Value<double?> difficulty,
+      Value<DateTime> due,
+      Value<DateTime?> lastReview,
+      Value<int> reps,
+      Value<int> lapses,
+      Value<int> rowid,
+    });
+
+class $$ReviewStatesTableFilterComposer
+    extends Composer<_$ProgressDatabase, $ReviewStatesTable> {
   $$ReviewStatesTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -1597,44 +2409,64 @@ class $$ReviewStatesTableFilterComposer extends Composer<_$ProgressDatabase, $Re
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  ColumnFilters<String> get cardId =>
-      $composableBuilder(column: $table.cardId, builder: (column) => ColumnFilters(column));
+  ColumnFilters<int> get profileId => $composableBuilder(
+    column: $table.profileId,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<String> get target =>
-      $composableBuilder(column: $table.target, builder: (column) => ColumnFilters(column));
+  ColumnFilters<String> get cardId => $composableBuilder(
+    column: $table.cardId,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<String> get native =>
-      $composableBuilder(column: $table.native, builder: (column) => ColumnFilters(column));
+  ColumnFilters<bool> get reversed => $composableBuilder(
+    column: $table.reversed,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<bool> get reversed =>
-      $composableBuilder(column: $table.reversed, builder: (column) => ColumnFilters(column));
+  ColumnFilters<int> get state => $composableBuilder(
+    column: $table.state,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<int> get state =>
-      $composableBuilder(column: $table.state, builder: (column) => ColumnFilters(column));
+  ColumnFilters<int> get step => $composableBuilder(
+    column: $table.step,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<int> get step =>
-      $composableBuilder(column: $table.step, builder: (column) => ColumnFilters(column));
+  ColumnFilters<double> get stability => $composableBuilder(
+    column: $table.stability,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<double> get stability =>
-      $composableBuilder(column: $table.stability, builder: (column) => ColumnFilters(column));
+  ColumnFilters<double> get difficulty => $composableBuilder(
+    column: $table.difficulty,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<double> get difficulty =>
-      $composableBuilder(column: $table.difficulty, builder: (column) => ColumnFilters(column));
+  ColumnFilters<DateTime> get due => $composableBuilder(
+    column: $table.due,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<DateTime> get due =>
-      $composableBuilder(column: $table.due, builder: (column) => ColumnFilters(column));
+  ColumnFilters<DateTime> get lastReview => $composableBuilder(
+    column: $table.lastReview,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<DateTime> get lastReview =>
-      $composableBuilder(column: $table.lastReview, builder: (column) => ColumnFilters(column));
+  ColumnFilters<int> get reps => $composableBuilder(
+    column: $table.reps,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<int> get reps =>
-      $composableBuilder(column: $table.reps, builder: (column) => ColumnFilters(column));
-
-  ColumnFilters<int> get lapses =>
-      $composableBuilder(column: $table.lapses, builder: (column) => ColumnFilters(column));
+  ColumnFilters<int> get lapses => $composableBuilder(
+    column: $table.lapses,
+    builder: (column) => ColumnFilters(column),
+  );
 }
 
-class $$ReviewStatesTableOrderingComposer extends Composer<_$ProgressDatabase, $ReviewStatesTable> {
+class $$ReviewStatesTableOrderingComposer
+    extends Composer<_$ProgressDatabase, $ReviewStatesTable> {
   $$ReviewStatesTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -1642,41 +2474,60 @@ class $$ReviewStatesTableOrderingComposer extends Composer<_$ProgressDatabase, $
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  ColumnOrderings<String> get cardId =>
-      $composableBuilder(column: $table.cardId, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<int> get profileId => $composableBuilder(
+    column: $table.profileId,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<String> get target =>
-      $composableBuilder(column: $table.target, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<String> get cardId => $composableBuilder(
+    column: $table.cardId,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<String> get native =>
-      $composableBuilder(column: $table.native, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<bool> get reversed => $composableBuilder(
+    column: $table.reversed,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<bool> get reversed =>
-      $composableBuilder(column: $table.reversed, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<int> get state => $composableBuilder(
+    column: $table.state,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<int> get state =>
-      $composableBuilder(column: $table.state, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<int> get step => $composableBuilder(
+    column: $table.step,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<int> get step =>
-      $composableBuilder(column: $table.step, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<double> get stability => $composableBuilder(
+    column: $table.stability,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<double> get stability =>
-      $composableBuilder(column: $table.stability, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<double> get difficulty => $composableBuilder(
+    column: $table.difficulty,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<double> get difficulty =>
-      $composableBuilder(column: $table.difficulty, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<DateTime> get due => $composableBuilder(
+    column: $table.due,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<DateTime> get due =>
-      $composableBuilder(column: $table.due, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<DateTime> get lastReview => $composableBuilder(
+    column: $table.lastReview,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<DateTime> get lastReview =>
-      $composableBuilder(column: $table.lastReview, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<int> get reps => $composableBuilder(
+    column: $table.reps,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<int> get reps =>
-      $composableBuilder(column: $table.reps, builder: (column) => ColumnOrderings(column));
-
-  ColumnOrderings<int> get lapses =>
-      $composableBuilder(column: $table.lapses, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<int> get lapses => $composableBuilder(
+    column: $table.lapses,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
 
 class $$ReviewStatesTableAnnotationComposer
@@ -1688,14 +2539,11 @@ class $$ReviewStatesTableAnnotationComposer
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
+  GeneratedColumn<int> get profileId =>
+      $composableBuilder(column: $table.profileId, builder: (column) => column);
+
   GeneratedColumn<String> get cardId =>
       $composableBuilder(column: $table.cardId, builder: (column) => column);
-
-  GeneratedColumn<String> get target =>
-      $composableBuilder(column: $table.target, builder: (column) => column);
-
-  GeneratedColumn<String> get native =>
-      $composableBuilder(column: $table.native, builder: (column) => column);
 
   GeneratedColumn<bool> get reversed =>
       $composableBuilder(column: $table.reversed, builder: (column) => column);
@@ -1709,14 +2557,18 @@ class $$ReviewStatesTableAnnotationComposer
   GeneratedColumn<double> get stability =>
       $composableBuilder(column: $table.stability, builder: (column) => column);
 
-  GeneratedColumn<double> get difficulty =>
-      $composableBuilder(column: $table.difficulty, builder: (column) => column);
+  GeneratedColumn<double> get difficulty => $composableBuilder(
+    column: $table.difficulty,
+    builder: (column) => column,
+  );
 
   GeneratedColumn<DateTime> get due =>
       $composableBuilder(column: $table.due, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get lastReview =>
-      $composableBuilder(column: $table.lastReview, builder: (column) => column);
+  GeneratedColumn<DateTime> get lastReview => $composableBuilder(
+    column: $table.lastReview,
+    builder: (column) => column,
+  );
 
   GeneratedColumn<int> get reps =>
       $composableBuilder(column: $table.reps, builder: (column) => column);
@@ -1736,24 +2588,30 @@ class $$ReviewStatesTableTableManager
           $$ReviewStatesTableAnnotationComposer,
           $$ReviewStatesTableCreateCompanionBuilder,
           $$ReviewStatesTableUpdateCompanionBuilder,
-          (ReviewState, BaseReferences<_$ProgressDatabase, $ReviewStatesTable, ReviewState>),
+          (
+            ReviewState,
+            BaseReferences<_$ProgressDatabase, $ReviewStatesTable, ReviewState>,
+          ),
           ReviewState,
           PrefetchHooks Function()
         > {
-  $$ReviewStatesTableTableManager(_$ProgressDatabase db, $ReviewStatesTable table)
-    : super(
+  $$ReviewStatesTableTableManager(
+    _$ProgressDatabase db,
+    $ReviewStatesTable table,
+  ) : super(
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$ReviewStatesTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$ReviewStatesTableOrderingComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$ReviewStatesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$ReviewStatesTableOrderingComposer($db: db, $table: table),
           createComputedFieldComposer: () =>
               $$ReviewStatesTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
+                Value<int> profileId = const Value.absent(),
                 Value<String> cardId = const Value.absent(),
-                Value<String> target = const Value.absent(),
-                Value<String> native = const Value.absent(),
                 Value<bool> reversed = const Value.absent(),
                 Value<int> state = const Value.absent(),
                 Value<int?> step = const Value.absent(),
@@ -1765,9 +2623,8 @@ class $$ReviewStatesTableTableManager
                 Value<int> lapses = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => ReviewStatesCompanion(
+                profileId: profileId,
                 cardId: cardId,
-                target: target,
-                native: native,
                 reversed: reversed,
                 state: state,
                 step: step,
@@ -1781,9 +2638,8 @@ class $$ReviewStatesTableTableManager
               ),
           createCompanionCallback:
               ({
+                required int profileId,
                 required String cardId,
-                required String target,
-                required String native,
                 required bool reversed,
                 required int state,
                 Value<int?> step = const Value.absent(),
@@ -1795,9 +2651,8 @@ class $$ReviewStatesTableTableManager
                 Value<int> lapses = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => ReviewStatesCompanion.insert(
+                profileId: profileId,
                 cardId: cardId,
-                target: target,
-                native: native,
                 reversed: reversed,
                 state: state,
                 step: step,
@@ -1813,7 +2668,11 @@ class $$ReviewStatesTableTableManager
               .map(
                 (e) => (
                   e.readTable<$ReviewStatesTable, ReviewState>(table),
-                  BaseReferences<_$ProgressDatabase, $ReviewStatesTable, ReviewState>(db, table, e),
+                  BaseReferences<
+                    _$ProgressDatabase,
+                    $ReviewStatesTable,
+                    ReviewState
+                  >(db, table, e),
                 ),
               )
               .toList(),
@@ -1832,15 +2691,17 @@ typedef $$ReviewStatesTableProcessedTableManager =
       $$ReviewStatesTableAnnotationComposer,
       $$ReviewStatesTableCreateCompanionBuilder,
       $$ReviewStatesTableUpdateCompanionBuilder,
-      (ReviewState, BaseReferences<_$ProgressDatabase, $ReviewStatesTable, ReviewState>),
+      (
+        ReviewState,
+        BaseReferences<_$ProgressDatabase, $ReviewStatesTable, ReviewState>,
+      ),
       ReviewState,
       PrefetchHooks Function()
     >;
 typedef $$ReviewLogsTableCreateCompanionBuilder = ReviewLogsCompanion Function({
   Value<int> id,
+  required int profileId,
   required String cardId,
-  required String target,
-  required String native,
   required bool reversed,
   required int rating,
   required bool wasNew,
@@ -1848,16 +2709,16 @@ typedef $$ReviewLogsTableCreateCompanionBuilder = ReviewLogsCompanion Function({
 });
 typedef $$ReviewLogsTableUpdateCompanionBuilder = ReviewLogsCompanion Function({
   Value<int> id,
+  Value<int> profileId,
   Value<String> cardId,
-  Value<String> target,
-  Value<String> native,
   Value<bool> reversed,
   Value<int> rating,
   Value<bool> wasNew,
   Value<DateTime> reviewedAt,
 });
 
-class $$ReviewLogsTableFilterComposer extends Composer<_$ProgressDatabase, $ReviewLogsTable> {
+class $$ReviewLogsTableFilterComposer
+    extends Composer<_$ProgressDatabase, $ReviewLogsTable> {
   $$ReviewLogsTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -1865,32 +2726,44 @@ class $$ReviewLogsTableFilterComposer extends Composer<_$ProgressDatabase, $Revi
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  ColumnFilters<int> get id =>
-      $composableBuilder(column: $table.id, builder: (column) => ColumnFilters(column));
+  ColumnFilters<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<String> get cardId =>
-      $composableBuilder(column: $table.cardId, builder: (column) => ColumnFilters(column));
+  ColumnFilters<int> get profileId => $composableBuilder(
+    column: $table.profileId,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<String> get target =>
-      $composableBuilder(column: $table.target, builder: (column) => ColumnFilters(column));
+  ColumnFilters<String> get cardId => $composableBuilder(
+    column: $table.cardId,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<String> get native =>
-      $composableBuilder(column: $table.native, builder: (column) => ColumnFilters(column));
+  ColumnFilters<bool> get reversed => $composableBuilder(
+    column: $table.reversed,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<bool> get reversed =>
-      $composableBuilder(column: $table.reversed, builder: (column) => ColumnFilters(column));
+  ColumnFilters<int> get rating => $composableBuilder(
+    column: $table.rating,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<int> get rating =>
-      $composableBuilder(column: $table.rating, builder: (column) => ColumnFilters(column));
+  ColumnFilters<bool> get wasNew => $composableBuilder(
+    column: $table.wasNew,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<bool> get wasNew =>
-      $composableBuilder(column: $table.wasNew, builder: (column) => ColumnFilters(column));
-
-  ColumnFilters<DateTime> get reviewedAt =>
-      $composableBuilder(column: $table.reviewedAt, builder: (column) => ColumnFilters(column));
+  ColumnFilters<DateTime> get reviewedAt => $composableBuilder(
+    column: $table.reviewedAt,
+    builder: (column) => ColumnFilters(column),
+  );
 }
 
-class $$ReviewLogsTableOrderingComposer extends Composer<_$ProgressDatabase, $ReviewLogsTable> {
+class $$ReviewLogsTableOrderingComposer
+    extends Composer<_$ProgressDatabase, $ReviewLogsTable> {
   $$ReviewLogsTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -1898,32 +2771,44 @@ class $$ReviewLogsTableOrderingComposer extends Composer<_$ProgressDatabase, $Re
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  ColumnOrderings<int> get id =>
-      $composableBuilder(column: $table.id, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<String> get cardId =>
-      $composableBuilder(column: $table.cardId, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<int> get profileId => $composableBuilder(
+    column: $table.profileId,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<String> get target =>
-      $composableBuilder(column: $table.target, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<String> get cardId => $composableBuilder(
+    column: $table.cardId,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<String> get native =>
-      $composableBuilder(column: $table.native, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<bool> get reversed => $composableBuilder(
+    column: $table.reversed,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<bool> get reversed =>
-      $composableBuilder(column: $table.reversed, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<int> get rating => $composableBuilder(
+    column: $table.rating,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<int> get rating =>
-      $composableBuilder(column: $table.rating, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<bool> get wasNew => $composableBuilder(
+    column: $table.wasNew,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<bool> get wasNew =>
-      $composableBuilder(column: $table.wasNew, builder: (column) => ColumnOrderings(column));
-
-  ColumnOrderings<DateTime> get reviewedAt =>
-      $composableBuilder(column: $table.reviewedAt, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<DateTime> get reviewedAt => $composableBuilder(
+    column: $table.reviewedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
 
-class $$ReviewLogsTableAnnotationComposer extends Composer<_$ProgressDatabase, $ReviewLogsTable> {
+class $$ReviewLogsTableAnnotationComposer
+    extends Composer<_$ProgressDatabase, $ReviewLogsTable> {
   $$ReviewLogsTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -1931,16 +2816,14 @@ class $$ReviewLogsTableAnnotationComposer extends Composer<_$ProgressDatabase, $
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<int> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<int> get profileId =>
+      $composableBuilder(column: $table.profileId, builder: (column) => column);
 
   GeneratedColumn<String> get cardId =>
       $composableBuilder(column: $table.cardId, builder: (column) => column);
-
-  GeneratedColumn<String> get target =>
-      $composableBuilder(column: $table.target, builder: (column) => column);
-
-  GeneratedColumn<String> get native =>
-      $composableBuilder(column: $table.native, builder: (column) => column);
 
   GeneratedColumn<bool> get reversed =>
       $composableBuilder(column: $table.reversed, builder: (column) => column);
@@ -1951,8 +2834,10 @@ class $$ReviewLogsTableAnnotationComposer extends Composer<_$ProgressDatabase, $
   GeneratedColumn<bool> get wasNew =>
       $composableBuilder(column: $table.wasNew, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get reviewedAt =>
-      $composableBuilder(column: $table.reviewedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get reviewedAt => $composableBuilder(
+    column: $table.reviewedAt,
+    builder: (column) => column,
+  );
 }
 
 class $$ReviewLogsTableTableManager
@@ -1966,7 +2851,10 @@ class $$ReviewLogsTableTableManager
           $$ReviewLogsTableAnnotationComposer,
           $$ReviewLogsTableCreateCompanionBuilder,
           $$ReviewLogsTableUpdateCompanionBuilder,
-          (ReviewLog, BaseReferences<_$ProgressDatabase, $ReviewLogsTable, ReviewLog>),
+          (
+            ReviewLog,
+            BaseReferences<_$ProgressDatabase, $ReviewLogsTable, ReviewLog>,
+          ),
           ReviewLog,
           PrefetchHooks Function()
         > {
@@ -1975,25 +2863,25 @@ class $$ReviewLogsTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$ReviewLogsTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$ReviewLogsTableOrderingComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$ReviewLogsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$ReviewLogsTableOrderingComposer($db: db, $table: table),
           createComputedFieldComposer: () =>
               $$ReviewLogsTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<int> id = const Value.absent(),
+                Value<int> profileId = const Value.absent(),
                 Value<String> cardId = const Value.absent(),
-                Value<String> target = const Value.absent(),
-                Value<String> native = const Value.absent(),
                 Value<bool> reversed = const Value.absent(),
                 Value<int> rating = const Value.absent(),
                 Value<bool> wasNew = const Value.absent(),
                 Value<DateTime> reviewedAt = const Value.absent(),
               }) => ReviewLogsCompanion(
                 id: id,
+                profileId: profileId,
                 cardId: cardId,
-                target: target,
-                native: native,
                 reversed: reversed,
                 rating: rating,
                 wasNew: wasNew,
@@ -2002,18 +2890,16 @@ class $$ReviewLogsTableTableManager
           createCompanionCallback:
               ({
                 Value<int> id = const Value.absent(),
+                required int profileId,
                 required String cardId,
-                required String target,
-                required String native,
                 required bool reversed,
                 required int rating,
                 required bool wasNew,
                 required DateTime reviewedAt,
               }) => ReviewLogsCompanion.insert(
                 id: id,
+                profileId: profileId,
                 cardId: cardId,
-                target: target,
-                native: native,
                 reversed: reversed,
                 rating: rating,
                 wasNew: wasNew,
@@ -2023,7 +2909,11 @@ class $$ReviewLogsTableTableManager
               .map(
                 (e) => (
                   e.readTable<$ReviewLogsTable, ReviewLog>(table),
-                  BaseReferences<_$ProgressDatabase, $ReviewLogsTable, ReviewLog>(db, table, e),
+                  BaseReferences<
+                    _$ProgressDatabase,
+                    $ReviewLogsTable,
+                    ReviewLog
+                  >(db, table, e),
                 ),
               )
               .toList(),
@@ -2042,7 +2932,10 @@ typedef $$ReviewLogsTableProcessedTableManager =
       $$ReviewLogsTableAnnotationComposer,
       $$ReviewLogsTableCreateCompanionBuilder,
       $$ReviewLogsTableUpdateCompanionBuilder,
-      (ReviewLog, BaseReferences<_$ProgressDatabase, $ReviewLogsTable, ReviewLog>),
+      (
+        ReviewLog,
+        BaseReferences<_$ProgressDatabase, $ReviewLogsTable, ReviewLog>,
+      ),
       ReviewLog,
       PrefetchHooks Function()
     >;
@@ -2057,7 +2950,8 @@ typedef $$SettingsTableUpdateCompanionBuilder = SettingsCompanion Function({
   Value<int> rowid,
 });
 
-class $$SettingsTableFilterComposer extends Composer<_$ProgressDatabase, $SettingsTable> {
+class $$SettingsTableFilterComposer
+    extends Composer<_$ProgressDatabase, $SettingsTable> {
   $$SettingsTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -2065,14 +2959,19 @@ class $$SettingsTableFilterComposer extends Composer<_$ProgressDatabase, $Settin
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  ColumnFilters<String> get key =>
-      $composableBuilder(column: $table.key, builder: (column) => ColumnFilters(column));
+  ColumnFilters<String> get key => $composableBuilder(
+    column: $table.key,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<String> get value =>
-      $composableBuilder(column: $table.value, builder: (column) => ColumnFilters(column));
+  ColumnFilters<String> get value => $composableBuilder(
+    column: $table.value,
+    builder: (column) => ColumnFilters(column),
+  );
 }
 
-class $$SettingsTableOrderingComposer extends Composer<_$ProgressDatabase, $SettingsTable> {
+class $$SettingsTableOrderingComposer
+    extends Composer<_$ProgressDatabase, $SettingsTable> {
   $$SettingsTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -2080,14 +2979,19 @@ class $$SettingsTableOrderingComposer extends Composer<_$ProgressDatabase, $Sett
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  ColumnOrderings<String> get key =>
-      $composableBuilder(column: $table.key, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<String> get key => $composableBuilder(
+    column: $table.key,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<String> get value =>
-      $composableBuilder(column: $table.value, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<String> get value => $composableBuilder(
+    column: $table.value,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
 
-class $$SettingsTableAnnotationComposer extends Composer<_$ProgressDatabase, $SettingsTable> {
+class $$SettingsTableAnnotationComposer
+    extends Composer<_$ProgressDatabase, $SettingsTable> {
   $$SettingsTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -2113,7 +3017,10 @@ class $$SettingsTableTableManager
           $$SettingsTableAnnotationComposer,
           $$SettingsTableCreateCompanionBuilder,
           $$SettingsTableUpdateCompanionBuilder,
-          (Setting, BaseReferences<_$ProgressDatabase, $SettingsTable, Setting>),
+          (
+            Setting,
+            BaseReferences<_$ProgressDatabase, $SettingsTable, Setting>,
+          ),
           Setting,
           PrefetchHooks Function()
         > {
@@ -2122,8 +3029,10 @@ class $$SettingsTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$SettingsTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$SettingsTableOrderingComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$SettingsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$SettingsTableOrderingComposer($db: db, $table: table),
           createComputedFieldComposer: () =>
               $$SettingsTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback: ({
@@ -2140,7 +3049,11 @@ class $$SettingsTableTableManager
               .map(
                 (e) => (
                   e.readTable<$SettingsTable, Setting>(table),
-                  BaseReferences<_$ProgressDatabase, $SettingsTable, Setting>(db, table, e),
+                  BaseReferences<_$ProgressDatabase, $SettingsTable, Setting>(
+                    db,
+                    table,
+                    e,
+                  ),
                 ),
               )
               .toList(),
@@ -2163,18 +3076,20 @@ typedef $$SettingsTableProcessedTableManager =
       Setting,
       PrefetchHooks Function()
     >;
-typedef $$DifficultyOverridesTableCreateCompanionBuilder = DifficultyOverridesCompanion Function({
-  required String cardId,
-  required String target,
-  required String difficulty,
-  Value<int> rowid,
-});
-typedef $$DifficultyOverridesTableUpdateCompanionBuilder = DifficultyOverridesCompanion Function({
-  Value<String> cardId,
-  Value<String> target,
-  Value<String> difficulty,
-  Value<int> rowid,
-});
+typedef $$DifficultyOverridesTableCreateCompanionBuilder =
+    DifficultyOverridesCompanion Function({
+      required int profileId,
+      required String cardId,
+      required String difficulty,
+      Value<int> rowid,
+    });
+typedef $$DifficultyOverridesTableUpdateCompanionBuilder =
+    DifficultyOverridesCompanion Function({
+      Value<int> profileId,
+      Value<String> cardId,
+      Value<String> difficulty,
+      Value<int> rowid,
+    });
 
 class $$DifficultyOverridesTableFilterComposer
     extends Composer<_$ProgressDatabase, $DifficultyOverridesTable> {
@@ -2185,14 +3100,20 @@ class $$DifficultyOverridesTableFilterComposer
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  ColumnFilters<String> get cardId =>
-      $composableBuilder(column: $table.cardId, builder: (column) => ColumnFilters(column));
+  ColumnFilters<int> get profileId => $composableBuilder(
+    column: $table.profileId,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<String> get target =>
-      $composableBuilder(column: $table.target, builder: (column) => ColumnFilters(column));
+  ColumnFilters<String> get cardId => $composableBuilder(
+    column: $table.cardId,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<String> get difficulty =>
-      $composableBuilder(column: $table.difficulty, builder: (column) => ColumnFilters(column));
+  ColumnFilters<String> get difficulty => $composableBuilder(
+    column: $table.difficulty,
+    builder: (column) => ColumnFilters(column),
+  );
 }
 
 class $$DifficultyOverridesTableOrderingComposer
@@ -2204,14 +3125,20 @@ class $$DifficultyOverridesTableOrderingComposer
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  ColumnOrderings<String> get cardId =>
-      $composableBuilder(column: $table.cardId, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<int> get profileId => $composableBuilder(
+    column: $table.profileId,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<String> get target =>
-      $composableBuilder(column: $table.target, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<String> get cardId => $composableBuilder(
+    column: $table.cardId,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<String> get difficulty =>
-      $composableBuilder(column: $table.difficulty, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<String> get difficulty => $composableBuilder(
+    column: $table.difficulty,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
 
 class $$DifficultyOverridesTableAnnotationComposer
@@ -2223,14 +3150,16 @@ class $$DifficultyOverridesTableAnnotationComposer
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
+  GeneratedColumn<int> get profileId =>
+      $composableBuilder(column: $table.profileId, builder: (column) => column);
+
   GeneratedColumn<String> get cardId =>
       $composableBuilder(column: $table.cardId, builder: (column) => column);
 
-  GeneratedColumn<String> get target =>
-      $composableBuilder(column: $table.target, builder: (column) => column);
-
-  GeneratedColumn<String> get difficulty =>
-      $composableBuilder(column: $table.difficulty, builder: (column) => column);
+  GeneratedColumn<String> get difficulty => $composableBuilder(
+    column: $table.difficulty,
+    builder: (column) => column,
+  );
 }
 
 class $$DifficultyOverridesTableTableManager
@@ -2246,55 +3175,69 @@ class $$DifficultyOverridesTableTableManager
           $$DifficultyOverridesTableUpdateCompanionBuilder,
           (
             DifficultyOverride,
-            BaseReferences<_$ProgressDatabase, $DifficultyOverridesTable, DifficultyOverride>,
+            BaseReferences<
+              _$ProgressDatabase,
+              $DifficultyOverridesTable,
+              DifficultyOverride
+            >,
           ),
           DifficultyOverride,
           PrefetchHooks Function()
         > {
-  $$DifficultyOverridesTableTableManager(_$ProgressDatabase db, $DifficultyOverridesTable table)
-    : super(
+  $$DifficultyOverridesTableTableManager(
+    _$ProgressDatabase db,
+    $DifficultyOverridesTable table,
+  ) : super(
         TableManagerState(
           db: db,
           table: table,
           createFilteringComposer: () =>
               $$DifficultyOverridesTableFilterComposer($db: db, $table: table),
           createOrderingComposer: () =>
-              $$DifficultyOverridesTableOrderingComposer($db: db, $table: table),
+              $$DifficultyOverridesTableOrderingComposer(
+                $db: db,
+                $table: table,
+              ),
           createComputedFieldComposer: () =>
-              $$DifficultyOverridesTableAnnotationComposer($db: db, $table: table),
+              $$DifficultyOverridesTableAnnotationComposer(
+                $db: db,
+                $table: table,
+              ),
           updateCompanionCallback:
               ({
+                Value<int> profileId = const Value.absent(),
                 Value<String> cardId = const Value.absent(),
-                Value<String> target = const Value.absent(),
                 Value<String> difficulty = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => DifficultyOverridesCompanion(
+                profileId: profileId,
                 cardId: cardId,
-                target: target,
                 difficulty: difficulty,
                 rowid: rowid,
               ),
           createCompanionCallback:
               ({
+                required int profileId,
                 required String cardId,
-                required String target,
                 required String difficulty,
                 Value<int> rowid = const Value.absent(),
               }) => DifficultyOverridesCompanion.insert(
+                profileId: profileId,
                 cardId: cardId,
-                target: target,
                 difficulty: difficulty,
                 rowid: rowid,
               ),
           withReferenceMapper: (p0) => p0
               .map(
                 (e) => (
-                  e.readTable<$DifficultyOverridesTable, DifficultyOverride>(table),
-                  BaseReferences<_$ProgressDatabase, $DifficultyOverridesTable, DifficultyOverride>(
-                    db,
+                  e.readTable<$DifficultyOverridesTable, DifficultyOverride>(
                     table,
-                    e,
                   ),
+                  BaseReferences<
+                    _$ProgressDatabase,
+                    $DifficultyOverridesTable,
+                    DifficultyOverride
+                  >(db, table, e),
                 ),
               )
               .toList(),
@@ -2315,7 +3258,11 @@ typedef $$DifficultyOverridesTableProcessedTableManager =
       $$DifficultyOverridesTableUpdateCompanionBuilder,
       (
         DifficultyOverride,
-        BaseReferences<_$ProgressDatabase, $DifficultyOverridesTable, DifficultyOverride>,
+        BaseReferences<
+          _$ProgressDatabase,
+          $DifficultyOverridesTable,
+          DifficultyOverride
+        >,
       ),
       DifficultyOverride,
       PrefetchHooks Function()
@@ -2324,11 +3271,14 @@ typedef $$DifficultyOverridesTableProcessedTableManager =
 class $ProgressDatabaseManager {
   final _$ProgressDatabase _db;
   $ProgressDatabaseManager(this._db);
+  $$ProfilesTableTableManager get profiles =>
+      $$ProfilesTableTableManager(_db, _db.profiles);
   $$ReviewStatesTableTableManager get reviewStates =>
       $$ReviewStatesTableTableManager(_db, _db.reviewStates);
   $$ReviewLogsTableTableManager get reviewLogs =>
       $$ReviewLogsTableTableManager(_db, _db.reviewLogs);
-  $$SettingsTableTableManager get settings => $$SettingsTableTableManager(_db, _db.settings);
+  $$SettingsTableTableManager get settings =>
+      $$SettingsTableTableManager(_db, _db.settings);
   $$DifficultyOverridesTableTableManager get difficultyOverrides =>
       $$DifficultyOverridesTableTableManager(_db, _db.difficultyOverrides);
 }

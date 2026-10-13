@@ -6,7 +6,7 @@
   "navStats": "Statistics",
   "navSettings": "Settings",
   "welcomeTitle": "Welcome",
-  "welcomeBody": "Choose the language you want to learn, the language you already know, and your level. You can change all of this later in Settings.",
+  "welcomeBody": "Choose the language you want to learn, the language you already know, and your level. You can add more profiles later in Settings, each with its own progress.",
   "languageToLearn": "Language to learn",
   "languageYouKnow": "Language you know",
   "level": "Level",
@@ -168,10 +168,7 @@
       }
     }
   },
-  "statsAllPairs": "All language pairs",
-  "statsThisPair": "Current language pair",
   "settingsMenuLanguage": "Menu language",
-  "settingsLanguages": "Languages",
   "settingsStudy": "Study",
   "settingsDailyGoal": "Daily goal (new words)",
   "settingsDailyGoalHint": "Only for keeping track. You can always study more.",
@@ -182,7 +179,7 @@
   "themeSystem": "Same as system",
   "themeLight": "Light",
   "themeDark": "Dark",
-  "settingsAbout": "Progress is kept separately for every language pair.",
+  "settingsAbout": "Each profile keeps its own progress. To study another pair of languages, add a new profile.",
   "typeNoun": "noun",
   "typeVerb": "verb",
   "typeAdj": "adjective",
@@ -196,5 +193,45 @@
   "typeNum": "number",
   "typePhrasalVerb": "phrasal verb",
   "typePhrase": "phrase",
-  "typeIdiom": "idiom"
+  "typeIdiom": "idiom",
+  "profiles": "Profiles",
+  "profileName": "Profile name",
+  "profileNameHint": "Optional. Leave it empty to name the profile after its languages.",
+  "profileDefaultName": "{native} → {target}",
+  "@profileDefaultName": {
+    "placeholders": {
+      "native": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "newProfile": "New profile",
+  "createProfile": "Create profile",
+  "switchProfile": "Switch profile",
+  "renameProfile": "Rename",
+  "deleteProfileTitle": "Delete “{name}”?",
+  "@deleteProfileTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteProfileBody": "All progress of this profile will be removed. This cannot be undone.",
+  "delete": "Delete",
+  "cancel": "Cancel",
+  "save": "Save",
+  "settingsStudyIn": "Study: {profile}",
+  "@settingsStudyIn": {
+    "placeholders": {
+      "profile": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsShowForms": "Show word forms",
+  "settingsShowFormsHint": "Plurals, verb forms and comparisons on the back of the card."
 }

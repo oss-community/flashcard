@@ -1,6 +1,6 @@
 import 'package:drift/drift.dart';
 
-import '../domain/pair.dart';
+import '../domain/profile.dart';
 import '../domain/srs.dart';
 import '../domain/stats.dart';
 import 'progress_database.dart';
@@ -11,14 +11,71 @@ class ProgressRepository {
 
   final ProgressDatabase _db;
 
-  Expression<bool> _isPair($ReviewStatesTable t, LanguagePair pair) =>
-      t.target.equals(pair.target) &
-      t.native.equals(pair.native) &
-      t.reversed.equals(pair.reversed);
+  /// Every profile, oldest first.
+  Future<List<Profile>> profiles() async {
+    final rows = await (_db.select(
+      _db.profiles,
+    )..orderBy([(t) => OrderingTerm(expression: t.id)])).get();
+    return [
+      for (final row in rows)
+        Profile(
+          id: row.id,
+          name: row.name,
+          native: row.native,
+          target: row.target,
+          level: row.level,
+          dailyGoal: row.dailyGoal,
+          reversed: row.reversed,
+          showForms: row.showForms,
+        ),
+    ];
+  }
 
-  /// Schedules of every card studied in [pair], by card id.
-  Future<Map<String, Schedule>> schedules(LanguagePair pair) async {
-    final rows = await (_db.select(_db.reviewStates)..where((t) => _isPair(t, pair))).get();
+  /// Adds a profile and returns it with its new id.
+  Future<Profile> createProfile({
+    String? name,
+    required String native,
+    required String target,
+    String? level,
+  }) async {
+    final id = await _db
+        .into(_db.profiles)
+        .insert(
+          ProfilesCompanion.insert(
+            name: Value(cleanName(name)),
+            native: native,
+            target: target,
+            level: Value(level),
+          ),
+        );
+    return Profile(id: id, name: cleanName(name), native: native, target: target, level: level);
+  }
+
+  /// Saves everything but the languages, which never change.
+  Future<void> updateProfile(Profile profile) =>
+      (_db.update(_db.profiles)..where((t) => t.id.equals(profile.id))).write(
+        ProfilesCompanion(
+          name: Value(profile.name),
+          level: Value(profile.level),
+          dailyGoal: Value(profile.dailyGoal),
+          reversed: Value(profile.reversed),
+          showForms: Value(profile.showForms),
+        ),
+      );
+
+  /// Removes a profile with all of its progress.
+  Future<void> deleteProfile(int id) => _db.transaction(() async {
+    await (_db.delete(_db.reviewStates)..where((t) => t.profileId.equals(id))).go();
+    await (_db.delete(_db.reviewLogs)..where((t) => t.profileId.equals(id))).go();
+    await (_db.delete(_db.difficultyOverrides)..where((t) => t.profileId.equals(id))).go();
+    await (_db.delete(_db.profiles)..where((t) => t.id.equals(id))).go();
+  });
+
+  /// Schedules of every card studied in [profile] in one direction, by card id.
+  Future<Map<String, Schedule>> schedules(int profile, {required bool reversed}) async {
+    final rows = await (_db.select(
+      _db.reviewStates,
+    )..where((t) => t.profileId.equals(profile) & t.reversed.equals(reversed))).get();
     return {
       for (final row in rows)
         row.cardId: Schedule(
@@ -36,7 +93,8 @@ class ProgressRepository {
 
   /// Stores an answer: the card's new schedule and a log entry.
   Future<void> saveReview({
-    required LanguagePair pair,
+    required int profile,
+    required bool reversed,
     required String cardId,
     required Schedule schedule,
     required Rating rating,
@@ -48,10 +106,9 @@ class ProgressRepository {
           .into(_db.reviewStates)
           .insertOnConflictUpdate(
             ReviewStatesCompanion.insert(
+              profileId: profile,
               cardId: cardId,
-              target: pair.target,
-              native: pair.native,
-              reversed: pair.reversed,
+              reversed: reversed,
               state: schedule.state.value,
               step: Value(schedule.step),
               stability: Value(schedule.stability),
@@ -66,10 +123,9 @@ class ProgressRepository {
           .into(_db.reviewLogs)
           .insert(
             ReviewLogsCompanion.insert(
+              profileId: profile,
               cardId: cardId,
-              target: pair.target,
-              native: pair.native,
-              reversed: pair.reversed,
+              reversed: reversed,
               rating: rating.value,
               wasNew: wasNew,
               reviewedAt: at,
@@ -78,8 +134,8 @@ class ProgressRepository {
     });
   }
 
-  /// Answers given since local midnight in [pair]: all of them and new cards.
-  Future<({int reviews, int newCards})> today(LanguagePair pair, DateTime now) async {
+  /// Answers given in [profile] since local midnight: all of them and new cards.
+  Future<({int reviews, int newCards})> today(int profile, DateTime now) async {
     final logs = _db.reviewLogs;
     final count = logs.id.count();
     final newCount = logs.id.count(filter: logs.wasNew.equals(true));
@@ -87,52 +143,60 @@ class ProgressRepository {
         await (_db.selectOnly(logs)
               ..addColumns([count, newCount])
               ..where(
-                logs.target.equals(pair.target) &
-                    logs.native.equals(pair.native) &
-                    logs.reversed.equals(pair.reversed) &
-                    logs.reviewedAt.isBiggerOrEqualValue(dayOf(now)),
+                logs.profileId.equals(profile) & logs.reviewedAt.isBiggerOrEqualValue(dayOf(now)),
               ))
             .getSingle();
     return (reviews: row.read(count) ?? 0, newCards: row.read(newCount) ?? 0);
   }
 
-  /// Number of answers per local day over the last [days] days, all pairs.
-  Future<Map<DateTime, int>> countsByDay(DateTime now, int days) async {
+  /// Number of answers in [profile] per local day over the last [days] days.
+  Future<Map<DateTime, int>> countsByDay(int profile, DateTime now, int days) async {
     final today = dayOf(now);
     final since = DateTime(today.year, today.month, today.day - days + 1);
-    final rows = await (_db.select(
-      _db.reviewLogs,
-    )..where((t) => t.reviewedAt.isBiggerOrEqualValue(since))).get();
+    final at = _db.reviewLogs.reviewedAt;
+    final rows =
+        await (_db.selectOnly(_db.reviewLogs)
+              ..addColumns([at])
+              ..where(_db.reviewLogs.profileId.equals(profile) & at.isBiggerOrEqualValue(since)))
+            .get();
     final counts = <DateTime, int>{};
     for (final row in rows) {
-      final day = dayOf(row.reviewedAt);
+      final day = dayOf(row.read(at)!);
       counts[day] = (counts[day] ?? 0) + 1;
     }
     return counts;
   }
 
-  /// Every local day on which at least one answer was given.
-  Future<Set<DateTime>> reviewDays() async {
+  /// Every local day on which at least one answer was given in [profile].
+  Future<Set<DateTime>> reviewDays(int profile) async {
     final at = _db.reviewLogs.reviewedAt;
-    final rows = await (_db.selectOnly(_db.reviewLogs)..addColumns([at])).get();
+    final rows =
+        await (_db.selectOnly(_db.reviewLogs)
+              ..addColumns([at])
+              ..where(_db.reviewLogs.profileId.equals(profile)))
+            .get();
     return {
       for (final row in rows)
         if (row.read(at) case final DateTime time) dayOf(time),
     };
   }
 
-  /// Difficulties the learner changed for words of [target], by card id.
-  Future<Map<String, String>> difficultyOverrides(String target) async {
+  /// Difficulties the learner changed in [profile], by card id.
+  Future<Map<String, String>> difficultyOverrides(int profile) async {
     final rows = await (_db.select(
       _db.difficultyOverrides,
-    )..where((t) => t.target.equals(target))).get();
+    )..where((t) => t.profileId.equals(profile))).get();
     return {for (final row in rows) row.cardId: row.difficulty};
   }
 
-  Future<void> setDifficulty(String cardId, String target, String difficulty) => _db
+  Future<void> setDifficulty(int profile, String cardId, String difficulty) => _db
       .into(_db.difficultyOverrides)
       .insertOnConflictUpdate(
-        DifficultyOverridesCompanion.insert(cardId: cardId, target: target, difficulty: difficulty),
+        DifficultyOverridesCompanion.insert(
+          profileId: profile,
+          cardId: cardId,
+          difficulty: difficulty,
+        ),
       );
 
   Future<Map<String, String>> readSettings() async {

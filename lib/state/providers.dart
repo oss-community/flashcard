@@ -6,6 +6,7 @@ import '../data/progress_repository.dart';
 import '../data/speech.dart';
 import '../data/vocabulary_repository.dart';
 import '../domain/pair.dart';
+import '../domain/profile.dart';
 import '../domain/srs.dart';
 import '../domain/stats.dart';
 
@@ -25,80 +26,81 @@ final clockProvider = Provider<DateTime Function()>((ref) => DateTime.now);
 /// Largest daily goal the settings offer.
 const maxDailyGoal = 200;
 
-/// What the learner chose: languages, level, menus and look.
+/// Every profile, read before the app starts.
+final initialProfilesProvider = Provider<List<Profile>>((ref) => throw UnimplementedError());
+
+/// What the learner chose: menus and look for the whole app, and the
+/// profile being studied with its languages, level and options.
 @immutable
 class AppSettings {
   const AppSettings({
     required this.uiLanguage,
-    this.native,
-    this.target,
-    this.level,
-    this.dailyGoal = 0,
-    this.reversed = false,
     this.themeMode = ThemeMode.system,
+    this.profiles = const [],
+    this.activeId,
   });
 
   /// Menu language; English unless the learner changes it.
   final String uiLanguage;
-  final String? native;
-  final String? target;
-
-  /// Level new cards come from; null means every level in order, A1 first.
-  final String? level;
-
-  /// New words the learner aims for each day; 0 means no goal. It never
-  /// stops the learner from going on.
-  final int dailyGoal;
-  final bool reversed;
   final ThemeMode themeMode;
+  final List<Profile> profiles;
+  final int? activeId;
 
-  /// True once both languages of the pair have been chosen.
-  bool get hasPair => native != null && target != null && native != target;
+  /// The profile being studied; null before the first one is made.
+  Profile? get profile {
+    for (final p in profiles) {
+      if (p.id == activeId) return p;
+    }
+    return profiles.firstOrNull;
+  }
 
-  LanguagePair get pair => LanguagePair(target: target!, native: native!, reversed: reversed);
+  String? get native => profile?.native;
+  String? get target => profile?.target;
+  String? get level => profile?.level;
+  int get dailyGoal => profile?.dailyGoal ?? 0;
+  bool get reversed => profile?.reversed ?? false;
+  bool get showForms => profile?.showForms ?? true;
+
+  /// True once a profile exists.
+  bool get hasPair => profile != null;
+
+  LanguagePair get pair => profile!.pair;
 
   AppSettings copyWith({
     String? uiLanguage,
-    String? native,
-    String? target,
-    String? Function()? level,
-    int? dailyGoal,
-    bool? reversed,
     ThemeMode? themeMode,
+    List<Profile>? profiles,
+    int? Function()? activeId,
   }) => AppSettings(
     uiLanguage: uiLanguage ?? this.uiLanguage,
-    native: native ?? this.native,
-    target: target ?? this.target,
-    level: level != null ? level() : this.level,
-    dailyGoal: dailyGoal ?? this.dailyGoal,
-    reversed: reversed ?? this.reversed,
     themeMode: themeMode ?? this.themeMode,
+    profiles: profiles ?? this.profiles,
+    activeId: activeId != null ? activeId() : this.activeId,
   );
 
   Map<String, String> toMap() => {
     'uiLanguage': uiLanguage,
-    'native': ?native,
-    'target': ?target,
-    'level': level ?? 'all',
-    'dailyGoal': '$dailyGoal',
-    'reversed': '$reversed',
     'themeMode': themeMode.name,
+    if (profile case final p?) 'activeProfile': '${p.id}',
   };
 
-  static AppSettings fromMap(Map<String, String> map, List<Language> languages) {
+  static AppSettings fromMap(
+    Map<String, String> map,
+    List<Language> languages,
+    List<Profile> profiles,
+  ) {
     final codes = languages.map((l) => l.code).toSet();
-    String? lang(String key) => codes.contains(map[key]) ? map[key] : null;
     return AppSettings(
-      uiLanguage: lang('uiLanguage') ?? 'en',
-      native: lang('native'),
-      target: lang('target'),
-      level: levels.contains(map['level']) ? map['level'] : null,
-      dailyGoal: int.tryParse(map['dailyGoal'] ?? '')?.clamp(0, maxDailyGoal) ?? 0,
-      reversed: map['reversed'] == 'true',
+      uiLanguage: codes.contains(map['uiLanguage']) ? map['uiLanguage']! : 'en',
       themeMode: ThemeMode.values.firstWhere(
         (m) => m.name == map['themeMode'],
         orElse: () => ThemeMode.system,
       ),
+      profiles: [
+        for (final p in profiles)
+          if (codes.contains(p.native) && codes.contains(p.target) && p.native != p.target) p,
+      ],
+      activeId: int.tryParse(map['activeProfile'] ?? ''),
     );
   }
 }
@@ -108,15 +110,71 @@ class SettingsNotifier extends Notifier<AppSettings> {
   AppSettings build() => AppSettings.fromMap(
     ref.watch(initialSettingsProvider),
     ref.watch(vocabularyProvider).languages,
+    ref.watch(initialProfilesProvider),
   );
 
-  Future<void> update(AppSettings Function(AppSettings) change) async {
-    final next = change(state);
-    state = next;
-    final repo = ref.read(progressRepositoryProvider);
-    for (final entry in next.toMap().entries) {
-      await repo.writeSetting(entry.key, entry.value);
+  ProgressRepository get _repo => ref.read(progressRepositoryProvider);
+
+  Future<void> _save() async {
+    for (final entry in state.toMap().entries) {
+      await _repo.writeSetting(entry.key, entry.value);
     }
+  }
+
+  /// Changes the settings shared by every profile.
+  Future<void> update(AppSettings Function(AppSettings) change) async {
+    state = change(state);
+    await _save();
+  }
+
+  /// Changes the profile being studied.
+  Future<void> updateProfile(Profile Function(Profile) change) async {
+    final current = state.profile;
+    if (current == null) return;
+    await saveProfile(change(current));
+  }
+
+  Future<void> saveProfile(Profile profile) async {
+    state = state.copyWith(
+      profiles: [for (final p in state.profiles) p.id == profile.id ? profile : p],
+    );
+    await _repo.updateProfile(profile);
+  }
+
+  /// Adds a profile and starts studying it.
+  Future<void> createProfile({
+    String? name,
+    required String native,
+    required String target,
+    String? level,
+  }) async {
+    final profile = await _repo.createProfile(
+      name: name,
+      native: native,
+      target: target,
+      level: level,
+    );
+    state = state.copyWith(profiles: [...state.profiles, profile], activeId: () => profile.id);
+    await _save();
+  }
+
+  Future<void> switchProfile(int id) async {
+    state = state.copyWith(activeId: () => id);
+    await _save();
+  }
+
+  /// Removes a profile and its progress; the first one left is studied next.
+  Future<void> deleteProfile(int id) async {
+    await _repo.deleteProfile(id);
+    final rest = [
+      for (final p in state.profiles)
+        if (p.id != id) p,
+    ];
+    state = state.copyWith(
+      profiles: rest,
+      activeId: () => state.activeId == id ? rest.firstOrNull?.id : state.activeId,
+    );
+    await _save();
   }
 }
 
@@ -128,19 +186,19 @@ final uiLanguageProvider = Provider<Language>((ref) {
   return ref.watch(vocabularyProvider).language(code);
 });
 
-/// Cards of the current pair (two languages each).
+/// Cards of the current profile (two languages each).
 final pairCardsProvider = Provider<List<PairCard>>((ref) {
-  final settings = ref.watch(settingsProvider);
-  if (!settings.hasPair) return const [];
-  return cardsForPair(ref.watch(vocabularyProvider).cards, settings.pair);
+  final pair = ref.watch(settingsProvider.select((s) => s.hasPair ? s.pair : null));
+  if (pair == null) return const [];
+  return cardsForPair(ref.watch(vocabularyProvider).cards, pair);
 });
 
-/// Difficulty labels the learner changed for the language being learned.
+/// Difficulty labels the learner changed in the current profile.
 final difficultyOverridesProvider = FutureProvider<Map<String, String>>((ref) async {
   ref.watch(progressVersionProvider);
-  final target = ref.watch(settingsProvider.select((s) => s.target));
-  if (target == null) return const {};
-  return ref.watch(progressRepositoryProvider).difficultyOverrides(target);
+  final id = ref.watch(settingsProvider.select((s) => s.profile?.id));
+  if (id == null) return const {};
+  return ref.watch(progressRepositoryProvider).difficultyOverrides(id);
 });
 
 /// Difficulty of [card] as the learner sees it: their own label, or the data's.
@@ -156,13 +214,19 @@ class ProgressVersion extends Notifier<int> {
   void bump() => state++;
 }
 
-/// Schedules of the current pair, by card id.
+/// Schedules of the current profile and direction, by card id.
 final schedulesProvider = FutureProvider<Map<String, Schedule>>((ref) async {
   ref.watch(progressVersionProvider);
-  final settings = ref.watch(settingsProvider);
-  if (!settings.hasPair) return const {};
+  final profile = ref.watch(
+    settingsProvider.select(
+      (s) => s.profile == null ? null : (id: s.profile!.id, reversed: s.reversed),
+    ),
+  );
+  if (profile == null) return const {};
   final ids = {for (final card in ref.watch(pairCardsProvider)) card.id};
-  final schedules = await ref.watch(progressRepositoryProvider).schedules(settings.pair);
+  final schedules = await ref
+      .watch(progressRepositoryProvider)
+      .schedules(profile.id, reversed: profile.reversed);
   // Progress of cards no longer in the vocabulary (removed duplicates) is ignored.
   return {
     for (final entry in schedules.entries)
@@ -196,8 +260,12 @@ final todayProvider = FutureProvider<TodaySummary>((ref) async {
   final now = ref.watch(clockProvider)();
   final schedules = await ref.watch(schedulesProvider.future);
   final cards = ref.watch(pairCardsProvider);
-  final today = await repo.today(settings.pair, now);
-  final streak = streakDays(await repo.reviewDays(), now);
+  final id = settings.profile?.id;
+  if (id == null) {
+    return const TodaySummary(due: 0, newLeft: 0, reviewedToday: 0, newToday: 0, streak: 0);
+  }
+  final today = await repo.today(id, now);
+  final streak = streakDays(await repo.reviewDays(id), now);
 
   final dueLimit = now.toUtc();
   final due = schedules.values.where((s) => !s.due.isAfter(dueLimit)).length;
@@ -216,10 +284,12 @@ final todayProvider = FutureProvider<TodaySummary>((ref) async {
   );
 });
 
-/// Review counts per day for the last 30 days, all pairs.
+/// Review counts per day for the last 30 days in the current profile.
 final historyProvider = FutureProvider<List<({DateTime day, int count})>>((ref) async {
   ref.watch(progressVersionProvider);
+  final id = ref.watch(settingsProvider.select((s) => s.profile?.id));
   final now = ref.watch(clockProvider)();
-  final counts = await ref.watch(progressRepositoryProvider).countsByDay(now, 30);
+  if (id == null) return const [];
+  final counts = await ref.watch(progressRepositoryProvider).countsByDay(id, now, 30);
   return dailyCounts(counts, now, 30);
 });

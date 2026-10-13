@@ -29,7 +29,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get welcomeBody =>
-      'Kies de taal die je wilt leren, de taal die je al kent en je niveau. Je kunt dit later in Instellingen wijzigen.';
+      'Kies de taal die je wilt leren, de taal die je al kent en je niveau. Later kun je in de instellingen meer profielen toevoegen, elk met een eigen voortgang.';
 
   @override
   String get languageToLearn => 'Taal om te leren';
@@ -242,16 +242,7 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get statsAllPairs => 'Alle taalparen';
-
-  @override
-  String get statsThisPair => 'Huidig taalpaar';
-
-  @override
   String get settingsMenuLanguage => 'Menutaal';
-
-  @override
-  String get settingsLanguages => 'Talen';
 
   @override
   String get settingsStudy => 'Leren';
@@ -285,7 +276,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get themeDark => 'Donker';
 
   @override
-  String get settingsAbout => 'De voortgang wordt voor elk taalpaar apart bijgehouden.';
+  String get settingsAbout =>
+      'Elk profiel heeft een eigen voortgang. Voeg een nieuw profiel toe om een ander taalpaar te leren.';
 
   @override
   String get typeNoun => 'zelfstandig naamwoord';
@@ -328,4 +320,60 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get typeIdiom => 'idioom';
+
+  @override
+  String get profiles => 'Profielen';
+
+  @override
+  String get profileName => 'Profielnaam';
+
+  @override
+  String get profileNameHint => 'Optioneel. Laat leeg om het profiel naar zijn talen te noemen.';
+
+  @override
+  String profileDefaultName(String native, String target) {
+    return '$native → $target';
+  }
+
+  @override
+  String get newProfile => 'Nieuw profiel';
+
+  @override
+  String get createProfile => 'Profiel maken';
+
+  @override
+  String get switchProfile => 'Ander profiel';
+
+  @override
+  String get renameProfile => 'Naam wijzigen';
+
+  @override
+  String deleteProfileTitle(String name) {
+    return '‘$name’ verwijderen?';
+  }
+
+  @override
+  String get deleteProfileBody =>
+      'Alle voortgang van dit profiel wordt verwijderd. Dit kan niet ongedaan worden gemaakt.';
+
+  @override
+  String get delete => 'Verwijderen';
+
+  @override
+  String get cancel => 'Annuleren';
+
+  @override
+  String get save => 'Opslaan';
+
+  @override
+  String settingsStudyIn(String profile) {
+    return 'Leren: $profile';
+  }
+
+  @override
+  String get settingsShowForms => 'Woordvormen tonen';
+
+  @override
+  String get settingsShowFormsHint =>
+      'Meervoud, werkwoordsvormen en trappen van vergelijking op de achterkant van de kaart.';
 }

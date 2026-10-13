@@ -29,7 +29,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get welcomeBody =>
-      'Wähle die Sprache, die du lernen möchtest, die Sprache, die du schon kannst, und dein Niveau. Du kannst alles später in den Einstellungen ändern.';
+      'Wähle die Sprache, die du lernen möchtest, die Sprache, die du schon kannst, und dein Niveau. Später kannst du in den Einstellungen weitere Profile anlegen, jedes mit eigenem Fortschritt.';
 
   @override
   String get languageToLearn => 'Sprache zum Lernen';
@@ -242,16 +242,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get statsAllPairs => 'Alle Sprachpaare';
-
-  @override
-  String get statsThisPair => 'Aktuelles Sprachpaar';
-
-  @override
   String get settingsMenuLanguage => 'Menüsprache';
-
-  @override
-  String get settingsLanguages => 'Sprachen';
 
   @override
   String get settingsStudy => 'Lernen';
@@ -285,7 +276,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get themeDark => 'Dunkel';
 
   @override
-  String get settingsAbout => 'Der Fortschritt wird für jedes Sprachpaar getrennt gespeichert.';
+  String get settingsAbout =>
+      'Jedes Profil hat seinen eigenen Fortschritt. Für ein anderes Sprachpaar legst du ein neues Profil an.';
 
   @override
   String get typeNoun => 'Nomen';
@@ -328,4 +320,61 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get typeIdiom => 'Redewendung';
+
+  @override
+  String get profiles => 'Profile';
+
+  @override
+  String get profileName => 'Profilname';
+
+  @override
+  String get profileNameHint =>
+      'Optional. Leer lassen, um das Profil nach seinen Sprachen zu benennen.';
+
+  @override
+  String profileDefaultName(String native, String target) {
+    return '$native → $target';
+  }
+
+  @override
+  String get newProfile => 'Neues Profil';
+
+  @override
+  String get createProfile => 'Profil anlegen';
+
+  @override
+  String get switchProfile => 'Profil wechseln';
+
+  @override
+  String get renameProfile => 'Umbenennen';
+
+  @override
+  String deleteProfileTitle(String name) {
+    return '„$name“ löschen?';
+  }
+
+  @override
+  String get deleteProfileBody =>
+      'Der gesamte Fortschritt dieses Profils wird entfernt. Das lässt sich nicht rückgängig machen.';
+
+  @override
+  String get delete => 'Löschen';
+
+  @override
+  String get cancel => 'Abbrechen';
+
+  @override
+  String get save => 'Speichern';
+
+  @override
+  String settingsStudyIn(String profile) {
+    return 'Lernen: $profile';
+  }
+
+  @override
+  String get settingsShowForms => 'Wortformen zeigen';
+
+  @override
+  String get settingsShowFormsHint =>
+      'Plural, Verbformen und Steigerung auf der Rückseite der Karte.';
 }

@@ -139,7 +139,7 @@ abstract class AppLocalizations {
   /// No description provided for @welcomeBody.
   ///
   /// In en, this message translates to:
-  /// **'Choose the language you want to learn, the language you already know, and your level. You can change all of this later in Settings.'**
+  /// **'Choose the language you want to learn, the language you already know, and your level. You can add more profiles later in Settings, each with its own progress.'**
   String get welcomeBody;
 
   /// No description provided for @languageToLearn.
@@ -466,29 +466,11 @@ abstract class AppLocalizations {
   /// **'{learned} of {total}'**
   String learnedOf(int learned, int total);
 
-  /// No description provided for @statsAllPairs.
-  ///
-  /// In en, this message translates to:
-  /// **'All language pairs'**
-  String get statsAllPairs;
-
-  /// No description provided for @statsThisPair.
-  ///
-  /// In en, this message translates to:
-  /// **'Current language pair'**
-  String get statsThisPair;
-
   /// No description provided for @settingsMenuLanguage.
   ///
   /// In en, this message translates to:
   /// **'Menu language'**
   String get settingsMenuLanguage;
-
-  /// No description provided for @settingsLanguages.
-  ///
-  /// In en, this message translates to:
-  /// **'Languages'**
-  String get settingsLanguages;
 
   /// No description provided for @settingsStudy.
   ///
@@ -553,7 +535,7 @@ abstract class AppLocalizations {
   /// No description provided for @settingsAbout.
   ///
   /// In en, this message translates to:
-  /// **'Progress is kept separately for every language pair.'**
+  /// **'Each profile keeps its own progress. To study another pair of languages, add a new profile.'**
   String get settingsAbout;
 
   /// No description provided for @typeNoun.
@@ -639,6 +621,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'idiom'**
   String get typeIdiom;
+
+  /// No description provided for @profiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Profiles'**
+  String get profiles;
+
+  /// No description provided for @profileName.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile name'**
+  String get profileName;
+
+  /// No description provided for @profileNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional. Leave it empty to name the profile after its languages.'**
+  String get profileNameHint;
+
+  /// No description provided for @profileDefaultName.
+  ///
+  /// In en, this message translates to:
+  /// **'{native} → {target}'**
+  String profileDefaultName(String native, String target);
+
+  /// No description provided for @newProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'New profile'**
+  String get newProfile;
+
+  /// No description provided for @createProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Create profile'**
+  String get createProfile;
+
+  /// No description provided for @switchProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch profile'**
+  String get switchProfile;
+
+  /// No description provided for @renameProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Rename'**
+  String get renameProfile;
+
+  /// No description provided for @deleteProfileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete “{name}”?'**
+  String deleteProfileTitle(String name);
+
+  /// No description provided for @deleteProfileBody.
+  ///
+  /// In en, this message translates to:
+  /// **'All progress of this profile will be removed. This cannot be undone.'**
+  String get deleteProfileBody;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// No description provided for @settingsStudyIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Study: {profile}'**
+  String settingsStudyIn(String profile);
+
+  /// No description provided for @settingsShowForms.
+  ///
+  /// In en, this message translates to:
+  /// **'Show word forms'**
+  String get settingsShowForms;
+
+  /// No description provided for @settingsShowFormsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Plurals, verb forms and comparisons on the back of the card.'**
+  String get settingsShowFormsHint;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
