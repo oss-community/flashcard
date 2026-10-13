@@ -15,11 +15,12 @@
   "levelAllInOrder": "All, in order",
   "levelAllHint": "New cards come from A1 first, then A2, and so on up to C2.",
   "dueNow": "Due for review",
-  "newToday": "New cards left today",
+  "newLeft": "New words left",
+  "newTodayLabel": "New words today",
   "reviewedToday": "Answered today",
   "streak": "Day streak",
   "studyNow": "Start studying",
-  "allDone": "All done for now. Come back later, or raise the number of new cards per day in Settings.",
+  "allDone": "Nothing to study right now: no review is due and every word has been studied. Reviews come back when they are due.",
   "learningPair": "{target} from {native}",
   "@learningPair": {
     "placeholders": {
@@ -47,14 +48,34 @@
   "diffMedium": "Medium",
   "diffAdvanced": "Advanced",
   "changeDifficulty": "Change difficulty",
-  "cardsLeft": "{count, plural, =1{1 card left} other{{count} cards left}}",
-  "@cardsLeft": {
+  "dueInSession": "{count, plural, =0{No reviews due} =1{1 review due} other{{count} reviews due}}",
+  "@dueInSession": {
     "placeholders": {
       "count": {
         "type": "int"
       }
     }
   },
+  "goalProgress": "Today's goal: {done} of {goal} new words",
+  "@goalProgress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "newTodayCount": "New words today: {count}",
+  "@newTodayCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "goalReached": "Daily goal reached. Keep going as long as you like.",
   "endSession": "End session",
   "sessionFinished": "Session finished",
   "sessionSummary": "{count, plural, =1{You answered 1 card.} other{You answered {count} cards.}}",
@@ -152,7 +173,9 @@
   "settingsMenuLanguage": "Menu language",
   "settingsLanguages": "Languages",
   "settingsStudy": "Study",
-  "settingsNewPerDay": "New cards per day",
+  "settingsDailyGoal": "Daily goal (new words)",
+  "settingsDailyGoalHint": "Only for keeping track. You can always study more.",
+  "noGoal": "None",
   "settingsReversed": "Reverse cards",
   "settingsReversedHint": "Show the meaning first and recall the word. Progress is kept separately.",
   "settingsAppearance": "Appearance",

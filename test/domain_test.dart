@@ -40,70 +40,54 @@ void main() {
     });
   });
 
-  group('buildSessionItems', () {
+  group('sessionCards', () {
     final cards = cardsForPair([
       for (var i = 0; i < 10; i++) card('a$i', 'A1', 'en$i', 'de$i', 'fa$i'),
       for (var i = 0; i < 5; i++) card('b$i', 'A2', 'x$i', 'y$i', 'z$i'),
     ], pair);
 
-    test('takes new cards only from the chosen level, up to the limit', () {
-      final items = buildSessionItems(
-        cards: cards,
-        schedules: {},
-        level: 'A2',
-        newLimit: 3,
-        now: now,
-        seed: 1,
-      );
-      expect(items.length, 3);
-      expect(items.every((i) => i.isNew && i.card.level == 'A2'), isTrue);
+    test('takes every new card of the chosen level, with no daily limit', () {
+      final result = sessionCards(cards: cards, schedules: {}, level: 'A2', now: now, seed: 1);
+      expect(result.fresh.length, 5);
+      expect(result.fresh.every((i) => i.isNew && i.card.level == 'A2'), isTrue);
     });
 
-    test('with no level, takes new cards from A1 first, then A2', () {
-      final items = buildSessionItems(
-        cards: cards,
-        schedules: {},
-        level: null,
-        newLimit: 12,
-        now: now,
-        seed: 1,
-      );
-      expect(items.take(10).every((i) => i.card.level == 'A1'), isTrue);
-      expect(items.skip(10).every((i) => i.card.level == 'A2'), isTrue);
+    test('with no level, takes every new card, A1 first, then A2', () {
+      final fresh = sessionCards(cards: cards, schedules: {}, level: null, now: now, seed: 1).fresh;
+      expect(fresh.length, 15);
+      expect(fresh.take(10).every((i) => i.card.level == 'A1'), isTrue);
+      expect(fresh.skip(10).every((i) => i.card.level == 'A2'), isTrue);
     });
 
-    test('includes due reviews from any level and spreads new cards between them', () {
+    test('reviews are cards due within the session horizon, oldest first', () {
       final schedules = {
         for (var i = 0; i < 4; i++)
           'b$i': Schedule(
             state: State.review,
             due: now.subtract(Duration(days: i)),
           ),
+        'a0': Schedule(state: State.review, due: now.add(const Duration(hours: 2))),
         'b4': Schedule(state: State.review, due: now.add(const Duration(days: 3))),
       };
-      final items = buildSessionItems(
+      final result = sessionCards(
         cards: cards,
         schedules: schedules,
         level: 'A1',
-        newLimit: 2,
         now: now,
         seed: 1,
       );
-      expect(items.length, 6);
-      expect(items.where((i) => i.isNew).length, 2);
-      expect(items.where((i) => !i.isNew).map((i) => i.card.id), ['b3', 'b2', 'b1', 'b0']);
-      expect(items.first.isNew, isFalse);
+      expect(result.reviews.map((i) => i.card.id), ['b3', 'b2', 'b1', 'b0', 'a0']);
+      expect(result.fresh.length, 9);
     });
 
     test('new card order is shuffled but stable', () {
-      List<String> ids() => buildSessionItems(
+      List<String> ids() => sessionCards(
         cards: cards,
         schedules: {},
         level: 'A1',
-        newLimit: 10,
         now: now,
         seed: 42,
-      ).map((i) => i.card.id).toList();
+      ).fresh.map((i) => i.card.id).toList();
       expect(ids(), ids());
       expect(ids(), isNot([for (var i = 0; i < 10; i++) 'a$i']));
     });
@@ -114,20 +98,72 @@ void main() {
     final cards = cardsForPair([
       card('1', 'A1', 'a', 'b', 'c'),
       card('2', 'A1', 'd', 'e', 'f'),
+      card('3', 'A1', 'g', 'h', 'i'),
     ], pair);
 
-    test('a forgotten card comes back in the same session', () {
-      final session = StudySession(
-        buildSessionItems(cards: cards, schedules: {}, level: 'A1', newLimit: 2, now: now, seed: 1),
+    StudySession session(Map<String, Schedule> schedules, DateTime Function() clock) {
+      final result = sessionCards(
+        cards: cards,
+        schedules: schedules,
+        level: 'A1',
+        now: clock(),
+        seed: 1,
       );
-      final first = session.current!.card.id;
-      final result = session.answer(srs, Rating.again, now);
+      return StudySession(reviews: result.reviews, fresh: result.fresh, clock: clock);
+    }
+
+    test('due reviews come before new cards', () {
+      final s = session({
+        '2': Schedule(
+          state: State.review,
+          stability: 5,
+          difficulty: 5,
+          due: now.subtract(const Duration(days: 1)),
+          lastReview: now.subtract(const Duration(days: 6)),
+        ),
+      }, () => now);
+      expect(s.current!.card.id, '2');
+      expect(s.dueCount, 1);
+      s.answer(srs, Rating.good, now);
+      expect(s.current!.isNew, isTrue);
+      expect(s.freshCount, 2);
+    });
+
+    test('a forgotten card comes back when it is due again', () {
+      var time = now;
+      final s = session({}, () => time);
+      final first = s.current!.card.id;
+      final result = s.answer(srs, Rating.again, time);
       expect(result.wasNew, isTrue);
-      expect(session.remaining, 2);
-      expect(session.current!.card.id, isNot(first));
-      session.answer(srs, Rating.easy, now);
-      expect(session.current!.card.id, first);
-      expect(session.current!.isNew, isFalse);
+      expect(s.current!.card.id, isNot(first));
+      expect(s.current!.isNew, isTrue);
+      time = time.add(const Duration(minutes: 2));
+      s.answer(srs, Rating.good, time);
+      expect(s.current!.card.id, first);
+      expect(s.current!.isNew, isFalse);
+      expect(s.newAnswered, 2);
+    });
+
+    test('the shown card stays the same until it is answered', () {
+      var time = now;
+      final s = session({
+        '3': Schedule(state: State.review, due: now.add(const Duration(minutes: 5))),
+      }, () => time);
+      final shown = s.current!;
+      expect(shown.isNew, isTrue);
+      time = time.add(const Duration(minutes: 10));
+      expect(s.current, same(shown));
+      s.answer(srs, Rating.good, time);
+      expect(s.current!.card.id, '3');
+    });
+
+    test('the session ends only when nothing is due and no new card is left', () {
+      final s = session({}, () => now);
+      for (var i = 0; i < 3; i++) {
+        s.answer(srs, rememberedRating('easy', s.current!.schedule), now, wordDifficulty: 'easy');
+      }
+      expect(s.isFinished, isTrue);
+      expect(s.answered, 3);
     });
 
     test('easy schedules further out than good, good further than again', () {

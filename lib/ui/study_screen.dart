@@ -23,20 +23,26 @@ class StudyScreen extends ConsumerStatefulWidget {
 class _StudyScreenState extends ConsumerState<StudyScreen> {
   StudySession? _session;
 
+  /// New cards studied today before the session started.
+  int _newBefore = 0;
+
   Future<void> _start() async {
     final settings = ref.read(settingsProvider);
-    final now = ref.read(clockProvider)();
+    final clock = ref.read(clockProvider);
+    final now = clock();
     final schedules = await ref.read(schedulesProvider.future);
     final today = await ref.read(progressRepositoryProvider).today(settings.pair, now);
-    final items = buildSessionItems(
+    final cards = sessionCards(
       cards: ref.read(pairCardsProvider),
       schedules: schedules,
       level: settings.level,
-      newLimit: settings.newPerDay - today.newCards,
       now: now,
       seed: pairSeed(settings.pair),
     );
-    setState(() => _session = StudySession(items));
+    setState(() {
+      _newBefore = today.newCards;
+      _session = StudySession(reviews: cards.reviews, fresh: cards.fresh, clock: clock);
+    });
   }
 
   void _close() {
@@ -52,6 +58,7 @@ class _StudyScreenState extends ConsumerState<StudyScreen> {
     return _SessionView(
       key: ValueKey(session),
       session: session,
+      newBefore: _newBefore,
       onChanged: () => setState(() {}),
       onEnd: _close,
     );
@@ -102,13 +109,18 @@ class _Overview extends ConsumerWidget {
                       runSpacing: 16,
                       children: [
                         StatTile(label: l.dueNow, value: value.due),
-                        StatTile(label: l.newToday, value: value.newAvailable),
-                        StatTile(label: l.reviewedToday, value: value.reviewedToday),
+                        StatTile(
+                          label: l.newTodayLabel,
+                          value: settings.dailyGoal > 0
+                              ? '${value.newToday} / ${settings.dailyGoal}'
+                              : value.newToday,
+                        ),
+                        StatTile(label: l.newLeft, value: value.newLeft),
                         StatTile(label: l.streak, value: value.streak),
                       ],
                     ),
                     const SizedBox(height: 32),
-                    if (value.due + value.newAvailable > 0)
+                    if (value.due + value.newLeft > 0)
                       FilledButton.icon(
                         onPressed: onStart,
                         icon: const Icon(Icons.play_arrow),
@@ -137,7 +149,9 @@ class StatTile extends StatelessWidget {
   const StatTile({super.key, required this.label, required this.value});
 
   final String label;
-  final int value;
+
+  /// A number, or a text such as "12 / 20".
+  final Object value;
 
   @override
   Widget build(BuildContext context) {
@@ -165,11 +179,13 @@ class _SessionView extends ConsumerStatefulWidget {
   const _SessionView({
     super.key,
     required this.session,
+    required this.newBefore,
     required this.onChanged,
     required this.onEnd,
   });
 
   final StudySession session;
+  final int newBefore;
   final VoidCallback onChanged;
   final VoidCallback onEnd;
 
@@ -211,6 +227,11 @@ class _SessionViewState extends ConsumerState<_SessionView> {
     _saving = false;
     ref.read(progressVersionProvider.notifier).bump();
     if (!mounted) return;
+    final goal = ref.read(settingsProvider).dailyGoal;
+    if (result.wasNew && goal > 0 && widget.newBefore + widget.session.newAnswered == goal) {
+      ScaffoldMessenger.maybeOf(context)
+          ?.showSnackBar(SnackBar(content: Text(AppLocalizations.of(context).goalReached)));
+    }
     setState(() => _revealed = false);
     widget.onChanged();
   }
@@ -223,6 +244,8 @@ class _SessionViewState extends ConsumerState<_SessionView> {
     final vocab = ref.watch(vocabularyProvider);
     final srs = ref.watch(srsProvider);
     final item = widget.session.current!;
+    final goal = settings.dailyGoal;
+    final newToday = widget.newBefore + widget.session.newAnswered;
     final now = ref.watch(clockProvider)();
 
     final target = vocab.language(settings.target!);
@@ -272,15 +295,18 @@ class _SessionViewState extends ConsumerState<_SessionView> {
             children: [
               Row(
                 children: [
-                  Text(l.cardsLeft(widget.session.remaining), style: theme.textTheme.titleSmall),
+                  Text(
+                    goal > 0 ? l.goalProgress(newToday, goal) : l.newTodayCount(newToday),
+                    style: theme.textTheme.titleSmall,
+                  ),
                   const SizedBox(width: 16),
                   Expanded(
-                    child: LinearProgressIndicator(
-                      value:
-                          widget.session.answered /
-                          (widget.session.answered + widget.session.remaining),
-                    ),
+                    child: goal > 0
+                        ? LinearProgressIndicator(value: (newToday / goal).clamp(0, 1))
+                        : const SizedBox(),
                   ),
+                  const SizedBox(width: 16),
+                  Text(l.dueInSession(widget.session.dueCount), style: theme.textTheme.bodySmall),
                   const SizedBox(width: 16),
                   TextButton.icon(
                     onPressed: widget.onEnd,

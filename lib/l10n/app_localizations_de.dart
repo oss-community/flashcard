@@ -57,7 +57,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get dueNow => 'Zur Wiederholung fällig';
 
   @override
-  String get newToday => 'Neue Karten heute übrig';
+  String get newLeft => 'Neue Wörter übrig';
+
+  @override
+  String get newTodayLabel => 'Neue Wörter heute';
 
   @override
   String get reviewedToday => 'Heute beantwortet';
@@ -70,7 +73,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get allDone =>
-      'Für jetzt ist alles erledigt. Komm später wieder oder erhöhe die Zahl neuer Karten pro Tag in den Einstellungen.';
+      'Gerade gibt es nichts zu lernen: Keine Wiederholung ist fällig, und alle Wörter wurden gelernt. Wiederholungen kommen zurück, sobald sie fällig sind.';
 
   @override
   String learningPair(String target, String native) {
@@ -107,15 +110,30 @@ class AppLocalizationsDe extends AppLocalizations {
   String get changeDifficulty => 'Schwierigkeit ändern';
 
   @override
-  String cardsLeft(int count) {
+  String dueInSession(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Noch $count Karten',
-      one: 'Noch 1 Karte',
+      other: '$count Wiederholungen fällig',
+      one: '1 Wiederholung fällig',
+      zero: 'Keine Wiederholung fällig',
     );
     return '$_temp0';
   }
+
+  @override
+  String goalProgress(int done, int goal) {
+    return 'Tagesziel: $done von $goal neuen Wörtern';
+  }
+
+  @override
+  String newTodayCount(int count) {
+    return 'Neue Wörter heute: $count';
+  }
+
+  @override
+  String get goalReached =>
+      'Tagesziel erreicht. Mach weiter, so lange du möchtest.';
 
   @override
   String get endSession => 'Sitzung beenden';
@@ -243,7 +261,14 @@ class AppLocalizationsDe extends AppLocalizations {
   String get settingsStudy => 'Lernen';
 
   @override
-  String get settingsNewPerDay => 'Neue Karten pro Tag';
+  String get settingsDailyGoal => 'Tagesziel (neue Wörter)';
+
+  @override
+  String get settingsDailyGoalHint =>
+      'Nur zur Übersicht. Du kannst immer mehr lernen.';
+
+  @override
+  String get noGoal => 'Keins';
 
   @override
   String get settingsReversed => 'Karten umdrehen';

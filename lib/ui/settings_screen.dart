@@ -75,25 +75,33 @@ class SettingsScreen extends ConsumerWidget {
               const SizedBox(height: 16),
               Row(
                 children: [
-                  Expanded(child: Text(l.settingsNewPerDay)),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(l.settingsDailyGoal),
+                        Text(l.settingsDailyGoalHint, style: theme.textTheme.bodySmall),
+                      ],
+                    ),
+                  ),
                   IconButton(
-                    onPressed: settings.newPerDay <= 0
+                    onPressed: settings.dailyGoal <= 0
                         ? null
-                        : () => notifier.update((s) => s.copyWith(newPerDay: s.newPerDay - 5)),
+                        : () => notifier.update((s) => s.copyWith(dailyGoal: s.dailyGoal - 5)),
                     icon: const Icon(Icons.remove),
                   ),
-                  SizedBox(
-                    width: 40,
+                  ConstrainedBox(
+                    constraints: const BoxConstraints(minWidth: 56),
                     child: Text(
-                      '${settings.newPerDay}',
+                      settings.dailyGoal > 0 ? '${settings.dailyGoal}' : l.noGoal,
                       textAlign: TextAlign.center,
                       style: theme.textTheme.titleMedium,
                     ),
                   ),
                   IconButton(
-                    onPressed: settings.newPerDay >= 200
+                    onPressed: settings.dailyGoal >= maxDailyGoal
                         ? null
-                        : () => notifier.update((s) => s.copyWith(newPerDay: s.newPerDay + 5)),
+                        : () => notifier.update((s) => s.copyWith(dailyGoal: s.dailyGoal + 5)),
                     icon: const Icon(Icons.add),
                   ),
                 ],

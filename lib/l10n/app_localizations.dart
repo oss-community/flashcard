@@ -192,11 +192,17 @@ abstract class AppLocalizations {
   /// **'Due for review'**
   String get dueNow;
 
-  /// No description provided for @newToday.
+  /// No description provided for @newLeft.
   ///
   /// In en, this message translates to:
-  /// **'New cards left today'**
-  String get newToday;
+  /// **'New words left'**
+  String get newLeft;
+
+  /// No description provided for @newTodayLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'New words today'**
+  String get newTodayLabel;
 
   /// No description provided for @reviewedToday.
   ///
@@ -219,7 +225,7 @@ abstract class AppLocalizations {
   /// No description provided for @allDone.
   ///
   /// In en, this message translates to:
-  /// **'All done for now. Come back later, or raise the number of new cards per day in Settings.'**
+  /// **'Nothing to study right now: no review is due and every word has been studied. Reviews come back when they are due.'**
   String get allDone;
 
   /// No description provided for @learningPair.
@@ -282,11 +288,29 @@ abstract class AppLocalizations {
   /// **'Change difficulty'**
   String get changeDifficulty;
 
-  /// No description provided for @cardsLeft.
+  /// No description provided for @dueInSession.
   ///
   /// In en, this message translates to:
-  /// **'{count, plural, =1{1 card left} other{{count} cards left}}'**
-  String cardsLeft(int count);
+  /// **'{count, plural, =0{No reviews due} =1{1 review due} other{{count} reviews due}}'**
+  String dueInSession(int count);
+
+  /// No description provided for @goalProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s goal: {done} of {goal} new words'**
+  String goalProgress(int done, int goal);
+
+  /// No description provided for @newTodayCount.
+  ///
+  /// In en, this message translates to:
+  /// **'New words today: {count}'**
+  String newTodayCount(int count);
+
+  /// No description provided for @goalReached.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily goal reached. Keep going as long as you like.'**
+  String get goalReached;
 
   /// No description provided for @endSession.
   ///
@@ -474,11 +498,23 @@ abstract class AppLocalizations {
   /// **'Study'**
   String get settingsStudy;
 
-  /// No description provided for @settingsNewPerDay.
+  /// No description provided for @settingsDailyGoal.
   ///
   /// In en, this message translates to:
-  /// **'New cards per day'**
-  String get settingsNewPerDay;
+  /// **'Daily goal (new words)'**
+  String get settingsDailyGoal;
+
+  /// No description provided for @settingsDailyGoalHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Only for keeping track. You can always study more.'**
+  String get settingsDailyGoalHint;
+
+  /// No description provided for @noGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get noGoal;
 
   /// No description provided for @settingsReversed.
   ///

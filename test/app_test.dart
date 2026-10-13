@@ -11,6 +11,7 @@ import 'package:flashcard/domain/pair.dart';
 import 'package:flashcard/domain/srs.dart';
 import 'package:flashcard/state/providers.dart';
 import 'package:flashcard/ui/difficulty_menu.dart';
+import 'package:flashcard/ui/term_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -113,8 +114,9 @@ void main() {
     await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 100)));
     await tester.pumpAndSettle();
 
-    expect(find.text('20 cards left'), findsOneWidget);
+    expect(find.text('New words today: 0'), findsOneWidget);
     expect(find.text('Again'), findsNothing);
+    final firstWord = tester.widget<TermText>(find.byType(TermText).first).text;
 
     // Mark the word as advanced; the choice is saved for German.
     await tester.tap(find.byType(DifficultyMenu));
@@ -129,10 +131,11 @@ void main() {
     await tester.tap(find.textContaining('Remembered'));
     await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 100)));
     await tester.pumpAndSettle();
+    expect(find.text('New words today: 1'), findsOneWidget);
     expect(
-      find.text('20 cards left'),
-      findsOneWidget,
-      reason: 'an advanced word answered once comes back in the same session',
+      tester.widget<TermText>(find.byType(TermText).first).text,
+      isNot(firstWord),
+      reason: 'the next new word is shown while the first one waits for its next step',
     );
     expect(await repo.schedules(const LanguagePair(target: 'de', native: 'fa')), hasLength(1));
 

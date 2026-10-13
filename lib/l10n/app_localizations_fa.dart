@@ -57,7 +57,10 @@ class AppLocalizationsFa extends AppLocalizations {
   String get dueNow => 'آماده‌ی مرور';
 
   @override
-  String get newToday => 'کارت تازه‌ی باقی‌مانده‌ی امروز';
+  String get newLeft => 'واژه‌های تازه‌ی باقی‌مانده';
+
+  @override
+  String get newTodayLabel => 'واژه‌ی تازه‌ی امروز';
 
   @override
   String get reviewedToday => 'پاسخ‌های امروز';
@@ -70,7 +73,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get allDone =>
-      'فعلاً کاری نمانده است. بعداً برگردید، یا در تنظیمات تعداد کارت تازه در روز را بیشتر کنید.';
+      'فعلاً چیزی برای مطالعه نیست: هیچ مروری سر نرسیده و همه‌ی واژه‌ها خوانده شده‌اند. مرورها سر وقتشان برمی‌گردند.';
 
   @override
   String learningPair(String target, String native) {
@@ -107,14 +110,29 @@ class AppLocalizationsFa extends AppLocalizations {
   String get changeDifficulty => 'تغییر درجه‌ی سختی';
 
   @override
-  String cardsLeft(int count) {
+  String dueInSession(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count کارت مانده',
+      other: '$count مرور مانده',
+      zero: 'مروری نمانده',
     );
     return '$_temp0';
   }
+
+  @override
+  String goalProgress(int done, int goal) {
+    return 'هدف امروز: $done از $goal واژه‌ی تازه';
+  }
+
+  @override
+  String newTodayCount(int count) {
+    return 'واژه‌ی تازه‌ی امروز: $count';
+  }
+
+  @override
+  String get goalReached =>
+      'به هدف امروز رسیدید. هر قدر بخواهید می‌توانید ادامه دهید.';
 
   @override
   String get endSession => 'پایان مرور';
@@ -238,7 +256,14 @@ class AppLocalizationsFa extends AppLocalizations {
   String get settingsStudy => 'مرور';
 
   @override
-  String get settingsNewPerDay => 'کارت تازه در روز';
+  String get settingsDailyGoal => 'هدف روزانه (واژه‌ی تازه)';
+
+  @override
+  String get settingsDailyGoalHint =>
+      'فقط برای پیگیری است. همیشه می‌توانید بیشتر بخوانید.';
+
+  @override
+  String get noGoal => 'ندارد';
 
   @override
   String get settingsReversed => 'کارت برعکس';

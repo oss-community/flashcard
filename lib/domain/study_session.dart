@@ -16,56 +16,48 @@ class StudyItem {
   bool isNew;
 }
 
-/// Cards due within this window are shown again in the same session.
+/// When nothing else is left, a card due within this window is shown early.
 const learnAhead = Duration(minutes: 20);
 
-/// Picks the cards for one session: every due review, plus up to
-/// [newLimit] cards that have never been studied.
+/// Studied cards that come due within this time join the session when they
+/// come due, so a long session brings back words as their time arrives.
+const sessionHorizon = Duration(hours: 12);
+
+/// The cards of a pair for one study session, with no daily limit.
 ///
-/// New cards come from [level], or, when [level] is null, from every level in
-/// order: all of A1 first, then A2, and so on. Within a level their order is
-/// shuffled with a fixed seed per pair, so it is random but the same every day.
-/// New cards are spread evenly between reviews.
-List<StudyItem> buildSessionItems({
+/// [reviews] are cards already studied that are due now or within
+/// [sessionHorizon], sorted by due time. [fresh] are all cards never studied,
+/// from [level], or, when [level] is null, from every level in order: all of
+/// A1 first, then A2, and so on. Within a level their order is shuffled with a
+/// fixed seed per pair, so it is random but the same every day.
+({List<StudyItem> reviews, List<StudyItem> fresh}) sessionCards({
   required List<PairCard> cards,
   required Map<String, Schedule> schedules,
   required String? level,
-  required int newLimit,
   required DateTime now,
   required int seed,
 }) {
-  final due = <StudyItem>[];
+  final reviews = <StudyItem>[];
   final freshByLevel = {for (final l in levels) l: <PairCard>[]};
+  final horizon = now.toUtc().add(sessionHorizon);
   for (final card in cards) {
     final schedule = schedules[card.id];
     if (schedule == null) {
       if (level == null || card.level == level) freshByLevel[card.level]?.add(card);
-    } else if (!schedule.due.isAfter(now.toUtc().add(learnAhead))) {
-      due.add(StudyItem(card: card, schedule: schedule, isNew: false));
+    } else if (!schedule.due.isAfter(horizon)) {
+      reviews.add(StudyItem(card: card, schedule: schedule, isNew: false));
     }
   }
-  due.sort((a, b) => a.schedule.due.compareTo(b.schedule.due));
+  reviews.sort((a, b) => a.schedule.due.compareTo(b.schedule.due));
   final random = Random(seed);
-  final fresh = [for (final l in levels) ...(freshByLevel[l]!..shuffle(random))];
-  final newItems = fresh
-      .take(max(0, newLimit))
-      .map((c) => StudyItem(card: c, schedule: Schedule.fresh(now), isNew: true))
-      .toList();
-
-  if (newItems.isEmpty) return due;
-  if (due.isEmpty) return newItems;
-  final result = <StudyItem>[];
-  final gap = (due.length + newItems.length) / newItems.length;
-  var dueIndex = 0;
-  for (var i = 0; i < newItems.length; i++) {
-    final until = ((i + 1) * gap).floor() - 1;
-    while (result.length < until && dueIndex < due.length) {
-      result.add(due[dueIndex++]);
-    }
-    result.add(newItems[i]);
-  }
-  result.addAll(due.skip(dueIndex));
-  return result;
+  return (
+    reviews: reviews,
+    fresh: [
+      for (final l in levels)
+        for (final card in freshByLevel[l]!..shuffle(random))
+          StudyItem(card: card, schedule: Schedule.fresh(now), isNew: true),
+    ],
+  );
 }
 
 /// A stable seed for shuffling new cards of a pair.
@@ -73,35 +65,75 @@ int pairSeed(LanguagePair pair) =>
     pair.target.codeUnits.fold(17, (h, c) => h * 31 + c) * 7 +
     pair.native.codeUnits.fold(19, (h, c) => h * 37 + c);
 
-/// The queue of one study session.
+/// One study session. It goes on as long as the learner wants: due reviews
+/// come first, then new cards one after another. A card answered in the
+/// session comes back when it is due again.
 class StudySession {
-  StudySession(Iterable<StudyItem> items) : _queue = Queue.of(items) {
-    total = _queue.length;
-  }
+  StudySession({
+    required List<StudyItem> reviews,
+    required Iterable<StudyItem> fresh,
+    required this.clock,
+  }) : _reviews = [...reviews],
+       _fresh = Queue.of(fresh);
 
-  final Queue<StudyItem> _queue;
-  late final int total;
+  /// Studied cards, sorted by due time.
+  final List<StudyItem> _reviews;
+  final Queue<StudyItem> _fresh;
+  final DateTime Function() clock;
+  StudyItem? _current;
+
+  /// Cards answered in this session.
   int answered = 0;
 
-  StudyItem? get current => _queue.isEmpty ? null : _queue.first;
-  int get remaining => _queue.length;
-  bool get isFinished => _queue.isEmpty;
+  /// New cards answered for the first time in this session.
+  int newAnswered = 0;
 
-  /// Answers the current card, a word labelled [wordDifficulty]. Cards that
-  /// come due again within [learnAhead] go to the back of the queue.
+  /// The card to show, or null when nothing is due and no new card is left.
+  /// It stays the same until it is answered.
+  StudyItem? get current => _current ??= _pick();
+
+  bool get isFinished => current == null;
+
+  /// Studied cards due now.
+  int get dueCount {
+    final now = clock().toUtc();
+    return _reviews.where((i) => !i.schedule.due.isAfter(now)).length;
+  }
+
+  /// New cards not yet shown.
+  int get freshCount => _fresh.length;
+
+  StudyItem? _pick() {
+    final now = clock().toUtc();
+    final next = _reviews.isEmpty ? null : _reviews.first;
+    if (next != null && !next.schedule.due.isAfter(now)) return next;
+    if (_fresh.isNotEmpty) return _fresh.first;
+    if (next != null && !next.schedule.due.isAfter(now.add(learnAhead))) return next;
+    return null;
+  }
+
+  /// Answers the current card, a word labelled [wordDifficulty].
   ({StudyItem item, bool wasNew, Schedule schedule}) answer(
     Srs srs,
     Rating rating,
     DateTime now, {
     String? wordDifficulty,
   }) {
-    final item = _queue.removeFirst();
+    final item = current!;
+    _current = null;
+    if (item.isNew) {
+      _fresh.remove(item);
+    } else {
+      _reviews.remove(item);
+    }
     final wasNew = item.isNew;
     item.schedule = srs.review(item.schedule, rating, now, wordDifficulty: wordDifficulty);
     item.isNew = false;
     answered++;
-    if (!item.schedule.due.isAfter(now.toUtc().add(learnAhead))) {
-      _queue.addLast(item);
+    if (wasNew) newAnswered++;
+    if (!item.schedule.due.isAfter(now.toUtc().add(sessionHorizon))) {
+      final index = _reviews.indexWhere((i) => i.schedule.due.isAfter(item.schedule.due));
+      _reviews.insert(index < 0 ? _reviews.length : index, item);
     }
     return (item: item, wasNew: wasNew, schedule: item.schedule);
   }

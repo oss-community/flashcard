@@ -57,7 +57,10 @@ class AppLocalizationsNl extends AppLocalizations {
   String get dueNow => 'Te herhalen';
 
   @override
-  String get newToday => 'Nieuwe kaarten over vandaag';
+  String get newLeft => 'Nieuwe woorden over';
+
+  @override
+  String get newTodayLabel => 'Nieuwe woorden vandaag';
 
   @override
   String get reviewedToday => 'Vandaag beantwoord';
@@ -70,7 +73,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get allDone =>
-      'Alles is voor nu klaar. Kom later terug of verhoog het aantal nieuwe kaarten per dag in Instellingen.';
+      'Er is nu niets te leren: er staat geen herhaling klaar en alle woorden zijn geleerd. Herhalingen komen terug zodra ze aan de beurt zijn.';
 
   @override
   String learningPair(String target, String native) {
@@ -107,15 +110,29 @@ class AppLocalizationsNl extends AppLocalizations {
   String get changeDifficulty => 'Moeilijkheid wijzigen';
 
   @override
-  String cardsLeft(int count) {
+  String dueInSession(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Nog $count kaarten',
-      one: 'Nog 1 kaart',
+      other: '$count herhalingen klaar',
+      one: '1 herhaling klaar',
+      zero: 'Geen herhaling klaar',
     );
     return '$_temp0';
   }
+
+  @override
+  String goalProgress(int done, int goal) {
+    return 'Dagdoel: $done van $goal nieuwe woorden';
+  }
+
+  @override
+  String newTodayCount(int count) {
+    return 'Nieuwe woorden vandaag: $count';
+  }
+
+  @override
+  String get goalReached => 'Dagdoel gehaald. Ga gerust door zo lang je wilt.';
 
   @override
   String get endSession => 'Sessie beëindigen';
@@ -241,7 +258,14 @@ class AppLocalizationsNl extends AppLocalizations {
   String get settingsStudy => 'Leren';
 
   @override
-  String get settingsNewPerDay => 'Nieuwe kaarten per dag';
+  String get settingsDailyGoal => 'Dagdoel (nieuwe woorden)';
+
+  @override
+  String get settingsDailyGoalHint =>
+      'Alleen om bij te houden. Je kunt altijd meer leren.';
+
+  @override
+  String get noGoal => 'Geen';
 
   @override
   String get settingsReversed => 'Kaarten omdraaien';

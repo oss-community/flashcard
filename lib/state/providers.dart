@@ -22,6 +22,9 @@ final srsProvider = Provider<Srs>((ref) => Srs());
 /// Clock, replaceable in tests.
 final clockProvider = Provider<DateTime Function()>((ref) => DateTime.now);
 
+/// Largest daily goal the settings offer.
+const maxDailyGoal = 200;
+
 /// What the learner chose: languages, level, menus and look.
 @immutable
 class AppSettings {
@@ -30,7 +33,7 @@ class AppSettings {
     this.native,
     this.target,
     this.level,
-    this.newPerDay = 20,
+    this.dailyGoal = 0,
     this.reversed = false,
     this.themeMode = ThemeMode.system,
   });
@@ -42,7 +45,10 @@ class AppSettings {
 
   /// Level new cards come from; null means every level in order, A1 first.
   final String? level;
-  final int newPerDay;
+
+  /// New words the learner aims for each day; 0 means no goal. It never
+  /// stops the learner from going on.
+  final int dailyGoal;
   final bool reversed;
   final ThemeMode themeMode;
 
@@ -56,7 +62,7 @@ class AppSettings {
     String? native,
     String? target,
     String? Function()? level,
-    int? newPerDay,
+    int? dailyGoal,
     bool? reversed,
     ThemeMode? themeMode,
   }) => AppSettings(
@@ -64,7 +70,7 @@ class AppSettings {
     native: native ?? this.native,
     target: target ?? this.target,
     level: level != null ? level() : this.level,
-    newPerDay: newPerDay ?? this.newPerDay,
+    dailyGoal: dailyGoal ?? this.dailyGoal,
     reversed: reversed ?? this.reversed,
     themeMode: themeMode ?? this.themeMode,
   );
@@ -74,7 +80,7 @@ class AppSettings {
     'native': ?native,
     'target': ?target,
     'level': level ?? 'all',
-    'newPerDay': '$newPerDay',
+    'dailyGoal': '$dailyGoal',
     'reversed': '$reversed',
     'themeMode': themeMode.name,
   };
@@ -87,7 +93,7 @@ class AppSettings {
       native: lang('native'),
       target: lang('target'),
       level: levels.contains(map['level']) ? map['level'] : null,
-      newPerDay: int.tryParse(map['newPerDay'] ?? '')?.clamp(0, 200) ?? 20,
+      dailyGoal: int.tryParse(map['dailyGoal'] ?? '')?.clamp(0, maxDailyGoal) ?? 0,
       reversed: map['reversed'] == 'true',
       themeMode: ThemeMode.values.firstWhere(
         (m) => m.name == map['themeMode'],
@@ -162,14 +168,16 @@ final schedulesProvider = FutureProvider<Map<String, Schedule>>((ref) async {
 class TodaySummary {
   const TodaySummary({
     required this.due,
-    required this.newAvailable,
+    required this.newLeft,
     required this.reviewedToday,
     required this.newToday,
     required this.streak,
   });
 
   final int due;
-  final int newAvailable;
+
+  /// Cards never studied, in the chosen level or all levels.
+  final int newLeft;
   final int reviewedToday;
   final int newToday;
   final int streak;
@@ -193,10 +201,9 @@ final todayProvider = FutureProvider<TodaySummary>((ref) async {
             (settings.level == null || c.level == settings.level) && !schedules.containsKey(c.id),
       )
       .length;
-  final newLeft = (settings.newPerDay - today.newCards).clamp(0, unseen);
   return TodaySummary(
     due: due,
-    newAvailable: newLeft,
+    newLeft: unseen,
     reviewedToday: today.reviews,
     newToday: today.newCards,
     streak: streak,

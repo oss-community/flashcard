@@ -11,6 +11,10 @@ about 9,000 cards in English, German, Dutch and Persian, from level A1 to C2.
 - Choose a language pair (any two of English, German, Dutch, Persian). By default
   new cards come from every level in order, all of A1 first, then A2, up to C2;
   you can also pick a single level.
+- No daily limit: study as long as you like. Words due for review come first,
+  then new words one after another, and a word studied earlier comes back by
+  itself when its time arrives. An optional daily goal for new words only
+  keeps track and never stops you.
 - Flashcards scheduled with the FSRS spaced repetition algorithm. Answer with
   Forgot or Remembered; keyboard: Space shows the answer, 1 forgot, 2 remembered.
 - Every word has a difficulty (easy, medium, advanced) from the data. Each time

@@ -57,7 +57,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dueNow => 'Due for review';
 
   @override
-  String get newToday => 'New cards left today';
+  String get newLeft => 'New words left';
+
+  @override
+  String get newTodayLabel => 'New words today';
 
   @override
   String get reviewedToday => 'Answered today';
@@ -70,7 +73,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get allDone =>
-      'All done for now. Come back later, or raise the number of new cards per day in Settings.';
+      'Nothing to study right now: no review is due and every word has been studied. Reviews come back when they are due.';
 
   @override
   String learningPair(String target, String native) {
@@ -107,15 +110,30 @@ class AppLocalizationsEn extends AppLocalizations {
   String get changeDifficulty => 'Change difficulty';
 
   @override
-  String cardsLeft(int count) {
+  String dueInSession(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count cards left',
-      one: '1 card left',
+      other: '$count reviews due',
+      one: '1 review due',
+      zero: 'No reviews due',
     );
     return '$_temp0';
   }
+
+  @override
+  String goalProgress(int done, int goal) {
+    return 'Today\'s goal: $done of $goal new words';
+  }
+
+  @override
+  String newTodayCount(int count) {
+    return 'New words today: $count';
+  }
+
+  @override
+  String get goalReached =>
+      'Daily goal reached. Keep going as long as you like.';
 
   @override
   String get endSession => 'End session';
@@ -241,7 +259,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsStudy => 'Study';
 
   @override
-  String get settingsNewPerDay => 'New cards per day';
+  String get settingsDailyGoal => 'Daily goal (new words)';
+
+  @override
+  String get settingsDailyGoalHint =>
+      'Only for keeping track. You can always study more.';
+
+  @override
+  String get noGoal => 'None';
 
   @override
   String get settingsReversed => 'Reverse cards';
