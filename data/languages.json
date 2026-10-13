@@ -1,0 +1,36 @@
+{
+  "languages": [
+    {
+      "code": "en",
+      "column": "english",
+      "rtl": false,
+      "ttsLocale": "en-US",
+      "articles": [],
+      "names": {"en": "English", "de": "Englisch", "nl": "Engels", "fa": "انگلیسی"}
+    },
+    {
+      "code": "de",
+      "column": "german",
+      "rtl": false,
+      "ttsLocale": "de-DE",
+      "articles": ["der", "die", "das"],
+      "names": {"en": "German", "de": "Deutsch", "nl": "Duits", "fa": "آلمانی"}
+    },
+    {
+      "code": "nl",
+      "column": "dutch",
+      "rtl": false,
+      "ttsLocale": "nl-NL",
+      "articles": ["de", "het"],
+      "names": {"en": "Dutch", "de": "Niederländisch", "nl": "Nederlands", "fa": "هلندی"}
+    },
+    {
+      "code": "fa",
+      "column": "persian",
+      "rtl": true,
+      "ttsLocale": "fa-IR",
+      "articles": [],
+      "names": {"en": "Persian", "de": "Persisch", "nl": "Perzisch", "fa": "فارسی"}
+    }
+  ]
+}
