@@ -161,7 +161,13 @@ final schedulesProvider = FutureProvider<Map<String, Schedule>>((ref) async {
   ref.watch(progressVersionProvider);
   final settings = ref.watch(settingsProvider);
   if (!settings.hasPair) return const {};
-  return ref.watch(progressRepositoryProvider).schedules(settings.pair);
+  final ids = {for (final card in ref.watch(pairCardsProvider)) card.id};
+  final schedules = await ref.watch(progressRepositoryProvider).schedules(settings.pair);
+  // Progress of cards no longer in the vocabulary (removed duplicates) is ignored.
+  return {
+    for (final entry in schedules.entries)
+      if (ids.contains(entry.key)) entry.key: entry.value,
+  };
 });
 
 /// Today's numbers for the home and statistics screens.

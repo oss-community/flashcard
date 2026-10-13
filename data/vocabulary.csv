@@ -6,7 +6,7 @@ a1-0004,A1,easy,a piece of cheese,phrase,ein Stück Käse,,phrase,een stuk kaas,
 a1-0005,A1,medium,abbreviation,noun,die Abkürzung,Abkürzungen,noun,de afkorting,afkortingen,noun,مخفف,noun
 a1-0006,A1,easy,about,prep,über,,prep,over,,prep,درباره,prep
 a1-0007,A1,easy,abstract,adj,abstrakt,,adj,abstract,,adj,انتزاعی,adj
-a1-0008,A1,medium,academy of art,noun,die Kunstakademie,Kunstakademien,noun,de kunstacademie,kunstacademies,noun,هنر کده,noun
+a1-0008,A1,medium,academy of art,noun,die Kunstakademie,Kunstakademien,noun,de kunstacademie,kunstacademies,noun,هنرکده,noun
 a1-0009,A1,advanced,acquaintance,noun,der Bekannte,Bekannten,noun,de kennis,kennissen,noun,آشنا,noun
 a1-0010,A1,medium,across the intersection,phrase,über die Kreuzung,,phrase,over het kruispunt,,phrase,از چهارراه گذشتن,verb
 a1-0011,A1,easy,action film,noun,der Actionfilm,Actionfilme,noun,de actiefilm,actiefilms,noun,فیلم اکشن,noun
@@ -98,7 +98,7 @@ a1-0096,A1,easy,bake,verb,backen,,verb,bakken,,verb,پختن,verb
 a1-0097,A1,advanced,baked goods,noun,die Backware,Backwaren,noun,het bakkersproduct,bakkersproducten,noun,نان و شیرینی,noun
 a1-0098,A1,easy,balcony,noun,der Balkon,Balkons,noun,het balkon,balkons,noun,بالکن,noun
 a1-0099,A1,easy,banana,noun,die Banane,Bananen,noun,de banaan,bananen,noun,موز,noun
-a1-0100,A1,advanced,band,noun,das Band,Bänder,noun,het lint,linten,noun,نوار،روبان,noun
+a1-0100,A1,advanced,band,noun,das Band,Bänder,noun,het lint,linten,noun,نوار، روبان,noun
 a1-0101,A1,easy,bank,noun,die Bank,Banken,noun,de bank,banken,noun,بانک,noun
 a1-0102,A1,advanced,bar,noun,die Tafel,Tafeln,noun,de reep,repen,noun,قالب تخته ای,noun
 a1-0103,A1,medium,barber,noun,der Friseur,Friseure,noun,de kapper,kappers,noun,آرایشگر,noun
@@ -140,7 +140,7 @@ a1-0138,A1,easy,bitter,adj,bitter,,adj,bitter,,adj,تلخ,adj
 a1-0139,A1,easy,black,adj,schwarz,,adj,zwart,,adj,سیاه,adj
 a1-0140,A1,easy,blouse,noun,die Bluse,Blusen,noun,de blouse,blouses,noun,بلوز,noun
 a1-0141,A1,easy,blue,adj,blau,,adj,blauw,,adj,آبی,adj
-a1-0142,A1,easy,boat,noun,das Boot,Boote,noun,de boot,boten,noun,قایق، بَلم (قایق),noun
+a1-0142,A1,easy,boat,noun,das Boot,Boote,noun,de boot,boten,noun,قایق، بَلم,noun
 a1-0143,A1,medium,body,noun,der Körper,Körper,noun,het lichaam,lichamen,noun,بدن,noun
 a1-0144,A1,advanced,boiled beef,noun,der Tafelspitz,Tafelspitze,noun,het gekookte rundvlees,-,noun,گوشت گاو آب پز,noun
 a1-0145,A1,easy,book,noun,das Buch,Bücher,noun,het boek,boeken,noun,کتاب,noun
@@ -160,12 +160,12 @@ a1-0158,A1,medium,bring along,phrasal verb,mitbringen,,verb,meebrengen,,verb,ه�
 a1-0159,A1,medium,broad,adj,breit,,adj,breed,,adj,گسترده,adj
 a1-0160,A1,advanced,brochure,noun,der Prospekt,Prospekte,noun,de brochure,brochures,noun,بروشور,noun
 a1-0161,A1,easy,brother,noun,der Bruder,Brüder,noun,de broer,broers,noun,برادر,noun
-a1-0162,A1,advanced,brother-in-law,noun,der Schwager,Schwäger,noun,de zwager,zwagers,noun,برادر شوهر/ زن,noun
+a1-0162,A1,advanced,brother-in-law,noun,der Schwager,Schwäger,noun,de zwager,zwagers,noun,برادر شوهر/زن,noun
 a1-0163,A1,easy,brown,adj,braun,,adj,bruin,,adj,قهوه‌ای,adj
 a1-0164,A1,advanced,build,verb,erbauen,,verb,bouwen,,verb,ساختن,verb
 a1-0165,A1,medium,building,noun,das Gebäude,Gebäude,noun,het gebouw,gebouwen,noun,ساختمان,noun
 a1-0166,A1,advanced,building supervisor,noun,der Hausmeister,Hausmeister,noun,de conciërge,conciërges,noun,ناظر ساختمان,noun
-a1-0167,A1,advanced,bunch,noun,das Bund,Bunde,noun,de bos,bossen,noun,دسته (گروه),noun
+a1-0167,A1,advanced,bunch,noun,das Bund,Bunde,noun,de bos,bossen,noun,دسته,noun
 a1-0168,A1,easy,bus,noun,der Bus,Busse,noun,de bus,bussen,noun,اتوبوس,noun
 a1-0169,A1,advanced,business,noun,das Geschäft,Geschäfte,noun,de zaak,zaken,noun,دادوستد، کسب و کار,noun
 a1-0170,A1,advanced,busy,adj,belebt,,adj,druk,,adj,شلوغ، پرتردد,adj
@@ -209,7 +209,7 @@ a1-0207,A1,easy,cheese,noun,der Käse,Käse,noun,de kaas,kazen,noun,پنیر,nou
 a1-0208,A1,medium,chicken,noun,das Huhn,Hühner,noun,de kip,kippen,noun,مرغ,noun
 a1-0209,A1,medium,chicken meat,noun,das Hühnerfleisch,-,noun,het kippenvlees,-,noun,گوشت مرغ,noun
 a1-0210,A1,easy,child,noun,das Kind,Kinder,noun,het kind,kinderen,noun,کودک,noun
-a1-0211,A1,advanced,childcare,noun,Kinder betreuen,,phrase,de kinderopvang,-,noun,مراقبت کردن از بچه ها,verb
+a1-0211,A1,advanced,childcare,noun,die Kinderbetreuung,-,noun,de kinderopvang,-,noun,مراقبت از کودک,noun
 a1-0212,A1,advanced,chime,noun,das Glockenspiel,Glockenspiele,noun,het klokkenspel,klokkenspellen,noun,ناقوس نواز,noun
 a1-0213,A1,easy,chips,noun,die Chips,-,noun,de chips,-,noun,چیپس,noun
 a1-0214,A1,medium,chips,noun,die Pommes,-,noun,de friet,-,noun,سیب‌زمینی سرخ‌کرده,noun
@@ -255,13 +255,13 @@ a1-0253,A1,easy,computer game,noun,das Computerspiel,Computerspiele,noun,het com
 a1-0254,A1,advanced,computer scientist,noun,der Informatiker,Informatiker,noun,de informaticus,informatici,noun,متخصص فناوری اطلاعات,noun
 a1-0255,A1,advanced,computer scientist,noun,die Informatikerin,Informatikerinnen,noun,de informaticus,informatici,noun,متخصص فناوری اطلاعات,noun
 a1-0256,A1,easy,concert,noun,das Konzert,Konzerte,noun,het concert,concerten,noun,کنسرت,noun
-a1-0257,A1,advanced,confectionery,noun,die Süßware,Süßwaren,noun,het snoepgoed,-,noun,فراورده قنادی، شیرینی‌,noun
+a1-0257,A1,advanced,confectionery,noun,die Süßware,Süßwaren,noun,het snoepgoed,-,noun,فراورده قنادی، شیرینی,noun
 a1-0258,A1,medium,conference,noun,die Konferenz,Konferenzen,noun,de conferentie,conferenties,noun,همایش,noun
 a1-0259,A1,easy,contact,noun,der Kontakt,Kontakte,noun,het contact,contacten,noun,تماس,noun
 a1-0260,A1,easy,continent,noun,der Kontinent,Kontinente,noun,het continent,continenten,noun,قاره,noun
 a1-0261,A1,advanced,continue,verb,weiterfahren,,verb,doorrijden,,verb,به راندن ادامه دادن,verb
 a1-0262,A1,advanced,contribution,noun,der Beitrag,Beiträge,noun,de bijdrage,bijdragen,noun,مشارکت,noun
-a1-0263,A1,medium,conversation,noun,das Gespräch,Gespräche,noun,het gesprek,gesprekken,noun,گفت وگو,noun
+a1-0263,A1,medium,conversation,noun,das Gespräch,Gespräche,noun,het gesprek,gesprekken,noun,گفت‌وگو,noun
 a1-0264,A1,easy,cook,verb,kochen,,verb,koken,,verb,آشپزی کردن,verb
 a1-0265,A1,easy,cooking,noun,das Kochen,-,noun,het koken,-,noun,آشپزی,noun
 a1-0266,A1,easy,copy,noun,die Kopie,Kopien,noun,de kopie,kopieën,noun,رونوشت,noun
@@ -307,7 +307,7 @@ a1-0305,A1,easy,daughter,noun,die Tochter,Töchter,noun,de dochter,dochters,noun
 a1-0306,A1,easy,day,noun,der Tag,Tage,noun,de dag,dagen,noun,روز,noun
 a1-0307,A1,medium,day ticket,noun,die Tageskarte,Tageskarten,noun,de dagkaart,dagkaarten,noun,بلیط روزانه,noun
 a1-0308,A1,easy,december,noun,der Dezember,Dezember,noun,de december,-,noun,دسامبر,noun
-a1-0309,A1,medium,degree,noun,das Grad,Grade,noun,de graad,graden,noun,درجه,noun
+a1-0309,A1,medium,degree,noun,der Grad,Grade,noun,de graad,graden,noun,درجه,noun
 a1-0310,A1,medium,delicious,adj,köstlich,,adj,heerlijk,,adj,خوشمزه,adj
 a1-0311,A1,easy,dentist,noun,der Zahnarzt,Zahnärzte,noun,de tandarts,tandartsen,noun,دندانپزشک,noun
 a1-0312,A1,medium,describe,verb,beschreiben,,verb,beschrijven,,verb,توصیف کردن,verb
@@ -317,7 +317,7 @@ a1-0315,A1,easy,desk,noun,der Schreibtisch,Schreibtische,noun,het bureau,bureaus
 a1-0316,A1,medium,desperate,adj,verzweifelt,,adj,wanhopig,,adj,ناامید,adj
 a1-0317,A1,easy,dessert,noun,das Dessert,Desserts,noun,het dessert,desserts,noun,دسر,noun
 a1-0318,A1,medium,dessert,noun,die Nachspeise,Nachspeisen,noun,het nagerecht,nagerechten,noun,دسر,noun
-a1-0319,A1,easy,dialog,noun,der Dialog,Dialoge,noun,de dialoog,dialogen,noun,گفت وگو,noun
+a1-0319,A1,easy,dialog,noun,der Dialog,Dialoge,noun,de dialoog,dialogen,noun,گفت‌وگو,noun
 a1-0320,A1,advanced,dice,verb,würfeln,,verb,in blokjes snijden,,phrase,نگینی خرد کردن,verb
 a1-0321,A1,medium,dictionary,noun,das Wörterbuch,Wörterbücher,noun,het woordenboek,woordenboeken,noun,فرهنگ لغت,noun
 a1-0322,A1,easy,die,verb,sterben,,verb,sterven,,verb,مردن,verb
@@ -332,13 +332,13 @@ a1-0330,A1,medium,director,noun,die Direktorin,Direktorinnen,noun,de directeur,d
 a1-0331,A1,easy,dirty,adj,schmutzig,,adj,vuil,,adj,کثیف,adj
 a1-0332,A1,medium,discount,noun,die Ermäßigung,Ermäßigungen,noun,de korting,kortingen,noun,تخفیف,noun
 a1-0333,A1,medium,discuss,verb,besprechen,,verb,bespreken,,verb,گفت‌وگو کردن,verb
-a1-0334,A1,advanced,"dish,court",noun,das Gericht,Gerichte,noun,het gerecht,gerechten,noun,غذا،دادگاه,noun
+a1-0334,A1,advanced,"dish, court",noun,das Gericht,Gerichte,noun,het gerecht,gerechten,noun,غذا، دادگاه,noun
 a1-0335,A1,medium,dismiss,verb,entlassen,,verb,ontslaan,,verb,بیرون کردن,verb
 a1-0336,A1,advanced,do,verb,treiben,,verb,doen,,verb,انجام دادن,verb
 a1-0337,A1,easy,do,verb,tun,,verb,doen,,verb,انجام دادن,verb
 a1-0338,A1,medium,do gymnastics,phrase,Gymnastik machen,,verb,gymnastiek doen,,phrase,نرمش کردن,verb
 a1-0339,A1,medium,do shopping,phrase,einkaufen,,verb,boodschappen doen,,phrase,خرید کردن (اقلام ضروری),verb
-a1-0340,A1,medium,do sport,phrase,Sport treiben,,verb,sporten,,phrase,ورزش کردن,verb
+a1-0340,A1,medium,do sport,phrase,Sport treiben,,verb,sporten,,verb,ورزش کردن,verb
 a1-0341,A1,easy,doctor,noun,der Arzt,Ärzte,noun,de arts,artsen,noun,پزشک,noun
 a1-0342,A1,easy,dog,noun,der Hund,Hunde,noun,de hond,honden,noun,سگ,noun
 a1-0343,A1,medium,doing housework,phrase,Haushalt machen,,verb,het huishouden doen,,phrase,انجام دادن کارهای خانه,verb
@@ -373,7 +373,7 @@ a1-0371,A1,advanced,emmental cheese,noun,der Emmentaler Käse,-,noun,de emmental
 a1-0372,A1,easy,empty,adj,leer,,adj,leeg,,adj,خالی,adj
 a1-0373,A1,easy,end,noun,das Ende,Enden,noun,het einde,einden,noun,پایان,noun
 a1-0374,A1,medium,enjoy,verb,genießen,,verb,genieten,,verb,لذت بردن,verb
-a1-0375,A1,medium,enter,verb,eingeben,,verb,invoeren,,verb,واردکردن,verb
+a1-0375,A1,medium,enter,verb,eingeben,,verb,invoeren,,verb,وارد کردن,verb
 a1-0376,A1,medium,enthusiastic,adj,begeistert,,adj,enthousiast,,adj,مشتاق,adj
 a1-0377,A1,easy,entrance,noun,der Eingang,Eingänge,noun,de ingang,ingangen,noun,ورودی,noun
 a1-0378,A1,advanced,entry fee,noun,das Startgeld,Startgelder,noun,het inschrijfgeld,inschrijfgelden,noun,هزینه ورود,noun
@@ -409,7 +409,7 @@ a1-0407,A1,easy,fast,adj,schnell,,adj,snel,,adj,سریع,adj
 a1-0408,A1,easy,fat,adj,dick,,adj,dik,,adj,چاق,adj
 a1-0409,A1,easy,fat,adj,fett,,adj,vet,,adj,چرب,adj
 a1-0410,A1,easy,father,noun,der Vater,Väter,noun,de vader,vaders,noun,پدر,noun
-a1-0411,A1,medium,father-in-law,noun,der Schwiegervater,Schwiegerväter,noun,de schoonvader,schoonvaders,noun,پدر شوهر/ زن,noun
+a1-0411,A1,medium,father-in-law,noun,der Schwiegervater,Schwiegerväter,noun,de schoonvader,schoonvaders,noun,پدر شوهر/زن,noun
 a1-0412,A1,medium,favourite,adj,liebste,,adj,favoriet,,adj,مورد علاقه,adj
 a1-0413,A1,easy,fear,noun,die Angst,Ängste,noun,de angst,angsten,noun,ترس,noun
 a1-0414,A1,easy,february,noun,der Februar,Februare,noun,de februari,-,noun,فوریه,noun
@@ -481,8 +481,8 @@ a1-0479,A1,easy,gate,noun,das Tor,Tore,noun,de poort,poorten,noun,دروازه,n
 a1-0480,A1,advanced,geriatric nurse,noun,der Altenpfleger,Altenpfleger,noun,de bejaardenverzorger,bejaardenverzorgers,noun,پرستار سالمندان,noun
 a1-0481,A1,advanced,geriatric nurse,noun,die Altenpflegerin,Altenpflegerinnen,noun,de bejaardenverzorgster,bejaardenverzorgsters,noun,پرستار سالمندان,noun
 a1-0482,A1,medium,german,noun,das Deutsch,-,noun,het Duits,-,noun,زبان آلمانی,noun
-a1-0483,A1,medium,german,noun,der Deutsche,Deutschen,noun,de Duitser,Duitsers,noun,ملیت آلمانی,noun
-a1-0484,A1,medium,german,noun,die Deutsche,Deutschen,noun,de Duitse,Duitsen,noun,ملیت آلمانی,noun
+a1-0483,A1,medium,german,noun,der Deutsche,Deutschen,noun,de Duitser,Duitsers,noun,مرد آلمانی,noun
+a1-0484,A1,medium,german,noun,die Deutsche,Deutschen,noun,de Duitse,Duitsen,noun,زن آلمانی,noun
 a1-0485,A1,easy,germany,noun,das Deutschland,-,noun,het Duitsland,-,noun,آلمان,noun
 a1-0486,A1,advanced,get,verb,ankommen,,verb,aankomen,,verb,رسیدن,verb
 a1-0487,A1,medium,get,verb,holen,,verb,halen,,verb,آوردن,verb
@@ -509,7 +509,7 @@ a1-0507,A1,easy,go,verb,gehen,,verb,gaan,,verb,رفتن,verb
 a1-0508,A1,medium,go back,phrasal verb,zurückgehen,,verb,teruggaan,,verb,برگشتن,verb
 a1-0509,A1,medium,go out,phrasal verb,ausgehen,,verb,uitgaan,,verb,بیرون رفتن، از خانه بیرون رفتن,verb
 a1-0510,A1,medium,go shopping,phrase,shoppen,,verb,winkelen,,verb,خرید کردن,verb
-a1-0511,A1,easy,goal,noun,das Ziel,Ziele,noun,het doel,doelen,noun,هدف، امتیاز در فوتبال و هاکی روی یخ,noun
+a1-0511,A1,easy,goal,noun,das Ziel,Ziele,noun,het doel,doelen,noun,هدف,noun
 a1-0512,A1,medium,going to bed,phrase,ins Bett gehen,,phrase,naar bed gaan,,phrase,به بستر رفتن,verb
 a1-0513,A1,easy,good,adj,gut,,adj,goed,,adj,خوب,adj
 a1-0514,A1,easy,good day,phrase,Guten Tag,,phrase,goedendag,,phrase,روزت به شادی,phrase
@@ -623,7 +623,7 @@ a1-0621,A1,medium,inform,verb,informieren,,verb,informeren,,verb,اطلاع دا
 a1-0622,A1,advanced,information,noun,die Angabe,Angaben,noun,het gegeven,gegevens,noun,اطلاعات,noun
 a1-0623,A1,medium,ingredient,noun,die Zutat,Zutaten,noun,het ingrediënt,ingrediënten,noun,ماده تشکیل دهنده,noun
 a1-0624,A1,advanced,inside,adv,hinein,,adv,naar binnen,,adv,داخل,adv
-a1-0625,A1,medium,instruction,noun,die Anleitung,Anleitungen,noun,de handleiding,handleidingen,noun,دستورکار,noun
+a1-0625,A1,medium,instruction,noun,die Anleitung,Anleitungen,noun,de handleiding,handleidingen,noun,دستورالعمل,noun
 a1-0626,A1,medium,instruction,noun,die Anweisung,Anweisungen,noun,de instructie,instructies,noun,دستور,noun
 a1-0627,A1,easy,intensive,adj,intensiv,,adj,intensief,,adj,فشرده,adj
 a1-0628,A1,medium,interest,noun,das Interesse,Interessen,noun,de interesse,interesses,noun,علاقه,noun
@@ -644,7 +644,7 @@ a1-0642,A1,easy,jazz,noun,der Jazz,-,noun,de jazz,-,noun,جاز,noun
 a1-0643,A1,easy,jeans,noun,die Jeans,Jeans,noun,de spijkerbroek,spijkerbroeken,noun,شلوار جین,noun
 a1-0644,A1,easy,job,noun,der Job,Jobs,noun,de baan,banen,noun,شغل,noun
 a1-0645,A1,easy,jog,verb,joggen,,verb,joggen,,verb,دویدن آهسته,verb
-a1-0646,A1,easy,jogging,noun,das Jogging,Joggings,noun,het joggen,-,noun,دویدن آهسته,verb
+a1-0646,A1,easy,jogging,noun,das Jogging,-,noun,het joggen,-,noun,دویدن آهسته,verb
 a1-0647,A1,easy,journalist,noun,der Journalist,Journalisten,noun,de journalist,journalisten,noun,روزنامه‌نگار,noun
 a1-0648,A1,easy,journalist,noun,die Journalistin,Journalistinnen,noun,de journalist,journalisten,noun,روزنامه‌نگار,noun
 a1-0649,A1,easy,juice,noun,der Saft,Säfte,noun,het sap,sappen,noun,آبمیوه,noun
@@ -661,7 +661,7 @@ a1-0659,A1,easy,knife,noun,das Messer,Messer,noun,het mes,messen,noun,چاقو,n
 a1-0660,A1,medium,know,verb,kennen,,verb,kennen,,verb,شناختن,verb
 a1-0661,A1,medium,know,verb,wissen,,verb,weten,,verb,دانستن,verb
 a1-0662,A1,medium,lake,noun,der See,Seen,noun,het meer,meren,noun,دریاچه,noun
-a1-0663,A1,medium,lamb,noun,das Lammfleisch,-,noun,het lamsvlees,-,noun,بره,noun
+a1-0663,A1,medium,lamb,noun,das Lammfleisch,-,noun,het lamsvlees,-,noun,گوشت بره,noun
 a1-0664,A1,easy,lamp,noun,die Lampe,Lampen,noun,de lamp,lampen,noun,چراغ,noun
 a1-0665,A1,easy,land,noun,das Land,Länder,noun,het land,landen,noun,زمین,noun
 a1-0666,A1,medium,landlady,noun,die Vermieterin,Vermieterinnen,noun,de verhuurster,verhuursters,noun,صاحبخانه,noun
@@ -677,14 +677,14 @@ a1-0675,A1,easy,later,adv,später,,adv,later,,adv,بعداً، بعد,adv
 a1-0676,A1,easy,laugh,verb,lachen,,verb,lachen,,verb,خندیدن,verb
 a1-0677,A1,medium,laundromat,noun,der Waschsalon,Waschsalons,noun,de wasserette,wasserettes,noun,رختشویخانه,noun
 a1-0678,A1,medium,laundry,noun,die Wäsche,Wäschen,noun,de was,-,noun,رختهای شستنی,noun
-a1-0679,A1,medium,laundry,noun,die Wäscherei,Wäschereien,noun,de wasserette,wasserettes,noun,خشکشویی,noun
-a1-0680,A1,medium,laundry basket,noun,der Waschkorb,Wäschekörbe,noun,de wasmand,wasmanden,noun,سبد لباس‌های شسته شده,noun
+a1-0679,A1,medium,laundry,noun,die Wäscherei,Wäschereien,noun,de wasserij,wasserijen,noun,خشکشویی,noun
+a1-0680,A1,medium,laundry basket,noun,der Waschkorb,Waschkörbe,noun,de wasmand,wasmanden,noun,سبد لباس‌های شسته شده,noun
 a1-0681,A1,medium,layer cake,noun,die Torte,Torten,noun,de taart,taarten,noun,کیک (خامه‌ای),noun
 a1-0682,A1,easy,learn,verb,lernen,,verb,leren,,verb,آموختن,verb
 a1-0683,A1,medium,leather,noun,das Leder,Leder,noun,het leer,-,noun,چرم,noun
 a1-0684,A1,medium,leave,verb,verlassen,,verb,verlaten,,verb,ترک کردن، رها کردن,verb
 a1-0685,A1,advanced,leaving home,phrase,von zu Hause ausziehen,,phrase,het huis uit gaan,,phrase,ترک کردن خانه,phrase
-a1-0686,A1,easy,left,adv,links,,adv,links,,adv,چپ، چپ (جهت),adv
+a1-0686,A1,easy,left,adv,links,,adv,links,,adv,چپ,adv
 a1-0687,A1,easy,leg,noun,das Bein,Beine,noun,het been,benen,noun,پا,noun
 a1-0688,A1,easy,lemon,noun,die Zitrone,Zitronen,noun,de citroen,citroenen,noun,لیمو,noun
 a1-0689,A1,medium,lesson,noun,die Lektion,Lektionen,noun,de les,lessen,noun,درس,noun
@@ -768,7 +768,7 @@ a1-0766,A1,medium,mood,noun,die Stimmung,Stimmungen,noun,de stemming,stemmingen,
 a1-0767,A1,medium,morning,noun,der Morgen,Morgen,noun,de ochtend,ochtenden,noun,بامداد,noun
 a1-0768,A1,advanced,most of all,phrase,am liebsten,,adv,het liefst,,phrase,بیشتر از همه,phrase
 a1-0769,A1,easy,mother,noun,die Mutter,Mütter,noun,de moeder,moeders,noun,مادر,noun
-a1-0770,A1,medium,mother-in-law,noun,die Schwiegermutter,Schwiegermütter,noun,de schoonmoeder,schoonmoeders,noun,مادر شوهر/ زن,noun
+a1-0770,A1,medium,mother-in-law,noun,die Schwiegermutter,Schwiegermütter,noun,de schoonmoeder,schoonmoeders,noun,مادرشوهر، مادرزن,noun
 a1-0771,A1,easy,motivate,verb,motivieren,,verb,motiveren,,verb,انگیزه دادن,verb
 a1-0772,A1,easy,mountain,noun,der Berg,Berge,noun,de berg,bergen,noun,کوه,noun
 a1-0773,A1,easy,mountain bike,noun,das Mountainbike,Mountainbikes,noun,de mountainbike,mountainbikes,noun,دوچرخه کوهستان,noun
@@ -804,7 +804,7 @@ a1-0802,A1,medium,news,noun,die Nachricht,Nachrichten,noun,het nieuws,-,noun,ا�
 a1-0803,A1,medium,news,noun,die Neuigkeit,Neuigkeiten,noun,het nieuwtje,nieuwtjes,noun,خبر جدید,noun
 a1-0804,A1,easy,newspaper,noun,die Zeitung,Zeitungen,noun,de krant,kranten,noun,روزنامه,noun
 a1-0805,A1,medium,newspaper article,noun,der Zeitungsartikel,Zeitungsartikel,noun,het krantenartikel,krantenartikelen,noun,مقاله روزنامه,noun
-a1-0806,A1,medium,next door,phrase,nebenan,,adv,hiernaast,,adv,همسایگی,noun
+a1-0806,A1,medium,next door,phrase,nebenan,,adv,hiernaast,,adv,در همسایگی,adv
 a1-0807,A1,medium,next stop,phrase,die nächste Haltestelle,,phrase,de volgende halte,,phrase,ایستگاه بعدی,phrase
 a1-0808,A1,easy,next to,prep,neben,,prep,naast,,prep,در کنار,prep
 a1-0809,A1,easy,nice,adj,nett,,adj,aardig,,adj,مهربان، خوشایند، دلپذیر,adj
@@ -820,7 +820,7 @@ a1-0818,A1,medium,not at all,phrase,gar nicht,,adv,helemaal niet,,phrase,نه ب
 a1-0819,A1,easy,note,noun,die Notiz,Notizen,noun,de notitie,notities,noun,یادداشت,noun
 a1-0820,A1,medium,note,verb,notieren,,verb,noteren,,verb,یادداشت کردن,verb
 a1-0821,A1,easy,nothing,pron,nichts,,pron,niets,,pron,هیچ چیز,pron
-a1-0822,A1,medium,noun,noun,das Nomen,Nomen,noun,het zelfstandig naamwoord,zelfstandige naamwoorden,noun,اسم(دستور زبانی)، اسم,noun
+a1-0822,A1,medium,noun,noun,das Nomen,Nomen,noun,het zelfstandig naamwoord,zelfstandige naamwoorden,noun,اسم (دستور زبان),noun
 a1-0823,A1,easy,november,noun,der November,November,noun,de november,-,noun,نوامبر,noun
 a1-0824,A1,easy,now,adv,jetzt,,adv,nu,,adv,الان,adv
 a1-0825,A1,medium,now,adv,nun,,adv,nu,,adv,اکنون,adv
@@ -934,14 +934,14 @@ a1-0932,A1,easy,player,noun,der Spieler,Spieler,noun,de speler,spelers,noun,با
 a1-0933,A1,easy,player,noun,die Spielerin,Spielerinnen,noun,de speelster,speelsters,noun,بازیکن,noun
 a1-0934,A1,medium,Pleased to meet you,phrase,Freut mich,,phrase,aangenaam kennis te maken,,phrase,خوشوقتم,phrase
 a1-0935,A1,easy,poem,noun,das Gedicht,Gedichte,noun,het gedicht,gedichten,noun,شعر,noun
-a1-0936,A1,medium,point,noun,der Punkt,Punkte,noun,het punt,punten,noun,امتیاز، نکته، نکته؛ هدف، فایده,noun
+a1-0936,A1,medium,point,noun,der Punkt,Punkte,noun,het punt,punten,noun,امتیاز، نکته,noun
 a1-0937,A1,easy,police,noun,die Polizei,-,noun,de politie,-,noun,پلیس,noun
 a1-0938,A1,medium,polite,adj,höflich,,adj,beleefd,,adj,مودب,adj
 a1-0939,A1,easy,poor,adj,arm,,adj,arm,,adj,فقیر,adj
 a1-0940,A1,easy,pop music,noun,die Popmusik,-,noun,de popmuziek,-,noun,موسیقی پاپ,noun
 a1-0941,A1,easy,popular,adj,populär,,adj,populair,,adj,محبوب,adj
 a1-0942,A1,easy,pork,noun,das Schweinefleisch,-,noun,het varkensvlees,-,noun,گوشت خوک,noun
-a1-0943,A1,easy,portion,noun,die Portion,Portionen,noun,de portie,porties,noun,یک دست غذا,noun
+a1-0943,A1,easy,portion,noun,die Portion,Portionen,noun,de portie,porties,noun,پرس غذا، سهم,noun
 a1-0944,A1,easy,positive,adj,positiv,,adj,positief,,adj,مثبت,adj
 a1-0945,A1,easy,possible,adj,möglich,,adj,mogelijk,,adj,ممکن، امکان پذیر,adj
 a1-0946,A1,medium,postal code,noun,die Postleitzahl,Postleitzahlen,noun,de postcode,postcodes,noun,کد پستی,noun
@@ -972,7 +972,7 @@ a1-0970,A1,easy,program,noun,das Programm,Programme,noun,het programma,programma
 a1-0971,A1,advanced,puree,verb,pürieren,,verb,pureren,,verb,له کردن غذا,verb
 a1-0972,A1,medium,purple,adj,lila,,adj,paars,,adj,بنفش,adj
 a1-0973,A1,advanced,put,verb,stecken,,verb,steken,,verb,قرار دادن,verb
-a1-0974,A1,medium,put on,phrasal verb,anziehen,,verb,aantrekken,,verb,پوشیدن، پوشیدن لباس، لباس پوشیدن,verb
+a1-0974,A1,medium,put on,phrasal verb,anziehen,,verb,aantrekken,,verb,پوشیدن، لباس پوشیدن,verb
 a1-0975,A1,easy,question,noun,die Frage,Fragen,noun,de vraag,vragen,noun,پرسش,noun
 a1-0976,A1,medium,quiet,adj,leise,,adj,stil,,adj,ساکت,adj
 a1-0977,A1,medium,quite,adv,ganz,,adv,helemaal,,adv,کاملاً,adv
@@ -1001,7 +1001,7 @@ a1-0999,A1,medium,regularly,adv,regelmäßig,,adj,regelmatig,,adv,به طور م
 a1-1000,A1,medium,rejection,noun,die Ablehnung,Ablehnungen,noun,de afwijzing,afwijzingen,noun,رد,noun
 a1-1001,A1,advanced,relative,noun,der Verwandte,Verwandten,noun,het familielid,familieleden,noun,خویشاوند,noun
 a1-1002,A1,easy,remain,verb,bleiben,,verb,blijven,,verb,ماندن,verb
-a1-1003,A1,advanced,"remind, (sich) remember",verb,erinnern,,verb,herinneren,,verb,چیزی را به‌ یاد آوردن، یادآوری کردن,verb
+a1-1003,A1,advanced,"remind, remember",verb,erinnern,,verb,herinneren,,verb,چیزی را به یاد آوردن، یادآوری کردن,verb
 a1-1004,A1,medium,rent,noun,die Miete,Mieten,noun,de huur,huren,noun,اجاره,noun
 a1-1005,A1,medium,rent,verb,mieten,,verb,huren,,verb,اجاره کردن,verb
 a1-1006,A1,medium,rental agreement,noun,der Mietvertrag,Mietverträge,noun,het huurcontract,huurcontracten,noun,قرارداد اجاره,noun
@@ -1022,13 +1022,13 @@ a1-1020,A1,easy,rich,adj,reich,,adj,rijk,,adj,غنی,adj
 a1-1021,A1,medium,ride,verb,reiten,,verb,paardrijden,,verb,اسب سواری کردن,verb
 a1-1022,A1,medium,ride a bike,phrase,das Radfahren,-,noun,fietsen,,verb,دوچرخه سواری کردن,verb
 a1-1023,A1,medium,ride along,phrasal verb,mitfahren,,verb,meerijden,,verb,همراه آمدن (با ماشین),verb
-a1-1024,A1,easy,right,adv,rechts,,adv,rechts,,adv,راست، راست (جهت),adv
+a1-1024,A1,easy,right,adv,rechts,,adv,rechts,,adv,راست,adv
 a1-1025,A1,medium,"right away, soon",phrase,gleich,,adv,zo meteen,,phrase,الان، به‌زودی,adv
 a1-1026,A1,medium,ring,verb,klingeln,,verb,aanbellen,,verb,زنگ زدن,verb
 a1-1027,A1,medium,ringtone,noun,der Klingelton,Klingeltöne,noun,de beltoon,beltonen,noun,آهنگ زنگ,noun
 a1-1028,A1,easy,river,noun,der Fluss,Flüsse,noun,de rivier,rivieren,noun,رودخانه,noun
 a1-1029,A1,easy,road,noun,die Straße,Straßen,noun,de weg,wegen,noun,جاده,noun
-a1-1030,A1,medium,roast,noun,der Braten,Braten,noun,het gebraad,-,noun,کباب شده,adj
+a1-1030,A1,medium,roast,noun,der Braten,Braten,noun,het gebraad,-,noun,گوشت بریان,noun
 a1-1031,A1,advanced,roasted potato,noun,die Rösterdäpfel,-,noun,de gebakken aardappel,gebakken aardappels,noun,سیب زمینی کباب شده,noun
 a1-1032,A1,easy,rock music,noun,die Rockmusik,-,noun,de rockmuziek,-,noun,موسیقی راک,noun
 a1-1033,A1,easy,role,noun,die Rolle,Rollen,noun,de rol,rollen,noun,نقش,noun
@@ -1092,9 +1092,9 @@ a1-1090,A1,medium,shopping list,noun,der Einkaufszettel,Einkaufszettel,noun,het 
 a1-1091,A1,easy,short,adj,kurz,,adj,kort,,adj,کوتاه,adj
 a1-1092,A1,medium,show,verb,zeigen,,verb,tonen,,verb,نشان دادن,verb
 a1-1093,A1,easy,shower,noun,die Dusche,Duschen,noun,de douche,douches,noun,دوش,noun
-a1-1094,A1,easy,shower,verb,duschen,,verb,douchen,,verb,دوش گرفتن، دوش گرفتن؛ باریدن,verb
+a1-1094,A1,easy,shower,verb,duschen,,verb,douchen,,verb,دوش گرفتن,verb
 a1-1095,A1,advanced,shrink (clothes),verb,einlaufen,,verb,krimpen,,verb,آب رفتن (لباس),verb
-a1-1096,A1,advanced,sibling,noun,die Geschwister,Geschwister,noun,de broer of zus,broers en zussen,noun,خواهر و برادر,noun
+a1-1096,A1,advanced,sibling,noun,das Geschwister,Geschwister,noun,de broer of zus,broers en zussen,noun,خواهر و برادر,noun
 a1-1097,A1,easy,sick,adj,krank,,adj,ziek,,adj,بیمار,adj
 a1-1098,A1,advanced,side dish,noun,die Beilage,Beilagen,noun,het bijgerecht,bijgerechten,noun,مخلفات,noun
 a1-1099,A1,easy,simple,adj,einfach,,adj,eenvoudig,,adj,ساده,adj
@@ -1102,7 +1102,7 @@ a1-1100,A1,medium,since,prep,seit,,prep,sinds,,prep,از (زمانِ)، از ...
 a1-1101,A1,easy,sing,verb,singen,,verb,zingen,,verb,آواز خواندن,verb
 a1-1102,A1,medium,singing,noun,der Gesang,Gesänge,noun,de zang,-,noun,آواز,noun
 a1-1103,A1,easy,sister,noun,die Schwester,Schwestern,noun,de zus,zussen,noun,خواهر,noun
-a1-1104,A1,advanced,sister-in-law,noun,die Schwägerin,Schwägerinnen,noun,de schoonzus,schoonzussen,noun,خواهر شوهر/ زن,noun
+a1-1104,A1,advanced,sister-in-law,noun,die Schwägerin,Schwägerinnen,noun,de schoonzus,schoonzussen,noun,خواهرشوهر، خواهرزن,noun
 a1-1105,A1,easy,sit,verb,sitzen,,verb,zitten,,verb,نشستن,verb
 a1-1106,A1,medium,sit down,phrasal verb,sich hinsetzen,,verb,gaan zitten,,verb,نشستن,verb
 a1-1107,A1,easy,situation,noun,die Situation,Situationen,noun,de situatie,situaties,noun,وضعیت,noun
@@ -1114,7 +1114,7 @@ a1-1112,A1,easy,slow,adj,langsam,,adj,langzaam,,adj,آهسته,adj
 a1-1113,A1,easy,small,adj,klein,,adj,klein,,adj,کوچک,adj
 a1-1114,A1,medium,small sausage,noun,das Würstchen,Würstchen,noun,het worstje,worstjes,noun,سوسیس کوچک,noun
 a1-1115,A1,medium,smile,verb,lächeln,,verb,glimlachen,,verb,لبخند زدن,verb
-a1-1116,A1,easy,sms,noun,die SMS,SMS,noun,de sms,sms'jes,noun,پیامک,noun
+a1-1116,A1,easy,sms,noun,die SMS,SMS,noun,de sms,sms'en,noun,پیامک,noun
 a1-1117,A1,easy,snack,noun,der Snack,Snacks,noun,de snack,snacks,noun,میان وعده,noun
 a1-1118,A1,easy,snow,noun,der Schnee,-,noun,de sneeuw,-,noun,برف,noun
 a1-1119,A1,easy,so,adv,so,,adv,zo,,adv,این‌طور، خیلی,adv
@@ -1156,7 +1156,7 @@ a1-1154,A1,easy,stay,verb,bleiben,,verb,blijven,,verb,ماندن,verb
 a1-1155,A1,easy,steak,noun,das Steak,Steaks,noun,de biefstuk,biefstukken,noun,استیک,noun
 a1-1156,A1,medium,sticky note,noun,der Notizzettel,Notizzettel,noun,het memobriefje,memobriefjes,noun,برگه یادداشت,noun
 a1-1157,A1,medium,still,adv,noch,,adv,nog,,adv,هنوز,adv
-a1-1158,A1,advanced,"still,but",adv,doch,,conj,toch,,adv,هنوز،اما,adv
+a1-1158,A1,advanced,"still, but",adv,doch,,conj,toch,,adv,هنوز، اما,adv
 a1-1159,A1,advanced,stocking,noun,der Strumpf,Strümpfe,noun,de kous,kousen,noun,جوراب زنانه ساقه بلند,noun
 a1-1160,A1,medium,stop,noun,die Haltestelle,Haltestellen,noun,de halte,haltes,noun,ایستگاه,noun
 a1-1161,A1,medium,stop,verb,halten,,verb,stoppen,,verb,توقف کردن، نگه داشتن,verb
@@ -1189,7 +1189,7 @@ a1-1187,A1,easy,sure,adj,sicher,,adj,zeker,,adj,مطمئن,adj
 a1-1188,A1,easy,surfing,noun,surfen,,verb,het surfen,-,noun,موج سواری کردن,verb
 a1-1189,A1,medium,surname,noun,der Familienname,Familiennamen,noun,de achternaam,achternamen,noun,نام خانوادگی,noun
 a1-1190,A1,medium,surprise,noun,die Überraschung,Überraschungen,noun,de verrassing,verrassingen,noun,غافلگیری,noun
-a1-1191,A1,medium,swap,verb,tauschen,,verb,ruilen,,verb,جابجا کردن,verb
+a1-1191,A1,medium,swap,verb,tauschen,,verb,ruilen,,verb,عوض کردن، مبادله کردن,verb
 a1-1192,A1,easy,sweater,noun,der Pullover,Pullover,noun,de trui,truien,noun,ژاکت,noun
 a1-1193,A1,easy,sweatshirt,noun,das Sweatshirt,Sweatshirts,noun,de sweater,sweaters,noun,سویشرت,noun
 a1-1194,A1,easy,sweet,adj,süß,,adj,zoet,,adj,شیرین,adj
@@ -1226,7 +1226,7 @@ a1-1224,A1,medium,tenant,noun,der Mieter,Mieter,noun,de huurder,huurders,noun,ا
 a1-1225,A1,medium,tenant,noun,die Mieterin,Mieterinnen,noun,de huurster,huursters,noun,اجاره کننده، مستاجر,noun
 a1-1226,A1,easy,tennis,noun,das Tennis,-,noun,het tennis,-,noun,تنیس,noun
 a1-1227,A1,medium,terrible,adj,schlimm,,adj,erg,,adj,ناخوشایند,adj
-a1-1228,A1,medium,terrible,adj,schrecklich,,adj,verschrikkelijk,,adj,ترسناک,adj
+a1-1228,A1,medium,terrible,adj,schrecklich,,adj,verschrikkelijk,,adj,وحشتناک,adj
 a1-1229,A1,advanced,terrific,adj,klasse,,adj,geweldig,,adj,عالی,adj
 a1-1230,A1,easy,test,noun,der Test,Teste,noun,de toets,toetsen,noun,آزمون,noun
 a1-1231,A1,easy,text,noun,der Text,Texte,noun,de tekst,teksten,noun,متن,noun
@@ -1331,7 +1331,7 @@ a1-1329,A1,easy,vegetarian,adj,vegetarisch,,adj,vegetarisch,,adj,گیاهی,adj
 a1-1330,A1,medium,vending machine,noun,der Automat,Automaten,noun,de automaat,automaten,noun,دستگاه فروش خودکار,noun
 a1-1331,A1,easy,verb,noun,das Verb,Verben,noun,het werkwoord,werkwoorden,noun,کنش، فعل,noun
 a1-1332,A1,easy,very,adv,sehr,,adv,heel,,adv,خیلی,adv
-a1-1333,A1,medium,vest,noun,die Weste,Westen,noun,het vest,vesten,noun,جلیقه,noun
+a1-1333,A1,medium,vest,noun,die Weste,Westen,noun,het gilet,gilets,noun,جلیقه,noun
 a1-1334,A1,medium,victory,noun,der Sieg,Siege,noun,de overwinning,overwinningen,noun,پیروزی,noun
 a1-1335,A1,easy,village,noun,das Dorf,Dörfer,noun,het dorp,dorpen,noun,روستا,noun
 a1-1336,A1,medium,visit,noun,der Besuch,Besuche,noun,het bezoek,bezoeken,noun,بازدید، دیدار,noun
@@ -1369,7 +1369,7 @@ a1-1367,A1,easy,weekend,noun,das Wochenende,Wochenenden,noun,het weekend,weekend
 a1-1368,A1,easy,weight,noun,das Gewicht,Gewichte,noun,het gewicht,gewichten,noun,وزن,noun
 a1-1369,A1,medium,welcome,interj,Herzlich willkommen,,phrase,welkom,,interj,خوش آمدید,phrase
 a1-1370,A1,medium,well,adj,gesund,,adj,gezond,,adj,سالم، خوب,adj
-a1-1371,A1,easy,well,adv,gut,,adv,goed,,adv,خوب، به‌خوبی، به خوبی,adv
+a1-1371,A1,easy,well,adv,gut,,adv,goed,,adv,خوب، به‌خوبی,adv
 a1-1372,A1,easy,wet,adj,nass,,adj,nat,,adj,خیس,adj
 a1-1373,A1,easy,what,pron,was,,pron,wat,,pron,چه,pron
 a1-1374,A1,easy,wheel,noun,das Rad,Räder,noun,het wiel,wielen,noun,چرخ,noun
@@ -1421,7 +1421,7 @@ a2-0010,A2,medium,a packet of biscuits,phrase,eine Packung Kekse,,phrase,een pak
 a2-0011,A2,medium,a packet of rice,phrase,eine Packung Reis,,phrase,een pak rijst,,phrase,یک بسته برنج,phrase
 a2-0012,A2,medium,a tin of tomatoes,phrase,eine Dose Tomaten,,phrase,een blik tomaten,,phrase,یک کنسرو گوجه فرنگی,phrase
 a2-0013,A2,medium,able,adj,fähig,,adj,bekwaam,,adj,توانا,adj
-a2-0014,A2,medium,above,prep,über,,prep,boven,,prep,بالای، روی، دربارهٔ، در بالایِ,prep
+a2-0014,A2,medium,above,prep,über,,prep,boven,,prep,بالای، روی,prep
 a2-0015,A2,medium,abroad,adv,das Ausland,-,noun,het buitenland,-,noun,خارج از کشور,noun
 a2-0016,A2,easy,absolute,adj,absolut,,adj,absoluut,,adj,بی چون و چرا,adj
 a2-0017,A2,medium,absolutely,adv,unbedingt,,adv,absoluut,,adv,بی چون و چرا,adv
@@ -1490,7 +1490,7 @@ a2-0079,A2,advanced,analytics,noun,die Analytik,-,noun,de analyse,analyses,noun,
 a2-0080,A2,medium,analyze,verb,analysieren,,verb,analyseren,,verb,تحلیل کردن، واکاوی کردن,verb
 a2-0081,A2,advanced,annoy,verb,nerven,,verb,irriteren,,verb,اذیت کردن,verb
 a2-0082,A2,advanced,annual cleaning,noun,der Jahresputz,-,noun,de grote schoonmaak,-,noun,نظافت سالانه,noun
-a2-0083,A2,advanced,any,det,beliebig,,adj,willekeurig,,adj,هر،دلخواه,det
+a2-0083,A2,advanced,any,det,beliebig,,adj,willekeurig,,adj,هر، دلخواه,det
 a2-0084,A2,medium,anyway,adv,jedenfalls,,adv,in ieder geval,,phrase,به هر حال,adv
 a2-0085,A2,advanced,apartment building,noun,das Mehrfamilienhaus,Mehrfamilienhäuser,noun,het appartementengebouw,appartementengebouwen,noun,ساختمان آپارتمانی,noun
 a2-0086,A2,medium,apologize,verb,sich entschuldigen,,verb,zich verontschuldigen,,verb,عذرخواهی کردن,verb
@@ -1502,7 +1502,7 @@ a2-0091,A2,medium,appointment,noun,die Verabredung,Verabredungen,noun,de afspraa
 a2-0092,A2,medium,apprentice,noun,der Lehrling,Lehrlinge,noun,de leerling,leerlingen,noun,شاگرد,noun
 a2-0093,A2,advanced,"apprenticeship, teaching",noun,die Lehre,Lehren,noun,de leertijd,leertijden,noun,کارآموزی، آموزه,noun
 a2-0094,A2,advanced,approach,verb,herankommen,,verb,naderen,,verb,نزدیک شدن,verb
-a2-0095,A2,medium,approximately,adv,rund,,adv,ongeveer,,adv,کم وبیش,adv
+a2-0095,A2,medium,approximately,adv,rund,,adv,ongeveer,,adv,کم و بیش,adv
 a2-0096,A2,easy,architecture,noun,die Architektur,-,noun,de architectuur,-,noun,معماری,noun
 a2-0097,A2,medium,area,noun,der Bereich,Bereiche,noun,het gebied,gebieden,noun,حوزه، زمینه، بخش,noun
 a2-0098,A2,medium,argue,verb,sich streiten,,verb,ruziemaken,,verb,مشاجره کردن,verb
@@ -1560,8 +1560,8 @@ a2-0149,A2,advanced,"be connected, be related",verb,zusammenhängen,,verb,samenh
 a2-0150,A2,advanced,"be enough, reach, hand",verb,reichen,,verb,reiken,,verb,کافی بودن، رسیدن، دادن,verb
 a2-0151,A2,advanced,be going to do something,phrase,"vorhaben, etwas zu tun",,phrase,van plan zijn iets te doen,,phrase,قرار بودن کاری را انجام دادن,phrase
 a2-0152,A2,medium,be happy,verb,sich freuen,,verb,zich verheugen,,verb,خوشحال بودن، شاد شدن,verb
-a2-0153,A2,medium,be interested,phrase,sich interessieren,,verb,geïnteresseerd zijn,,phrase,علاقمند بودن,verb
-a2-0154,A2,medium,be located (sich befinden),verb,sich befinden,,verb,zich bevinden,,verb,قرار داشتن,verb
+a2-0153,A2,medium,be interested,phrase,sich interessieren,,verb,geïnteresseerd zijn,,phrase,علاقه‌مند بودن,verb
+a2-0154,A2,medium,be located,verb,sich befinden,,verb,zich bevinden,,verb,قرار داشتن,verb
 a2-0155,A2,medium,"be missing, miss",phrase,fehlen,,verb,ontbreken,,verb,غایب بودن، کم بودن,verb
 a2-0156,A2,medium,be over,phrasal verb,vorbei sein,,verb,voorbij zijn,,verb,تمام شدن,verb
 a2-0157,A2,medium,be right,phrase,stimmen,,verb,kloppen,,verb,درست بودن,verb
@@ -1575,11 +1575,10 @@ a2-0164,A2,easy,bee,noun,die Biene,Bienen,noun,de bij,bijen,noun,زنبور,noun
 a2-0165,A2,medium,beef,noun,das Rindfleisch,-,noun,het rundvlees,-,noun,گوشت گاو,noun
 a2-0166,A2,medium,beer barrel,noun,das Bierfass,Bierfässer,noun,het bierfust,bierfusten,noun,بشکه آبجو,noun
 a2-0167,A2,medium,beer tent,noun,das Bierzelt,Bierzelte,noun,de biertent,biertenten,noun,چادر آبجو,noun
-a2-0168,A2,easy,bee,noun,die Biene,Bienen,noun,de bij,bijen,noun,زنبور,noun
 a2-0169,A2,easy,belly,noun,der Bauch,Bäuche,noun,de buik,buiken,noun,شکم,noun
 a2-0170,A2,easy,below,adv,unten,,adv,beneden,,adv,زیر,adv
 a2-0171,A2,easy,beside,prep,neben,,prep,naast,,prep,در کنار,prep
-a2-0172,A2,medium,besides,adv,außerdem,,adv,bovendien,,adv,علاوه براین,adv
+a2-0172,A2,medium,besides,adv,außerdem,,adv,bovendien,,adv,علاوه بر این,adv
 a2-0173,A2,medium,best,adv,am besten,,phrase,het best,,adv,بهترین,adj
 a2-0174,A2,easy,Best wishes,phrase,Viele Grüße,,phrase,met vriendelijke groet,,phrase,با بهترین آرزوها,phrase
 a2-0175,A2,easy,better,adj,besser,,adj,beter,,adj,بهتر,adj
@@ -1606,7 +1605,7 @@ a2-0195,A2,medium,borrow,verb,ausleihen,,verb,lenen,,verb,قرض گرفتن,verb
 a2-0196,A2,easy,both,pron,beide,,pron,beide,,pron,هر دو,pron
 a2-0197,A2,medium,bottom,adj,unterste,,adj,onderste,,adj,پایین,adj
 a2-0198,A2,medium,bowl,noun,die Schüssel,Schüsseln,noun,de kom,kommen,noun,کاسه,noun
-a2-0199,A2,medium,brand,noun,die Marke,Marken,noun,het merk,merken,noun,مارک، نشان تجاری، تمبر,noun
+a2-0199,A2,medium,brand,noun,die Marke,Marken,noun,het merk,merken,noun,مارک، نشان تجاری,noun
 a2-0200,A2,medium,brave,adj,mutig,,adj,moedig,,adj,شجاع,adj
 a2-0201,A2,easy,break,noun,die Pause,Pausen,noun,de pauze,pauzes,noun,استراحت,noun
 a2-0202,A2,medium,break,verb,zerbrechen,,verb,breken,,verb,شکستن، خرد شدن,verb
@@ -1649,7 +1648,7 @@ a2-0238,A2,medium,cap,noun,die Kappe,Kappen,noun,de pet,petten,noun,کلاه,nou
 a2-0239,A2,easy,capital,noun,die Hauptstadt,Hauptstädte,noun,de hoofdstad,hoofdsteden,noun,پایتخت,noun
 a2-0240,A2,easy,captain,noun,der Kapitän,Kapitäne,noun,de kapitein,kapiteins,noun,کاپیتان,noun
 a2-0241,A2,medium,car,noun,der Pkw,Pkws,noun,de personenauto,personenauto's,noun,وسیله نقلیه شخصی,noun
-a2-0242,A2,medium,caravan,noun,der Wohnwagen,Wohnwagen,noun,de caravan,caravans,noun,کاروان,noun
+a2-0242,A2,medium,caravan,noun,der Wohnwagen,Wohnwagen,noun,de caravan,caravans,noun,کاراوان، خانه سیار,noun
 a2-0243,A2,medium,cardigan,noun,die Strickjacke,Strickjacken,noun,het vest,vesten,noun,ژاکت بافتنی,noun
 a2-0244,A2,advanced,cardinal direction,noun,die Himmelsrichtung,Himmelsrichtungen,noun,de windrichting,windrichtingen,noun,جهت های اصلی,noun
 a2-0245,A2,medium,care,noun,die Pflege,-,noun,de verzorging,-,noun,مراقبت,noun
@@ -1675,7 +1674,7 @@ a2-0264,A2,medium,catch a train,phrase,den Zug erreichen,,phrase,de trein halen,
 a2-0265,A2,advanced,catch up,phrasal verb,einholen,,verb,inhalen,,verb,رسیدن,verb
 a2-0266,A2,medium,cathedral,noun,der Dom,Dome,noun,de dom,dommen,noun,کلیسای جامع,noun
 a2-0267,A2,medium,cave,noun,die Höhle,Höhlen,noun,de grot,grotten,noun,غار,noun
-a2-0268,A2,medium,"ceiling,blanket",noun,die Decke,Decken,noun,"het plafond, de deken","plafonds, dekens",noun,پتو،سقف,noun
+a2-0268,A2,medium,"ceiling, blanket",noun,die Decke,Decken,noun,"het plafond, de deken","plafonds, dekens",noun,سقف، پتو,noun
 a2-0269,A2,medium,celebration,noun,die Feier,Feiern,noun,het feest,feesten,noun,جشن,noun
 a2-0270,A2,easy,cell phone,noun,das Handy,Handys,noun,de mobiele telefoon,mobiele telefoons,noun,تلفن همراه,noun
 a2-0271,A2,easy,cellar,noun,der Keller,Keller,noun,de kelder,kelders,noun,زیرزمین,noun
@@ -1758,7 +1757,7 @@ a2-0347,A2,medium,comfortable,adj,bequem,,adj,comfortabel,,adj,راحت,adj
 a2-0348,A2,medium,commercial,adj,kaufmännisch,,adj,commercieel,,adj,تجاری,adj
 a2-0349,A2,medium,commercial building,noun,das Geschäftshaus,Geschäftshäuser,noun,het bedrijfspand,bedrijfspanden,noun,ساختمان تجاری,noun
 a2-0350,A2,medium,commodity,noun,die Ware,Waren,noun,het handelsartikel,handelsartikelen,noun,کالا,noun
-a2-0351,A2,medium,common,adj,gemeinsam,,adj,gemeenschappelijk,,adj,مشترک، رایج,adj
+a2-0351,A2,medium,common,adj,gemeinsam,,adj,gemeenschappelijk,,adj,مشترک,adj
 a2-0352,A2,medium,common,adj,üblich,,adj,gebruikelijk,,adj,رایج,adj
 a2-0353,A2,easy,communicate,verb,kommunizieren,,verb,communiceren,,verb,ارتباط برقرار کردن,verb
 a2-0354,A2,easy,communication,noun,die Kommunikation,-,noun,de communicatie,-,noun,ارتباط,noun
@@ -1778,7 +1777,7 @@ a2-0367,A2,advanced,compulsory studies,noun,das Pflichtstudium,Pflichtstudien,no
 a2-0368,A2,medium,concentrate,verb,sich konzentrieren,,verb,zich concentreren,,verb,تمرکز کردن,verb
 a2-0369,A2,advanced,concern,verb,angehen,,verb,aangaan,,verb,ربط داشتن,verb
 a2-0370,A2,medium,condition,noun,die Bedingung,Bedingungen,noun,de voorwaarde,voorwaarden,noun,شرط,noun
-a2-0371,A2,advanced,confectionery,noun,die Zuckerwaren,-,noun,de suikerwaren,-,noun,شیرینی‌ ها,noun
+a2-0371,A2,advanced,confectionery,noun,die Zuckerwaren,-,noun,de suikerwaren,-,noun,شیرینی‌ها,noun
 a2-0372,A2,easy,confetti,noun,das Konfetti,-,noun,de confetti,-,noun,کاغذرنگی های ریز که بر سر افراد می ریزند,noun
 a2-0373,A2,medium,confused,adj,verwirrt,,adj,verward,,adj,گیج,adj
 a2-0374,A2,medium,congratulate,verb,gratulieren,,verb,feliciteren,,verb,تبریک گفتن,verb
@@ -1812,7 +1811,7 @@ a2-0401,A2,medium,cough,verb,husten,,verb,hoesten,,verb,سرفه کردن,verb
 a2-0402,A2,medium,counter,noun,der Schalter,Schalter,noun,het loket,loketten,noun,گیشه,noun
 a2-0403,A2,easy,country inn,noun,der Landgasthof,Landgasthöfe,noun,de landelijke herberg,landelijke herbergen,noun,مسافرخانه روستایی,noun
 a2-0404,A2,medium,cover,verb,bedecken,,verb,bedekken,,verb,پوشاندن,verb
-a2-0405,A2,medium,"covered,cloudy",adj,bedeckt,,adj,bewolkt,,adj,ابری،گرفته,adj
+a2-0405,A2,medium,"covered, cloudy",adj,bedeckt,,adj,bewolkt,,adj,ابری، گرفته,adj
 a2-0406,A2,medium,cozy,adj,gemütlich,,adj,gezellig,,adj,دنج,adj
 a2-0407,A2,medium,craftsman,noun,der Handwerker,Handwerker,noun,de vakman,vakmensen,noun,صنعتگر,noun
 a2-0408,A2,medium,craftswoman,noun,die Handwerkerin,Handwerkerinnen,noun,de vakvrouw,vakvrouwen,noun,صنعتگر,noun
@@ -1820,7 +1819,7 @@ a2-0409,A2,medium,crazy,adj,verrückt,,adj,gek,,adj,دیوانه,adj
 a2-0410,A2,advanced,create,verb,erstellen,,verb,opstellen,,verb,ساختن,verb
 a2-0411,A2,medium,creation,noun,die Erstellung,Erstellungen,noun,de vervaardiging,-,noun,ساخت,noun
 a2-0412,A2,easy,credit card,noun,die Kreditkarte,Kreditkarten,noun,de creditcard,creditcards,noun,کارت اعتباری,noun
-a2-0413,A2,easy,credit institution,noun,das Kreditinstitut,Kreditinstitute,noun,de kredietinstelling,kredietinstellingen,noun,موسسه اعتباری,noun
+a2-0413,A2,easy,credit institution,noun,das Kreditinstitut,Kreditinstitute,noun,de kredietinstelling,kredietinstellingen,noun,مؤسسه اعتباری,noun
 a2-0414,A2,medium,crime novel,noun,der Krimi,Krimis,noun,de detective,detectives,noun,داستان جنایی,noun
 a2-0415,A2,medium,cross over,phrasal verb,überqueren,,verb,oversteken,,verb,گذشتن از روی ...,verb
 a2-0416,A2,medium,"crowd, crush",noun,das Gedränge,-,noun,het gedrang,-,noun,ازدحام، شلوغی,noun
@@ -1857,7 +1856,7 @@ a2-0446,A2,advanced,department store,noun,das Kaufhaus,Kaufhäuser,noun,het ware
 a2-0447,A2,medium,departure,noun,die Abfahrt,Abfahrten,noun,het vertrek,vertrekken,noun,عزیمت، راه افتادن,noun
 a2-0448,A2,advanced,dependent,adj,abhängig,,adj,afhankelijk,,adj,وابسته,adj
 a2-0449,A2,medium,deposit,noun,die Kaution,Kautionen,noun,de borg,borgen,noun,ودیعه، پول پیش,noun
-a2-0450,A2,medium,deposit,verb,einzahlen,,verb,storten,,verb,واریز کردن، سپرده,verb
+a2-0450,A2,medium,deposit,verb,einzahlen,,verb,storten,,verb,واریز کردن,verb
 a2-0451,A2,medium,design,noun,das Design,Designs,noun,het ontwerp,ontwerpen,noun,طراحی,noun
 a2-0452,A2,medium,design,verb,entwerfen,,verb,ontwerpen,,verb,طراحی کردن,verb
 a2-0453,A2,medium,desk chair,noun,der Schreibtischstuhl,Schreibtischstühle,noun,de bureaustoel,bureaustoelen,noun,صندلی اداری,noun
@@ -1900,26 +1899,26 @@ a2-0489,A2,medium,divide,verb,gliedern,,verb,indelen,,verb,تقسیم‌بندی
 a2-0490,A2,medium,divorced,adj,geschieden,,adj,gescheiden,,adj,طلاق گرفته,adj
 a2-0491,A2,medium,"do odd jobs, work part-time",phrase,jobben,,verb,jobben,,verb,موقتی کار کردن,verb
 a2-0492,A2,medium,do online banking,phrase,Online-Banking machen,,phrase,internetbankieren,,verb,کار بانکی آنلاین انجام دادن,verb
-a2-0493,A2,medium,do the shopping,phrase,einkaufen,,verb,boodschappen doen,,phrase,خرید کردن، خرید کردن (خرید روزمره),verb
+a2-0493,A2,medium,do the shopping,phrase,einkaufen,,verb,boodschappen doen,,phrase,خرید کردن,verb
 a2-0494,A2,medium,do well,verb,erfolgreich sein,,phrase,slagen,,verb,موفق شدن,verb
 a2-0495,A2,advanced,doctor,noun,die Ärztin,Ärztinnen,noun,de arts,artsen,noun,پزشک,noun
 a2-0496,A2,medium,doctor's assistant,noun,der Arzthelfer,Arzthelfer,noun,de doktersassistent,doktersassistenten,noun,دستیار پزشکی,noun
 a2-0497,A2,advanced,doctor's assistant,noun,die Arzthelferin,Arzthelferinnen,noun,de doktersassistente,doktersassistentes,noun,دستیار پزشک,noun
-a2-0498,A2,medium,doctor’s office,noun,die Praxis,Praxen,noun,de praktijk,praktijken,noun,مطب، مطب دکتر,noun
+a2-0498,A2,medium,doctor’s office,noun,die Praxis,Praxen,noun,de praktijk,praktijken,noun,مطب,noun
 a2-0499,A2,medium,document,noun,die Unterlage,Unterlagen,noun,het document,documenten,noun,مدرک,noun
 a2-0500,A2,medium,doner kebab,noun,der Döner,Döner,noun,de döner,döners,noun,کباب دونر,noun
 a2-0501,A2,medium,dormitory,noun,das Wohnheim,Wohnheime,noun,het studentenhuis,studentenhuizen,noun,خوابگاه,noun
 a2-0502,A2,medium,dosage,noun,die Dosierung,Dosierungen,noun,de dosering,doseringen,noun,مقدار مصرف,noun
 a2-0503,A2,medium,double room,noun,das Doppelzimmer,Doppelzimmer,noun,de tweepersoonskamer,tweepersoonskamers,noun,اتاق با یک تخت دونفره,noun
 a2-0504,A2,medium,down coat,noun,der Daunenmantel,Daunenmäntel,noun,de donsjas,donsjassen,noun,پالتو پر,noun
-a2-0505,A2,medium,download,verb,herunterladen,,verb,downloaden,,verb,دانلود کردن، دانلود,verb
+a2-0505,A2,medium,download,verb,herunterladen,,verb,downloaden,,verb,دانلود کردن,verb
 a2-0506,A2,medium,drawing,noun,das Zeichnen,-,noun,het tekenen,-,noun,طراحی,noun
 a2-0507,A2,medium,dream job,noun,der Traumberuf,Traumberufe,noun,het droomberoep,droomberoepen,noun,شغل رویایی,noun
 a2-0508,A2,medium,dreamy,adj,traumhaft,,adj,droomachtig,,adj,رویایی,adj
 a2-0509,A2,easy,dress,verb,sich anziehen,,verb,zich aankleden,,verb,جامه پوشیدن,verb
 a2-0510,A2,medium,driving,noun,das Fahren,-,noun,het rijden,-,noun,رانندگی,noun
 a2-0511,A2,easy,drop,noun,der Tropfen,Tropfen,noun,de druppel,druppels,noun,قطره,noun
-a2-0512,A2,medium,drop,verb,fallen lassen,,verb,laten vallen,,verb,انداختن، افتادن,verb
+a2-0512,A2,medium,drop,verb,fallen lassen,,verb,laten vallen,,verb,انداختن,verb
 a2-0513,A2,medium,drum,noun,die Trommel,Trommeln,noun,de trommel,trommels,noun,طبل,noun
 a2-0514,A2,easy,duck,noun,die Ente,Enten,noun,de eend,eenden,noun,اردک,noun
 a2-0515,A2,advanced,dumpling,noun,die Teigtasche,Teigtaschen,noun,de knoedel,knoedels,noun,پیراشکی,noun
@@ -1967,7 +1966,7 @@ a2-0556,A2,medium,engine,noun,der Motor,Motoren,noun,de motor,motoren,noun,مو�
 a2-0557,A2,easy,engineer,noun,der Ingenieur,Ingenieure,noun,de ingenieur,ingenieurs,noun,مهندس,noun
 a2-0558,A2,medium,enjoyment,noun,das Vergnügen,Vergnügen,noun,het plezier,-,noun,لذت,noun
 a2-0559,A2,medium,enter pin,phrase,PIN eingeben,,phrase,pincode invoeren,,phrase,پین را وارد کنید,phrase
-a2-0560,A2,advanced,"entertain, talk (sich unterhalten)",verb,unterhalten,,verb,onderhouden,,verb,سرگرم کردن، گفت‌وگو کردن,verb
+a2-0560,A2,advanced,"entertain, talk",verb,unterhalten,,verb,onderhouden,,verb,سرگرم کردن، گفت‌وگو کردن,verb
 a2-0561,A2,medium,entertainment,noun,die Unterhaltung,Unterhaltungen,noun,het vermaak,-,noun,سرگرمی,noun
 a2-0562,A2,medium,envelope,noun,der Briefumschlag,Briefumschläge,noun,de envelop,enveloppen,noun,پاکت,noun
 a2-0563,A2,medium,environment,noun,die Umwelt,-,noun,het milieu,-,noun,محیط زیست,noun
@@ -1996,7 +1995,7 @@ a2-0585,A2,advanced,exhibition,noun,die Messe,Messen,noun,de beurs,beurzen,noun,
 a2-0586,A2,advanced,existing until now,phrase,bisherig,,adj,tot nu toe,,phrase,پیشین، تاکنونی,adj
 a2-0587,A2,medium,exit,noun,der Ausgang,Ausgänge,noun,de uitgang,uitgangen,noun,خروج,noun
 a2-0588,A2,medium,expand,verb,erweitern,,verb,uitbreiden,,verb,گسترش دادن,verb
-a2-0589,A2,medium,expect,verb,erwarten,,verb,verwachten,,verb,انتظار/ توقع داشتن، انتظار داشتن,verb
+a2-0589,A2,medium,expect,verb,erwarten,,verb,verwachten,,verb,انتظار داشتن، توقع داشتن,verb
 a2-0590,A2,medium,experience,noun,die Erfahrung,Erfahrungen,noun,de ervaring,ervaringen,noun,تجربه,noun
 a2-0591,A2,medium,experienced,adj,erfahren,,adj,ervaren,,adj,کارکشته، با تجربه,adj
 a2-0592,A2,medium,experiment,verb,experimentieren,,verb,experimenteren,,verb,آزمایش کردن,verb
@@ -2011,7 +2010,7 @@ a2-0600,A2,easy,factory,noun,die Fabrik,Fabriken,noun,de fabriek,fabrieken,noun,
 a2-0601,A2,advanced,"factory, work (of art)",noun,das Werk,Werke,noun,het werk,werken,noun,کارخانه، اثر,noun
 a2-0602,A2,advanced,fail an exam,phrase,durch eine Prüfung fallen,,phrase,zakken voor een examen,,phrase,در امتحان رد شدن,verb
 a2-0603,A2,easy,fair,adj,fair,,adj,eerlijk,,adj,منصفانه,adj
-a2-0604,A2,advanced,"fair, bright, cheerful",adj,heiter,,adj,zonnig,,adj,صاف آفتابی,adj
+a2-0604,A2,advanced,"fair, bright, cheerful",adj,heiter,,adj,zonnig,,adj,صاف، آفتابی,adj
 a2-0605,A2,medium,fairy tale,noun,das Märchen,Märchen,noun,het sprookje,sprookjes,noun,افسانه,noun
 a2-0606,A2,advanced,fairytale-like,adj,märchenhaft,,adj,sprookjesachtig,,adj,افسانه‌ای، افسانه‌وار,adj
 a2-0607,A2,easy,fall,verb,fallen,,verb,vallen,,verb,افتادن,verb
@@ -2022,7 +2021,7 @@ a2-0611,A2,easy,fantastic,adj,fantastisch,,adj,fantastisch,,adj,شگفت انگ�
 a2-0612,A2,medium,farewell,noun,der Abschied,Abschiede,noun,het afscheid,-,noun,وداع,noun
 a2-0613,A2,medium,fascinating,adj,faszinierend,,adj,fascinerend,,adj,شگفت‌انگیز، مسحورکننده,adj
 a2-0614,A2,easy,fashion,noun,die Mode,Moden,noun,de mode,-,noun,مد,noun
-a2-0615,A2,medium,fashionable,adj,modisch,,adj,modieus,,adj,مُد روز، شیک، مد روز، باب روز,adj
+a2-0615,A2,medium,fashionable,adj,modisch,,adj,modieus,,adj,مد روز، شیک، باب روز,adj
 a2-0616,A2,medium,fatigue,noun,die Müdigkeit,-,noun,de vermoeidheid,-,noun,خستگی,noun
 a2-0617,A2,medium,fear,verb,fürchten,,verb,vrezen,,verb,ترسیدن,verb
 a2-0618,A2,medium,fee,noun,die Gebühr,Gebühren,noun,de vergoeding,vergoedingen,noun,هزینه,noun
@@ -2094,7 +2093,7 @@ a2-0683,A2,medium,free of charge,phrase,kostenfrei,,adj,kosteloos,,adj,رایگ�
 a2-0684,A2,easy,freedom,noun,die Freiheit,Freiheiten,noun,de vrijheid,vrijheden,noun,آزادی,noun
 a2-0685,A2,easy,freezing,adj,eiskalt,,adj,ijskoud,,adj,بسیار سرد,adj
 a2-0686,A2,easy,French fries,noun,die Pommes frites,-,noun,de patat,-,noun,سیب زمینی سرخ کرده,noun
-a2-0687,A2,medium,frequency,noun,die Häufigkeit,Häufigkeiten,noun,de frequentie,frequenties,noun,تناوب,noun
+a2-0687,A2,medium,frequency,noun,die Häufigkeit,Häufigkeiten,noun,de frequentie,frequenties,noun,بسامد، فراوانی,noun
 a2-0688,A2,medium,frequent,adj,häufig,,adj,frequent,,adj,مکرر، اغلب,adj
 a2-0689,A2,easy,fresh,adj,frisch,,adj,vers,,adj,تازه,adj
 a2-0690,A2,easy,fridge,noun,der Kühlschrank,Kühlschränke,noun,de koelkast,koelkasten,noun,یخچال,noun
@@ -2110,7 +2109,7 @@ a2-0699,A2,advanced,"funny, strange",adj,komisch,,adj,"grappig, raar",,adj,خن�
 a2-0700,A2,medium,furnish,verb,möblieren,,verb,meubileren,,verb,مبله کردن,verb
 a2-0701,A2,medium,furnishings,noun,die Einrichtung,Einrichtungen,noun,de inrichting,inrichtingen,noun,اثاثیه، مبلمان,noun
 a2-0702,A2,medium,future,adj,zukünftig,,adj,toekomstig,,adj,آینده,adj
-a2-0703,A2,easy,gallery,noun,die Galerie,Galerien,noun,de galerie,galerieën,noun,نگار خانه,noun
+a2-0703,A2,easy,gallery,noun,die Galerie,Galerien,noun,de galerie,galerieën,noun,نگارخانه,noun
 a2-0704,A2,easy,garage,noun,die Garage,Garagen,noun,de garage,garages,noun,گاراژ,noun
 a2-0705,A2,medium,garbage,noun,der Müll,-,noun,het afval,-,noun,زباله,noun
 a2-0706,A2,medium,garbage can,noun,die Mülltonne,Mülltonnen,noun,de vuilnisbak,vuilnisbakken,noun,سطل آشغال,noun
@@ -2124,7 +2123,7 @@ a2-0713,A2,easy,general,noun,die Generalin,Generalinnen,noun,de generaal,generaa
 a2-0714,A2,advanced,general practitioner,noun,der Allgemeinmediziner,Allgemeinmediziner,noun,de huisarts,huisartsen,noun,پزشک عمومی,noun
 a2-0715,A2,easy,geography,noun,die Geografie,-,noun,de aardrijkskunde,-,noun,جغرافیا,noun
 a2-0716,A2,medium,germanic,adj,germanisch,,adj,Germaans,,adj,ژرمنی,adj
-a2-0717,A2,medium,get,verb,bekommen,,verb,krijgen,,verb,بدست آوردن، به دست آوردن,verb
+a2-0717,A2,medium,get,verb,bekommen,,verb,krijgen,,verb,به دست آوردن,verb
 a2-0718,A2,medium,get,verb,werden,,verb,worden,,verb,شدن,verb
 a2-0719,A2,advanced,get a haircut,phrase,sich die Haare schneiden lassen,,phrase,zijn haar laten knippen,,phrase,کوتاه کردن مو,verb
 a2-0720,A2,medium,get back,phrasal verb,wiederbekommen,,verb,terugkrijgen,,verb,باز پس گرفتن,verb
@@ -2157,7 +2156,7 @@ a2-0746,A2,easy,go straight on,phrasal verb,geradeaus gehen,,phrase,rechtdoor ga
 a2-0747,A2,medium,go there,phrase,hingehen,,verb,erheen gaan,,phrase,به جایی رفتن,verb
 a2-0748,A2,advanced,go under,phrasal verb,unter etwas durchgehen,,phrase,ergens onderdoor gaan,,phrase,از زیر ... رد شدن,verb
 a2-0749,A2,medium,go up,phrasal verb,hinaufgehen,,verb,naar boven gaan,,phrase,بالا رفتن,verb
-a2-0750,A2,medium,go up,phrasal verb,steigen,,verb,stijgen,,verb,افزایش پیدا کردن، بالا رفتن، افزایش یافتن,verb
+a2-0750,A2,medium,go up,phrasal verb,steigen,,verb,stijgen,,verb,افزایش یافتن، بالا رفتن,verb
 a2-0751,A2,easy,god,noun,der Gott,Götter,noun,de god,goden,noun,خدا,noun
 a2-0752,A2,medium,going to the gym,phrase,ins Fitnessstudio gehen,,phrase,naar de sportschool gaan,,phrase,رفتن به باشگاه ورزشی,phrase
 a2-0753,A2,medium,going to the theater,noun,der Theaterbesuch,Theaterbesuche,noun,het theaterbezoek,theaterbezoeken,noun,تماشای نمایش در تئاتر,noun
@@ -2185,7 +2184,7 @@ a2-0774,A2,medium,guess,verb,raten,,verb,raden,,verb,حدس زدن,verb
 a2-0775,A2,medium,guest bed,noun,das Gästebett,Gästebetten,noun,het logeerbed,logeerbedden,noun,تختخواب مهمان,noun
 a2-0776,A2,easy,guest room,noun,das Gästezimmer,Gästezimmer,noun,de logeerkamer,logeerkamers,noun,اتاق مهمان,noun
 a2-0777,A2,medium,guide,noun,der Reiseführer,Reiseführer,noun,de reisgids,reisgidsen,noun,راهنما,noun
-a2-0778,A2,medium,guy,noun,der Typ,Typen,noun,de vent,venten,noun,یارو؛ مرد,noun
+a2-0778,A2,medium,guy,noun,der Typ,Typen,noun,de vent,venten,noun,یارو، مرد,noun
 a2-0779,A2,medium,habit,noun,die Gewohnheit,Gewohnheiten,noun,de gewoonte,gewoonten,noun,عادت,noun
 a2-0780,A2,easy,hail,noun,der Hagel,-,noun,de hagel,-,noun,تگرگ,noun
 a2-0781,A2,medium,hail,verb,hageln,,verb,hagelen,,verb,تگرگ باریدن,verb
@@ -2217,7 +2216,7 @@ a2-0806,A2,advanced,have a haircut,phrase,sich die Haare schneiden lassen,,phras
 a2-0807,A2,easy,have a lovely weekend,phrase,Schönes Wochenende!,,phrase,fijn weekend,,phrase,آخر هفته‌ی خوبی داشته باشید,phrase
 a2-0808,A2,medium,have a nice evening,phrase,Schönen Abend noch!,,phrase,nog een fijne avond!,,phrase,عصر خوبی داشته باشید.,phrase
 a2-0809,A2,advanced,"have an effect, seem",phrase,wirken,,verb,werken,,verb,اثر داشتن,verb
-a2-0810,A2,advanced,have at one's disposal,phrase,verfügen,,verb,beschikken over,,verb,در اختیار داشتن,verb
+a2-0810,A2,advanced,have at one's disposal,phrase,verfügen über,,verb,beschikken over,,verb,در اختیار داشتن,verb
 a2-0811,A2,medium,having a cold,phrase,erkältet,,adj,verkouden,,adj,دچار سرماخوردگی,adj
 a2-0812,A2,medium,head of human resources,noun,der Personalchef,Personalchefs,noun,het hoofd personeelszaken,hoofden personeelszaken,noun,رئیس منابع انسانی,noun
 a2-0813,A2,medium,head of human resources,noun,die Personalchefin,Personalchefinnen,noun,het hoofd personeelszaken,hoofden personeelszaken,noun,رئیس منابع انسانی,noun
@@ -2246,13 +2245,13 @@ a2-0835,A2,easy,hill,noun,der Hügel,Hügel,noun,de heuvel,heuvels,noun,تپه,n
 a2-0836,A2,advanced,"hint, note, notice",noun,der Hinweis,Hinweise,noun,de aanwijzing,aanwijzingen,noun,اشاره,noun
 a2-0837,A2,easy,historical,adj,historisch,,adj,historisch,,adj,تاریخی,adj
 a2-0838,A2,easy,hit,verb,schlagen,,verb,slaan,,verb,ضربه زدن,verb
-a2-0839,A2,medium,hold,verb,halten,,verb,houden,,verb,نگه داشتن، ایستادن,verb
+a2-0839,A2,medium,hold,verb,halten,,verb,houden,,verb,نگه داشتن,verb
 a2-0840,A2,advanced,"hold, keep, give (a talk)",verb,halten,,verb,houden,,verb,نگه داشتن، (سخنرانی) ارائه دادن,verb
 a2-0841,A2,easy,hole,noun,das Loch,Löcher,noun,het gat,gaten,noun,سوراخ,noun
 a2-0842,A2,medium,holiday apartment,noun,die Ferienwohnung,Ferienwohnungen,noun,het vakantiehuis,vakantiehuizen,noun,خانهٔ اجاره‌ای برای سفر,noun
 a2-0843,A2,medium,holidays,noun,die Ferien,-,noun,de vakantie,vakanties,noun,تعطیلات,noun
 a2-0844,A2,medium,home,noun,das Heim,Heime,noun,het tehuis,tehuizen,noun,خانه، آسایشگاه,noun
-a2-0845,A2,advanced,homeopathic,adj,homöopathisch,,adj,homeopathisch,,adj,هومیوپاتیک، همسان‌درمانی,adj
+a2-0845,A2,advanced,homeopathic,adj,homöopathisch,,adj,homeopathisch,,adj,هومیوپاتیک,adj
 a2-0846,A2,easy,honest,adj,ehrlich,,adj,eerlijk,,adj,راستگو,adj
 a2-0847,A2,advanced,honored,adj,geehrt,,adj,geëerd,,adj,گرامی، محترم,adj
 a2-0848,A2,medium,hood,noun,die Kapuze,Kapuzen,noun,de capuchon,capuchons,noun,کلاه وصل به لباس,noun
@@ -2296,7 +2295,7 @@ a2-0885,A2,easy,important,adj,wichtig,,adj,belangrijk,,adj,مهم,adj
 a2-0886,A2,easy,impossible,adj,unmöglich,,adj,onmogelijk,,adj,غیرممکن,adj
 a2-0887,A2,medium,improve,verb,verbessern,,verb,verbeteren,,verb,بهبود بخشیدن,verb
 a2-0888,A2,medium,in,adv,herein,,adv,binnen,,adv,به داخل,adv
-a2-0889,A2,medium,in (colloquial for herein/hinein),adv,rein,,adv,naar binnen,,adv,به داخل,adv
+a2-0889,A2,medium,in,adv,rein,,adv,naar binnen,,adv,به داخل,adv
 a2-0890,A2,medium,in advance,phrase,im Voraus,,adv,van tevoren,,phrase,از پیش,adv
 a2-0891,A2,easy,in front,phrase,vorne,,adv,vooraan,,adv,جلو,adv
 a2-0892,A2,easy,"in front of, before",prep,vor,,prep,voor,,prep,جلوی، قبل از,prep
@@ -2383,7 +2382,7 @@ a2-0972,A2,medium,last stop,phrase,die Endhaltestelle,Endhaltestellen,noun,de ei
 a2-0973,A2,advanced,last time,phrase,letztmalig,,adj,voor het laatst,,phrase,آخرین بار,phrase
 a2-0974,A2,medium,late shift,noun,der Spätdienst,Spätdienste,noun,de late dienst,late diensten,noun,نوبت کاری عصر,noun
 a2-0975,A2,easy,later,adj,später,,adj,later,,adj,بعدی,adj
-a2-0976,A2,easy,latin,adj,lateinisch,,adj,Latijns,,adj,لاتین,adj
+a2-0976,A2,easy,Latin,adj,lateinisch,,adj,Latijns,,adj,لاتین,adj
 a2-0977,A2,medium,laundry room,noun,die Waschküche,Waschküchen,noun,de wasruimte,wasruimtes,noun,اتاق رختشویی,noun
 a2-0978,A2,advanced,law,noun,das Recht,Rechte,noun,het recht,rechten,noun,قانون,noun
 a2-0979,A2,medium,lawyer,noun,der Anwalt,Anwälte,noun,de advocaat,advocaten,noun,وکیل,noun
@@ -2398,7 +2397,7 @@ a2-0987,A2,easy,left,adj,link,,adj,links,,adj,چپ,adj
 a2-0988,A2,medium,left into,phrase,links einbiegen,,phrase,linksaf slaan,,phrase,به سمت چپ رفتن,verb
 a2-0989,A2,medium,lend,verb,leihen,,verb,lenen,,verb,قرض دادن,verb
 a2-0990,A2,medium,"lessons, teaching",noun,der Unterricht,-,noun,het onderwijs,-,noun,درس، تدریس,noun
-a2-0991,A2,medium,level,noun,das Niveau,Niveaus,noun,het niveau,niveaus,noun,تراز،پایه،جایگاه,noun
+a2-0991,A2,medium,level,noun,das Niveau,Niveaus,noun,het niveau,niveaus,noun,تراز، پایه، جایگاه,noun
 a2-0992,A2,medium,lie,verb,liegen,,verb,liggen,,verb,قرار داشتن، (خوابیده) بودن,verb
 a2-0993,A2,medium,lie down,phrasal verb,sich hinlegen,,verb,gaan liggen,,verb,دراز کشیدن,verb
 a2-0994,A2,easy,lift,noun,der Lift,Lifte,noun,de lift,liften,noun,بالابر,noun
@@ -2414,7 +2413,7 @@ a2-1003,A2,medium,lively,adj,lebendig,,adj,levendig,,adj,سرزنده,adj
 a2-1004,A2,easy,living room,noun,das Wohnzimmer,Wohnzimmer,noun,de woonkamer,woonkamers,noun,اتاق نشیمن,noun
 a2-1005,A2,medium,"loan, credit",noun,der Kredit,Kredite,noun,het krediet,kredieten,noun,وام، اعتبار,noun
 a2-1006,A2,medium,local,adj,örtlich,,adj,plaatselijk,,adj,محلی,adj
-a2-1007,A2,advanced,"located,opportune",adj,gelegen,,adj,gelegen,,adj,واقع شده،مناسب,adj
+a2-1007,A2,advanced,"located, opportune",adj,gelegen,,adj,gelegen,,adj,واقع شده، مناسب,adj
 a2-1008,A2,medium,location,noun,die Lage,Lagen,noun,de ligging,liggingen,noun,موقعیت,noun
 a2-1009,A2,medium,lock,verb,abschließen,,verb,op slot doen,,verb,قفل کردن,verb
 a2-1010,A2,medium,"lock, castle",noun,das Schloss,Schlösser,noun,"het slot, het kasteel","sloten, kastelen",noun,قفل، کاخ,noun
@@ -2428,7 +2427,7 @@ a2-1017,A2,medium,look around,phrasal verb,sich umschauen,,verb,om zich heen kij
 a2-1018,A2,medium,look around,phrasal verb,sich umsehen,,verb,rondkijken,,verb,بررسی کردن اطراف,verb
 a2-1019,A2,medium,look forward to,phrase,sich freuen auf,,verb,zich verheugen op,,verb,بی تابانه چشم به راه بودن، مشتاقانه منتظر چیزی بودن,verb
 a2-1020,A2,medium,look like somebody,phrase,jemandem ähnlich sehen,,phrase,op iemand lijken,,phrase,مانند کسی بودن,verb
-a2-1021,A2,advanced,look up,phrasal verb,sich bessern,,verb,beter worden,,verb,بهتر شدن، بهتر شدن (اوضاع),verb
+a2-1021,A2,advanced,look up,phrasal verb,sich bessern,,verb,beter worden,,verb,بهتر شدن (اوضاع),verb
 a2-1022,A2,easy,lose,verb,verlieren,,verb,verliezen,,verb,از دست دادن، باختن,verb
 a2-1023,A2,easy,lost,adj,verloren,,adj,verloren,,adj,گمشده,adj
 a2-1024,A2,medium,lost and found office,noun,das Fundbüro,Fundbüros,noun,het bureau gevonden voorwerpen,bureaus gevonden voorwerpen,noun,دفتر اشیای گم شده,noun
@@ -2478,7 +2477,7 @@ a2-1067,A2,medium,medical,adj,ärztlich,,adj,medisch,,adj,پزشکی,adj
 a2-1068,A2,advanced,medicament,noun,das Heilmittel,Heilmittel,noun,het geneesmiddel,geneesmiddelen,noun,دارو,noun
 a2-1069,A2,easy,medicine,noun,die Medizin,-,noun,de geneeskunde,-,noun,پزشکی,noun
 a2-1070,A2,medium,"medicine, medication",noun,das Medikament,Medikamente,noun,het medicijn,medicijnen,noun,دارو,noun
-a2-1071,A2,medium,medium,adj,mittel,,adj,middelmatig,,adj,متوسط,adj
+a2-1071,A2,medium,medium,adj,mittel,,adj,gemiddeld,,adj,متوسط,adj
 a2-1072,A2,medium,meeting point,noun,der Treffpunkt,Treffpunkte,noun,het ontmoetingspunt,ontmoetingspunten,noun,جای دیدار,noun
 a2-1073,A2,easy,melon,noun,die Melone,Melonen,noun,de meloen,meloenen,noun,خربزه,noun
 a2-1074,A2,medium,member,noun,das Mitglied,Mitglieder,noun,het lid,leden,noun,عضو,noun
@@ -2519,7 +2518,7 @@ a2-1108,A2,easy,muscle,noun,der Muskel,Muskeln,noun,de spier,spieren,noun,عضل
 a2-1109,A2,medium,mushroom,noun,der Pilz,Pilze,noun,de paddenstoel,paddenstoelen,noun,قارچ,noun
 a2-1110,A2,medium,musical instrument,noun,das Musikinstrument,Musikinstrumente,noun,het muziekinstrument,muziekinstrumenten,noun,ساز موسیقی,noun
 a2-1111,A2,easy,musician,noun,der Musiker,Musiker,noun,de muzikant,muzikanten,noun,نوازنده,noun
-a2-1112,A2,medium,"narrow,tight",adj,eng,,adj,nauw,,adj,باریک،تنگ,adj
+a2-1112,A2,medium,"narrow, tight",adj,eng,,adj,nauw,,adj,باریک، تنگ,adj
 a2-1113,A2,easy,national,adj,national,,adj,nationaal,,adj,ملی,adj
 a2-1114,A2,easy,natural,adj,natürlich,,adj,natuurlijk,,adj,طبیعی,adj
 a2-1115,A2,medium,navigation device,noun,das Navigationsgerät,Navigationsgeräte,noun,het navigatiesysteem,navigatiesystemen,noun,دستگاه ناوبری,noun
@@ -2538,8 +2537,8 @@ a2-1127,A2,medium,net rent,noun,die Nettomiete,Nettomieten,noun,de kale huur,kal
 a2-1128,A2,advanced,network,verb,vernetzen,,verb,verbinden,,verb,به هم وصل کردن,verb
 a2-1129,A2,medium,never mind,phrase,macht nichts,,phrase,geeft niet,,phrase,مهم نیست,phrase
 a2-1130,A2,medium,new building,noun,der Neubau,Neubauten,noun,de nieuwbouw,-,noun,ساختمان جدید,noun
-a2-1131,A2,advanced,new year's celebration,noun,das Neujahrsfest,Neujahrsfeste,noun,het nieuwjaarsfeest,nieuwjaarsfeesten,noun,جشن سال نو,noun
-a2-1132,A2,advanced,new year's eve,noun,das Silvester,-,noun,de oudejaarsavond,oudejaarsavonden,noun,شب سال نو,noun
+a2-1131,A2,advanced,New Year's celebration,noun,das Neujahrsfest,Neujahrsfeste,noun,het nieuwjaarsfeest,nieuwjaarsfeesten,noun,جشن سال نو,noun
+a2-1132,A2,advanced,New Year's Eve,noun,das Silvester,-,noun,de oudejaarsavond,oudejaarsavonden,noun,شب سال نو,noun
 a2-1133,A2,medium,next,adj,nächst,,adj,volgend,,adj,بعدی,adj
 a2-1134,A2,advanced,next but one,phrase,übernächste,,adj,over twee,,phrase,دو تا بعد، پس از بعدی,phrase
 a2-1135,A2,medium,night shift,noun,die Nachtschicht,Nachtschichten,noun,de nachtdienst,nachtdiensten,noun,شب کاری,noun
@@ -2564,7 +2563,7 @@ a2-1153,A2,medium,notice,verb,bemerken,,verb,opmerken,,verb,متوجه شدن، 
 a2-1154,A2,easy,novel,noun,der Roman,Romane,noun,de roman,romans,noun,رمان,noun
 a2-1155,A2,medium,nowhere,adv,nirgends,,adv,nergens,,adv,هیچ جا,adv
 a2-1156,A2,medium,numerous,adj,zahlreich,,adj,talrijk,,adj,فراوان,adj
-a2-1157,A2,medium,nuremberg gingerbread,noun,der Nürnberger Lebkuchen,Nürnberger Lebkuchen,noun,de Neurenberger peperkoek,Neurenberger peperkoeken,noun,نان زنجبیلی نورنبرگ,noun
+a2-1157,A2,medium,Nuremberg gingerbread,noun,der Nürnberger Lebkuchen,Nürnberger Lebkuchen,noun,de Neurenberger peperkoek,Neurenberger peperkoeken,noun,نان زنجبیلی نورنبرگ,noun
 a2-1158,A2,medium,nurse,noun,die Krankenschwester,Krankenschwestern,noun,de verpleegster,verpleegsters,noun,پرستار,noun
 a2-1159,A2,medium,nursing home,noun,das Altenheim,Altenheime,noun,het bejaardentehuis,bejaardentehuizen,noun,خانه سالمندان,noun
 a2-1160,A2,medium,nuts,noun,die Nüsse,-,noun,de noten,-,noun,آجیل,noun
@@ -2596,8 +2595,8 @@ a2-1185,A2,easy,organ,noun,das Organ,Organe,noun,het orgaan,organen,noun,اند�
 a2-1186,A2,medium,"original, creative",adj,originell,,adj,origineel,,adj,بدیع، مبتکرانه,adj
 a2-1187,A2,medium,otherwise,adv,sonst,,adv,anders,,adv,وگرنه,conj
 a2-1188,A2,medium,out,adv,hinaus,,adv,naar buiten,,adv,بیرون,adv
-a2-1189,A2,medium,out (colloquial for heraus/hinaus),adv,raus,,adv,eruit,,adv,بیرون,adv
-a2-1190,A2,advanced,out of here,phrase,heraus,,adv,eruit,,adv,به‌ بیرون,adv
+a2-1189,A2,medium,out,adv,raus,,adv,eruit,,adv,بیرون,adv
+a2-1190,A2,advanced,out of here,phrase,heraus,,adv,eruit,,adv,به بیرون,adv
 a2-1191,A2,advanced,outpatient,adj,ambulant,,adj,poliklinisch,,adj,سرپایی,adj
 a2-1192,A2,medium,outside,adj,äußere,,adj,buitenste,,adj,بیرونی,adj
 a2-1193,A2,medium,oven,noun,der Backofen,Backöfen,noun,de oven,ovens,noun,فر,noun
@@ -2611,7 +2610,7 @@ a2-1200,A2,medium,own,adj,eigen,,adj,eigen,,adj,مال خود، خودی، خو�
 a2-1201,A2,medium,own,verb,besitzen,,verb,bezitten,,verb,مالک بودن، داشتن,verb
 a2-1202,A2,medium,owner,noun,der Besitzer,Besitzer,noun,de eigenaar,eigenaren,noun,مالک,noun
 a2-1203,A2,medium,owner,noun,der Eigentümer,Eigentümer,noun,de eigenaar,eigenaren,noun,دارنده,noun
-a2-1204,A2,medium,owner,noun,die Besitzerin,Besitzerinnen,noun,de eigenaar,eigenaars,noun,مالک,noun
+a2-1204,A2,medium,owner,noun,die Besitzerin,Besitzerinnen,noun,de eigenares,eigenaressen,noun,مالک,noun
 a2-1205,A2,medium,owner,noun,die Eigentümerin,Eigentümerinnen,noun,de eigenares,eigenaressen,noun,دارنده,noun
 a2-1206,A2,medium,pack,verb,einpacken,,verb,inpakken,,verb,بسته بندی کردن,verb
 a2-1207,A2,easy,pack,verb,packen,,verb,inpakken,,verb,بسته بندی کردن,verb
@@ -2649,14 +2648,14 @@ a2-1238,A2,medium,past,adv,vorbei,,adv,voorbij,,adv,گذشته,adj
 a2-1239,A2,easy,patient,adj,geduldig,,adj,geduldig,,adj,شکیبا، بردبار,adj
 a2-1240,A2,easy,patient,noun,der Patient,Patienten,noun,de patiënt,patiënten,noun,بیمار,noun
 a2-1241,A2,advanced,patient questionnaire,noun,der Patientenbogen,Patientenbögen,noun,de patiëntenvragenlijst,patiëntenvragenlijsten,noun,پرسشنامه بیمار,noun
-a2-1242,A2,easy,"patient,sick person",noun,die Patientin,Patientinnen,noun,de patiënte,patiëntes,noun,بیمار (زن),noun
+a2-1242,A2,easy,"patient, sick person",noun,die Patientin,Patientinnen,noun,de patiënte,patiëntes,noun,بیمار (زن),noun
 a2-1243,A2,medium,pay attention,phrase,beachten,,verb,opletten,,verb,توجه کردن,verb
 a2-1244,A2,medium,payment,noun,die Zahlung,Zahlungen,noun,de betaling,betalingen,noun,پرداخت,noun
 a2-1245,A2,medium,PE,noun,der Sportunterricht,-,noun,de gym,-,noun,تربیت بدنی,noun
 a2-1246,A2,easy,peace,noun,der Frieden,-,noun,de vrede,-,noun,صلح,noun
 a2-1247,A2,medium,peach,noun,der Pfirsich,Pfirsiche,noun,de perzik,perziken,noun,هلو,noun
 a2-1248,A2,medium,peak season,noun,die Hauptsaison,Hauptsaisons,noun,het hoogseizoen,hoogseizoenen,noun,اوج فصل سفر,noun
-a2-1249,A2,advanced,pedestrian street,noun,die Flaniermeile,Flaniermeilen,noun,de wandelboulevard,wandelboulevards,noun,خیابان پیاده‌ گردی,noun
+a2-1249,A2,advanced,pedestrian street,noun,die Flaniermeile,Flaniermeilen,noun,de wandelboulevard,wandelboulevards,noun,خیابان پیاده‌گردی,noun
 a2-1250,A2,advanced,pencil sharpener,noun,der Anspitzer,Anspitzer,noun,de puntenslijper,puntenslijpers,noun,مداد تراش,noun
 a2-1251,A2,easy,penicillin,noun,das Penizillin,-,noun,de penicilline,-,noun,پنی‌سیلین,noun
 a2-1252,A2,medium,people,noun,das Volk,Völker,noun,het volk,volken,noun,مردم,noun
@@ -2686,7 +2685,7 @@ a2-1275,A2,advanced,PIN,noun,die Geheimzahl,Geheimzahlen,noun,de pincode,pincode
 a2-1276,A2,easy,PIN,noun,die PIN,PINs,noun,de pincode,pincodes,noun,شماره شناسایی ویژه,noun
 a2-1277,A2,easy,pineapple,noun,die Ananas,Ananas,noun,de ananas,ananassen,noun,آناناس,noun
 a2-1278,A2,medium,pipe,noun,die Pfeife,Pfeifen,noun,de pijp,pijpen,noun,پیپ,noun
-a2-1279,A2,medium,place,verb,stellen,,verb,zetten,,verb,گذاشتن (به گونه ایستاده)، گذاشتن,verb
+a2-1279,A2,medium,place,verb,stellen,,verb,zetten,,verb,گذاشتن (به گونه ایستاده),verb
 a2-1280,A2,easy,plan,noun,der Plan,Pläne,noun,het plan,plannen,noun,برنامه,noun
 a2-1281,A2,advanced,plan,verb,vorhaben,,verb,van plan zijn,,phrase,قصد داشتن,verb
 a2-1282,A2,easy,planet,noun,der Planet,Planeten,noun,de planeet,planeten,noun,سیاره,noun
@@ -2719,7 +2718,7 @@ a2-1308,A2,medium,postman,noun,der Briefträger,Briefträger,noun,de postbode,po
 a2-1309,A2,advanced,"postpone, move",verb,verschieben,,verb,verschuiven,,verb,به تعویق انداختن، جابه‌جا کردن,verb
 a2-1310,A2,medium,power outlet,noun,die Steckdose,Steckdosen,noun,het stopcontact,stopcontacten,noun,پریز برق,noun
 a2-1311,A2,easy,practical,adj,praktisch,,adj,praktisch,,adj,کاربردی,adj
-a2-1312,A2,advanced,pre-christmas season,noun,die Vorweihnachtszeit,-,noun,de tijd voor Kerstmis,-,noun,روزهای پیش از کریسمس,noun
+a2-1312,A2,advanced,pre-Christmas season,noun,die Vorweihnachtszeit,-,noun,de tijd voor Kerstmis,-,noun,روزهای پیش از کریسمس,noun
 a2-1313,A2,advanced,pre-existing condition,noun,die Vorerkrankung,Vorerkrankungen,noun,de onderliggende aandoening,onderliggende aandoeningen,noun,بیماری زمینه ای,noun
 a2-1314,A2,medium,prefer,verb,bevorzugen,,verb,de voorkeur geven aan,,phrase,ترجیح دادن,verb
 a2-1315,A2,advanced,preference,noun,die Vorliebe,Vorlieben,noun,de voorliefde,voorliefdes,noun,علاقه,noun
@@ -2753,7 +2752,7 @@ a2-1342,A2,easy,profile,noun,das Profil,Profile,noun,het profiel,profielen,noun,
 a2-1343,A2,advanced,profile,noun,der Steckbrief,Steckbriefe,noun,het profiel,profielen,noun,پروفایل,noun
 a2-1344,A2,easy,programme,noun,das Programm,Programme,noun,het programma,programma's,noun,برنامه,noun
 a2-1345,A2,easy,project,noun,das Projekt,Projekte,noun,het project,projecten,noun,پروژه,noun
-a2-1346,A2,medium,promenade,noun,die Promenade,Promenaden,noun,de boulevard,boulevards,noun,پیاده‌ راه (کنار آب),noun
+a2-1346,A2,medium,promenade,noun,die Promenade,Promenaden,noun,de boulevard,boulevards,noun,پیاده‌راه (کنار آب),noun
 a2-1347,A2,medium,promise,verb,versprechen,,verb,beloven,,verb,قول دادن,verb
 a2-1348,A2,medium,pronounce,verb,aussprechen,,verb,uitspreken,,verb,تلفظ کردن,verb
 a2-1349,A2,easy,protect,verb,schützen,,verb,beschermen,,verb,محافظت کردن,verb
@@ -2797,7 +2796,7 @@ a2-1386,A2,medium,recommend,verb,empfehlen,,verb,aanbevelen,,verb,توصیه ک�
 a2-1387,A2,medium,recommendation,noun,die Empfehlung,Empfehlungen,noun,de aanbeveling,aanbevelingen,noun,توصیه,noun
 a2-1388,A2,medium,record,verb,aufnehmen,,verb,opnemen,,verb,ضبط کردن,verb
 a2-1389,A2,advanced,"record, take in, admit",verb,aufnehmen,,verb,opnemen,,verb,ضبط کردن، پذیرفتن,verb
-a2-1390,A2,medium,recover,verb,erholen,,verb,zich ontspannen,,verb,استراحت کردن,verb
+a2-1390,A2,medium,recover,verb,sich erholen,,verb,zich ontspannen,,verb,استراحت کردن,verb
 a2-1391,A2,medium,"recreation, rest, recovery",noun,die Erholung,-,noun,de ontspanning,-,noun,استراحت,noun
 a2-1392,A2,easy,recycle,verb,recyceln,,verb,recyclen,,verb,بازیافت کردن,verb
 a2-1393,A2,medium,reduce,verb,reduzieren,,verb,verminderen,,verb,کاهش دادن,verb
@@ -2832,7 +2831,7 @@ a2-1421,A2,medium,research,verb,forschen,,verb,onderzoeken,,verb,پژوهش کر
 a2-1422,A2,advanced,research,verb,recherchieren,,verb,onderzoeken,,verb,پژوهش کردن,verb
 a2-1423,A2,easy,respect,noun,der Respekt,-,noun,het respect,-,noun,احترام,noun
 a2-1424,A2,advanced,responsible,adj,zuständig,,adj,verantwoordelijk,,adj,مسئول,adj
-a2-1425,A2,medium,"rest, recover",verb,erholen,,verb,uitrusten,,verb,استراحت کردن، بهبود یافتن,verb
+a2-1425,A2,medium,"rest, recover",verb,sich erholen,,verb,uitrusten,,verb,استراحت کردن، بهبود یافتن,verb
 a2-1426,A2,medium,result,noun,das Ergebnis,Ergebnisse,noun,het resultaat,resultaten,noun,نتیجه,noun
 a2-1427,A2,medium,retired,adj,pensioniert,,adj,gepensioneerd,,adj,بازنشسته,adj
 a2-1428,A2,advanced,retirement pay,noun,die Pension,Pensionen,noun,het pensioen,pensioenen,noun,مستمری,noun
@@ -2866,11 +2865,11 @@ a2-1455,A2,medium,sale,noun,der Verkauf,Verkäufe,noun,de verkoop,verkopen,noun,
 a2-1456,A2,advanced,"sales, paragraph",noun,der Absatz,Absätze,noun,de afzet,-,noun,فروش، بند (متن),noun
 a2-1457,A2,advanced,salutation,noun,die Grußformel,Grußformeln,noun,de aanhef,aanheffen,noun,عبارت درود/خطاب در نامه,noun
 a2-1458,A2,easy,sandal,noun,die Sandale,Sandalen,noun,de sandaal,sandalen,noun,صندل,noun
-a2-1459,A2,easy,santa claus,noun,der Weihnachtsmann,Weihnachtsmänner,noun,de kerstman,kerstmannen,noun,بابا نوئل,noun
+a2-1459,A2,easy,Santa Claus,noun,der Weihnachtsmann,Weihnachtsmänner,noun,de kerstman,kerstmannen,noun,بابا نوئل,noun
 a2-1460,A2,easy,sauna,noun,die Sauna,Saunen,noun,de sauna,sauna's,noun,سونا,noun
 a2-1461,A2,medium,save,verb,speichern,,verb,opslaan,,verb,ذخیره کردن,verb
 a2-1462,A2,medium,savings account,noun,das Sparkonto,Sparkonten,noun,de spaarrekening,spaarrekeningen,noun,حساب پس‌انداز,noun
-a2-1463,A2,medium,say goodbye,phrase,verabschieden,,verb,afscheid nemen,,phrase,خداحافظی کردن,verb
+a2-1463,A2,medium,say goodbye,phrase,sich verabschieden,,verb,afscheid nemen,,phrase,خداحافظی کردن,verb
 a2-1464,A2,medium,schedule,noun,der Zeitplan,Zeitpläne,noun,het tijdschema,tijdschema's,noun,برنامه,noun
 a2-1465,A2,easy,school year,noun,das Schuljahr,Schuljahre,noun,het schooljaar,schooljaren,noun,سال تحصیلی,noun
 a2-1466,A2,medium,schoolyard,noun,der Schulhof,Schulhöfe,noun,het schoolplein,schoolpleinen,noun,حیاط مدرسه,noun
@@ -2902,9 +2901,9 @@ a2-1491,A2,medium,"share, divide",verb,teilen,,verb,delen,,verb,تقسیم کر�
 a2-1492,A2,easy,sheet,noun,das Blatt,Blätter,noun,het blad,bladen,noun,ورق,noun
 a2-1493,A2,advanced,shield,noun,der Schild,Schilde,noun,het schild,schilden,noun,سپر,noun
 a2-1494,A2,medium,shift,noun,die Schicht,Schichten,noun,de dienst,diensten,noun,نوبت,noun
-a2-1495,A2,advanced,shine,verb,scheinen,,verb,schijnen,,verb,به نظر رسیدن،تابیدن,verb
+a2-1495,A2,advanced,shine,verb,scheinen,,verb,schijnen,,verb,به نظر رسیدن، تابیدن,verb
 a2-1496,A2,easy,ship,noun,das Schiff,Schiffe,noun,het schip,schepen,noun,کشتی,noun
-a2-1497,A2,advanced,ship deck,noun,der Bord,Borde,noun,het dek,dekken,noun,عرشه کشتی,noun
+a2-1497,A2,advanced,ship deck,noun,das Deck,Decks,noun,het dek,dekken,noun,عرشه کشتی,noun
 a2-1498,A2,advanced,shipping,noun,die Schifffahrt,-,noun,de scheepvaart,-,noun,کشتیرانی,noun
 a2-1499,A2,easy,shop,noun,der Laden,Läden,noun,de winkel,winkels,noun,فروشگاه,noun
 a2-1500,A2,medium,shop assistant,noun,der Verkäufer,Verkäufer,noun,de verkoper,verkopers,noun,فروشنده,noun
@@ -3005,7 +3004,7 @@ a2-1594,A2,medium,stomach,noun,der Magen,Mägen,noun,de maag,magen,noun,معده
 a2-1595,A2,medium,stomach medicine,noun,das Magenmittel,Magenmittel,noun,het maagmiddel,maagmiddelen,noun,داروهای معده,noun
 a2-1596,A2,medium,stomachache,noun,die Bauchschmerzen,-,noun,de buikpijn,-,noun,دل درد,noun
 a2-1597,A2,easy,stone,noun,der Stein,Steine,noun,de steen,stenen,noun,سنگ,noun
-a2-1598,A2,advanced,stone age,noun,die Steinzeit,-,noun,de steentijd,-,noun,عصر سنگ,noun
+a2-1598,A2,advanced,Stone Age,noun,die Steinzeit,-,noun,de steentijd,-,noun,عصر سنگ,noun
 a2-1599,A2,medium,storage room,noun,der Abstellraum,Abstellräume,noun,de berging,bergingen,noun,اتاق انبار,noun
 a2-1600,A2,easy,storm,noun,der Sturm,Stürme,noun,de storm,stormen,noun,توفان,noun
 a2-1601,A2,medium,storm,verb,stürmen,,verb,stormen,,verb,طوفانی بودن,verb
@@ -3025,7 +3024,7 @@ a2-1614,A2,medium,structure,verb,strukturieren,,verb,structureren,,verb,سازم
 a2-1615,A2,advanced,"structure, outline",noun,die Gliederung,Gliederungen,noun,de indeling,indelingen,noun,ساختار، طرح کلی,noun
 a2-1616,A2,medium,student,noun,der Studierende,Studierenden,noun,de student,studenten,noun,دانشجو,noun
 a2-1617,A2,medium,student,noun,die Studierende,Studierenden,noun,de student,studenten,noun,دانشجو,noun
-a2-1618,A2,medium,student place,noun,der Studentenplatz,Studentenplätze,noun,de studieplaats,studieplaatsen,noun,ظرفیت دانشجویی,noun
+a2-1618,A2,medium,student place,noun,der Studienplatz,Studienplätze,noun,de studieplaats,studieplaatsen,noun,ظرفیت دانشجویی,noun
 a2-1619,A2,medium,studies,noun,das Studium,Studien,noun,de studie,studies,noun,تحصیل (دانشگاهی),noun
 a2-1620,A2,medium,stylish,adj,schick,,adj,chic,,adj,شیک,adj
 a2-1621,A2,advanced,subject,noun,der Betreff,Betreffe,noun,het onderwerp,onderwerpen,noun,موضوع,noun
@@ -3065,12 +3064,12 @@ a2-1654,A2,medium,take care,phrase,Pass auf dich auf!,,phrase,pas goed op jezelf
 a2-1655,A2,advanced,take care of,phrase,versorgen,,verb,verzorgen,,verb,مراقبت کردن,verb
 a2-1656,A2,medium,take money,phrase,Geld entnehmen,,phrase,geld opnemen,,phrase,پول را بردارید,phrase
 a2-1657,A2,medium,take notes,phrase,sich Notizen machen,,phrase,aantekeningen maken,,phrase,یادداشت برداشتن,verb
-a2-1658,A2,advanced,take off,phrasal verb,abheben,,verb,opstijgen,,verb,برخاستن هواپیما، بلند شدن هواپیما از زمین، برخاستن,verb
-a2-1659,A2,medium,take off,phrasal verb,ausziehen,,verb,uittrekken,,verb,درآوردن لباس، در آوردن,verb
+a2-1658,A2,advanced,take off,phrasal verb,abheben,,verb,opstijgen,,verb,برخاستن هواپیما، بلند شدن هواپیما از زمین,verb
+a2-1659,A2,medium,take off,phrasal verb,ausziehen,,verb,uittrekken,,verb,درآوردن لباس,verb
 a2-1660,A2,advanced,take out,phrasal verb,rausbringen,,verb,buitenzetten,,verb,بیرون بردن,verb
 a2-1661,A2,medium,take part,phrase,teilnehmen,,verb,deelnemen,,verb,شرکت کردن,verb
 a2-1662,A2,medium,take place,phrase,stattfinden,,verb,plaatsvinden,,verb,برگزار شدن,verb
-a2-1663,A2,medium,take your time,phrase,Zeit nehmen,,verb,de tijd nemen,,phrase,وقت گذاشتن,verb
+a2-1663,A2,medium,take your time,phrase,sich Zeit nehmen,,verb,de tijd nemen,,phrase,وقت گذاشتن,verb
 a2-1664,A2,easy,talk about,phrasal verb,sprechen über,,phrase,praten over,,verb,صحبت کردن در مورد,verb
 a2-1665,A2,easy,tandem,noun,das Tandem,Tandems,noun,de tandem,tandems,noun,دوچرخه دونفره,noun
 a2-1666,A2,medium,tap,noun,der Wasserhahn,Wasserhähne,noun,de kraan,kranen,noun,شیر، شیر آب,noun
@@ -3085,7 +3084,7 @@ a2-1674,A2,easy,tent,noun,das Zelt,Zelte,noun,de tent,tenten,noun,چادر,noun
 a2-1675,A2,easy,terrace,noun,die Terrasse,Terrassen,noun,het terras,terrassen,noun,ایوان,noun
 a2-1676,A2,advanced,terrain,noun,das Gelände,Gelände,noun,het terrein,terreinen,noun,زمین,noun
 a2-1677,A2,easy,test,verb,testen,,verb,testen,,verb,آزمودن,verb
-a2-1678,A2,medium,thank,verb,bedanken,,verb,bedanken,,verb,سپاسگزاری کردن,verb
+a2-1678,A2,medium,thank,verb,sich bedanken,,verb,bedanken,,verb,سپاسگزاری کردن,verb
 a2-1679,A2,easy,thankful,adj,dankbar,,adj,dankbaar,,adj,سپاسگزار,adj
 a2-1680,A2,easy,that sounds good,phrase,das klingt gut,,phrase,dat klinkt goed,,phrase,خوب به نظر می‌رسد,phrase
 a2-1681,A2,easy,that would be good,phrase,das wäre gut,,phrase,dat zou goed zijn,,phrase,خوب خواهد بود,phrase
@@ -3116,7 +3115,7 @@ a2-1705,A2,medium,timetable,noun,der Fahrplan,Fahrpläne,noun,de dienstregeling,
 a2-1706,A2,easy,title,noun,der Titel,Titel,noun,de titel,titels,noun,عنوان,noun
 a2-1707,A2,medium,to be one's turn,phrase,dran sein,,verb,aan de beurt zijn,,phrase,نوبتِ کسی بودن,verb
 a2-1708,A2,advanced,to be valid,phrase,gelten,,verb,gelden,,verb,اعتبار داشتن,verb
-a2-1709,A2,advanced,to be worth it,phrase,lohnen,,verb,de moeite waard zijn,,phrase,ارزش داشتن,verb
+a2-1709,A2,advanced,to be worth it,phrase,sich lohnen,,verb,de moeite waard zijn,,phrase,ارزش داشتن,verb
 a2-1710,A2,medium,to come by,phrasal verb,vorbeikommen,,verb,langskomen,,verb,سر زدن,verb
 a2-1711,A2,medium,to laugh along (with others),phrasal verb,mitlachen,,verb,meelachen,,verb,همراه دیگران خندیدن,verb
 a2-1712,A2,medium,to worry,verb,sich Sorgen machen,,verb,zich zorgen maken,,phrase,نگران بودن,verb
@@ -3203,7 +3202,7 @@ a2-1792,A2,medium,unpopular,adj,unbeliebt,,adj,impopulair,,adj,نامحبوب,ad
 a2-1793,A2,easy,until,conj,bis,,conj,totdat,,conj,تا,conj
 a2-1794,A2,medium,until now,phrase,bisher,,adv,tot nu toe,,phrase,تا الان,phrase
 a2-1795,A2,medium,upper floor,noun,das Obergeschoss,Obergeschosse,noun,de bovenverdieping,bovenverdiepingen,noun,طبقه بالا,noun
-a2-1796,A2,advanced,"upset, excite (sich aufregen: get upset)",verb,aufregen,,verb,opwinden,,verb,عصبانی کردن، هیجان‌زده کردن,verb
+a2-1796,A2,advanced,"upset, excite",verb,aufregen,,verb,opwinden,,verb,عصبانی کردن، هیجان‌زده کردن,verb
 a2-1797,A2,medium,use,noun,die Verwendung,Verwendungen,noun,het gebruik,-,noun,کاربرد,noun
 a2-1798,A2,medium,use,verb,gebrauchen,,verb,gebruiken,,verb,به کار بردن,verb
 a2-1799,A2,medium,useful,adj,nützlich,,adj,nuttig,,adj,مفید,adj
@@ -3306,7 +3305,7 @@ b1-0010,B1,advanced,accommodation,noun,die Unterbringung,Unterbringungen,noun,de
 b1-0011,B1,medium,accompany,verb,begleiten,,verb,begeleiden,,verb,همراهی کردن,verb
 b1-0012,B1,medium,accurate,adj,genau,,adj,nauwkeurig,,adj,دقیق,adj
 b1-0013,B1,medium,accurately,adv,genau,,adv,nauwkeurig,,adv,به طور دقیق,adv
-b1-0014,B1,medium,achieve,verb,erreichen,,verb,bereiken,,verb,دست یافتن، به دست آوردن، دست یافتن به,verb
+b1-0014,B1,medium,achieve,verb,erreichen,,verb,bereiken,,verb,دست یافتن، به دست آوردن,verb
 b1-0015,B1,advanced,achievement,noun,die Leistung,Leistungen,noun,de prestatie,prestaties,noun,دستاورد,noun
 b1-0016,B1,advanced,acquire,verb,erwerben,,verb,verwerven,,verb,کسب کردن,verb
 b1-0017,B1,advanced,act,verb,handeln,,verb,handelen,,verb,عمل کردن، رفتار کردن,verb
@@ -3331,7 +3330,7 @@ b1-0035,B1,medium,advert,noun,die Werbung,Werbungen,noun,de reclame,reclames,nou
 b1-0036,B1,advanced,"heed, pay attention to",verb,beachten,,verb,letten op,,verb,توجه کردن,verb
 b1-0037,B1,medium,advertise,verb,werben,,verb,adverteren,,verb,آگهی دادن,verb
 b1-0038,B1,medium,advise,verb,raten,,verb,aanraden,,verb,توصیه کردن,verb
-b1-0039,B1,advanced,advised,adj,geraten,,adj,geraden,,adj,توصیه شده,adj
+b1-0039,B1,advanced,advised,adj,geraten,,adj,aangeraden,,adj,توصیه شده,adj
 b1-0040,B1,advanced,"adviser, guidebook",noun,der Ratgeber,Ratgeber,noun,de raadgever,raadgevers,noun,مشاور، کتاب راهنما,noun
 b1-0041,B1,advanced,afford,verb,sich leisten,,verb,zich veroorloven,,verb,از عهده برآمدن,verb
 b1-0042,B1,medium,after a while,phrase,nach einer Weile,,phrase,na een tijdje,,phrase,بعد از مدتی,phrase
@@ -3390,13 +3389,13 @@ b1-0094,B1,medium,approximately,adv,ungefähr,,adv,ongeveer,,adv,تقریباً,
 b1-0095,B1,advanced,aptitude test,noun,die Eignungsprüfung,Eignungsprüfungen,noun,de geschiktheidstest,geschiktheidstests,noun,آزمون شایستگی,noun
 b1-0096,B1,advanced,archway,noun,der Torbogen,Torbogen,noun,de poortboog,poortbogen,noun,طاق‌نما,noun
 b1-0097,B1,medium,area,noun,die Fläche,Flächen,noun,de oppervlakte,oppervlakten,noun,مساحت,noun
-b1-0098,B1,advanced,argue for + a,phrasal verb,streiten für + A,,verb,strijden voor,,phrase,مبارزه کردن برای، دفاع کردن از,verb
+b1-0098,B1,advanced,argue for,phrasal verb,streiten für + A,,verb,strijden voor,,phrase,مبارزه کردن برای، دفاع کردن از,verb
 b1-0099,B1,easy,argument,noun,das Argument,Argumente,noun,het argument,argumenten,noun,استدلال، دلیل,noun
 b1-0100,B1,medium,argument,noun,der Streit,Streite,noun,de ruzie,ruzies,noun,دعوا، بگومگو,noun
 b1-0101,B1,medium,arrange,verb,arrangieren,,verb,regelen,,verb,ترتیب دادن,verb
 b1-0102,B1,advanced,arrangement,noun,die Anordnung,Anordnungen,noun,de rangschikking,rangschikkingen,noun,ترتیب,noun
 b1-0103,B1,advanced,arrangement,noun,die Vereinbarung,Vereinbarungen,noun,de afspraak,afspraken,noun,قرار، برنامه,noun
-b1-0104,B1,medium,arrest,verb,verhaften,,verb,arresteren,,verb,دستگیر کردن، بازداشت,verb
+b1-0104,B1,medium,arrest,verb,verhaften,,verb,arresteren,,verb,دستگیر کردن، بازداشت کردن,verb
 b1-0105,B1,medium,arrival,noun,die Ankunft,Ankünfte,noun,de aankomst,aankomsten,noun,رسیدن,verb
 b1-0106,B1,advanced,arrival,noun,die Anreise,Anreisen,noun,de heenreis,heenreizen,noun,رسیدن,noun
 b1-0107,B1,medium,arrow,noun,der Pfeil,Pfeile,noun,de pijl,pijlen,noun,پیکان,noun
@@ -3404,7 +3403,7 @@ b1-0108,B1,medium,artificial,adj,künstlich,,adj,kunstmatig,,adj,ساختگی,ad
 b1-0109,B1,medium,artistic,adj,künstlerisch,,adj,artistiek,,adj,هنری,adj
 b1-0110,B1,medium,as,conj,da,,conj,aangezien,,conj,چون، از آنجا که,conj
 b1-0111,B1,advanced,"as ... as possible, if possible",phrase,möglichst,,adv,zo ... mogelijk,,phrase,تا حد امکان، در صورت امکان,phrase
-b1-0112,B1,advanced,as a matter of fact,phrase,tatsächlich,,adv,eigenlijk,,adv,در واقع؛ راستش,phrase
+b1-0112,B1,advanced,as a matter of fact,phrase,tatsächlich,,adv,eigenlijk,,adv,در واقع، راستش,phrase
 b1-0113,B1,advanced,as a result,phrase,infolgedessen,,adv,als gevolg daarvan,,phrase,در نتیجه,phrase
 b1-0114,B1,advanced,as a result of that,phrase,aufgrund dessen,,phrase,als gevolg daarvan,,phrase,در نتیجه‌ی آن,phrase
 b1-0115,B1,easy,as dry as,phrase,so trocken wie,,phrase,zo droog als,,phrase,خشک مانند,phrase
@@ -3476,10 +3475,10 @@ b1-0180,B1,advanced,be bullied,phrase,gemobbt werden,,phrase,gepest worden,,phra
 b1-0181,B1,advanced,"be entitled to, be due",phrase,zustehen,,verb,toekomen,,verb,حق داشتن,verb
 b1-0182,B1,medium,be homesick,phrase,Heimweh haben,,verb,heimwee hebben,,phrase,دلتنگ بودن برای خانه,verb
 b1-0183,B1,advanced,be into something,phrase,auf etwas stehen,,phrase,ergens van houden,,phrase,به چیزی علاقه داشتن,verb
-b1-0184,B1,advanced,be late,phrase,verspäten,,verb,te laat komen,,phrase,دیر کردن,verb
+b1-0184,B1,advanced,be late,phrase,sich verspäten,,verb,te laat komen,,phrase,دیر کردن,verb
 b1-0185,B1,medium,be okay,phrase,in Ordnung sein,,phrase,in orde zijn,,phrase,درست بودن,verb
 b1-0186,B1,medium,be silent,verb,schweigen,,verb,zwijgen,,verb,سکوت کردن، ساکت ماندن,verb
-b1-0187,B1,advanced,be surprised,phrase,wundern,,verb,zich verbazen,,verb,شگفت زده شدن,verb
+b1-0187,B1,advanced,be surprised,phrase,sich wundern,,verb,zich verbazen,,verb,شگفت زده شدن,verb
 b1-0188,B1,medium,be under control,phrase,unter Kontrolle sein,,phrase,onder controle zijn,,phrase,تحت کنترل بودن,verb
 b1-0189,B1,advanced,"be up for (something), feel like",phrase,Bock haben,,phrase,zin hebben,,phrase,حوصلهٔ کاری را داشتن، پایه بودن,verb
 b1-0190,B1,medium,be used to,verb,gewohnt sein,,verb,gewend zijn,,phrase,عادت داشتن به,verb
@@ -3495,11 +3494,11 @@ b1-0199,B1,advanced,become feral,phrase,verwildern,,verb,verwilderen,,verb,وح�
 b1-0200,B1,advanced,behave,verb,sich verhalten,,verb,zich gedragen,,verb,رفتار کردن,verb
 b1-0201,B1,medium,behaviour,noun,das Verhalten,-,noun,het gedrag,-,noun,رفتار,noun
 b1-0202,B1,medium,"belief, faith",noun,der Glaube,-,noun,het geloof,geloven,noun,باور,noun
-b1-0203,B1,advanced,beliefs,noun,die Überzeugungen,-,noun,de overtuiging,overtuigingen,noun,باورها,noun
+b1-0203,B1,advanced,beliefs,noun,die Überzeugungen,-,noun,de overtuigingen,-,noun,باورها,noun
 b1-0204,B1,advanced,believe it or not,phrase,Ob du es glaubst oder nicht,,phrase,geloof het of niet,,phrase,باور کنی یا نه,phrase
 b1-0205,B1,advanced,bend,verb,sich beugen,,verb,buigen,,verb,خم شدن,verb
 b1-0206,B1,medium,benefit,noun,der Nutzen,-,noun,het nut,-,noun,سود، فایده,noun
-b1-0207,B1,medium,berlin wall,noun,die Berliner Mauer,-,noun,de Berlijnse Muur,-,noun,دیوار برلین,noun
+b1-0207,B1,medium,Berlin Wall,noun,die Berliner Mauer,-,noun,de Berlijnse Muur,-,noun,دیوار برلین,noun
 b1-0208,B1,medium,better late than never,idiom,Besser spät als nie,,idiom,beter laat dan nooit,,idiom,دیر رسیدن بهتر از هرگز نرسیدن است,idiom
 b1-0209,B1,medium,BIC,noun,die BIC,BICs,noun,de BIC,BIC's,noun,بیک,noun
 b1-0210,B1,medium,big chance,phrase,große Chance,,phrase,grote kans,,phrase,شانس بزرگ,phrase
@@ -3562,10 +3561,10 @@ b1-0266,B1,advanced,broken collarbone,noun,der Schlüsselbeinbruch,Schlüsselbei
 b1-0267,B1,easy,browser,noun,der Browser,Browser,noun,de browser,browsers,noun,مرورگر,noun
 b1-0268,B1,advanced,bruise,noun,die Prellung,Prellungen,noun,de kneuzing,kneuzingen,noun,کبودی,noun
 b1-0269,B1,easy,bucket,noun,der Eimer,Eimer,noun,de emmer,emmers,noun,سطل,noun
-b1-0270,B1,medium,buddhism,noun,der Buddhismus,-,noun,het boeddhisme,-,noun,بودیسم,noun
-b1-0271,B1,medium,buddhist,adj,buddhistisch,,adj,boeddhistisch,,adj,بودایی,adj
-b1-0272,B1,medium,buddhist,noun,der Buddhist,Buddhisten,noun,de boeddhist,boeddhisten,noun,مرد بودایی,noun
-b1-0273,B1,medium,buddhist woman,noun,die Buddhistin,Buddhistinnen,noun,de boeddhiste,boeddhistes,noun,زن بودایی,noun
+b1-0270,B1,medium,Buddhism,noun,der Buddhismus,-,noun,het boeddhisme,-,noun,بودیسم,noun
+b1-0271,B1,medium,Buddhist,adj,buddhistisch,,adj,boeddhistisch,,adj,بودایی,adj
+b1-0272,B1,medium,Buddhist,noun,der Buddhist,Buddhisten,noun,de boeddhist,boeddhisten,noun,مرد بودایی,noun
+b1-0273,B1,medium,Buddhist woman,noun,die Buddhistin,Buddhistinnen,noun,de boeddhiste,boeddhistes,noun,زن بودایی,noun
 b1-0274,B1,medium,bull,noun,der Bulle,Bullen,noun,de stier,stieren,noun,گاو نر,noun
 b1-0275,B1,advanced,bully,verb,schikanieren,,verb,pesten,,verb,قلدری کردن,verb
 b1-0276,B1,medium,bullying,noun,das Mobbing,-,noun,het pesten,-,noun,قلدری,noun
@@ -3645,9 +3644,9 @@ b1-0349,B1,medium,cheek,noun,die Wange,Wangen,noun,de wang,wangen,noun,گونه,
 b1-0350,B1,medium,cheek kiss,noun,der Wangenkuss,Wangenküsse,noun,de wangkus,wangkussen,noun,بوسه گونه,noun
 b1-0351,B1,advanced,"cheek, impudence",noun,die Frechheit,Frechheiten,noun,de brutaliteit,brutaliteiten,noun,گستاخی، پررویی,noun
 b1-0352,B1,medium,cheeky,adj,frech,,adj,brutaal,,adj,گستاخ,adj
-b1-0353,B1,medium,cheers,interj,danke,,interj,bedankt,,interj,ممنون؛ به سلامتی,interj
-b1-0354,B1,easy,cheers,interj,prost,,interj,proost,,interj,مرسی؛ به سلامتی,interj
-b1-0355,B1,easy,cheers,interj,Prost!,,interj,proost!,,interj,به سلامتی! / مرسی,interj
+b1-0353,B1,medium,cheers,interj,danke,,interj,bedankt,,interj,ممنون، مرسی,interj
+b1-0354,B1,easy,cheers,interj,prost,,interj,proost,,interj,به سلامتی,interj
+b1-0355,B1,easy,cheers,interj,Prost!,,interj,proost!,,interj,به سلامتی!,interj
 b1-0356,B1,medium,chef,noun,der Küchenchef,Küchenchefs,noun,de chef-kok,chef-koks,noun,سرآشپز,noun
 b1-0357,B1,advanced,chemist,noun,die Apotheke,Apotheken,noun,de apotheek,apotheken,noun,داروخانه,noun
 b1-0358,B1,advanced,chest,noun,der Brustkorb,Brustkörbe,noun,de borstkas,borstkassen,noun,قفسه سینه,noun
@@ -3676,7 +3675,7 @@ b1-0380,B1,advanced,clear,verb,räumen,,verb,ontruimen,,verb,خالی کردن,v
 b1-0381,B1,medium,clearly,adv,deutlich,,adv,duidelijk,,adv,به وضوح,adv
 b1-0382,B1,advanced,clerk,noun,der Büroangestellte,Büroangestellten,noun,de kantoorbediende,kantoorbedienden,noun,کارمند دفتری,noun
 b1-0383,B1,easy,client,noun,der Kunde,Kunden,noun,de klant,klanten,noun,مشتری,noun
-b1-0384,B1,medium,cliff,noun,die Klippe,Klippen,noun,de klif,kliffen,noun,صخره,noun
+b1-0384,B1,medium,cliff,noun,die Klippe,Klippen,noun,het klif,kliffen,noun,صخره,noun
 b1-0385,B1,medium,climate,noun,das Klima,Klimata,noun,het klimaat,klimaten,noun,آب و هوا,noun
 b1-0386,B1,easy,coal,noun,die Kohle,Kohlen,noun,de kool,kolen,noun,زغال,noun
 b1-0387,B1,medium,coalition,noun,die Koalition,Koalitionen,noun,de coalitie,coalities,noun,ائتلاف,noun
@@ -3793,7 +3792,7 @@ b1-0497,B1,advanced,crane operator,noun,der Kranführer,Kranführer,noun,de kraa
 b1-0498,B1,advanced,crane operator,noun,die Kranführerin,Kranführerinnen,noun,de kraanmachiniste,kraanmachinistes,noun,اپراتور جرثقیل,noun
 b1-0499,B1,medium,creamy,adj,cremig,,adj,romig,,adj,خامه ای,adj
 b1-0500,B1,easy,creative,adj,kreativ,,adj,creatief,,adj,خلاق,adj
-b1-0501,B1,advanced,creature,noun,das Lebewesen,Lebewesen,noun,het wezen,wezens,noun,جانور,noun
+b1-0501,B1,advanced,creature,noun,das Lebewesen,Lebewesen,noun,het wezen,wezens,noun,موجود، موجود زنده,noun
 b1-0502,B1,medium,crime,noun,das Verbrechen,Verbrechen,noun,de misdaad,misdaden,noun,جرم و جنایت,noun
 b1-0503,B1,medium,criminal,noun,der Verbrecher,Verbrecher,noun,de misdadiger,misdadigers,noun,مجرم، جنایتکار,noun
 b1-0504,B1,easy,crisis,noun,die Krise,Krisen,noun,de crisis,crises,noun,بحران,noun
@@ -3890,7 +3889,7 @@ b1-0594,B1,medium,disappointing,adj,enttäuschend,,adj,teleurstellend,,adj,نا�
 b1-0595,B1,easy,disaster,noun,die Katastrophe,Katastrophen,noun,de ramp,rampen,noun,فاجعه,noun
 b1-0596,B1,medium,disc,noun,die Scheibe,Scheiben,noun,de schijf,schijven,noun,صفحه، ورقه، برش,noun
 b1-0597,B1,medium,discovery,noun,die Entdeckung,Entdeckungen,noun,de ontdekking,ontdekkingen,noun,کشف,noun
-b1-0598,B1,medium,disgusting,adj,ekelhaft,,adj,walgelijk,,adj,نفرت انگیز، نفرت‌انگیز، حال‌به‌هم‌زن,adj
+b1-0598,B1,medium,disgusting,adj,ekelhaft,,adj,walgelijk,,adj,نفرت‌انگیز، حال‌به‌هم‌زن,adj
 b1-0599,B1,medium,disk,noun,die Diskette,Disketten,noun,de diskette,diskettes,noun,دیسک,noun
 b1-0600,B1,medium,dislike,verb,nicht mögen,,verb,niet leuk vinden,,phrase,دوست نداشتن,verb
 b1-0601,B1,medium,display,verb,anzeigen,,verb,weergeven,,verb,نمایش دادن,verb
@@ -3905,7 +3904,7 @@ b1-0609,B1,medium,division,noun,die Teilung,Teilungen,noun,de deling,delingen,no
 b1-0610,B1,medium,divorce,noun,die Scheidung,Scheidungen,noun,de scheiding,scheidingen,noun,جدایی، طلاق,noun
 b1-0611,B1,medium,divorce,verb,sich scheiden lassen,,verb,scheiden,,verb,طلاق گرفتن,verb
 b1-0612,B1,advanced,dizzy,adj,schwindlig,,adj,duizelig,,adj,گیج، دچار سرگیجه,adj
-b1-0613,B1,advanced,do (for sd/sth),verb,reichen,,verb,volstaan,,verb,کافی یا قابل قبول بودن چیزی,verb
+b1-0613,B1,advanced,do (for sb/sth),verb,reichen,,verb,volstaan,,verb,کافی یا قابل قبول بودن چیزی,verb
 b1-0614,B1,advanced,do a degree,phrase,studieren,,verb,studeren,,verb,درس خواندن برای دانشگاه,verb
 b1-0615,B1,medium,do one's hair,phrasal verb,sich frisieren,,verb,zijn haar doen,,phrase,مو را درست کردن,verb
 b1-0616,B1,medium,do research,phrase,forschen,,verb,onderzoek doen,,phrase,تحقیق کردن,verb
@@ -3961,7 +3960,7 @@ b1-0665,B1,medium,economic,adj,ökonomisch,,adj,economisch,,adj,اقتصادی,a
 b1-0666,B1,advanced,economics,noun,die Wirtschaftswissenschaft,Wirtschaftswissenschaften,noun,de economie,-,noun,اقتصاد,noun
 b1-0667,B1,easy,edge,noun,die Kante,Kanten,noun,de rand,randen,noun,لبه,noun
 b1-0668,B1,advanced,editor,noun,der Herausgeber,Herausgeber,noun,de uitgever,uitgevers,noun,ناشر، گردآورنده,noun
-b1-0669,B1,medium,editor,noun,der Redakteur,Redakteure,noun,de redacteur,redacteuren,noun,سردبیر,noun
+b1-0669,B1,medium,editor,noun,der Redakteur,Redakteure,noun,de redacteur,redacteuren,noun,ویراستار، دبیر,noun
 b1-0670,B1,advanced,editor,noun,die Herausgeberin,Herausgeberinnen,noun,de redacteur,redacteuren,noun,ویراستار,noun
 b1-0671,B1,advanced,editorial,noun,der Leitartikel,Leitartikel,noun,het hoofdartikel,hoofdartikelen,noun,سرمقاله,noun
 b1-0672,B1,advanced,educational,adj,pädagogisch,,adj,pedagogisch,,adj,آموزشی,adj
@@ -4039,7 +4038,7 @@ b1-0743,B1,medium,even though,conj,obwohl,,conj,hoewel,,conj,با اینکه، �
 b1-0744,B1,medium,eventually,adv,schließlich,,adv,uiteindelijk,,adv,در نهایت,adv
 b1-0745,B1,medium,evidence,noun,der Beweis,Beweise,noun,het bewijs,bewijzen,noun,شواهد,noun
 b1-0746,B1,advanced,evident,adj,augenscheinlich,,adj,duidelijk,,adj,آشکار,adj
-b1-0747,B1,medium,ex boyfriend,noun,der Exfreund,Exfreunde,noun,de ex-vriend,ex-vrienden,noun,دوست پسر سابق,noun
+b1-0747,B1,medium,ex-boyfriend,noun,der Exfreund,Exfreunde,noun,de ex-vriend,ex-vrienden,noun,دوست پسر سابق,noun
 b1-0748,B1,advanced,exceed,verb,übersteigen,,verb,overschrijden,,verb,فراتر رفتن از,verb
 b1-0749,B1,medium,excellent,adj,exzellent,,adj,uitstekend,,adj,عالی,adj
 b1-0750,B1,advanced,excellent,adj,hervorragend,,adj,uitstekend,,adj,برجسته,adj
@@ -4061,7 +4060,7 @@ b1-0765,B1,medium,expert,noun,die Fachfrau,Fachfrauen,noun,de vakvrouw,vakvrouwe
 b1-0766,B1,advanced,explain,verb,aufklären,,verb,voorlichten,,verb,روشنگری کردن,verb
 b1-0767,B1,advanced,explain,verb,erläutern,,verb,toelichten,,verb,توضیح دادن,verb
 b1-0768,B1,medium,explanation,noun,die Erklärung,Erklärungen,noun,de uitleg,-,noun,توضیح,noun
-b1-0769,B1,advanced,explore,verb,erkunden,,verb,verkennen,,verb,کاوش کردن، بررسی کردن؛ کاوش کردن,verb
+b1-0769,B1,advanced,explore,verb,erkunden,,verb,verkennen,,verb,کاوش کردن، بررسی کردن,verb
 b1-0770,B1,medium,express,verb,ausdrücken,,verb,uitdrukken,,verb,بیان کردن,verb
 b1-0771,B1,medium,extend,verb,verlängern,,verb,verlengen,,verb,تمدید کردن,verb
 b1-0772,B1,advanced,extensive,adj,weitgehend,,adj,vergaand,,adj,گسترده,adj
@@ -4152,7 +4151,7 @@ b1-0856,B1,easy,flute,noun,die Flöte,Flöten,noun,de fluit,fluiten,noun,فلو�
 b1-0857,B1,easy,fly,noun,die Fliege,Fliegen,noun,de vlieg,vliegen,noun,مگس,noun
 b1-0858,B1,medium,folder,noun,die Mappe,Mappen,noun,de map,mappen,noun,پوشه,noun
 b1-0859,B1,medium,following,adj,folgend,,adj,volgend,,adj,بعدی، زیر,adj
-b1-0860,B1,advanced,fond,adj,gern haben,,phrase,dol op,,adj,علاقه‌مند (fond of),adj
+b1-0860,B1,advanced,fond,adj,gern haben,,phrase,dol op,,adj,علاقه‌مند,adj
 b1-0861,B1,medium,for a while,phrase,für eine Weile,,phrase,een tijdje,,phrase,برای مدتی,phrase
 b1-0862,B1,medium,for some reason,phrase,aus irgendeinem Grund,,phrase,om de een of andere reden,,phrase,به دلایلی,phrase
 b1-0863,B1,advanced,force somebody to do something,phrase,"jemanden zwingen, etwas zu tun",,phrase,iemand dwingen iets te doen,,phrase,کسی را مجبور به انجام کاری کردن,verb
@@ -4241,7 +4240,7 @@ b1-0945,B1,advanced,gossip,noun,der Klatsch,-,noun,de roddel,roddels,noun,غیب
 b1-0946,B1,medium,gothic,adj,gotisch,,adj,gotisch,,adj,گوتیک,adj
 b1-0947,B1,medium,government office,noun,das Amt,Ämter,noun,het bureau,bureaus,noun,دفتر دولتی,noun
 b1-0948,B1,advanced,government system,noun,das Regierungssystem,Regierungssysteme,noun,het regeringsstelsel,regeringsstelsels,noun,شیوهٔ کشورداری,noun
-b1-0949,B1,medium,governmental,adj,staatlich,,adj,statelijk,,adj,دولتی,adj
+b1-0949,B1,medium,governmental,adj,staatlich,,adj,gouvernementeel,,adj,دولتی,adj
 b1-0950,B1,medium,grade,noun,die Klasse,Klassen,noun,de klas,klassen,noun,پایهٔ تحصیلی,noun
 b1-0951,B1,medium,gradually,adv,allmählich,,adv,geleidelijk,,adv,به تدریج,adv
 b1-0952,B1,advanced,graduate,noun,der Absolvent,Absolventen,noun,de afgestudeerde,afgestudeerden,noun,فارغ التحصیل,noun
@@ -4298,7 +4297,7 @@ b1-1002,B1,medium,heel,noun,die Ferse,Fersen,noun,de hiel,hielen,noun,پاشنه
 b1-1003,B1,medium,helicopter,noun,der Hubschrauber,Hubschrauber,noun,de helikopter,helikopters,noun,هلیکوپتر,noun
 b1-1004,B1,advanced,help,verb,verhelfen,,verb,helpen aan,,verb,کمک کردن (به رسیدن به چیزی),verb
 b1-1005,B1,advanced,"help progress, advance",phrase,weiterbringen,,verb,verder helpen,,phrase,پیش بردن,verb
-b1-1006,B1,advanced,help yourself to something,phrase,sich bedienen,,verb,zich bedienen,,verb,(بی‌اجازه) برای خود برداشتن,phrase
+b1-1006,B1,advanced,help yourself to something,phrase,sich bedienen,,verb,zich bedienen,,verb,برای خود برداشتن,phrase
 b1-1007,B1,easy,helper,noun,der Helfer,Helfer,noun,de helper,helpers,noun,یاور,noun
 b1-1008,B1,medium,helper,noun,die Helferin,Helferinnen,noun,de helpster,helpsters,noun,یاور,noun
 b1-1009,B1,easy,hen,noun,die Henne,Hennen,noun,de hen,hennen,noun,مرغ,noun
@@ -4318,11 +4317,10 @@ b1-1022,B1,medium,Hinduism,noun,der Hinduismus,-,noun,het hindoeïsme,-,noun,ه�
 b1-1023,B1,medium,hire,verb,anstellen,,verb,aannemen,,verb,استخدام کردن,verb
 b1-1024,B1,medium,hire,verb,mieten,,verb,huren,,verb,کرایه کردن، اجاره کردن,verb
 b1-1025,B1,easy,historic,adj,historisch,,adj,historisch,,adj,تاریخی,adj
-b1-1026,B1,medium,hold on,phrasal verb,warten,,verb,wachten,,verb,صبر کن,verb
+b1-1026,B1,medium,hold on,phrasal verb,warten,,verb,wachten,,verb,صبر کردن,verb
 b1-1027,B1,medium,home country,noun,das Heimatland,Heimatländer,noun,het vaderland,vaderlanden,noun,میهن,noun
 b1-1028,B1,medium,homesickness,noun,das Heimweh,-,noun,het heimwee,-,noun,دلتنگی برای خانه,noun
 b1-1029,B1,medium,honeymoon,noun,die Flitterwochen,-,noun,de huwelijksreis,huwelijksreizen,noun,ماه عسل,noun
-b1-1030,B1,advanced,hope,verb,hoffen,,verb,hopen,,verb,امید داشتن,verb
 b1-1031,B1,advanced,hospitality industry,noun,das Gastgewerbe,Gastgewerbe,noun,de horeca,-,noun,پیشه مهمانداری,noun
 b1-1032,B1,advanced,hostile,adj,feindlich,,adj,vijandig,,adj,خصمانه,adj
 b1-1033,B1,easy,housewife,noun,die Hausfrau,Hausfrauen,noun,de huisvrouw,huisvrouwen,noun,زن خانه دار,noun
@@ -4346,7 +4344,7 @@ b1-1050,B1,advanced,I'd better be off,phrase,Ich muss jetzt los.,,phrase,ik moet
 b1-1051,B1,medium,I'm afraid,phrase,leider,,adv,helaas,,adv,متاسفانه,adv
 b1-1052,B1,medium,I'm afraid not,phrase,Leider nicht.,,phrase,helaas niet,,phrase,متاسفم اما نه,phrase
 b1-1053,B1,medium,I'm afraid so,phrase,Leider ja.,,phrase,helaas wel,,phrase,متاسفم اما بله,phrase
-b1-1054,B1,medium,I'm afraid so/not,phrase,leider ja / leider nicht,,phrase,helaas wel / helaas niet,,phrase,متاسفانه بله،خیر,phrase
+b1-1054,B1,medium,I'm afraid so/not,phrase,leider ja / leider nicht,,phrase,helaas wel / helaas niet,,phrase,متاسفانه بله/خیر,phrase
 b1-1055,B1,medium,IBAN,noun,die IBAN,IBANs,noun,het IBAN-nummer,IBAN-nummers,noun,آیبان,noun
 b1-1056,B1,medium,ID card,noun,der Personalausweis,Personalausweise,noun,de identiteitskaart,identiteitskaarten,noun,کارت شناسایی,noun
 b1-1057,B1,easy,identical,adj,identisch,,adj,identiek,,adj,یکسان,adj
@@ -4358,7 +4356,7 @@ b1-1062,B1,medium,illustration,noun,die Abbildung,Abbildungen,noun,de afbeelding
 b1-1063,B1,advanced,imagine,verb,sich einbilden,,verb,zich verbeelden,,verb,پنداشتن,verb
 b1-1064,B1,medium,immigrant,noun,der Einwanderer,Einwanderer,noun,de immigrant,immigranten,noun,مهاجر,noun
 b1-1065,B1,medium,immigrant,noun,die Einwanderin,Einwanderinnen,noun,de immigrante,immigrantes,noun,مهاجر,noun
-b1-1066,B1,medium,immigrate,verb,einwandern,,verb,immigreren,,verb,مهاجرت کردن، مهاجرت کردن به,verb
+b1-1066,B1,medium,immigrate,verb,einwandern,,verb,immigreren,,verb,مهاجرت کردن,verb
 b1-1067,B1,advanced,immigration,noun,der Zuzug,Zuzüge,noun,de immigratie,-,noun,مهاجرت,noun
 b1-1068,B1,medium,immigration,noun,die Einwanderung,Einwanderungen,noun,de immigratie,-,noun,مهاجرت,noun
 b1-1069,B1,easy,impatient,adj,ungeduldig,,adj,ongeduldig,,adj,بی صبر,adj
@@ -4435,7 +4433,7 @@ b1-1139,B1,easy,internet forum,noun,das Internetforum,Internetforen,noun,het int
 b1-1140,B1,medium,interpreter,noun,der Dolmetscher,Dolmetscher,noun,de tolk,tolken,noun,مترجم,noun
 b1-1141,B1,medium,interpreter,noun,die Dolmetscherin,Dolmetscherinnen,noun,de tolk,tolken,noun,مترجم,noun
 b1-1142,B1,advanced,"interrogate, question",verb,vernehmen,,verb,verhoren,,verb,بازجویی کردن,verb
-b1-1143,B1,medium,interrupt,verb,unterbrechen,,verb,onderbreken,,verb,قطع کردن (حرف کسی)، حرف کسی را قطع کردن,verb
+b1-1143,B1,medium,interrupt,verb,unterbrechen,,verb,onderbreken,,verb,قطع کردن، حرف کسی را قطع کردن,verb
 b1-1144,B1,easy,interview,verb,interviewen,,verb,interviewen,,verb,مصاحبه کردن,verb
 b1-1145,B1,easy,interviewer,noun,der Interviewer,Interviewer,noun,de interviewer,interviewers,noun,مصاحبه کننده,noun
 b1-1146,B1,easy,interviewer,noun,die Interviewerin,Interviewerinnen,noun,de interviewster,interviewsters,noun,مصاحبه کننده,noun
@@ -4452,7 +4450,7 @@ b1-1156,B1,medium,involved,adj,beteiligt,,adj,betrokken,,adj,درگیر,adj
 b1-1157,B1,medium,involved in,phrase,beteiligt an,,phrase,betrokken bij,,phrase,درگیر در,phrase
 b1-1158,B1,medium,Iron Curtain,noun,der Eiserne Vorhang,-,noun,het IJzeren Gordijn,-,noun,پرده آهنین,noun
 b1-1159,B1,medium,ironing,noun,das Bügeln,-,noun,het strijken,-,noun,اتوکشی,noun
-b1-1160,B1,advanced,irritate,verb,reizen,,verb,irriteren,,verb,برانگیختن,verb
+b1-1160,B1,advanced,irritate,verb,reizen,,verb,irriteren,,verb,آزردن، تحریک کردن,verb
 b1-1161,B1,advanced,Is that worth seeing?,phrase,"Lohnt es sich, das anzusehen?",,phrase,Is dat de moeite waard om te zien?,,phrase,ارزش دیدن دارد؟,phrase
 b1-1162,B1,easy,Islam,noun,der Islam,-,noun,de islam,-,noun,اسلام,noun
 b1-1163,B1,medium,Islamic,adj,islamisch,,adj,islamitisch,,adj,اسلامی,adj
@@ -4492,7 +4490,7 @@ b1-1196,B1,medium,lack,noun,der Mangel,Mängel,noun,het gebrek,gebreken,noun,ک�
 b1-1197,B1,easy,land,verb,landen,,verb,landen,,verb,فرود آمدن,verb
 b1-1198,B1,advanced,landing pier,noun,die Landungsbrücke,Landungsbrücken,noun,de aanlegsteiger,aanlegsteigers,noun,اسکله مسافربری,noun
 b1-1199,B1,advanced,landmark,noun,der Orientierungspunkt,Orientierungspunkte,noun,het oriëntatiepunt,oriëntatiepunten,noun,نشانهٔ جهت یابی,noun
-b1-1200,B1,medium,lane,noun,die Fahrspur,Fahrspuren,noun,de rijstrook,rijstroken,noun,خط، خط (جاده),noun
+b1-1200,B1,medium,lane,noun,die Fahrspur,Fahrspuren,noun,de rijstrook,rijstroken,noun,خط جاده,noun
 b1-1201,B1,advanced,"large number, multitude",noun,die Vielzahl,-,noun,de veelheid,veelheden,noun,تعداد زیاد,noun
 b1-1202,B1,medium,last call,noun,der letzte Aufruf,letzte Aufrufe,noun,de laatste oproep,laatste oproepen,noun,آخرین فراخوان,noun
 b1-1203,B1,advanced,lateness,noun,das Zuspätkommen,-,noun,het te laat komen,-,noun,دیرکرد,noun
@@ -4563,11 +4561,11 @@ b1-1267,B1,easy,lorry,noun,der Lastwagen,Lastwagen,noun,de vrachtwagen,vrachtwag
 b1-1268,B1,advanced,lose one's temper,phrase,die Beherrschung verlieren,,idiom,zijn zelfbeheersing verliezen,,phrase,از کوره در رفتن,idiom
 b1-1269,B1,advanced,lose your temper,idiom,die Beherrschung verlieren,,idiom,zijn zelfbeheersing verliezen,,idiom,از کوره در رفتن,idiom
 b1-1270,B1,easy,loss,noun,der Verlust,Verluste,noun,het verlies,verliezen,noun,ضرر، از دست دادن,noun
-b1-1271,B1,easy,lottery,noun,die Lotterie,Lotterien,noun,de loterij,loterijen,noun,بخت آزمایی، بخت‌آزمایی,noun
+b1-1271,B1,easy,lottery,noun,die Lotterie,Lotterien,noun,de loterij,loterijen,noun,بخت‌آزمایی,noun
 b1-1272,B1,easy,lotto,noun,das Lotto,Lottos,noun,de lotto,-,noun,بخت آزمایی,noun
 b1-1273,B1,medium,loyalty,noun,die Treue,-,noun,de trouw,-,noun,وفاداری,noun
 b1-1274,B1,easy,luck,noun,das Glück,-,noun,het geluk,-,noun,بخت,noun
-b1-1275,B1,easy,mad,adj,verrückt,,adj,gek,,adj,دیوانه، شیفته، دیوانهٔ (چیزی) (mad about),adj
+b1-1275,B1,easy,mad,adj,verrückt,,adj,gek,,adj,دیوانه، شیفته,adj
 b1-1276,B1,medium,"madman, crazy person",noun,der/die Verrückte,Verrückten,noun,de gek,gekken,noun,دیوانه,noun
 b1-1277,B1,easy,mail,noun,die Post,-,noun,de post,-,noun,نامه یا بسته,noun
 b1-1278,B1,easy,mail,verb,schicken,,verb,opsturen,,verb,فرستادن نامه یا بسته,verb
@@ -4588,13 +4586,13 @@ b1-1292,B1,medium,make clear,phrase,klarmachen,,verb,duidelijk maken,,phrase,ر�
 b1-1293,B1,advanced,make fun of someone,phrase,sich über jemanden lustig machen,,phrase,iemand belachelijk maken,,phrase,کسی را مسخره کردن,verb
 b1-1294,B1,advanced,make hay,phrase,heuen,,verb,hooien,,verb,علف خشک کردن,verb
 b1-1295,B1,medium,make it,phrase,es schaffen,,phrase,het halen,,phrase,موفق شدن,verb
-b1-1296,B1,medium,make up,phrasal verb,erfinden,,verb,verzinnen,,verb,ساختن (داستان)، آشتی کردن,verb
+b1-1296,B1,medium,make up,phrasal verb,erfinden,,verb,verzinnen,,verb,از خود درآوردن، ساختن,verb
 b1-1297,B1,easy,make-up,noun,das Make-up,Make-ups,noun,de make-up,-,noun,آرایش,noun
 b1-1298,B1,easy,male,adj,männlich,,adj,mannelijk,,adj,نر، مذکر,adj
 b1-1299,B1,medium,male cat,noun,der Kater,Kater,noun,de kater,katers,noun,گربه نر,noun
 b1-1300,B1,medium,mall,noun,das Einkaufszentrum,Einkaufszentren,noun,het winkelcentrum,winkelcentra,noun,مرکز خرید,noun
 b1-1301,B1,medium,manage,verb,leiten,,verb,leiden,,verb,اداره کردن,verb
-b1-1302,B1,medium,manage,verb,schaffen,,verb,lukken,,verb,موفق شدن (manage to do),verb
+b1-1302,B1,medium,manage,verb,schaffen,,verb,lukken,,verb,موفق شدن,verb
 b1-1303,B1,easy,management,noun,das Management,Managements,noun,het management,-,noun,مدیریت,noun
 b1-1304,B1,advanced,management,noun,die Geschäftsführung,Geschäftsführungen,noun,de directie,directies,noun,مدیریت,noun
 b1-1305,B1,advanced,management,noun,die Geschäftsleitung,Geschäftsleitungen,noun,de directie,directies,noun,مدیریت,noun
@@ -4640,8 +4638,8 @@ b1-1344,B1,advanced,microsystems technology,noun,die Mikrosystemtechnik,Mikrosys
 b1-1345,B1,easy,Middle Ages,noun,das Mittelalter,-,noun,de middeleeuwen,-,noun,قرون وسطی,noun
 b1-1346,B1,medium,middle class,noun,die Mittelschicht,Mittelschichten,noun,de middenklasse,middenklassen,noun,طبقه متوسط,noun
 b1-1347,B1,advanced,"migrate onward, continue hiking",phrasal verb,weiterwandern,,verb,verder trekken,,verb,ادامه دادن به پیاده‌روی,verb
-b1-1348,B1,medium,mind,verb,aufpassen,,verb,oppassen,,verb,مراقب بودن (Mind the step),verb
-b1-1349,B1,advanced,mind,verb,etwas dagegen haben,,phrase,het erg vinden,,phrase,اهمیت دادن، ناراحت شدن (do you mind),verb
+b1-1348,B1,medium,mind,verb,aufpassen,,verb,oppassen,,verb,مراقب بودن,verb
+b1-1349,B1,advanced,mind,verb,etwas dagegen haben,,phrase,het erg vinden,,phrase,اهمیت دادن، ناراحت شدن,verb
 b1-1350,B1,advanced,mind your own business,idiom,Kümmere dich um deine eigenen Angelegenheiten!,,idiom,bemoei je met je eigen zaken,,idiom,به کار خودت برس,idiom
 b1-1351,B1,medium,mineral water,noun,das Mineralwasser,Mineralwässer,noun,het mineraalwater,-,noun,آب معدنی,noun
 b1-1352,B1,medium,minimum,noun,das Minimum,Minima,noun,het minimum,minima,noun,حداقل,noun
@@ -4655,7 +4653,7 @@ b1-1359,B1,medium,miss,verb,verpassen,,verb,missen,,verb,از دست دادن,ve
 b1-1360,B1,advanced,mission,noun,der Einsatz,Einsätze,noun,de inzet,-,noun,ماموریت,noun
 b1-1361,B1,medium,mist,noun,der Dunst,-,noun,de nevel,nevels,noun,مه خفیف,noun
 b1-1362,B1,medium,mix,verb,vermischen,,verb,mengen,,verb,مخلوط کردن,verb
-b1-1363,B1,easy,mixed,adj,gemischt,,adj,gemengd,,adj,ضدونقیض، دوگانه (mixed feelings),adj
+b1-1363,B1,easy,mixed,adj,gemischt,,adj,gemengd,,adj,مخلوط، ضدونقیض، دوگانه,adj
 b1-1364,B1,medium,mixture,noun,die Mischung,Mischungen,noun,het mengsel,mengsels,noun,مخلوط,noun
 b1-1365,B1,easy,mobile,adj,mobil,,adj,mobiel,,adj,جابه جاشونده,adj
 b1-1366,B1,medium,monarchy,noun,die Monarchie,Monarchien,noun,de monarchie,monarchieën,noun,پادشاهی,noun
@@ -4715,8 +4713,7 @@ b1-1419,B1,easy,nest,noun,das Nest,Nester,noun,het nest,nesten,noun,لانه,nou
 b1-1420,B1,medium,net,adj,netto,,adj,netto,,adj,خالص دریافتی,adj
 b1-1421,B1,easy,net,noun,das Netz,Netze,noun,het net,netten,noun,تور والیبال، تور تنیس,noun
 b1-1422,B1,easy,network,noun,das Netz,Netze,noun,het netwerk,netwerken,noun,شبکه,noun
-b1-1423,B1,easy,neutral,adj,neutral,,adj,neutraal,,adj,بی طرف، خنثی (رنگ)، خنثی,adj
-b1-1424,B1,advanced,next to,prep,neben,,prep,naast,,prep,در کنار,prep
+b1-1423,B1,easy,neutral,adj,neutral,,adj,neutraal,,adj,بی‌طرف، خنثی,adj
 b1-1425,B1,medium,nickname,noun,der Spitzname,Spitznamen,noun,de bijnaam,bijnamen,noun,لقب,noun
 b1-1426,B1,medium,nightlife,noun,das Nachtleben,-,noun,het nachtleven,-,noun,زندگی شبانه,noun
 b1-1427,B1,medium,nightmare,noun,der Albtraum,Albträume,noun,de nachtmerrie,nachtmerries,noun,کابوس,noun
@@ -4749,7 +4746,7 @@ b1-1453,B1,medium,object,noun,der Gegenstand,Gegenstände,noun,het voorwerp,voor
 b1-1454,B1,medium,observe,verb,beobachten,,verb,observeren,,verb,مشاهده کردن,verb
 b1-1455,B1,medium,obvious,adj,offensichtlich,,adj,duidelijk,,adj,بدیهی,adj
 b1-1456,B1,medium,obviously,adv,offensichtlich,,adv,duidelijk,,adv,بدیهی است,adv
-b1-1457,B1,medium,occasion,noun,der Anlass,Anlässe,noun,de aanleiding,aanleidingen,noun,مناسبت,noun
+b1-1457,B1,medium,occasion,noun,der Anlass,Anlässe,noun,de gelegenheid,gelegenheden,noun,مناسبت,noun
 b1-1458,B1,advanced,occasionally,adv,ab und zu,,adv,af en toe,,phrase,گاهی اوقات,adv
 b1-1459,B1,medium,occasionally,adv,gelegentlich,,adv,af en toe,,adv,گاه‌گاهی,adv
 b1-1460,B1,medium,occupy,verb,besetzen,,verb,bezetten,,verb,اشغال کردن,verb
@@ -4781,7 +4778,7 @@ b1-1485,B1,advanced,opposite,adj,gegensätzlich,,adj,tegengesteld,,adj,کامل�
 b1-1486,B1,advanced,opposite lane,noun,die Gegenfahrbahn,Gegenfahrbahnen,noun,de andere rijbaan,andere rijbanen,noun,لاین مقابل,noun
 b1-1487,B1,easy,optimistic,adj,optimistisch,,adj,optimistisch,,adj,خوشبین,adj
 b1-1488,B1,easy,option,noun,die Option,Optionen,noun,de optie,opties,noun,گزینه,noun
-b1-1489,B1,advanced,or rather,phrase,beziehungsweise,,conj,respectievelijk,,adv,یا به عبارت دیگر,phrase
+b1-1489,B1,advanced,or rather,phrase,beziehungsweise,,conj,of beter gezegd,,phrase,یا به عبارت دیگر,phrase
 b1-1490,B1,medium,oral,adj,mündlich,,adj,mondeling,,adj,گفتاری,adj
 b1-1491,B1,easy,orchestra,noun,das Orchester,Orchester,noun,het orkest,orkesten,noun,ارکستر، گروه نوازندگان,noun
 b1-1492,B1,medium,organic,adj,bio,,adj,biologisch,,adj,ارگانیک,adj
@@ -4801,7 +4798,7 @@ b1-1505,B1,medium,outlook,noun,die Aussicht,Aussichten,noun,het vooruitzicht,voo
 b1-1506,B1,advanced,outrageous,adj,unverschämt,,adj,schaamteloos,,adj,گستاخانه، بی‌شرمانه,adj
 b1-1507,B1,easy,outside,adv,außen,,adv,buiten,,adv,بیرون,adv
 b1-1508,B1,medium,outside,prep,außerhalb,,prep,buiten,,prep,بیرون,prep
-b1-1509,B1,advanced,overlook,verb,übersehen,,verb,over het hoofd zien,,phrase,چشم‌پوشی کردن,verb
+b1-1509,B1,advanced,overlook,verb,übersehen,,verb,over het hoofd zien,,phrase,از قلم انداختن، ندیدن,verb
 b1-1510,B1,medium,overtake,verb,überholen,,verb,inhalen,,verb,سبقت گرفتن,verb
 b1-1511,B1,advanced,survey,verb,übersehen,,verb,overzien,,verb,دید کلی داشتن,verb
 b1-1512,B1,medium,owe,verb,schulden,,verb,verschuldigd zijn,,verb,بدهکار بودن,verb
@@ -4814,7 +4811,7 @@ b1-1518,B1,easy,panorama,noun,das Panorama,Panoramen,noun,het panorama,panorama'
 b1-1519,B1,medium,panoramic view,noun,der Rundblick,Rundblicke,noun,het panorama,panorama's,noun,نمای گسترده,noun
 b1-1520,B1,advanced,"pantomimic, mimed",adj,pantomimisch,,adj,pantomimisch,,adj,پانتومیمی، با ایما و اشاره,adj
 b1-1521,B1,advanced,paper,noun,die Klausur,Klausuren,noun,het tentamen,tentamens,noun,برگه امتحانی,noun
-b1-1522,B1,medium,paragraph,noun,der Paragraph,Paragraphen,noun,de paragraaf,paragrafen,noun,بند,noun
+b1-1522,B1,medium,section,noun,der Paragraph,Paragraphen,noun,de paragraaf,paragrafen,noun,بند,noun
 b1-1523,B1,medium,parcel shipment,noun,die Paketsendung,Paketsendungen,noun,de pakketzending,pakketzendingen,noun,حمل بسته,noun
 b1-1524,B1,advanced,parliamentary group,noun,die Fraktion,Fraktionen,noun,de fractie,fracties,noun,گروه پارلمانی,noun
 b1-1525,B1,medium,partially,adv,teilweise,,adv,gedeeltelijk,,adv,تا حدی,adv
@@ -4837,7 +4834,7 @@ b1-1541,B1,easy,pattern,noun,das Muster,Muster,noun,het patroon,patronen,noun,ا
 b1-1542,B1,easy,pause,noun,die Pause,Pausen,noun,de pauze,pauzes,noun,مکث,noun
 b1-1543,B1,medium,pause,verb,innehalten,,verb,pauzeren,,verb,مکث کردن,verb
 b1-1544,B1,medium,pavement,noun,der Gehweg,Gehwege,noun,de stoep,stoepen,noun,پیاده رو,noun
-b1-1545,B1,medium,pay attention to,phrase,achten,,verb,letten op,,phrase,توجه کردن,verb
+b1-1545,B1,medium,pay attention to,phrase,achten auf,,verb,letten op,,phrase,توجه کردن,verb
 b1-1546,B1,medium,pay out,phrasal verb,auszahlen,,verb,uitbetalen,,verb,پرداخت کردن,verb
 b1-1547,B1,medium,payment,noun,die Bezahlung,Bezahlungen,noun,de betaling,betalingen,noun,پرداخت,noun
 b1-1548,B1,advanced,pedagogy,noun,die Pädagogik,-,noun,de pedagogiek,-,noun,دانش آموزش و پرورش,noun
@@ -4865,7 +4862,7 @@ b1-1569,B1,medium,photo opportunity,noun,das Fotomotiv,Fotomotive,noun,het fotom
 b1-1570,B1,medium,physicist,noun,der Physiker,Physiker,noun,de natuurkundige,natuurkundigen,noun,فیزیکدان,noun
 b1-1571,B1,medium,physicist,noun,die Physikerin,Physikerinnen,noun,de natuurkundige,natuurkundigen,noun,فیزیکدان,noun
 b1-1572,B1,easy,pianist,noun,der Pianist,Pianisten,noun,de pianist,pianisten,noun,نوازنده پیانو,noun
-b1-1573,B1,advanced,pick up,phrasal verb,sich einfangen,,verb,oplopen,,verb,(بیماری) گرفتن؛ یاد گرفتن,verb
+b1-1573,B1,advanced,pick up,phrasal verb,sich einfangen,,verb,oplopen,,verb,بیماری گرفتن، مبتلا شدن,verb
 b1-1574,B1,advanced,pickled knuckle of pork,noun,das Eisbein,Eisbeine,noun,het gepekelde varkenspootje,gepekelde varkenspootjes,noun,پای خوک پخته یا دودی,noun
 b1-1575,B1,medium,picturesque,adj,malerisch,,adj,schilderachtig,,adj,زیبا و خوش‌منظره,adj
 b1-1576,B1,medium,pie chart,noun,das Tortendiagramm,Tortendiagramme,noun,het cirkeldiagram,cirkeldiagrammen,noun,نمودار دایره‌ای,noun
@@ -4919,9 +4916,9 @@ b1-1623,B1,advanced,presentation,noun,das Referat,Referate,noun,de presentatie,p
 b1-1624,B1,medium,president,noun,die Präsidentin,Präsidentinnen,noun,de presidente,presidentes,noun,رئیس جمهور,noun
 b1-1625,B1,advanced,president of the bundestag,noun,der Bundestagspräsident,Bundestagspräsidenten,noun,de voorzitter van de Bondsdag,voorzitters van de Bondsdag,noun,رئیس مجلس فدرال (بوندستاگ),noun
 b1-1626,B1,advanced,president of the bundestag,noun,die Bundestagspräsidentin,Bundestagspräsidentinnen,noun,de voorzitter van de Bondsdag,voorzitters van de Bondsdag,noun,رئیس مجلس فدرال (بوندستاگ),noun
-b1-1627,B1,medium,press,noun,die Presse,Pressen,noun,de pers,-,noun,مطبوعات,noun
+b1-1627,B1,medium,press,noun,die Presse,-,noun,de pers,-,noun,مطبوعات,noun
 b1-1628,B1,medium,press,verb,eindrücken,,verb,indrukken,,verb,به داخل فشار دادن,verb
-b1-1629,B1,advanced,pretend,verb,so tun,,verb,doen alsof,,phrase,وانمود کردن,verb
+b1-1629,B1,advanced,pretend,verb,"so tun, als ob",,verb,doen alsof,,phrase,وانمود کردن,verb
 b1-1630,B1,medium,prevent,verb,verhindern,,verb,verhinderen,,verb,مانع شدن,verb
 b1-1631,B1,medium,previous,adj,vorherig,,adj,vorig,,adj,پیشین,adj
 b1-1632,B1,medium,previous knowledge,noun,die Vorkenntnis,Vorkenntnisse,noun,de voorkennis,-,noun,پیش آگاهی,noun
@@ -4975,7 +4972,7 @@ b1-1679,B1,medium,push somebody,verb,jemanden schubsen,,verb,iemand duwen,,phras
 b1-1680,B1,medium,put away,phrasal verb,wegräumen,,verb,opbergen,,verb,سر جایش گذاشتن، جمع کردن,verb
 b1-1681,B1,advanced,put back,phrasal verb,verschieben,,verb,uitstellen,,verb,عقب انداختن,verb
 b1-1682,B1,medium,put cigarette out,phrase,die Zigarette ausmachen,,phrase,de sigaret uitmaken,,phrase,سیگار را خاموش کردن,verb
-b1-1683,B1,medium,put down,phrasal verb,hinlegen,,verb,neerleggen,,verb,قرار دادن روی زمین،کنار گذاشتن,verb
+b1-1683,B1,medium,put down,phrasal verb,hinlegen,,verb,neerleggen,,verb,قرار دادن روی زمین، کنار گذاشتن,verb
 b1-1684,B1,medium,put on weight,phrasal verb,zunehmen,,verb,aankomen,,verb,وزن اضافه کردن,verb
 b1-1685,B1,medium,put out,phrasal verb,löschen,,verb,blussen,,verb,خاموش کردن (آتش، سیگار),verb
 b1-1686,B1,easy,put out the fire,phrase,das Feuer löschen,,phrase,het vuur blussen,,phrase,آتش را خاموش کردن,verb
@@ -4985,7 +4982,7 @@ b1-1689,B1,medium,qualifications,noun,die Qualifikationen,-,noun,de kwalificatie
 b1-1690,B1,medium,qualify,verb,qualifizieren,,verb,zich kwalificeren,,verb,واجد شرایط بودن,verb
 b1-1691,B1,advanced,qualify for,phrase,Anspruch haben auf,,phrase,recht hebben op,,phrase,واجد شرایط بودن برای,phrase
 b1-1692,B1,easy,quality,noun,die Qualität,Qualitäten,noun,de kwaliteit,kwaliteiten,noun,کیفیت,noun
-b1-1693,B1,medium,quark,noun,der Quark,-,noun,de kwark,-,noun,کشک، پنیر تازه,noun
+b1-1693,B1,medium,quark,noun,der Quark,-,noun,de kwark,-,noun,پنیر تازه، کوارک,noun
 b1-1694,B1,medium,quarter,noun,das Quartal,Quartale,noun,het kwartaal,kwartalen,noun,سه‌ماهه، فصل,noun
 b1-1695,B1,medium,question,verb,befragen,,verb,ondervragen,,verb,بازجویی کردن، پرسش کردن,verb
 b1-1696,B1,easy,queue,noun,die Schlange,Schlangen,noun,de rij,rijen,noun,صف,noun
@@ -5064,7 +5061,7 @@ b1-1768,B1,medium,represent,verb,vertreten,,verb,vertegenwoordigen,,verb,نما�
 b1-1769,B1,medium,representative,adj,repräsentativ,,adj,representatief,,adj,نمایانگر، معرف,adj
 b1-1770,B1,medium,representative,noun,der Repräsentant,Repräsentanten,noun,de vertegenwoordiger,vertegenwoordigers,noun,نماینده,noun
 b1-1771,B1,medium,representative,noun,die Repräsentantin,Repräsentantinnen,noun,de vertegenwoordigster,vertegenwoordigsters,noun,نماینده,noun
-b1-1772,B1,easy,republic,noun,die Republik,Republiken,noun,de republiek,republieken,noun,جمهوری، جمهوری (همگانی سالاری),noun
+b1-1772,B1,easy,republic,noun,die Republik,Republiken,noun,de republiek,republieken,noun,جمهوری,noun
 b1-1773,B1,medium,request,verb,auffordern,,verb,verzoeken,,verb,درخواست کردن,verb
 b1-1774,B1,medium,require,verb,erfordern,,verb,vereisen,,verb,نیاز داشتن,verb
 b1-1775,B1,medium,residence,noun,der Aufenthalt,Aufenthalte,noun,het verblijf,verblijven,noun,اقامت,noun
@@ -5098,7 +5095,7 @@ b1-1802,B1,easy,revolution,noun,die Revolution,Revolutionen,noun,de revolutie,re
 b1-1803,B1,easy,rib,noun,die Rippe,Rippen,noun,de rib,ribben,noun,دنده,noun
 b1-1804,B1,medium,rich in tradition,phrase,traditionsreich,,adj,rijk aan traditie,,phrase,سرشار از سنت‌ها,adj
 b1-1805,B1,medium,ridiculous,adj,lächerlich,,adj,belachelijk,,adj,مسخره,adj
-b1-1806,B1,medium,ring,noun,der Anruf,Anrufe,noun,het telefoontje,telefoontjes,noun,زنگ (تلفن)؛ حلقه,noun
+b1-1806,B1,medium,ring,noun,der Anruf,Anrufe,noun,het telefoontje,telefoontjes,noun,زنگ، تماس تلفنی,noun
 b1-1807,B1,medium,rise,verb,steigen,,verb,stijgen,,verb,افزایش یافتن، بالا رفتن,verb
 b1-1808,B1,easy,risk,noun,das Risiko,Risiken,noun,het risico,risico's,noun,ریسک,noun
 b1-1809,B1,medium,risky,adj,riskant,,adj,riskant,,adj,پرخطر، مخاطره‌آمیز,adj
@@ -5141,13 +5138,13 @@ b1-1845,B1,medium,save,verb,retten,,verb,redden,,verb,نجات دادن,verb
 b1-1846,B1,easy,saxophone,noun,das Saxofon,Saxofone,noun,de saxofoon,saxofoons,noun,ساکسیفون,noun
 b1-1847,B1,medium,scale,noun,die Waage,Waagen,noun,de weegschaal,weegschalen,noun,ترازو,noun
 b1-1848,B1,medium,scales,noun,die Waage,Waagen,noun,de weegschaal,weegschalen,noun,ترازو,noun
-b1-1849,B1,medium,scandinavia,noun,Skandinavien,-,noun,het Scandinavië,-,noun,اسکاندیناوی,noun
+b1-1849,B1,medium,Scandinavia,noun,Skandinavien,-,noun,het Scandinavië,-,noun,اسکاندیناوی,noun
 b1-1850,B1,medium,scare,verb,erschrecken,,verb,laten schrikken,,verb,ترساندن,verb
 b1-1851,B1,easy,scene,noun,die Szene,Szenen,noun,de scène,scènes,noun,صحنه,noun
 b1-1852,B1,easy,school type,noun,der Schultyp,Schultypen,noun,het schooltype,schooltypes,noun,نوع مدرسه,noun
 b1-1853,B1,advanced,school-leaving exam (Abitur),noun,die Reifeprüfung,Reifeprüfungen,noun,het eindexamen,eindexamens,noun,آزمون پایانی,noun
 b1-1854,B1,easy,science fiction,noun,die Science-Fiction,-,noun,de sciencefiction,-,noun,علمی تخیلی,noun
-b1-1855,B1,medium,scratch,verb,kratzen,,verb,krabben,,verb,خراشیدن، خاراندن، خاراندن؛ خراش,verb
+b1-1855,B1,medium,scratch,verb,kratzen,,verb,krabben,,verb,خراشیدن، خاراندن,verb
 b1-1856,B1,medium,scroll down,phrasal verb,nach unten scrollen,,verb,naar beneden scrollen,,phrase,به پایین پیمایش کردن,verb
 b1-1857,B1,medium,scroll up,phrasal verb,nach oben scrollen,,phrase,omhoog scrollen,,verb,اسکرول به بالا,phrase
 b1-1858,B1,medium,seafood,noun,die Meeresfrüchte,-,noun,de zeevruchten,-,noun,غذاهای دریایی,noun
@@ -5247,10 +5244,10 @@ b1-1951,B1,medium,some money off,phrase,der Rabatt,Rabatte,noun,de korting,korti
 b1-1952,B1,medium,something to do with,phrase,etwas zu tun haben mit,,phrase,iets te maken hebben met,,phrase,چیزی که مربوط به,phrase
 b1-1953,B1,advanced,songwriter,noun,der Liedermacher,Liedermacher,noun,de liedjesschrijver,liedjesschrijvers,noun,ترانه سرا,noun
 b1-1954,B1,easy,sooner or later,phrase,früher oder später,,phrase,vroeg of laat,,phrase,دیر یا زود,phrase
-b1-1955,B1,medium,sort of,phrase,irgendwie,,adv,een beetje,,phrase,یه جورایی، تا حدی، یه‌جورایی؛ تا حدی,adv
+b1-1955,B1,medium,sort of,phrase,irgendwie,,adv,een beetje,,phrase,یه‌جورایی، تا حدی,adv
 b1-1956,B1,medium,sort out,phrasal verb,klären,,verb,regelen,,verb,حل کردن، سامان دادن,verb
 b1-1957,B1,medium,sound engineer,noun,der Toningenieur,Toningenieure,noun,de geluidstechnicus,geluidstechnici,noun,مهندس صدا,noun
-b1-1958,B1,medium,sound engineer,noun,die Toningenieurin,Toningenieurinnen,noun,de geluidstechnica,geluidstechnici,noun,مهندس صدا,noun
+b1-1958,B1,medium,sound engineer,noun,die Toningenieurin,Toningenieurinnen,noun,de geluidstechnica,geluidstechnica's,noun,مهندس صدا,noun
 b1-1959,B1,medium,sounds familiar,phrase,bekannt vorkommen,,phrase,bekend voorkomen,,phrase,آشنا به نظر رسیدن,verb
 b1-1960,B1,medium,"sour, annoyed",adj,sauer,,adj,zuur,,adj,ترش، دلخور,adj
 b1-1961,B1,easy,source,noun,die Quelle,Quellen,noun,de bron,bronnen,noun,منبع,noun
@@ -5276,7 +5273,7 @@ b1-1980,B1,medium,spices,noun,die Gewürze,-,noun,de specerijen,-,noun,ادوی�
 b1-1981,B1,medium,split up,phrasal verb,sich trennen,,verb,uit elkaar gaan,,verb,از هم جدا شدن,verb
 b1-1982,B1,medium,spoil,verb,verderben,,verb,bederven,,verb,خراب کردن,verb
 b1-1983,B1,easy,spontaneous,adj,spontan,,adj,spontaan,,adj,خودجوش,adj
-b1-1984,B1,medium,spot,noun,der Fleck,Flecken,noun,de vlek,vlekken,noun,نقطه،لکه,noun
+b1-1984,B1,medium,spot,noun,der Fleck,Flecken,noun,de vlek,vlekken,noun,نقطه، لکه,noun
 b1-1985,B1,medium,spray,verb,sprühen,,verb,spuiten,,verb,افشاندن,verb
 b1-1986,B1,medium,spread,verb,sich ausbreiten,,verb,zich verspreiden,,verb,گسترش یافتن,verb
 b1-1987,B1,medium,spread,verb,verbreiten,,verb,verspreiden,,verb,پخش کردن (شایعه),verb
@@ -5357,7 +5354,7 @@ b1-2061,B1,medium,supporter,noun,der Anhänger,Anhänger,noun,de aanhanger,aanha
 b1-2062,B1,easy,sure,adv,sicher,,adv,zeker,,adv,بی گمان,adv
 b1-2063,B1,medium,surface,noun,die Oberfläche,Oberflächen,noun,het oppervlak,oppervlakken,noun,سطح، رویه,noun
 b1-2064,B1,medium,surgeon,noun,der Chirurg,Chirurgen,noun,de chirurg,chirurgen,noun,جراح,noun
-b1-2065,B1,medium,surgery,noun,die Chirurgie,-,noun,de chirurgie,-,noun,عمل جراحی,noun
+b1-2065,B1,medium,surgery,noun,die Chirurgie,-,noun,de chirurgie,-,noun,جراحی,noun
 b1-2066,B1,advanced,surgery,noun,die Praxis,Praxen,noun,de praktijk,praktijken,noun,مطب (پزشک/دندانپزشک),noun
 b1-2067,B1,medium,surprise,verb,überraschen,,verb,verrassen,,verb,غافلگیر کردن,verb
 b1-2068,B1,medium,survey,noun,die Befragung,Befragungen,noun,de enquête,enquêtes,noun,نظرسنجی,noun
@@ -5415,9 +5412,8 @@ b1-2119,B1,easy,theoretical,adj,theoretisch,,adj,theoretisch,,adj,نظری,adj
 b1-2120,B1,easy,theory,noun,die Theorie,Theorien,noun,de theorie,theorieën,noun,نظریه,noun
 b1-2121,B1,easy,therefore,adv,deshalb,,adv,daarom,,adv,بنابراین,adv
 b1-2122,B1,medium,these days,phrase,heutzutage,,adv,tegenwoordig,,adv,این روزها,phrase
-b1-2123,B1,easy,thing,noun,das Ding,Dinge,noun,het ding,dingen,noun,چیز,noun
 b1-2124,B1,medium,think,verb,überlegen,,verb,nadenken,,verb,فکر کردن,verb
-b1-2125,B1,medium,"think up, invent",phrasal verb,ausdenken,,verb,bedenken,,verb,از خود درآوردن، ابداع کردن,verb
+b1-2125,B1,medium,"think up, invent",phrasal verb,sich ausdenken,,verb,bedenken,,verb,از خود درآوردن، ابداع کردن,verb
 b1-2126,B1,easy,third,noun,das Drittel,Drittel,noun,het derde,derden,noun,یک سوم,noun
 b1-2127,B1,easy,this time,phrase,diesmal,,adv,deze keer,,phrase,این بار,adv
 b1-2128,B1,medium,though,conj,obwohl,,conj,hoewel,,conj,هرچند,conj
@@ -5438,11 +5434,11 @@ b1-2142,B1,medium,tissue,noun,das Papiertaschentuch,Papiertaschentücher,noun,de
 b1-2143,B1,advanced,to be difficult,phrase,schwerfallen,,verb,moeilijk vallen,,phrase,دشوار بودن,verb
 b1-2144,B1,medium,to be honest,phrase,ehrlich gesagt,,phrase,eerlijk gezegd,,phrase,راستش را بخواهید,phrase
 b1-2145,B1,medium,to be right,phrase,recht haben,,verb,gelijk hebben,,phrase,حق داشتن,verb
-b1-2146,B1,advanced,to go,phrase,noch,,adv,nog,,adv,مانده، باقی‌مانده (مثلاً two days to go),adj
+b1-2146,B1,advanced,to go,phrase,noch,,adv,nog,,adv,مانده، باقی‌مانده,adj
 b1-2147,B1,medium,to tell you the truth,phrase,ehrlich gesagt,,phrase,eerlijk gezegd,,phrase,راستش را بخواهی,phrase
 b1-2148,B1,medium,today’s,adj,heutig,,adj,hedendaags,,adj,امروزی,adj
 b1-2149,B1,easy,tolerant,adj,tolerant,,adj,tolerant,,adj,بردبار,adj
-b1-2150,B1,medium,ton,noun,die Tonne,Tonnen,noun,de ton,tonnen,noun,تن؛ (tons of) مقدار زیاد,noun
+b1-2150,B1,medium,ton,noun,die Tonne,Tonnen,noun,de ton,tonnen,noun,تن,noun
 b1-2151,B1,easy,tool,noun,das Werkzeug,Werkzeuge,noun,het gereedschap,gereedschappen,noun,ابزار,noun
 b1-2152,B1,easy,top,noun,die Spitze,Spitzen,noun,de top,toppen,noun,بالا,noun
 b1-2153,B1,medium,total,adj,gesamt,,adj,totaal,,adj,کل، سراسری,adj
@@ -5468,7 +5464,7 @@ b1-2172,B1,easy,travel bag,noun,die Reisetasche,Reisetaschen,noun,de reistas,rei
 b1-2173,B1,medium,"treat, take care of",verb,versorgen,,verb,verzorgen,,verb,مداوا کردن، رسیدگی کردن,verb
 b1-2174,B1,easy,trend,noun,der Trend,Trends,noun,de trend,trends,noun,روند,noun
 b1-2175,B1,easy,triumph,noun,der Triumph,Triumphe,noun,de triomf,triomfen,noun,پیروزی,noun
-b1-2176,B1,advanced,triumphal arch,noun,die Triumphpforte,Triumphpforten,noun,de triomfboog,triomfbogen,noun,طاق پیروزی,noun
+b1-2176,B1,advanced,triumphal arch,noun,der Triumphbogen,Triumphbögen,noun,de triomfboog,triomfbogen,noun,طاق پیروزی,noun
 b1-2177,B1,easy,trolley,noun,der Trolley,Trolleys,noun,de trolley,trolleys,noun,چمدان چرخ‌دار,noun
 b1-2178,B1,medium,tropical fruits,noun,die Südfrüchte,-,noun,de tropische vruchten,-,noun,میوه‌های گرمسیری,noun
 b1-2179,B1,medium,truck,noun,der Lastkraftwagen,Lastkraftwagen,noun,de vrachtwagen,vrachtwagens,noun,کامیون,noun
@@ -5487,7 +5483,7 @@ b1-2191,B1,medium,"turn, shoot (a film)",verb,drehen,,verb,draaien,,verb,چرخ�
 b1-2192,B1,advanced,turning point; (1989) fall of communism,noun,die Wende,Wenden,noun,de ommekeer,-,noun,نقطهٔ عطف، تحولات ۱۹۸۹,noun
 b1-2193,B1,medium,TV,noun,der Fernsehapparat,Fernsehapparate,noun,het televisietoestel,televisietoestellen,noun,تلویزیون,noun
 b1-2194,B1,easy,tyre,noun,der Reifen,Reifen,noun,de band,banden,noun,تایر,noun
-b1-2195,B1,easy,ufo,noun,das Ufo,Ufos,noun,de ufo,ufo's,noun,یوفو,noun
+b1-2195,B1,easy,UFO,noun,das Ufo,Ufos,noun,de ufo,ufo's,noun,یوفو,noun
 b1-2196,B1,advanced,unadulterated,adj,unverfälscht,,adj,onvervalst,,adj,اصیل، دست‌نخورده,adj
 b1-2197,B1,medium,uncomfortable,adj,unbequem,,adj,ongemakkelijk,,adj,ناراحت,adj
 b1-2198,B1,advanced,unconscious,adj,ohnmächtig,,adj,bewusteloos,,adj,بیهوش,adj
@@ -5498,7 +5494,7 @@ b1-2202,B1,medium,undertake,verb,unternehmen,,verb,ondernemen,,verb,انجام �
 b1-2203,B1,medium,unexpected,adj,unerwartet,,adj,onverwacht,,adj,غیرمنتظره,adj
 b1-2204,B1,easy,unfair,adj,unfair,,adj,oneerlijk,,adj,ناعادلانه,adj
 b1-2205,B1,medium,unforgettable,adj,unvergesslich,,adj,onvergetelijk,,adj,فراموش نشدنی,adj
-b1-2206,B1,medium,unhealthy food,noun,das ungesunde Essen,-,noun,het ongezonde eten,-,noun,خوراکی کم‌ارزش,noun
+b1-2206,B1,medium,unhealthy food,noun,das ungesunde Essen,-,noun,het ongezonde eten,-,noun,غذای ناسالم,noun
 b1-2207,B1,medium,"unification, association",noun,die Vereinigung,Vereinigungen,noun,de vereniging,verenigingen,noun,اتحاد، انجمن,noun
 b1-2208,B1,medium,uninjured,adj,unverletzt,,adj,ongedeerd,,adj,آسیب ندیده,adj
 b1-2209,B1,medium,unique,adj,einzigartig,,adj,uniek,,adj,بی همتا,adj
@@ -5597,7 +5593,7 @@ b1-2301,B1,advanced,whiplash injury,noun,das Schleudertrauma,Schleudertraumata,n
 b1-2302,B1,medium,whisper,verb,flüstern,,verb,fluisteren,,verb,پچ‌پچ کردن، نجوا کردن,verb
 b1-2303,B1,advanced,wholefood,noun,die Vollwertkost,-,noun,de volwaardige voeding,-,noun,غذاهای کامل,noun
 b1-2304,B1,medium,wildlife,noun,die Tierwelt,-,noun,de dierenwereld,-,noun,حیات وحش,noun
-b1-2305,B1,medium,will,noun,das Testament,Testamente,noun,het testament,testamenten,noun,سفارش (وصیت),noun
+b1-2305,B1,medium,will,noun,das Testament,Testamente,noun,het testament,testamenten,noun,وصیت‌نامه,noun
 b1-2306,B1,medium,willing,adj,willig,,adj,bereid,,adj,مایل، راغب,adj
 b1-2307,B1,easy,win,noun,der Sieg,Siege,noun,de overwinning,overwinningen,noun,پیروزی,noun
 b1-2308,B1,medium,wind player,noun,der Bläser,Bläser,noun,de blazer,blazers,noun,نوازندهٔ ساز بادی,noun
@@ -5613,7 +5609,7 @@ b1-2317,B1,easy,wool,noun,die Wolle,-,noun,de wol,-,noun,پشم,noun
 b1-2318,B1,easy,woollen blanket,noun,die Wolldecke,Wolldecken,noun,de wollen deken,wollen dekens,noun,پتوی پشمی,noun
 b1-2319,B1,easy,word,noun,das Wort,Wörter,noun,het woord,woorden,noun,واژه,noun
 b1-2320,B1,medium,word,noun,die Vokabel,Vokabeln,noun,het woord,woorden,noun,واژه,noun
-b1-2321,B1,medium,work out,phrasal verb,herausfinden,,verb,uitzoeken,,verb,حل کردن، فهمیدن؛ ورزش کردن,verb
+b1-2321,B1,medium,work out,phrasal verb,herausfinden,,verb,uitzoeken,,verb,حل کردن، فهمیدن,verb
 b1-2322,B1,medium,work shift,noun,die Schicht,Schichten,noun,de dienst,diensten,noun,نوبت کاری,noun
 b1-2323,B1,medium,working day,noun,der Werktag,Werktage,noun,de werkdag,werkdagen,noun,روز کاری,noun
 b1-2324,B1,medium,working life,noun,das Arbeitsleben,-,noun,het arbeidsleven,-,noun,زندگی کاری,noun
@@ -5702,7 +5698,7 @@ b2-0059,B2,advanced,armed forces,noun,die Streitkräfte,-,noun,de strijdkrachten
 b2-0060,B2,easy,arrogant,adj,arrogant,,adj,arrogant,,adj,خودپسند,adj
 b2-0061,B2,medium,as far as something is concerned,phrase,was etwas betrifft,,phrase,wat iets betreft,,phrase,تا جایی که به چیزی مربوط می‌شود,phrase
 b2-0062,B2,medium,as for,prep,was … betrifft,,phrase,wat … betreft,,phrase,اما درباره‌ی؛ در مورد,prep
-b2-0063,B2,easy,as good as,phrase,so gut wie,,phrase,zo goed als,,phrase,به خوبیِ,phrase
+b2-0063,B2,easy,as good as,phrase,so gut wie,,phrase,zo goed als,,phrase,تقریباً، عملاً,phrase
 b2-0064,B2,medium,as I was saying,phrase,wie ich schon sagte,,phrase,zoals ik al zei,,phrase,همانطور که می‌گفتم,phrase
 b2-0065,B2,medium,assess,verb,beurteilen,,verb,beoordelen,,verb,ارزیابی کردن,verb
 b2-0066,B2,medium,assessment,noun,die Bewertung,Bewertungen,noun,de beoordeling,beoordelingen,noun,ارزیابی,noun
@@ -5742,7 +5738,7 @@ b2-0099,B2,medium,battle,noun,die Schlacht,Schlachten,noun,de veldslag,veldslage
 b2-0100,B2,medium,bay,noun,die Bucht,Buchten,noun,de baai,baaien,noun,خلیج,noun
 b2-0101,B2,advanced,be based somewhere,phrase,irgendwo ansässig sein,,phrase,ergens gevestigd zijn,,phrase,در جایی مستقر بودن,phrase
 b2-0102,B2,medium,be distracted by something,phrase,von etwas abgelenkt sein,,phrase,door iets afgeleid zijn,,phrase,با چیزی حواس‌پرت شدن,verb
-b2-0103,B2,medium,be in control of,phrase,die Kontrolle haben über,,phrase,de controle hebben over,,phrase,تحت کنترل بودن,verb
+b2-0103,B2,medium,be in control of,phrase,die Kontrolle haben über,,phrase,de controle hebben over,,phrase,کنترل داشتن بر,verb
 b2-0104,B2,medium,be off,phrase,weg sein,,phrase,weg zijn,,phrase,رفتن، راه افتادن,verb
 b2-0105,B2,advanced,be on your best behaviour,idiom,sich von seiner besten Seite zeigen,,idiom,zich van zijn beste kant laten zien,,idiom,مؤدب‌ترین رفتار را داشتن,verb
 b2-0106,B2,advanced,be tied up,phrase,eingespannt sein,,phrase,het druk hebben,,phrase,گیر کردن در کاری,verb
@@ -5854,7 +5850,7 @@ b2-0211,B2,advanced,cod,noun,der Kabeljau,Kabeljaue,noun,de kabeljauw,kabeljauwe
 b2-0212,B2,medium,coffin,noun,der Sarg,Särge,noun,de doodskist,doodskisten,noun,تابوت,noun
 b2-0213,B2,medium,coincidence,noun,der Zufall,Zufälle,noun,het toeval,toevalligheden,noun,اتفاق، تصادف (هم‌زمانی),noun
 b2-0214,B2,easy,combined,adj,kombiniert,,adj,gecombineerd,,adj,ترکیب شده,adj
-b2-0215,B2,medium,come across,phrasal verb,auf etwas stoßen,,verb,op iets stuiten,,phrase,بر خوردن (پیدا کردن) به چیزی,verb
+b2-0215,B2,medium,come across,phrasal verb,auf etwas stoßen,,verb,op iets stuiten,,phrase,به چیزی برخوردن,verb
 b2-0216,B2,medium,come across,phrasal verb,wirken,,verb,overkomen,,verb,به نظر رسیدن، جلوه کردن,verb
 b2-0217,B2,advanced,come round,phrasal verb,wieder zu sich kommen,,phrase,bijkomen,,verb,به هوش آمدن,verb
 b2-0218,B2,medium,come top,phrase,Erster werden,,phrase,eerste worden,,phrase,اول شدن؛ بهترین نتیجه را گرفتن,verb
@@ -5900,7 +5896,7 @@ b2-0257,B2,medium,cosmetic surgery,noun,die Schönheitsoperation,Schönheitsoper
 b2-0258,B2,medium,cotton wool,noun,die Watte,-,noun,de watten,-,noun,پنبه‌ی بهداشتی,noun
 b2-0259,B2,easy,council,noun,der Rat,Räte,noun,de raad,raden,noun,شورا,noun
 b2-0260,B2,easy,courageous,adj,mutig,,adj,moedig,,adj,شجاع,adj
-b2-0261,B2,medium,crack,verb,einen Riss bekommen,,phrase,barsten,,verb,ترک (برداشتن),verb
+b2-0261,B2,medium,crack,verb,einen Riss bekommen,,phrase,barsten,,verb,ترک برداشتن,verb
 b2-0262,B2,medium,cracked,adj,rissig,,adj,gebarsten,,adj,ترک خورده,adj
 b2-0263,B2,medium,crawl,verb,kriechen,,verb,kruipen,,verb,خزیدن,verb
 b2-0264,B2,medium,crop,noun,die Ernte,Ernten,noun,de oogst,oogsten,noun,محصول زراعی,noun
@@ -5939,7 +5935,7 @@ b2-0296,B2,easy,depression,noun,die Depression,Depressionen,noun,de depressie,de
 b2-0297,B2,easy,depth,noun,die Tiefe,Tiefen,noun,de diepte,diepten,noun,عمق,noun
 b2-0298,B2,medium,deserted,adj,verlassen,,adj,verlaten,,adj,متروکه,adj
 b2-0299,B2,easy,deserve,verb,verdienen,,verb,verdienen,,verb,سزاوار بودن,verb
-b2-0300,B2,medium,desperately,adv,verzweifelt,,adv,wanhopig,,adv,به شدت,adv
+b2-0300,B2,medium,desperately,adv,verzweifelt,,adv,wanhopig,,adv,ناامیدانه,adv
 b2-0301,B2,medium,desperately need,phrase,dringend brauchen,,phrase,dringend nodig hebben,,phrase,شدیداً نیاز داشتن,verb
 b2-0302,B2,medium,detect,verb,entdecken,,verb,ontdekken,,verb,تشخیص دادن، کشف کردن,verb
 b2-0303,B2,advanced,devastated,adj,am Boden zerstört,,adj,kapot,,adj,به‌شدت ناراحت، داغان,adj
@@ -6065,11 +6061,11 @@ b2-0422,B2,medium,figure,noun,die Figur,Figuren,noun,het figuur,figuren,noun,ا�
 b2-0423,B2,medium,fillet,noun,das Filet,Filets,noun,de filet,filets,noun,فیله,noun
 b2-0424,B2,medium,filling,noun,die Zahnfüllung,Zahnfüllungen,noun,de vulling,vullingen,noun,پرکردگی دندان,noun
 b2-0425,B2,medium,filthy,adj,dreckig,,adj,smerig,,adj,کثیف,adj
-b2-0426,B2,medium,final outcome,phrase,das Endergebnis,Endergebnisse,noun,het eindresultaat,,phrase,نتیجه نهایی,noun
+b2-0426,B2,medium,final outcome,phrase,das Endergebnis,Endergebnisse,noun,het eindresultaat,eindresultaten,noun,نتیجه نهایی,noun
 b2-0427,B2,medium,finance,noun,die Finanzen,-,noun,de financiën,-,noun,امور مالی,noun
 b2-0428,B2,easy,fingerprint,noun,der Fingerabdruck,Fingerabdrücke,noun,de vingerafdruk,vingerafdrukken,noun,اثر انگشت,noun
-b2-0429,B2,medium,fire,verb,entlassen,,verb,ontslaan,,verb,اخراج کردن یا شدن,verb
-b2-0430,B2,medium,fire broke out,phrase,Ein Feuer brach aus,,phrase,er brak brand uit,,phrase,آتش شعله ور شد,phrase
+b2-0429,B2,medium,fire,verb,entlassen,,verb,ontslaan,,verb,اخراج کردن,verb
+b2-0430,B2,medium,fire broke out,phrase,ein Feuer brach aus,,phrase,er brak brand uit,,phrase,آتش شعله ور شد,phrase
 b2-0431,B2,medium,fire spread,phrase,die Ausbreitung des Feuers,,phrase,de verspreiding van het vuur,,phrase,گسترش آتش,phrase
 b2-0432,B2,medium,firmly,adv,fest,,adv,stevig,,adv,محکم,adv
 b2-0433,B2,medium,fit in,phrasal verb,sich einfügen,,verb,zich aanpassen,,verb,جا افتادن,verb
@@ -6127,12 +6123,12 @@ b2-0484,B2,medium,get over,verb,überwinden,,verb,over iets heen komen,,phrase,�
 b2-0485,B2,advanced,get something to do something,phrase,etwas zum Laufen bringen,,phrase,iets aan de praat krijgen,,phrase,کاری کردن که چیزی کار کند,verb
 b2-0486,B2,advanced,get the hang of something,idiom,den Dreh raushaben,,idiom,de slag te pakken hebben,,idiom,از چیزی سر در آوردن,verb
 b2-0487,B2,medium,get there,phrase,es schaffen,,phrase,het redden,,phrase,به نتیجه رسیدن؛ موفق شدن,verb
-b2-0488,B2,medium,get through,phrasal verb,durchstehen,,verb,doorstaan,,verb,پشت سر گذاشتن؛ تماس برقرار کردن,verb
+b2-0488,B2,medium,get through,phrasal verb,durchstehen,,verb,doorstaan,,verb,پشت سر گذاشتن,verb
 b2-0489,B2,advanced,get through,phrasal verb,weiterkommen,,verb,doorgaan,,verb,صعود کردن (به مرحله‌ی بعد),verb
 b2-0490,B2,easy,giant,adj,riesig,,adj,reusachtig,,adj,غول پیکر,adj
 b2-0491,B2,medium,give birth,phrase,gebären,,verb,bevallen,,verb,به دنیا آوردن، زایمان کردن,verb
 b2-0492,B2,advanced,give it a trim,phrase,die Spitzen schneiden,,phrase,de puntjes bijknippen,,phrase,کمی کوتاهش کردن,verb
-b2-0493,B2,medium,give out,phrasal verb,verteilen,,verb,uitdelen,,verb,بیرون دادن،توزیع کردن,verb
+b2-0493,B2,medium,give out,phrasal verb,verteilen,,verb,uitdelen,,verb,توزیع کردن,verb
 b2-0494,B2,advanced,give somebody a hand,idiom,jemandem unter die Arme greifen,,idiom,iemand een handje helpen,,idiom,کمک کردن به کسی,phrase
 b2-0495,B2,medium,give something a go,idiom,etwas ausprobieren,,phrase,iets proberen,,phrase,چیزی را امتحان کردن,verb
 b2-0496,B2,easy,give something a try,phrase,etwas ausprobieren,,verb,iets uitproberen,,phrase,چیزی را امتحان کردن,phrase
@@ -6284,7 +6280,7 @@ b2-0641,B2,medium,jury,noun,die Geschworenen,-,noun,de jury,jury's,noun,هیئت
 b2-0642,B2,medium,justice,noun,die Gerechtigkeit,-,noun,de gerechtigheid,-,noun,عدالت,noun
 b2-0643,B2,medium,keep an eye on something,idiom,ein Auge auf etwas haben,,idiom,iets in de gaten houden,,idiom,چیزی را زیر نظر داشتن,verb
 b2-0644,B2,medium,keep your temper,phrase,die Ruhe bewahren,,phrase,kalm blijven,,phrase,حفظ کردن خونسردی,verb
-b2-0645,B2,advanced,keep somebody going,phrase,jdn. über Wasser halten,,phrase,iemand op de been houden,,idiom,کافی بودن چیزی برای کسی,verb
+b2-0645,B2,advanced,keep somebody going,phrase,jdn. über Wasser halten,,phrase,iemand op de been houden,,idiom,کسی را سرپا نگه داشتن,verb
 b2-0646,B2,medium,keep somebody informed,phrase,jemanden auf dem Laufenden halten,,phrase,iemand op de hoogte houden,,phrase,کسی را در جریان قرار دادن,verb
 b2-0647,B2,medium,keep track,phrase,den Überblick behalten,,phrase,het overzicht bewaren,,phrase,حساب چیزی را داشتن,verb
 b2-0648,B2,medium,key factor,noun,der Schlüsselfaktor,Schlüsselfaktoren,noun,de sleutelfactor,sleutelfactoren,noun,عامل کلیدی,noun
@@ -6368,7 +6364,7 @@ b2-0725,B2,medium,measurement,noun,die Messung,Messungen,noun,de meting,metingen
 b2-0726,B2,advanced,meet the needs of something,phrase,den Bedürfnissen von etwas gerecht werden,,phrase,tegemoetkomen aan de behoeften van iets,,phrase,نیازهای چیزی را برآورده کردن,verb
 b2-0727,B2,easy,melody,noun,die Melodie,Melodien,noun,de melodie,melodieën,noun,آهنگ,noun
 b2-0728,B2,medium,memory loss,noun,der Gedächtnisverlust,-,noun,het geheugenverlies,-,noun,از دست دادن حافظه,noun
-b2-0729,B2,medium,mend,verb,reparieren,,verb,repareren,,verb,اصلاح کردن,verb
+b2-0729,B2,medium,mend,verb,reparieren,,verb,repareren,,verb,تعمیر کردن,verb
 b2-0730,B2,medium,metaphor,noun,die Metapher,Metaphern,noun,de metafoor,metaforen,noun,استعاره,noun
 b2-0731,B2,medium,metaphors,noun,die Metapher,Metaphern,noun,de metafoor,metaforen,noun,استعاره ها,noun
 b2-0732,B2,easy,microscope,noun,das Mikroskop,Mikroskope,noun,de microscoop,microscopen,noun,میکروسکوپ,noun
@@ -6387,7 +6383,7 @@ b2-0744,B2,medium,mop,noun,der Wischmopp,Wischmopps,noun,de dweil,dweilen,noun,�
 b2-0745,B2,medium,moral,adj,moralisch,,adj,moreel,,adj,اخلاقی,adj
 b2-0746,B2,medium,mosquito,noun,die Mücke,Mücken,noun,de mug,muggen,noun,پشه,noun
 b2-0747,B2,medium,moving,adj,bewegend,,adj,ontroerend,,adj,ایجاد احساسات قوی، تکان دهنده,adj
-b2-0748,B2,medium,multi-storey,adj,mehrstöckig,,adj,met meerdere verdiepingen,,adj,ساختمان چند طبقه,phrase
+b2-0748,B2,medium,multi-storey,adj,mehrstöckig,,adj,met meerdere verdiepingen,,adj,چندطبقه,adj
 b2-0749,B2,medium,mussel,noun,die Muschel,Muscheln,noun,de mossel,mosselen,noun,صدف,noun
 b2-0750,B2,advanced,my mind goes blank,idiom,Ich habe ein Blackout.,,idiom,ik heb een black-out,,idiom,ذهنم خالی می‌شود,phrase
 b2-0751,B2,medium,nail,noun,der Nagel,Nägel,noun,de spijker,spijkers,noun,میخ,noun
@@ -6417,7 +6413,7 @@ b2-0774,B2,medium,nuclear weapon,noun,die Atomwaffe,Atomwaffen,noun,het kernwape
 b2-0775,B2,medium,number plate,noun,das Nummernschild,Nummernschilder,noun,de nummerplaat,nummerplaten,noun,پلاک,noun
 b2-0776,B2,medium,obey,verb,gehorchen,,verb,gehoorzamen,,verb,اطاعت کردن,verb
 b2-0777,B2,medium,obey the law,phrase,das Gesetz befolgen,,phrase,de wet naleven,,phrase,از قانون پیروی کردن,phrase
-b2-0778,B2,medium,object,verb,widersprechen,,verb,bezwaar maken,,phrase,خرده گرفتن,verb
+b2-0778,B2,medium,object,verb,widersprechen,,verb,bezwaar maken,,phrase,اعتراض کردن,verb
 b2-0779,B2,medium,objective,noun,das Ziel,Ziele,noun,de doelstelling,doelstellingen,noun,هدف,noun
 b2-0780,B2,medium,observation,noun,die Beobachtung,Beobachtungen,noun,de waarneming,waarnemingen,noun,مشاهده,noun
 b2-0781,B2,medium,obstacle,noun,das Hindernis,Hindernisse,noun,het obstakel,obstakels,noun,مانع,noun
@@ -6554,7 +6550,7 @@ b2-0911,B2,medium,puzzled,adj,verwirrt,,adj,verbaasd,,adj,گیج و مبهوت,a
 b2-0912,B2,medium,quit,verb,aufhören,,verb,stoppen,,verb,ترک کردن,verb
 b2-0913,B2,medium,quote,noun,das Zitat,Zitate,noun,het citaat,citaten,noun,نقل قول,noun
 b2-0914,B2,medium,radishes,noun,das Radieschen,Radieschen,noun,het radijsje,radijsjes,noun,تربچه,noun
-b2-0915,B2,advanced,raise,verb,ansprechen,,verb,aankaarten,,verb,مطرح کردن، مطرح کردن (موضوع),verb
+b2-0915,B2,advanced,raise,verb,ansprechen,,verb,aankaarten,,verb,مطرح کردن,verb
 b2-0916,B2,medium,raisins,noun,die Rosinen,-,noun,de rozijnen,-,noun,کشمش,noun
 b2-0917,B2,medium,rapid recovery,phrase,eine schnelle Genesung,,phrase,een snel herstel,,phrase,بهبودی سریع,phrase
 b2-0918,B2,medium,raspberry,noun,die Himbeere,Himbeeren,noun,de framboos,frambozen,noun,تمشک,noun
@@ -6636,8 +6632,8 @@ b2-0993,B2,medium,rubber tyre,noun,der Gummireifen,Gummireifen,noun,de rubberen 
 b2-0994,B2,medium,ruins,noun,die Ruine,Ruinen,noun,de ruïnes,-,noun,خرابه ها,noun
 b2-0995,B2,medium,rules and regulations,phrase,Gesetze und Vorschriften,,phrase,wetten en voorschriften,,phrase,قوانین و مقررات,phrase
 b2-0996,B2,medium,rumour,noun,das Gerücht,Gerüchte,noun,het gerucht,geruchten,noun,شایعه,noun
-b2-0997,B2,medium,running water,noun,fließendes Wasser,,phrase,het stromend water,-,noun,آب جاری,noun
-b2-0998,B2,medium,runny nose,phrase,die laufende Nase,-,noun,de loopneus,,phrase,آبریزش بینی,noun
+b2-0997,B2,medium,running water,noun,fließendes Wasser,,phrase,het stromende water,-,noun,آب جاری,noun
+b2-0998,B2,medium,runny nose,phrase,die laufende Nase,-,noun,de loopneus,loopneuzen,noun,آبریزش بینی,noun
 b2-0999,B2,medium,rural,adj,ländlich,,adj,landelijk,,adj,روستایی,adj
 b2-1000,B2,easy,sail,noun,das Segel,Segel,noun,het zeil,zeilen,noun,بادبان,noun
 b2-1001,B2,advanced,sales representative,noun,der Handelsvertreter,Handelsvertreter,noun,de handelsvertegenwoordiger,handelsvertegenwoordigers,noun,نماینده فروش,noun
@@ -6667,10 +6663,10 @@ b2-1024,B2,medium,sensational,adj,sensationell,,adj,sensationeel,,adj,شوران
 b2-1025,B2,advanced,sentence,noun,das Urteil,Urteile,noun,het vonnis,vonnissen,noun,حکم,noun
 b2-1026,B2,easy,sentimental,adj,sentimental,,adj,sentimenteel,,adj,احساساتی,adj
 b2-1027,B2,advanced,set,noun,die Kulisse,Kulissen,noun,het decor,decors,noun,صحنه، دکور,noun
-b2-1028,B2,medium,set an example,phrase,ein Beispiel geben,,phrase,het goede voorbeeld geven,,phrase,سرمشق بودن، الگو شدن,verb
+b2-1028,B2,medium,set an example,phrase,mit gutem Beispiel vorangehen,,phrase,het goede voorbeeld geven,,phrase,سرمشق بودن، الگو شدن,verb
 b2-1029,B2,medium,set aside,phrasal verb,beiseitelegen,,verb,opzijleggen,,verb,کنار گذاشتن,verb
 b2-1030,B2,medium,set fire to,phrase,in Brand setzen,,phrase,in brand steken,,phrase,آتش زدن به,verb
-b2-1031,B2,advanced,settle,verb,beilegen,,verb,bijleggen,,verb,حل‌وفصل کردن (اختلاف)، حل و فصل کردن، تسویه کردن,verb
+b2-1031,B2,advanced,settle,verb,beilegen,,verb,bijleggen,,verb,حل‌وفصل کردن، تسویه کردن,verb
 b2-1032,B2,advanced,settle an argument,phrase,einen Streit schlichten,,phrase,een ruzie bijleggen,,phrase,حل و فصل کردن مشاجره,verb
 b2-1033,B2,medium,severe,adj,schwer,,adj,ernstig,,adj,شدید,adj
 b2-1034,B2,medium,severely,adv,schwer,,adv,zwaar,,adv,به شدت,adv
@@ -6730,7 +6726,7 @@ b2-1087,B2,medium,solar system,noun,das Sonnensystem,Sonnensysteme,noun,het zonn
 b2-1088,B2,medium,solo artist,noun,der Solokünstler,Solokünstler,noun,de soloartiest,soloartiesten,noun,هنرمند انفرادی,noun
 b2-1089,B2,medium,somehow,adv,irgendwie,,adv,op de een of andere manier,,phrase,به نحوی,adv
 b2-1090,B2,advanced,sort something out,phrasal verb,regeln,,verb,regelen,,verb,چیزی را حل‌وفصل کردن، درست کردن,verb
-b2-1091,B2,medium,soul,noun,die Seele,Seelen,noun,de ziel,zielen,noun,روح،ضمیر,noun
+b2-1091,B2,medium,soul,noun,die Seele,Seelen,noun,de ziel,zielen,noun,روح، ضمیر,noun
 b2-1092,B2,medium,sound effects,noun,die Soundeffekte,-,noun,de geluidseffecten,-,noun,جلوه‌های صوتی,noun
 b2-1093,B2,medium,soya,noun,die Soja,-,noun,de soja,-,noun,سویا,noun
 b2-1094,B2,medium,spacious,adj,geräumig,,adj,ruim,,adj,جادار,adj
@@ -6773,7 +6769,6 @@ b2-1130,B2,advanced,stick up for somebody,phrasal verb,für jemanden eintreten,,
 b2-1131,B2,advanced,stick up for somebody,phrasal verb,sich für jemanden einsetzen,,verb,voor iemand opkomen,,verb,از کسی طرفداری کردن,verb
 b2-1132,B2,medium,stiff,adj,steif,,adj,stijf,,adj,سفت و سخت,adj
 b2-1133,B2,easy,still,adj,still,,adj,stil,,adj,بی حرکت,adj
-b2-1134,B2,medium,sting,verb,stechen,,verb,steken,,verb,نیش زدن,verb
 b2-1135,B2,easy,stink,verb,stinken,,verb,stinken,,verb,بوی بد داشتن,verb
 b2-1136,B2,medium,stinky,adj,stinkend,,adj,stinkend,,adj,بدبو,adj
 b2-1137,B2,medium,stir,verb,umrühren,,verb,roeren,,verb,هم زدن,verb
@@ -6781,7 +6776,7 @@ b2-1138,B2,advanced,stir-fry,verb,unter Rühren braten,,verb,roerbakken,,verb,ت
 b2-1139,B2,advanced,stock,noun,das Vermögen,Vermögen,noun,het vermogen,vermogens,noun,دارایی، موجودی,noun
 b2-1140,B2,advanced,stock,noun,der Bestand,Bestände,noun,de voorraad,voorraden,noun,موجودی انبار، موجودی کالا,noun
 b2-1141,B2,medium,stock,noun,die Aktie,Aktien,noun,het aandeel,aandelen,noun,سهام,noun
-b2-1142,B2,advanced,stock,noun,die Brühe,Brühen,noun,de bouillon,bouillons,noun,آبِ گوشت، مرغ و غیره,noun
+b2-1142,B2,advanced,stock,noun,die Brühe,Brühen,noun,de bouillon,bouillons,noun,آب گوشت، آب‌مایه,noun
 b2-1143,B2,advanced,stock,verb,vorrätig haben,,phrase,op voorraad hebben,,phrase,انبار کردن,verb
 b2-1144,B2,advanced,stop off,phrasal verb,kurz Halt machen,,phrase,even stoppen,,phrase,توقف کوتاه داشتن,phrase
 b2-1145,B2,medium,store,noun,das Lager,Lager,noun,het magazijn,magazijnen,noun,انبار,noun
@@ -6796,7 +6791,7 @@ b2-1153,B2,easy,strike,noun,der Streik,Streiks,noun,de staking,stakingen,noun,ا
 b2-1154,B2,advanced,strike,verb,schlagen,,verb,toeslaan,,verb,ضربه زدن، (فاجعه) رخ دادن,verb
 b2-1155,B2,advanced,strike somebody,verb,jemandem auffallen,,verb,iemand opvallen,,verb,به نظر کسی رسیدن، روی کسی تأثیر گذاشتن,verb
 b2-1156,B2,medium,string,noun,die Schnur,Schnüre,noun,het touw,touwen,noun,ریسمان,noun
-b2-1157,B2,medium,stripe,noun,der Streifen,Streifen,noun,de streep,strepen,noun,راه (نوار)، نوار,noun
+b2-1157,B2,medium,stripe,noun,der Streifen,Streifen,noun,de streep,strepen,noun,راه، نوار,noun
 b2-1158,B2,medium,strong accent,phrase,ein starker Akzent,,phrase,een zwaar accent,,phrase,لهجه‌ی غلیظ,phrase
 b2-1159,B2,medium,strong criticism,phrase,scharfe Kritik,,phrase,scherpe kritiek,,phrase,انتقاد شدید,phrase
 b2-1160,B2,medium,strongly,adv,nachdrücklich,,adv,nadrukkelijk,,adv,قویاً,adv
@@ -6902,7 +6897,7 @@ b2-1259,B2,easy,triangle,noun,das Dreieck,Dreiecke,noun,de driehoek,driehoeken,n
 b2-1260,B2,advanced,tricky,adj,knifflig,,adj,lastig,,adj,دشوار؛ پیچیده,adj
 b2-1261,B2,advanced,trim,verb,stutzen,,verb,bijknippen,,verb,کوتاه کردن (سر مو)، مرتب کردن,verb
 b2-1262,B2,advanced,trolley,noun,der Einkaufswagen,Einkaufswagen,noun,het winkelwagentje,winkelwagentjes,noun,چرخ خرید، چرخ دستی,noun
-b2-1263,B2,advanced,trouble,verb,beunruhigen,,verb,verontrusten,,verb,دردسر دادن,verb
+b2-1263,B2,advanced,trouble,verb,beunruhigen,,verb,verontrusten,,verb,نگران کردن، ناراحت کردن,verb
 b2-1264,B2,medium,truly,adv,wahrhaft,,adv,waarlijk,,adv,واقعاً,adv
 b2-1265,B2,advanced,trunk,noun,der Rüssel,Rüssel,noun,de slurf,slurven,noun,خرطوم,noun
 b2-1266,B2,advanced,try,verb,vor Gericht stellen,,verb,berechten,,verb,محاکمه کردن,verb
@@ -6910,7 +6905,7 @@ b2-1267,B2,medium,tuition fees,noun,die Studiengebühren,-,noun,het collegegeld,
 b2-1268,B2,medium,tumble dryer,noun,der Wäschetrockner,Wäschetrockner,noun,de wasdroger,wasdrogers,noun,خشک کن,noun
 b2-1269,B2,medium,tune,noun,die Melodie,Melodien,noun,de melodie,melodieën,noun,آهنگ، نغمه,noun
 b2-1270,B2,medium,turn down,phrasal verb,ablehnen,,verb,afwijzen,,verb,رد کردن,verb
-b2-1271,B2,advanced,turn out,phrasal verb,erscheinen,,verb,opkomen,,verb,حاضر شدن (در جمع)؛ معلوم شدن,verb
+b2-1271,B2,advanced,turn out,phrasal verb,erscheinen,,verb,opkomen,,verb,حاضر شدن، شرکت کردن,verb
 b2-1272,B2,advanced,turn up,phrasal verb,auftauchen,,verb,opduiken,,verb,پیدا شدن؛ سر رسیدن,verb
 b2-1273,B2,medium,turned down,phrasal verb,ablehnen,,verb,afwijzen,,verb,رد کردن,verb
 b2-1274,B2,medium,tutor,noun,der Tutor,Tutoren,noun,de tutor,tutoren,noun,استاد راهنما,noun
@@ -7125,7 +7120,7 @@ c1-0103,C1,advanced,bail,noun,die Kaution,Kautionen,noun,de borgtocht,borgtochte
 c1-0104,C1,advanced,bail somebody out,phrasal verb,jemanden aus der Patsche helfen,,phrase,iemand uit de brand helpen,,idiom,کسی را از مخمصهٔ مالی نجات دادن,verb
 c1-0105,C1,advanced,ballot,noun,die Abstimmung,Abstimmungen,noun,de stemming,stemmingen,noun,رأی‌گیری,noun
 c1-0106,C1,advanced,banister,noun,das Treppengeländer,Treppengeländer,noun,de trapleuning,trapleuningen,noun,نردهٔ پله، نرده,noun
-c1-0107,C1,advanced,bank,noun,der Damm,Dämme,noun,de dijk,dijken,noun,سیل گیر,noun
+c1-0107,C1,advanced,bank,noun,der Damm,Dämme,noun,de dijk,dijken,noun,خاکریز، سیل‌بند,noun
 c1-0108,C1,medium,bargain,verb,feilschen,,verb,afdingen,,verb,چانه زدن,verb
 c1-0109,C1,advanced,be behind,phrase,hinter jemandem stehen,,phrase,achter iemand staan,,phrase,پشتیبان کسی بودن؛ حمایت کردن,verb
 c1-0110,C1,advanced,be confined to bed,phrase,bettlägerig sein,,phrase,bedlegerig zijn,,phrase,بستری شدن، زمین‌گیر شدن,verb
@@ -7215,7 +7210,7 @@ c1-0193,C1,advanced,cease,verb,einstellen,,verb,staken,,verb,متوقف کردن
 c1-0194,C1,advanced,ceasefire,noun,der Waffenstillstand,Waffenstillstände,noun,het staakt-het-vuren,-,noun,آتش‌بس,noun
 c1-0195,C1,medium,center party,noun,die Zentrumspartei,Zentrumsparteien,noun,de middenpartij,middenpartijen,noun,حزب میانه,noun
 c1-0196,C1,advanced,chain of events,phrase,die Kette von Ereignissen,Ketten von Ereignissen,noun,een aaneenschakeling van gebeurtenissen,,phrase,زنجیره ای از وقایع,noun
-c1-0197,C1,medium,chairperson,noun,der Vorsitzende,Vorsitzenden,noun,de voorzitter,voorzitters,noun,رئیس,noun
+c1-0197,C1,medium,chairperson,noun,der Vorsitzende,Vorsitzende,noun,de voorzitter,voorzitters,noun,رئیس,noun
 c1-0198,C1,advanced,changeable,adj,wechselhaft,,adj,wisselvallig,,adj,ناپایدار,adj
 c1-0199,C1,medium,channel of communication,phrase,der Kommunikationskanal,Kommunikationskanäle,noun,het communicatiekanaal,communicatiekanalen,noun,کانال ارتباطی,noun
 c1-0200,C1,advanced,characterized,adj,gekennzeichnet,,adj,gekenmerkt,,adj,مشخص‌شده (با)؛ توصیف‌شده,adj
@@ -7236,7 +7231,7 @@ c1-0214,C1,advanced,clear,verb,freisprechen,,verb,vrijspreken,,verb,تبرئه �
 c1-0215,C1,advanced,clerical,adj,Büro-,,adj,administratief,,adj,دفتری,adj
 c1-0216,C1,medium,cliché,noun,das Klischee,Klischees,noun,het cliché,clichés,noun,کلیشه,noun
 c1-0217,C1,advanced,clinical trial,noun,die klinische Studie,klinische Studien,noun,de klinische studie,klinische studies,noun,کارآزمایی بالینی,phrase
-c1-0218,C1,advanced,close to tears,phrase,den Tränen nahe,,phrase,den tranen nabij,,phrase,در آستانه‌ی گریه,phrase
+c1-0218,C1,advanced,close to tears,phrase,den Tränen nahe,,phrase,de tranen nabij,,phrase,در آستانه‌ی گریه,phrase
 c1-0219,C1,medium,closure,noun,die Schließung,Schließungen,noun,de sluiting,sluitingen,noun,بسته شدن,verb
 c1-0220,C1,medium,clutch,noun,die Kupplung,Kupplungen,noun,de koppeling,koppelingen,noun,کلاچ,noun
 c1-0221,C1,advanced,coherent,adj,kohärent,,adj,samenhangend,,adj,منسجم,adj
@@ -7262,7 +7257,7 @@ c1-0240,C1,advanced,complementary medicine,noun,die Komplementärmedizin,-,noun,
 c1-0241,C1,advanced,compliance,noun,die Einhaltung,-,noun,de naleving,-,noun,انطباق,noun
 c1-0242,C1,advanced,complimentary,adj,schmeichelhaft,,adj,vleiend,,adj,تعریف‌آمیز، ستایش‌آمیز,adj
 c1-0243,C1,advanced,comply,verb,einhalten,,verb,naleven,,verb,پیروی کردن؛ مطابقت داشتن,verb
-c1-0244,C1,advanced,compose,verb,bestehen aus,,verb,bestaan uit,,verb,تشکیل دادن (be composed of),verb
+c1-0244,C1,advanced,compose,verb,bestehen aus,,verb,bestaan uit,,verb,تشکیل شدن از,verb
 c1-0245,C1,medium,compost,noun,der Kompost,Komposte,noun,de compost,-,noun,کمپوست,noun
 c1-0246,C1,advanced,comprehensive healthcare provision,phrase,die umfassende Gesundheitsversorgung,-,noun,uitgebreide gezondheidszorg,,phrase,ارائه خدمات جامع درمانی,phrase
 c1-0247,C1,advanced,comprise,verb,umfassen,,verb,omvatten,,verb,شامل شدن، تشکیل شدن از,verb
@@ -7330,7 +7325,7 @@ c1-0308,C1,advanced,dawn on somebody,phrasal verb,jemandem dämmern,,verb,tot ie
 c1-0309,C1,medium,deadly dull,phrase,todlangweilig,,adj,doodsaai,,adj,به‌شدت کسل‌کننده,phrase
 c1-0310,C1,advanced,deafening,adj,ohrenbetäubend,,adj,oorverdovend,,adj,کر کننده,adj
 c1-0311,C1,medium,death toll,noun,die Zahl der Todesopfer,Zahlen der Todesopfer,noun,het dodental,dodentallen,noun,شمار جان باختگان,noun
-c1-0312,C1,advanced,debit,noun,die Lastschrift,Lastschriften,noun,de automatische incasso,automatische incasso's,noun,بدهی,noun
+c1-0312,C1,advanced,debit,noun,die Lastschrift,Lastschriften,noun,de automatische incasso,automatische incasso's,noun,برداشت مستقیم از حساب,noun
 c1-0313,C1,medium,decaffeinated,adj,entkoffeiniert,,adj,cafeïnevrij,,adj,بدون کافئین,adj
 c1-0314,C1,medium,deceived,adj,getäuscht,,adj,bedrogen,,adj,فریب خورده,adj
 c1-0315,C1,medium,deception,noun,die Täuschung,Täuschungen,noun,het bedrog,-,noun,فریب,noun
@@ -7338,7 +7333,7 @@ c1-0316,C1,advanced,deep end,noun,der Tiefwasserbereich,Tiefwasserbereiche,noun,
 c1-0317,C1,medium,deep-fat fryer,noun,die Fritteuse,Fritteusen,noun,de friteuse,friteuses,noun,سرخ‌کن,noun
 c1-0318,C1,medium,defect,noun,der Defekt,Defekte,noun,het defect,defecten,noun,نقص,noun
 c1-0319,C1,medium,defective,adj,defekt,,adj,defect,,adj,معیوب,adj
-c1-0320,C1,advanced,defendant,noun,der Angeklagte,Angeklagten,noun,de verdachte,verdachten,noun,متهم، خوانده,noun
+c1-0320,C1,advanced,defendant,noun,der Angeklagte,Angeklagte,noun,de verdachte,verdachten,noun,متهم، خوانده,noun
 c1-0321,C1,advanced,deforestation,noun,die Abholzung,Abholzungen,noun,de ontbossing,-,noun,جنگل‌زدایی,noun
 c1-0322,C1,medium,defrosted,adj,aufgetaut,,adj,ontdooid,,adj,یخ‌زدایی شده,adj
 c1-0323,C1,medium,delegate,verb,delegieren,,verb,delegeren,,verb,(کار را) واگذار کردن، تفویض کردن,verb
@@ -7363,7 +7358,7 @@ c1-0341,C1,advanced,detrimental effect,phrase,die schädliche Wirkung,schädlich
 c1-0342,C1,advanced,deviate from something,phrasal verb,von etwas abweichen,,verb,van iets afwijken,,verb,از چیزی منحرف شدن,verb
 c1-0343,C1,advanced,deviation,noun,die Abweichung,Abweichungen,noun,de afwijking,afwijkingen,noun,انحراف,noun
 c1-0344,C1,advanced,devise,verb,entwickeln,,verb,bedenken,,verb,طراحی کردن، ابداع کردن,verb
-c1-0345,C1,advanced,diagnoses,noun,die Diagnosen,-,noun,de diagnose,diagnoses,noun,تشخیص‌ها,noun
+c1-0345,C1,advanced,diagnoses,noun,die Diagnosen,-,noun,de diagnoses,-,noun,تشخیص‌ها,noun
 c1-0346,C1,medium,diagnosis,noun,die Diagnose,Diagnosen,noun,de diagnose,diagnoses,noun,تشخیص,noun
 c1-0347,C1,medium,diagnostic,adj,diagnostisch,,adj,diagnostisch,,adj,تشخیصی,adj
 c1-0348,C1,advanced,diarrhoea,noun,der Durchfall,-,noun,de diarree,-,noun,اسهال,noun
@@ -7421,7 +7416,7 @@ c1-0399,C1,advanced,dropout,noun,der Studienabbrecher,Studienabbrecher,noun,de s
 c1-0400,C1,advanced,drown something out,phrasal verb,übertönen,,verb,overstemmen,,verb,صدای چیزی را تحت‌الشعاع قرار دادن,verb
 c1-0401,C1,advanced,dry up,phrasal verb,versiegen,,verb,opdrogen,,verb,خشک شدن، ته کشیدن,verb
 c1-0402,C1,advanced,duck,verb,ausweichen,,verb,wegduiken,,verb,جاخالی دادن,verb
-c1-0403,C1,advanced,duplicate,verb,vervielfältigen,,verb,dupliceren,,verb,تکثیر کردن؛ نسخه‌ی تکراری,verb
+c1-0403,C1,advanced,duplicate,verb,vervielfältigen,,verb,dupliceren,,verb,تکثیر کردن,verb
 c1-0404,C1,advanced,eat your words,idiom,seine Worte zurücknehmen,,idiom,zijn woorden terugnemen,,idiom,حرف خود را پس گرفتن,verb
 c1-0405,C1,advanced,economized,verb,sparen,,verb,bezuinigen,,verb,صرفه‌جویی کردن,verb
 c1-0406,C1,advanced,eligible,adj,berechtigt,,adj,in aanmerking komend,,adj,واجد شرایط,adj
@@ -7434,12 +7429,12 @@ c1-0412,C1,advanced,empirical,adj,empirisch,,adj,empirisch,,adj,تجربی,adj
 c1-0413,C1,advanced,enclose,verb,beifügen,,verb,bijvoegen,,verb,پیوست کردن,verb
 c1-0414,C1,medium,energetically,adv,energisch,,adv,energiek,,adv,با انرژی,adv
 c1-0415,C1,advanced,enforce,verb,durchsetzen,,verb,afdwingen,,verb,اجرا کردن,verb
-c1-0416,C1,advanced,enforcement,noun,die Durchsetzung,-,noun,de handhaving,-,noun,اجرا (ی قانون),noun
+c1-0416,C1,advanced,enforcement,noun,die Durchsetzung,-,noun,de handhaving,-,noun,اجرای قانون,noun
 c1-0417,C1,advanced,enhance,verb,verbessern,,verb,verbeteren,,verb,بهتر کردن، جلوه دادن,verb
 c1-0418,C1,medium,enrich,verb,bereichern,,verb,verrijken,,verb,غنی کردن,verb
 c1-0419,C1,advanced,enterprise,noun,der Unternehmergeist,-,noun,de ondernemingszin,-,noun,ابتکار، روحیهٔ کارآفرینی,noun
 c1-0420,C1,advanced,entitle,verb,berechtigen,,verb,het recht geven,,phrase,حق دادن,verb
-c1-0421,C1,advanced,erupt,verb,ausbrechen,,verb,uitbarsten,,verb,جهیدن (فوران کردن),verb
+c1-0421,C1,advanced,erupt,verb,ausbrechen,,verb,uitbarsten,,verb,فوران کردن,verb
 c1-0422,C1,medium,essentially,adv,im Wesentlichen,,adv,in wezen,,adv,اساساً,adv
 c1-0423,C1,advanced,establishment,noun,die Gründung,Gründungen,noun,de oprichting,oprichtingen,noun,تأسیس,noun
 c1-0424,C1,advanced,etiquette,noun,die Etikette,-,noun,de etiquette,-,noun,آداب معاشرت,noun
@@ -7484,7 +7479,7 @@ c1-0462,C1,advanced,fellow,noun,der Kollege,Kollegen,noun,de collega,collega's,n
 c1-0463,C1,medium,fennel,noun,der Fenchel,-,noun,de venkel,-,noun,رازیانه,noun
 c1-0464,C1,medium,fertile,adj,fruchtbar,,adj,vruchtbaar,,adj,حاصلخیز,adj
 c1-0465,C1,advanced,fierce criticism,phrase,scharfe Kritik,,phrase,felle kritiek,,phrase,انتقاد شدید,phrase
-c1-0466,C1,medium,fighter,noun,der Kämpfer,Kämpfer,noun,de strijder,strijders,noun,جنگنده,noun
+c1-0466,C1,medium,fighter,noun,der Kämpfer,Kämpfer,noun,de strijder,strijders,noun,مبارز، جنگجو,noun
 c1-0467,C1,advanced,figuratively,adv,im übertragenen Sinne,,phrase,figuurlijk,,adv,به‌طور مجازی,adv
 c1-0468,C1,medium,finalized,verb,abgeschlossen,,adj,afgerond,,adj,نهایی‌شده,adj
 c1-0469,C1,advanced,find,noun,der Fund,Funde,noun,de vondst,vondsten,noun,یافته,noun
@@ -7546,7 +7541,7 @@ c1-0524,C1,advanced,ginger,adj,rothaarig,,adj,rossig,,adj,(موی) قرمز، ح
 c1-0525,C1,advanced,gist,noun,das Wesentliche,-,noun,de kern,-,noun,اصل مطلب,noun
 c1-0526,C1,advanced,give or take something,phrase,plus/minus,,phrase,plus of min,,phrase,کم‌وبیش؛ با اختلافی جزئی,adv
 c1-0527,C1,medium,give somebody a say,phrase,jemandem ein Mitspracherecht geben,,phrase,iemand inspraak geven,,phrase,به کسی حق اظهار نظر دادن,verb
-c1-0528,C1,advanced,give something away,phrasal verb,verschenken,,verb,weggeven,,verb,(فرصت یا گل را) مفت از دست دادن,verb
+c1-0528,C1,advanced,give something away,phrasal verb,verschenken,,verb,weggeven,,verb,بخشیدن، مجانی دادن,verb
 c1-0529,C1,advanced,go ahead,noun,die Freigabe,Freigaben,noun,het groene licht,-,noun,اجازهٔ شروع، موافقت,noun
 c1-0530,C1,advanced,go down with,phrasal verb,erkranken an,,verb,ziek worden van,,phrase,(به بیماری) مبتلا شدن,verb
 c1-0531,C1,medium,go downhill,idiom,bergab gehen,,idiom,bergafwaarts gaan,,idiom,رو به افول رفتن؛ بدتر شدن,verb
@@ -7562,7 +7557,7 @@ c1-0540,C1,medium,gripping,adj,packend,,adj,meeslepend,,adj,گیرا، جذاب,
 c1-0541,C1,medium,gripping,adj,spannend,,adj,spannend,,adj,هیجان انگیز,adj
 c1-0542,C1,medium,groom,noun,der Bräutigam,Bräutigame,noun,de bruidegom,bruidegoms,noun,داماد,noun
 c1-0543,C1,medium,groundbreaking,adj,bahnbrechend,,adj,baanbrekend,,adj,پیشگامانه,adj
-c1-0544,C1,advanced,grounds,noun,die Gründe,-,noun,de grond,gronden,noun,دلایل، زمینه‌ها,noun
+c1-0544,C1,advanced,grounds,noun,die Gründe,-,noun,de gronden,-,noun,دلایل، زمینه‌ها,noun
 c1-0545,C1,advanced,grueling,adj,zermürbend,,adj,slopend,,adj,طاقت فرسا,adj
 c1-0546,C1,advanced,guarded,adj,zurückhaltend,,adj,terughoudend,,adj,محتاط، تودار,adj
 c1-0547,C1,easy,half truth,noun,die Halbwahrheit,Halbwahrheiten,noun,de halve waarheid,halve waarheden,noun,نیمی از حقیقت,noun
@@ -7583,7 +7578,7 @@ c1-0561,C1,advanced,having said that,phrase,andererseits,,adv,anderzijds,,adv,ب
 c1-0562,C1,medium,heading in the right direction,idiom,auf dem richtigen Weg sein,,idiom,op de goede weg zijn,,idiom,در مسیر درست قرار گرفتن,verb
 c1-0563,C1,medium,heading in the wrong direction,idiom,in die falsche Richtung steuern,,phrase,de verkeerde kant op gaan,,idiom,در جهت اشتباه حرکت کردن,phrase
 c1-0564,C1,medium,heal up,phrasal verb,verheilen,,verb,genezen,,verb,خوب شدن، التیام یافتن,verb
-c1-0565,C1,easy,heartless,adj,herzlos,,adj,harteloos,,adj,بی دل و بی عاطفه,adj
+c1-0565,C1,easy,heartless,adj,herzlos,,adj,harteloos,,adj,سنگدل، بی‌عاطفه,adj
 c1-0566,C1,medium,heated discussion,phrase,die hitzige Diskussion,hitzige Diskussionen,noun,de verhitte discussie,,phrase,بحث داغ,phrase
 c1-0567,C1,easy,hectic,adj,hektisch,,adj,hectisch,,adj,پرجنب و جوش,adj
 c1-0568,C1,medium,hence,adv,daher,,adv,daarom,,adv,از این رو,adv
@@ -7593,7 +7588,7 @@ c1-0571,C1,medium,hit back at,phrasal verb,zurückschlagen,,verb,terugslaan,,ver
 c1-0572,C1,advanced,hit the roof,idiom,an die Decke gehen,,idiom,uit zijn vel springen,,idiom,از کوره در رفتن، به‌شدت عصبانی شدن,idiom
 c1-0573,C1,advanced,hob,noun,das Kochfeld,Kochfelder,noun,de kookplaat,kookplaten,noun,صفحهٔ اجاق گاز,noun
 c1-0574,C1,medium,hold somebody responsible,phrase,jemanden verantwortlich machen,,phrase,iemand verantwoordelijk stellen,,phrase,کسی را مسئول دانستن,verb
-c1-0575,C1,advanced,hold-up,noun,die Verzögerung,Verzögerungen,noun,de vertraging,vertragingen,noun,تأخیر؛ سرقت مسلحانه,noun
+c1-0575,C1,advanced,hold-up,noun,die Verzögerung,Verzögerungen,noun,de vertraging,vertragingen,noun,تأخیر,noun
 c1-0576,C1,medium,hostility,noun,die Feindseligkeit,Feindseligkeiten,noun,de vijandigheid,vijandigheden,noun,خصومت,noun
 c1-0577,C1,medium,hum,verb,summen,,verb,neuriën,,verb,زمزمه کردن,verb
 c1-0578,C1,easy,humble,adj,bescheiden,,adj,bescheiden,,adj,فروتن,adj
@@ -7648,7 +7643,7 @@ c1-0626,C1,advanced,in the region of,phrase,in der Größenordnung von,,phrase,i
 c1-0627,C1,medium,in view of,prep,angesichts,,prep,gezien,,prep,با توجه به,phrase
 c1-0628,C1,medium,inadequate,adj,unzureichend,,adj,ontoereikend,,adj,ناکافی,adj
 c1-0629,C1,medium,incentive,noun,der Anreiz,Anreize,noun,de prikkel,prikkels,noun,انگیزه,noun
-c1-0630,C1,medium,incidentally,adv,übrigens,,adv,trouwens,,adv,اتفاقاً,adv
+c1-0630,C1,medium,incidentally,adv,übrigens,,adv,trouwens,,adv,ضمناً، راستی,adv
 c1-0631,C1,medium,inclination,noun,die Neigung,Neigungen,noun,de neiging,neigingen,noun,تمایل,noun
 c1-0632,C1,medium,inclined,adj,geneigt,,adj,geneigd,,adj,متمایل,adj
 c1-0633,C1,medium,incomprehensible,adj,unverständlich,,adj,onbegrijpelijk,,adj,غیرقابل درک,adj
@@ -8043,7 +8038,7 @@ c1-1021,C1,medium,runner-up,noun,der Zweitplatzierte,Zweitplatzierten,noun,de nu
 c1-1022,C1,advanced,rushed off your feet,idiom,alle Hände voll zu tun haben,,idiom,de handen vol hebben,,idiom,سر (کسی) خیلی شلوغ بودن,idiom
 c1-1023,C1,medium,ruthless,adj,rücksichtslos,,adj,meedogenloos,,adj,بی‌رحم,adj
 c1-1024,C1,medium,ruthlessly,adv,rücksichtslos,,adv,meedogenloos,,adv,با بی‌رحمی,adv
-c1-1025,C1,medium,sack,verb,feuern,,verb,ontslaan,,verb,اخراج کردن یا شدن,verb
+c1-1025,C1,medium,sack,verb,feuern,,verb,ontslaan,,verb,اخراج کردن,verb
 c1-1026,C1,medium,safe and sound,idiom,gesund und munter,,idiom,veilig en wel,,idiom,امن و امان,idiom
 c1-1027,C1,easy,sage,noun,der Salbei,-,noun,de salie,-,noun,مریم‌گلی,noun
 c1-1028,C1,easy,sarcasm,noun,der Sarkasmus,-,noun,het sarcasme,-,noun,کنایه,noun
@@ -8075,7 +8070,7 @@ c1-1053,C1,medium,sergeant,noun,der Feldwebel,Feldwebel,noun,de sergeant,sergean
 c1-1054,C1,advanced,set off,phrasal verb,auslösen,,verb,veroorzaken,,verb,باعث شدن، به راه انداختن,verb
 c1-1055,C1,medium,set-back,noun,der Rückschlag,Rückschläge,noun,de tegenslag,tegenslagen,noun,مانع، عقب‌گرد، شکست موقت,noun
 c1-1056,C1,medium,setback,noun,der Rückschlag,Rückschläge,noun,de tegenslag,tegenslagen,noun,مانع، عقب‌گرد، شکست موقت,noun
-c1-1057,C1,medium,settle a dispute,phrase,einen Streit beilegen,,phrase,een geschil bijleggen,,phrase,حل و فصل کردن اختلاف، حل و فصل اختلاف,verb
+c1-1057,C1,medium,settle a dispute,phrase,einen Streit beilegen,,phrase,een geschil bijleggen,,phrase,حل و فصل کردن اختلاف,verb
 c1-1058,C1,medium,settle for,phrasal verb,sich zufriedengeben mit,,verb,genoegen nemen met,,phrase,بسنده کردن به,verb
 c1-1059,C1,medium,settle the bill,phrase,die Rechnung begleichen,,phrase,de rekening voldoen,,phrase,صورتحساب را پرداختن,verb
 c1-1060,C1,medium,settlement,noun,die Einigung,Einigungen,noun,de schikking,schikkingen,noun,توافق، حل و فصل,noun
@@ -8119,7 +8114,7 @@ c1-1097,C1,advanced,sour grapes,idiom,Die Trauben hängen zu hoch,,idiom,de drui
 c1-1098,C1,easy,spamming,noun,das Spamming,-,noun,het spammen,-,noun,هرزنامه نویسی,noun
 c1-1099,C1,easy,spark,noun,der Funke,Funken,noun,de vonk,vonken,noun,جرقه,noun
 c1-1100,C1,medium,spark of,phrase,ein Funke,,phrase,een sprankje,,phrase,جرقه ای از,phrase
-c1-1101,C1,advanced,spell,noun,die Phase,Phasen,noun,de periode,periodes,noun,دوره‌ی (کوتاه),noun
+c1-1101,C1,advanced,spell,noun,die Phase,Phasen,noun,de periode,periodes,noun,دوره‌ی کوتاه,noun
 c1-1102,C1,medium,spell out,phrasal verb,verdeutlichen,,verb,duidelijk maken,,verb,به‌روشنی توضیح دادن,verb
 c1-1103,C1,medium,spite,noun,die Bosheit,Bosheiten,noun,de wrok,-,noun,کینه، بدخواهی,noun
 c1-1104,C1,medium,spiteful,adj,gehässig,,adj,hatelijk,,adj,کینه توز,adj
@@ -8129,7 +8124,7 @@ c1-1107,C1,medium,spokesperson,noun,der Sprecher,Sprecher,noun,de woordvoerder,w
 c1-1108,C1,medium,spotless,adj,blitzsauber,,adj,brandschoon,,adj,بسیار تمیز، بی‌لک,adj
 c1-1109,C1,medium,sprained,adj,verstaucht,,adj,verstuikt,,adj,رگ به رگ شده,adj
 c1-1110,C1,medium,spree,noun,der Kaufrausch,-,noun,de koopwoede,-,noun,ولخرجی، خرید افراطی,noun
-c1-1111,C1,easy,sprint,verb,sprinten,,verb,sprinten,,verb,دو سرعت,noun
+c1-1111,C1,easy,sprint,verb,sprinten,,verb,sprinten,,verb,با سرعت دویدن,verb
 c1-1112,C1,easy,stability,noun,die Stabilität,-,noun,de stabiliteit,-,noun,پایداری,noun
 c1-1113,C1,easy,stables,noun,die Ställe,-,noun,de stallen,-,noun,اصطبل ها,noun
 c1-1114,C1,medium,stance,noun,die Haltung,Haltungen,noun,de houding,houdingen,noun,موضع گیری,noun
@@ -8174,7 +8169,7 @@ c1-1152,C1,medium,sum sth up,phrasal verb,zusammenfassen,,verb,samenvatten,,verb
 c1-1153,C1,medium,superficial,adj,oberflächlich,,adj,oppervlakkig,,adj,سطحی,adj
 c1-1154,C1,medium,supposedly,adv,angeblich,,adv,zogenaamd,,adv,ظاهراً,adv
 c1-1155,C1,medium,suppress your feelings,phrase,seine Gefühle unterdrücken,,phrase,je gevoelens onderdrukken,,phrase,احساسات خود را سرکوب کردن,verb
-c1-1156,C1,medium,surge,verb,sprunghaft ansteigen,,verb,sterk stijgen,,verb,افزایش ناگهانی,noun
+c1-1156,C1,medium,surge,verb,sprunghaft ansteigen,,verb,sterk stijgen,,verb,به‌طور ناگهانی افزایش یافتن,verb
 c1-1157,C1,medium,surrender,verb,sich ergeben,,verb,zich overgeven,,verb,تسلیم شدن,verb
 c1-1158,C1,medium,survival rate,noun,die Überlebensrate,Überlebensraten,noun,het overlevingspercentage,overlevingspercentages,noun,میزان بقا,noun
 c1-1159,C1,medium,susceptible to,phrase,anfällig für,,phrase,vatbaar voor,,phrase,مستعدِ؛ آسیب‌پذیر در برابر,adj
@@ -8283,7 +8278,7 @@ c1-1261,C1,medium,venue,noun,der Veranstaltungsort,Veranstaltungsorte,noun,de lo
 c1-1262,C1,easy,verify,verb,überprüfen,,verb,verifiëren,,verb,تأیید کردن؛ صحت‌سنجی کردن,verb
 c1-1263,C1,medium,versatile,adj,vielseitig,,adj,veelzijdig,,adj,همه کاره,adj
 c1-1264,C1,advanced,vice,noun,der Stellvertreter,Stellvertreter,noun,de plaatsvervanger,plaatsvervangers,noun,معاون,noun
-c1-1265,C1,medium,virtually,adv,praktisch,,adv,praktisch,,adv,عملا، عملاً,adv
+c1-1265,C1,medium,virtually,adv,praktisch,,adv,praktisch,,adv,عملاً,adv
 c1-1266,C1,medium,virtue,noun,die Tugend,Tugenden,noun,de deugd,deugden,noun,فضیلت,noun
 c1-1267,C1,easy,visualize,verb,sich vorstellen,,verb,visualiseren,,verb,تجسم کردن,verb
 c1-1268,C1,medium,visually impaired,adj,sehbehindert,,adj,slechtziend,,adj,کم بینا,adj
@@ -8359,7 +8354,7 @@ c2-0033,C2,medium,anonymity,noun,die Anonymität,-,noun,de anonimiteit,-,noun,ن
 c2-0034,C2,medium,anticlimax,noun,die Enttäuschung,Enttäuschungen,noun,de anticlimax,anticlimaxen,noun,ضد اوج,noun
 c2-0035,C2,medium,appetizing,adj,appetitlich,,adj,smakelijk,,adj,اشتها آور,adj
 c2-0036,C2,advanced,aptitude for,phrase,die Begabung für,,phrase,aanleg voor,,phrase,استعداد برای,phrase
-c2-0037,C2,advanced,archaic,adj,veraltet,,adj,archaïsch,,adj,کهنه، منسوخ (واژه)، کهنه؛ منسوخ,adj
+c2-0037,C2,advanced,archaic,adj,veraltet,,adj,archaïsch,,adj,کهنه، منسوخ,adj
 c2-0038,C2,advanced,arduous,adj,mühsam,,adj,moeizaam,,adj,طاقت فرسا,adj
 c2-0039,C2,medium,are reconciled,verb,versöhnt sein,,phrase,verzoend zijn,,phrase,آشتی کرده‌اند,verb
 c2-0040,C2,medium,arouse,verb,erregen,,verb,opwekken,,verb,برانگیختن,verb
@@ -8371,7 +8366,7 @@ c2-0045,C2,advanced,baffle,verb,verblüffen,,verb,verbijsteren,,verb,گیج کر
 c2-0046,C2,advanced,be at your wits' end,idiom,mit seinem Latein am Ende sein,,idiom,met je handen in het haar zitten,,idiom,کلافه و درمانده بودن؛ عقل به جایی نرسیدن,idiom
 c2-0047,C2,advanced,be cruel to be kind,idiom,"Wer liebt, muss auch mal streng sein",,idiom,"wie zijn kind liefheeft, kastijdt het",,idiom,گاهی برای خیر کسی باید با او سخت‌گیر بود,phrase
 c2-0048,C2,medium,be drawn to somebody/something,phrase,sich zu jemandem/etwas hingezogen fühlen,,phrase,zich aangetrokken voelen tot iemand/iets,,phrase,به سمت کسی/چیزی کشیده شدن,verb
-c2-0049,C2,advanced,be economical,idiom,es mit der Wahrheit nicht so genau nehmen,,idiom,het niet zo nauw nemen met de waarheid,,idiom,حقیقت را کامل نگفتن (be economical with the truth),idiom
+c2-0049,C2,advanced,be economical,idiom,es mit der Wahrheit nicht so genau nehmen,,idiom,het niet zo nauw nemen met de waarheid,,idiom,حقیقت را کامل نگفتن,idiom
 c2-0050,C2,advanced,be getting on for something,phrase,auf etwas zugehen,,phrase,tegen iets aan zitten,,phrase,نزدیک به (سن یا عددی) بودن,verb
 c2-0051,C2,advanced,be like gold dust,idiom,Mangelware sein,,idiom,schaars zijn,,idiom,کمیاب بودن,verb
 c2-0052,C2,advanced,be on borrowed time,idiom,auf geborgter Zeit leben,,idiom,in blessuretijd spelen,,idiom,روزهای آخر را گذراندن,idiom
@@ -8444,7 +8439,7 @@ c2-0118,C2,medium,cosmopolitan,noun,der Kosmopolit,Kosmopoliten,noun,de kosmopol
 c2-0119,C2,medium,counteract,verb,entgegenwirken,,verb,tegengaan,,verb,مقابله کردن,verb
 c2-0120,C2,medium,crafty,adj,gerissen,,adj,sluw,,adj,حیله گر,adj
 c2-0121,C2,medium,craving for,phrase,das Verlangen nach,,phrase,het verlangen naar,-,noun,اشتیاق شدید به,phrase
-c2-0122,C2,medium,creak,verb,knarren,,verb,kraken,,verb,جیرجیر,noun
+c2-0122,C2,medium,creak,verb,knarren,,verb,kraken,,verb,جیرجیر کردن,verb
 c2-0123,C2,medium,crippling,adj,lähmend,,adj,verlammend,,adj,فلج کننده,adj
 c2-0124,C2,medium,cross-reference,noun,der Querverweis,Querverweise,noun,de kruisverwijzing,kruisverwijzingen,noun,ارجاع متقابل,noun
 c2-0125,C2,advanced,curb,verb,eindämmen,,verb,indammen,,verb,مهار کردن,verb
@@ -8471,7 +8466,7 @@ c2-0145,C2,advanced,dejected,adj,niedergeschlagen,,adj,neerslachtig,,adj,افس�
 c2-0146,C2,medium,deluded,adj,verblendet,,adj,verblind,,adj,دچار توهم، فریب‌خورده,adj
 c2-0147,C2,advanced,deluge,noun,die Flut,Fluten,noun,de stortvloed,stortvloeden,noun,سیل,noun
 c2-0148,C2,medium,demobilize,verb,demobilisieren,,verb,demobiliseren,,verb,از خدمت مرخص کردن (نیروها),verb
-c2-0149,C2,advanced,dent,verb,einen Dämpfer verpassen,,phrase,een deuk geven,,phrase,لطمه زدن (به اعتماد به نفس)؛ فرورفتگی,verb
+c2-0149,C2,advanced,dent,verb,einen Dämpfer verpassen,,phrase,een deuk geven,,phrase,لطمه زدن (به اعتماد به نفس),verb
 c2-0150,C2,medium,depopulated,adj,entvölkert,,adj,ontvolkt,,adj,خالی از سکنه,adj
 c2-0151,C2,medium,depreciate,verb,an Wert verlieren,,verb,in waarde dalen,,phrase,کاهش ارزش یافتن؛ مستهلک شدن,verb
 c2-0152,C2,advanced,derision,noun,der Spott,-,noun,de spot,-,noun,تمسخر,noun
@@ -8488,7 +8483,7 @@ c2-0162,C2,advanced,din,noun,der Lärm,-,noun,het kabaal,-,noun,سروصدا؛ �
 c2-0163,C2,medium,disclosure,noun,die Offenlegung,Offenlegungen,noun,de openbaarmaking,openbaarmakingen,noun,افشا,noun
 c2-0164,C2,medium,discourteous,adj,unhöflich,,adj,onbeleefd,,adj,بی‌ادب,adj
 c2-0165,C2,medium,discreetly,adv,diskret,,adv,discreet,,adv,با احتیاط,adv
-c2-0166,C2,advanced,discursive,adj,weitschweifig,,adj,uitweidend,,adj,بحثی؛ استدلالی (نوشتار),adj
+c2-0166,C2,advanced,discursive,adj,weitschweifig,,adj,uitweidend,,adj,پرحاشیه، پراکنده‌گو,adj
 c2-0167,C2,medium,dislocated,adj,ausgerenkt,,adj,ontwricht,,adj,جابجا شده,adj
 c2-0168,C2,medium,disorientated,adj,desorientiert,,adj,gedesoriënteerd,,adj,گیج و مبهوت,adj
 c2-0169,C2,medium,disregard for,phrase,die Missachtung,-,noun,de minachting voor,,phrase,بی‌توجهی به,phrase
@@ -8581,7 +8576,7 @@ c2-0255,C2,medium,go down that road,idiom,diesen Weg einschlagen,,idiom,die weg 
 c2-0256,C2,advanced,go from strength to strength,idiom,von Erfolg zu Erfolg eilen,,idiom,van succes naar succes gaan,,idiom,روزبه‌روز موفق‌تر شدن,phrase
 c2-0257,C2,advanced,goad somebody,verb,jemanden anstacheln,,verb,iemand opjutten,,phrase,کسی را تحریک کردن,verb
 c2-0258,C2,advanced,gobsmacked,adj,baff,,adj,paf,,adj,مات و مبهوت,adj
-c2-0259,C2,advanced,goes on at,phrasal verb,herumnörgeln an,,verb,zeuren tegen,,phrase,غر زدن به؛ مدام ایراد گرفتن از,verb
+c2-0259,C2,advanced,go on at,phrasal verb,herumnörgeln an,,verb,zeuren tegen,,phrase,غر زدن به؛ مدام ایراد گرفتن از,verb
 c2-0260,C2,advanced,grapple,verb,sich herumschlagen,,verb,worstelen,,verb,دست‌وپنجه نرم کردن (با مشکل),verb
 c2-0261,C2,medium,grimace,verb,das Gesicht verziehen,,verb,een grimas trekken,,phrase,شکلک درآوردن (از درد یا نفرت),verb
 c2-0262,C2,medium,growl,verb,knurren,,verb,grommen,,verb,غرغر کردن,verb
@@ -8727,7 +8722,7 @@ c2-0401,C2,advanced,nose,verb,herumschnüffeln,,verb,rondsnuffelen,,verb,کنج�
 c2-0402,C2,medium,not far off,idiom,nicht weit daneben,,phrase,er niet ver naast zitten,,idiom,تقریباً درست؛ نزدیک,adj
 c2-0403,C2,advanced,not put a foot wrong,idiom,keinen Fehler machen,,idiom,geen enkele fout maken,,phrase,هیچ اشتباهی نکردن,verb
 c2-0404,C2,advanced,not take something lying down,idiom,sich etwas nicht gefallen lassen,,idiom,iets niet over je kant laten gaan,,idiom,چیزی را بی‌اعتراض نپذیرفتن,verb
-c2-0405,C2,advanced,notwithstanding,prep,ungeachtet,,prep,ondanks,,prep,با وجود این,phrase
+c2-0405,C2,advanced,notwithstanding,prep,ungeachtet,,prep,ondanks,,prep,با وجودِ، علی‌رغمِ,prep
 c2-0406,C2,easy,nuclear capability,noun,die nukleare Fähigkeit,nukleare Fähigkeiten,noun,het nucleaire vermogen,-,noun,توانمندی هسته‌ای,noun
 c2-0407,C2,easy,nude,adj,nackt,,adj,naakt,,adj,برهنه,adj
 c2-0408,C2,medium,nudge,verb,anstupsen,,verb,aanstoten,,verb,سقلمه زدن,verb
@@ -8869,7 +8864,7 @@ c2-0543,C2,medium,rubble,noun,der Schutt,-,noun,het puin,-,noun,آوار، نخ�
 c2-0544,C2,advanced,ruddy cheeks,phrase,die roten Wangen,-,noun,blozende wangen,,phrase,گونه‌های سرخ,phrase
 c2-0545,C2,advanced,rugged features,phrase,markante Gesichtszüge,,phrase,markante gelaatstrekken,,phrase,چهره‌ی زمخت و مردانه,phrase
 c2-0546,C2,medium,rumble,verb,grollen,,verb,rommelen,,verb,غرش کردن,verb
-c2-0547,C2,medium,rustle,verb,rascheln,,verb,ritselen,,verb,خش خش,noun
+c2-0547,C2,medium,rustle,verb,rascheln,,verb,ritselen,,verb,خش‌خش کردن,verb
 c2-0548,C2,advanced,safe as houses,idiom,bombensicher,,adj,zo veilig als een huis,,idiom,کاملاً امن,adj
 c2-0549,C2,medium,safeguard against,phrase,der Schutz vor,,phrase,de bescherming tegen,,phrase,محافظت در برابر,phrase
 c2-0550,C2,medium,sane,adj,vernünftig,,adj,verstandig,,adj,عاقل,adj
@@ -8895,14 +8890,14 @@ c2-0569,C2,medium,siege,noun,die Belagerung,Belagerungen,noun,het beleg,-,noun,�
 c2-0570,C2,medium,simile,noun,der Vergleich,Vergleiche,noun,de vergelijking,vergelijkingen,noun,تشبیه,noun
 c2-0571,C2,easy,simplification,noun,die Vereinfachung,Vereinfachungen,noun,de vereenvoudiging,vereenvoudigingen,noun,ساده سازی,noun
 c2-0572,C2,medium,single-minded,adj,zielstrebig,,adj,doelgericht,,adj,مصمم، یک‌دل در هدف,adj
-c2-0573,C2,medium,sink or swim,idiom,Hopp oder top,,idiom,erop of eronder,,idiom,یا موفق شو یا شکست بخور,idiom
+c2-0573,C2,medium,sink or swim,idiom,hopp oder topp,,idiom,erop of eronder,,idiom,یا موفق شو یا شکست بخور,idiom
 c2-0574,C2,medium,sluggish,adj,träge,,adj,traag,,adj,کند، بی‌حال,adj
 c2-0575,C2,medium,sluggishness,noun,die Trägheit,-,noun,de traagheid,-,noun,کندی و بی‌حالی,noun
-c2-0576,C2,medium,slump,verb,einbrechen,,verb,instorten,,verb,رکود,noun
+c2-0576,C2,medium,slump,verb,einbrechen,,verb,instorten,,verb,به‌شدت افت کردن، سقوط کردن,verb
 c2-0577,C2,medium,snarl,verb,knurren,,verb,grauwen,,verb,غرغر کردن,verb
 c2-0578,C2,medium,sniper,noun,der Scharfschütze,Scharfschützen,noun,de sluipschutter,sluipschutters,noun,تک تیرانداز,noun
 c2-0579,C2,easy,socialized,adj,sozialisiert,,adj,gesocialiseerd,,adj,اجتماعی شده,adj
-c2-0580,C2,medium,solidifies,verb,erstarren,,verb,stollen,,verb,جامد می‌کند؛ سفت می‌شود,verb
+c2-0580,C2,medium,solidify,verb,erstarren,,verb,stollen,,verb,جامد شدن، سفت شدن,verb
 c2-0581,C2,medium,soluble,adj,löslich,,adj,oplosbaar,,adj,محلول,adj
 c2-0582,C2,advanced,spin,noun,die Meinungsmache,-,noun,de stemmingmakerij,-,noun,جهت‌دهی خبری، تحریف,noun
 c2-0583,C2,medium,spin doctors,noun,die Spindoktoren,-,noun,de spindoctors,-,noun,متخصصان جهت‌دهی افکار عمومی,noun
@@ -8914,12 +8909,12 @@ c2-0588,C2,advanced,sport,verb,zur Schau tragen,,verb,pronken met,,verb,به ن�
 c2-0589,C2,advanced,squander,verb,verschwenden,,verb,verspillen,,verb,اسراف کردن,verb
 c2-0590,C2,medium,squeak,verb,quietschen,,verb,piepen,,verb,جیرجیر کردن,verb
 c2-0591,C2,medium,squeaky,adj,quietschend,,adj,piepend,,adj,جیرجیرکننده,adj
-c2-0592,C2,medium,squeal,verb,quieken,,verb,gillen,,verb,جیغ,noun
+c2-0592,C2,medium,squeal,verb,quieken,,verb,gillen,,verb,جیغ کشیدن,verb
 c2-0593,C2,advanced,squelch,verb,schmatzen,,verb,soppen,,verb,شلپ‌شلپ کردن (در گل),verb
 c2-0594,C2,medium,squint,verb,blinzeln,,verb,turen,,verb,چشم تنگ کردن,verb
 c2-0595,C2,medium,stacks of,phrase,jede Menge,,phrase,een heleboel,,phrase,انبوهی از؛ کلی,phrase
 c2-0596,C2,medium,stagger,verb,taumeln,,verb,wankelen,,verb,تلو تلو خوردن,verb
-c2-0597,C2,medium,stampede,noun,die Massenpanik,Massenpaniken,noun,de stormloop,stormlopen,noun,رم کردن,verb
+c2-0597,C2,medium,stampede,noun,die Massenpanik,Massenpaniken,noun,de stormloop,stormlopen,noun,هجوم وحشت‌زده، رم,noun
 c2-0598,C2,advanced,stand-offish,adj,reserviert,,adj,afstandelijk,,adj,سرد و خودگیر,adj
 c2-0599,C2,medium,stated dose,phrase,die angegebene Dosis,angegebene Dosen,noun,de voorgeschreven dosis,,phrase,دوز اعلام شده,phrase
 c2-0600,C2,easy,status quo,noun,der Status quo,-,noun,de status quo,-,noun,وضع موجود,noun
@@ -8969,7 +8964,7 @@ c2-0643,C2,medium,trace of irony,phrase,ein Hauch von Ironie,,phrase,een vleugje
 c2-0644,C2,advanced,trudge,verb,stapfen,,verb,sjokken,,verb,به‌زحمت و خسته راه رفتن,verb
 c2-0645,C2,easy,turbulence,noun,die Turbulenz,Turbulenzen,noun,de turbulentie,turbulenties,noun,تلاطم,noun
 c2-0646,C2,medium,turmoil,noun,der Aufruhr,-,noun,de beroering,-,noun,آشفتگی,noun
-c2-0647,C2,medium,twitch,verb,zucken,,verb,trekken,,verb,تکان ناگهانی,noun
+c2-0647,C2,medium,twitch,verb,zucken,,verb,trekken,,verb,تکان ناگهانی خوردن,verb
 c2-0648,C2,medium,two wrongs don't make a right,idiom,Zweimal Unrecht ergibt kein Recht.,,idiom,twee keer fout maakt nog geen goed,,idiom,با اشتباه دیگر نمی‌شود اشتباهی را جبران کرد,idiom
 c2-0649,C2,advanced,ulterior motive,phrase,der Hintergedanke,Hintergedanken,noun,de bijbedoeling,bijbedoelingen,noun,انگیزه پنهان,noun
 c2-0650,C2,medium,unappetizing,adj,unappetitlich,,adj,onsmakelijk,,adj,اشتهاکور، نامطبوع,adj
@@ -9001,7 +8996,7 @@ c2-0675,C2,advanced,waffle,verb,schwafeln,,verb,zwammen,,verb,صحبت حاشی�
 c2-0676,C2,advanced,warily,adv,vorsichtig,,adv,behoedzaam,,adv,با احتیاط,adv
 c2-0677,C2,advanced,wear your heart on your sleeve,idiom,das Herz auf der Zunge tragen,,idiom,het hart op de tong hebben,,idiom,احساسات خود را آشکارا نشان دادن,verb
 c2-0678,C2,medium,welding,noun,das Schweißen,-,noun,het lassen,-,noun,جوشکاری,noun
-c2-0679,C2,medium,were thrown in at the deep end,idiom,ins kalte Wasser geworfen werden,,idiom,in het diepe gegooid worden,,idiom,بی‌تجربه در شرایط سخت قرار گرفتن,verb
+c2-0679,C2,medium,be thrown in at the deep end,idiom,ins kalte Wasser geworfen werden,,idiom,in het diepe gegooid worden,,idiom,بی‌تجربه در شرایط سخت قرار گرفتن,verb
 c2-0680,C2,medium,what a cheek,idiom,So eine Frechheit!,,idiom,wat een brutaliteit!,,idiom,چه پررویی!,idiom
 c2-0681,C2,medium,what a nerve,idiom,So eine Frechheit!,,phrase,wat een brutaliteit!,,idiom,چه پررویی!,phrase
 c2-0682,C2,advanced,whatchamacallit,noun,das Dingsbums,-,noun,het dinges,-,noun,اسمش چیه؛ چیز (وقتی اسمش یادت نیست),noun
