@@ -402,7 +402,7 @@ class _SessionViewState extends ConsumerState<_SessionView> {
                     : Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          for (final (i, (_, label, rating, color, _, _)) in answers.indexed)
+                          for (final (_, label, rating, color, _, _) in answers)
                             Flexible(
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -422,7 +422,7 @@ class _SessionViewState extends ConsumerState<_SessionView> {
                                     child: FittedBox(
                                       child: Column(
                                         children: [
-                                          Text(compact ? label : '${i + 1}  $label'),
+                                          Text(label),
                                           Text(
                                             intervalLabel(
                                               l,
