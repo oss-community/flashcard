@@ -10,7 +10,7 @@ class AppLocalizationsNl extends AppLocalizations {
   AppLocalizationsNl([String locale = 'nl']) : super(locale);
 
   @override
-  String get appTitle => 'Flashcards';
+  String get appTitle => 'Wordeck';
 
   @override
   String get navStudy => 'Leren';
@@ -50,7 +50,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get levelAllInOrder => 'Alle, op volgorde';
 
   @override
-  String get levelAllHint => 'Nieuwe kaarten komen eerst uit A1, dan uit A2 en zo verder tot C2.';
+  String get levelAllHint =>
+      'Nieuwe kaarten komen eerst uit A1, dan uit A2 en zo verder tot C2.';
 
   @override
   String get dueNow => 'Te herhalen';
@@ -166,7 +167,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get pronounce => 'Uitspreken';
 
   @override
-  String get noVoice => 'Op dit apparaat is geen stem voor deze taal geïnstalleerd';
+  String get noVoice =>
+      'Op dit apparaat is geen stem voor deze taal geïnstalleerd';
 
   @override
   String get newCardBadge => 'Nieuw';
@@ -251,7 +253,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get settingsDailyGoal => 'Dagdoel (nieuwe woorden)';
 
   @override
-  String get settingsDailyGoalHint => 'Alleen om bij te houden. Je kunt altijd meer leren.';
+  String get settingsDailyGoalHint =>
+      'Alleen om bij te houden. Je kunt altijd meer leren.';
 
   @override
   String get noGoal => 'Geen';
@@ -328,7 +331,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get profileName => 'Profielnaam';
 
   @override
-  String get profileNameHint => 'Optioneel. Laat leeg om het profiel naar zijn talen te noemen.';
+  String get profileNameHint =>
+      'Optioneel. Laat leeg om het profiel naar zijn talen te noemen.';
 
   @override
   String profileDefaultName(String native, String target) {

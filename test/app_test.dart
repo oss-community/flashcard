@@ -446,8 +446,8 @@ void phoneTest(Vocabulary vocabulary, String uiLanguage) {
 
     // The About page opens from the bottom of Settings.
     PackageInfo.setMockInitialValues(
-      appName: 'Flashcards',
-      packageName: 'org.osscommunity.flashcard',
+      appName: 'Wordeck',
+      packageName: 'org.osscommunity.wordeck',
       version: '1.0.0',
       buildNumber: '1',
       buildSignature: '',

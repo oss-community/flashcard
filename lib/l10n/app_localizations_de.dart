@@ -10,7 +10,7 @@ class AppLocalizationsDe extends AppLocalizations {
   AppLocalizationsDe([String locale = 'de']) : super(locale);
 
   @override
-  String get appTitle => 'Karteikarten';
+  String get appTitle => 'Wordeck';
 
   @override
   String get navStudy => 'Lernen';
@@ -50,7 +50,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get levelAllInOrder => 'Alle, der Reihe nach';
 
   @override
-  String get levelAllHint => 'Neue Karten kommen zuerst aus A1, dann aus A2 und so weiter bis C2.';
+  String get levelAllHint =>
+      'Neue Karten kommen zuerst aus A1, dann aus A2 und so weiter bis C2.';
 
   @override
   String get dueNow => 'Zur Wiederholung fällig';
@@ -131,7 +132,8 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get goalReached => 'Tagesziel erreicht. Mach weiter, so lange du möchtest.';
+  String get goalReached =>
+      'Tagesziel erreicht. Mach weiter, so lange du möchtest.';
 
   @override
   String get endSession => 'Sitzung beenden';
@@ -154,7 +156,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get backHome => 'Zurück';
 
   @override
-  String get keyboardHint => 'Leertaste: Antwort zeigen   1: vergessen   2: gewusst';
+  String get keyboardHint =>
+      'Leertaste: Antwort zeigen   1: vergessen   2: gewusst';
 
   @override
   String get pluralLabel => 'Plural:';
@@ -166,7 +169,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get pronounce => 'Aussprechen';
 
   @override
-  String get noVoice => 'Auf diesem Gerät ist keine Stimme für diese Sprache installiert';
+  String get noVoice =>
+      'Auf diesem Gerät ist keine Stimme für diese Sprache installiert';
 
   @override
   String get newCardBadge => 'Neu';
@@ -251,7 +255,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get settingsDailyGoal => 'Tagesziel (neue Wörter)';
 
   @override
-  String get settingsDailyGoalHint => 'Nur zur Übersicht. Du kannst immer mehr lernen.';
+  String get settingsDailyGoalHint =>
+      'Nur zur Übersicht. Du kannst immer mehr lernen.';
 
   @override
   String get noGoal => 'Keins';

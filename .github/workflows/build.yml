@@ -37,10 +37,10 @@ jobs:
       - run: flutter pub get
       - run: dart run tool/build_vocabulary_db.dart
       - run: flutter build windows --release
-      # Downloads as Flashcards-windows.zip; unzip and run flashcard.exe.
+      # Downloads as Wordeck-windows.zip; unzip and run Wordeck.exe.
       - uses: actions/upload-artifact@v4
         with:
-          name: Flashcards-windows
+          name: Wordeck-windows
           path: build/windows/x64/runner/Release/
 
   android:
@@ -62,11 +62,11 @@ jobs:
       - run: flutter build apk --release
       # Signed with a debug key: fine for installing directly on a phone, but
       # Google Play needs a release key (see README).
-      - run: cp build/app/outputs/flutter-apk/app-release.apk Flashcards.apk
+      - run: cp build/app/outputs/flutter-apk/app-release.apk Wordeck.apk
       - uses: actions/upload-artifact@v4
         with:
-          name: Flashcards-android
-          path: Flashcards.apk
+          name: Wordeck-android
+          path: Wordeck.apk
 
   ios:
     needs: test
@@ -83,12 +83,12 @@ jobs:
       - run: flutter build ios --release --no-codesign
       # An unsigned .ipa; it has to be signed with an Apple ID before it can be
       # installed on an iPhone (see README).
-      - name: Package Flashcards.ipa
+      - name: Package Wordeck.ipa
         run: |
           mkdir -p ipa/Payload
           cp -R build/ios/iphoneos/Runner.app ipa/Payload/
-          cd ipa && zip -qr ../Flashcards.ipa Payload
+          cd ipa && zip -qr ../Wordeck.ipa Payload
       - uses: actions/upload-artifact@v4
         with:
-          name: Flashcards-ios
-          path: Flashcards.ipa
+          name: Wordeck-ios
+          path: Wordeck.ipa

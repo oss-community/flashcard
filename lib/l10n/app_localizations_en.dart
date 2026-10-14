@@ -10,7 +10,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'Flashcards';
+  String get appTitle => 'Wordeck';
 
   @override
   String get navStudy => 'Study';
@@ -50,7 +50,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get levelAllInOrder => 'All, in order';
 
   @override
-  String get levelAllHint => 'New cards come from A1 first, then A2, and so on up to C2.';
+  String get levelAllHint =>
+      'New cards come from A1 first, then A2, and so on up to C2.';
 
   @override
   String get dueNow => 'Due for review';
@@ -131,7 +132,8 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get goalReached => 'Daily goal reached. Keep going as long as you like.';
+  String get goalReached =>
+      'Daily goal reached. Keep going as long as you like.';
 
   @override
   String get endSession => 'End session';
@@ -166,7 +168,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pronounce => 'Pronounce';
 
   @override
-  String get noVoice => 'No voice for this language is installed on this device';
+  String get noVoice =>
+      'No voice for this language is installed on this device';
 
   @override
   String get newCardBadge => 'New';
@@ -251,7 +254,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsDailyGoal => 'Daily goal (new words)';
 
   @override
-  String get settingsDailyGoalHint => 'Only for keeping track. You can always study more.';
+  String get settingsDailyGoalHint =>
+      'Only for keeping track. You can always study more.';
 
   @override
   String get noGoal => 'None';
@@ -328,7 +332,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileName => 'Profile name';
 
   @override
-  String get profileNameHint => 'Optional. Leave it empty to name the profile after its languages.';
+  String get profileNameHint =>
+      'Optional. Leave it empty to name the profile after its languages.';
 
   @override
   String profileDefaultName(String native, String target) {

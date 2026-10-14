@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "OSS Community" "\0"
-            VALUE "FileDescription", "Flashcards" "\0"
+            VALUE "FileDescription", "Wordeck" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "flashcard" "\0"
+            VALUE "InternalName", "Wordeck" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2026 OSS Community. Apache License 2.0." "\0"
-            VALUE "OriginalFilename", "flashcard.exe" "\0"
-            VALUE "ProductName", "Flashcards" "\0"
+            VALUE "OriginalFilename", "Wordeck.exe" "\0"
+            VALUE "ProductName", "Wordeck" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

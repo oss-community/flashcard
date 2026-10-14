@@ -1,4 +1,4 @@
-<h1 align="center">Flashcards</h1>
+<h1 align="center">Wordeck</h1>
 
 An app for Windows, Android and iPhone for learning vocabulary with flashcards
 and spaced repetition.
@@ -55,7 +55,7 @@ Every push to `main` builds the app on GitHub Actions. Open the latest
 
 ### Windows
 
-Download **Flashcards-windows**, unzip it and run `flashcard.exe`. Windows may
+Download **Wordeck-windows**, unzip it and run `Wordeck.exe`. Windows may
 warn that the app is unsigned; choose "More info" and "Run anyway".
 
 Pronunciation uses Windows voices. To add one, open Settings > Time & language >
@@ -63,7 +63,7 @@ Speech > Add voices. A language without a voice shows a disabled speaker button.
 
 ### Android
 
-Download **Flashcards-android** and unzip it to get `Flashcards.apk`. Copy it to
+Download **Wordeck-android** and unzip it to get `Wordeck.apk`. Copy it to
 the phone (or send it by email or a messenger), open it and allow installing
 apps from that source when Android asks. Android 7 or newer is needed. The file
 is signed with a test key, so Android may show a warning, and a later version
@@ -75,7 +75,7 @@ phone makers).
 
 ### iPhone
 
-Download **Flashcards-ios** and unzip it to get `Flashcards.ipa`. The file is not
+Download **Wordeck-ios** and unzip it to get `Wordeck.ipa`. The file is not
 signed, and an iPhone only installs apps signed with an Apple ID. A sideloading
 tool such as Sideloadly or AltStore signs and installs it from a computer with
 your Apple ID. With a free Apple ID the app has to be signed again every 7 days;
