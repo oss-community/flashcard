@@ -108,7 +108,7 @@ a CSV changes. Tests:
 | Folder | What it holds |
 |---|---|
 | `data/` | `vocabulary.csv` and `conjugations.csv` (copied from the dictionary repository) and `languages.json` |
-| `tool/` | The script that builds the word database from `data/` |
+| `tool/` | The script that builds the word database from `data/`, and `make_icons.py`, which writes the app icon for every platform from `assets/icon/` |
 | `lib/core/` | Language list, CSV reading and checks (plain Dart) |
 | `lib/data/` | Word database, progress database, pronunciation |
 | `lib/domain/` | Profiles, language pairs, spaced repetition, study sessions, statistics |
