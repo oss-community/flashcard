@@ -45,7 +45,7 @@ about 9,000 cards in English, German, Dutch and Persian, from level A1 to C2.
 - Light, dark, or the same as the system.
 - On a phone the menu moves to the bottom of the screen.
 - Works fully offline and collects no data; see the
-  [privacy policy](https://oss-community.github.io/flashcard/privacy.html)
+  [privacy policy](https://oss-community.github.io/wordeck/privacy.html)
   (source in `docs/privacy.html`).
 
 ## Download

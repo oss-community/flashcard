@@ -5,9 +5,9 @@ import '../core/language.dart';
 import '../core/vocabulary_source.dart';
 import '../domain/pair.dart';
 
-const repositoryUrl = 'https://github.com/oss-community/flashcard';
+const repositoryUrl = 'https://github.com/oss-community/wordeck';
 const issuesUrl = '$repositoryUrl/issues';
-const privacyUrl = 'https://oss-community.github.io/flashcard/privacy.html';
+const privacyUrl = 'https://oss-community.github.io/wordeck/privacy.html';
 
 /// Where mistakes in the words themselves are fixed.
 const dictionaryIssuesUrl = 'https://github.com/oss-community/dictionary/issues/new';
